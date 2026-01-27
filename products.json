@@ -1,0 +1,991 @@
+[{
+        "id": 1,
+        "name": "Real Love",
+        "price": 1500000,
+        "images": ["img/001-reallove.jpg", "img/001-reallove-2.jpg", "img/001-reallove-3.jpg", "img/001-reallove-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 5.0,
+        "description": "Real Love là hiện thân của tình yêu chân thực và mãnh liệt nhất, được gửi gắm qua những đóa hồng đỏ rực rỡ, nồng nàn như ngọn lửa không bao giờ tắt. Mỗi bông hoa được hái thủ công vào đúng thời điểm nở đẹp nhất, giữ được độ tươi lâu và màu sắc sống động suốt nhiều ngày. Bó hoa được sắp xếp tỉ mỉ, kết hợp hài hòa với lá xanh tươi mát và giấy gói cao cấp sang trọng, tạo nên một món quà hoàn hảo để bày tỏ tình cảm sâu đậm trong dịp sinh nhật người yêu, kỷ niệm ngày cưới, Valentine hay bất kỳ khoảnh khắc nào bạn muốn nói 'Anh/em yêu em/anh bằng cả trái tim'. Khi người nhận cầm bó hoa này, họ sẽ cảm nhận được sự chân thành, nồng nhiệt và lời hứa yêu thương vĩnh cửu từ bạn – một món quà không chỉ đẹp mà còn chạm đến trái tim."
+    },
+    {
+        "id": 2,
+        "name": "With All My Heart",
+        "price": 800000,
+        "images": ["img/002-wamh.jpg", "img/002-wamh-2.jpg", "img/002-wamh-3.jpg", "img/002-wamh-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "With All My Heart – gửi trọn cả trái tim qua bó hồng đỏ đẳng cấp, mỗi cánh hoa như một lời thì thầm yêu thương chân thành và mãnh liệt. Những bông hồng được tuyển chọn kỹ lưỡng từ những vườn hoa chất lượng cao, đảm bảo màu đỏ đậm đà, cánh dày mịn màng và hương thơm quyến rũ lưu luyến. Bó hoa được thiết kế tinh tế, gói trong giấy cao cấp kèm nơ satin thanh lịch, là lựa chọn lý tưởng để tặng sinh nhật, kỷ niệm ngày yêu nhau, hay thậm chí là lời xin lỗi chân thành nhất. Khi trao tặng bó hoa này, bạn đang nói rằng: 'Tất cả những gì anh/em có, anh/em dành cho em/anh' – một món quà vừa sang trọng, vừa chứa đựng tình cảm sâu sắc khiến người nhận xúc động."
+    },
+    {
+        "id": 3,
+        "name": "Keep Loving You",
+        "price": 500000,
+        "images": ["img/003-kly.jpg", "img/003-kly-2.jpg", "img/003-kly-3.jpg", "img/003-kly-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 5.0,
+        "description": "Keep Loving You – lời hứa 'Mãi mãi yêu em' được gửi gắm qua bó hồng đỏ thanh lịch, tinh tế và tràn đầy cảm xúc. Mỗi bông hoa được chăm chút tỉ mỉ từ khâu chọn giống đến đóng gói, giữ được độ tươi lâu, màu đỏ rực rỡ tượng trưng cho tình yêu bền vững vượt qua mọi thử thách của thời gian. Thiết kế bó hoa đơn giản nhưng cực kỳ sang trọng, phù hợp làm quà tặng sinh nhật người yêu, kỷ niệm ngày cưới, hay chỉ đơn giản là nhắc nhở người ấy về tình cảm không đổi thay. Khi nhìn thấy bó hoa này, người nhận sẽ cảm nhận được sự chân thành, cam kết và tình yêu vĩnh cửu từ bạn – một món quà đẹp, ý nghĩa và đáng nhớ suốt đời."
+    },
+    {
+        "id": 4,
+        "name": "Flamme d'Amour",
+        "price": 1200000,
+        "images": ["img/004-flammeDamour.jpg", "img/004-flammeDamour-2.jpg", "img/004-flammeDamour-3.jpg", "img/004-flammeDamour-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "Flamme d'Amour – ngọn lửa tình yêu bùng cháy mãnh liệt qua sắc đỏ rực rỡ của những đóa hồng cao cấp. Mỗi bông hoa được hái tại thời điểm đẹp nhất, cánh hoa dày dặn, màu đỏ đậm đà như biểu tượng của đam mê cháy bỏng và khát khao mãnh liệt. Bó hoa được sắp xếp nghệ thuật, kết hợp lá bạc và giấy gói tối giản nhưng đẳng cấp, tạo nên món quà hoàn hảo cho những khoảnh khắc lãng mạn nồng nàn: tỏ tình, kỷ niệm ngày cưới, hay đơn giản là muốn thắp lên ngọn lửa yêu thương. Khi trao tặng, bạn đang gửi đi thông điệp: 'Tình yêu của anh/em dành cho em/anh là ngọn lửa không bao giờ nguội lạnh' – một bó hoa không chỉ đẹp mà còn khiến trái tim người nhận rung động mạnh mẽ."
+    },
+    {
+        "id": 5,
+        "name": "Love You",
+        "price": 750000,
+        "images": ["img/005-ly.jpg", "img/005-ly-2.jpg", "img/005-ly-3.jpg", "img/005-ly-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.8,
+        "description": "Love You – lời nói giản dị nhưng chứa chan tình cảm 'Anh/em yêu em/anh' được thể hiện qua bó hồng đỏ tinh khôi, ấm áp và chân thành. Những bông hồng được chọn lọc cẩn thận, giữ được độ tươi lâu, màu sắc rực rỡ nhưng không phô trương, phù hợp với những ai yêu thích sự đơn giản mà sâu sắc. Bó hoa được gói trong giấy kraft cao cấp kèm ruy băng mảnh mai, là món quà tuyệt vời cho sinh nhật, kỷ niệm ngày yêu nhau hay chỉ muốn gửi chút yêu thương bất ngờ. Người nhận sẽ cảm nhận được sự chân thành, ấm áp và tình cảm thuần khiết từ bạn – một bó hoa giản dị nhưng đủ sức làm tan chảy trái tim."
+    },
+    {
+        "id": 6,
+        "name": "Velvet Sonnet",
+        "price": 3750000,
+        "images": ["img/006-vs.jpg", "img/006-vs-2.jpg", "img/006-vs-3.jpg", "img/006-vs-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.7,
+        "description": "Velvet Sonnet – bài thơ tình nhung mịn được viết bằng những đóa hồng đỏ cao cấp nhất, sang trọng và đầy cảm xúc. Mỗi bông hoa được tuyển chọn từ giống hồng nhập khẩu, cánh hoa mềm mại như nhung, màu đỏ đậm đà, hương thơm quyến rũ lan tỏa. Bó hoa được thiết kế theo phong cách luxury, kết hợp giấy gói đen-vàng ánh kim và nơ satin, là lựa chọn hoàn hảo cho những dịp đặc biệt: sinh nhật người yêu, kỷ niệm ngày cưới, hay cầu hôn. Khi trao tặng bó hoa này, bạn đang gửi đi một bài thơ tình sống động, khiến người nhận cảm nhận được sự trân trọng, lãng mạn và tình yêu đẳng cấp từ bạn."
+    },
+    {
+        "id": 7,
+        "name": "Gentle Love",
+        "price": 750000,
+        "images": ["img/007-gl.jpg", "img/007-gl-2.jpg", "img/007-gl-3.jpg", "img/007-gl-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.6,
+        "description": "Gentle Love – tình yêu dịu dàng, ấm áp được gửi gắm qua những đóa hồng đỏ mềm mại, thanh thoát và sâu lắng. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu đỏ nhẹ nhàng nhưng vẫn tràn đầy sức sống. Bó hoa được sắp xếp tự nhiên, kết hợp lá xanh tươi và giấy gói pastel tinh tế, phù hợp làm quà tặng sinh nhật, kỷ niệm ngày cưới hay những lúc muốn an ủi người yêu. Người nhận sẽ cảm nhận được sự dịu dàng, quan tâm và tình cảm chân thành từ bạn – một món quà nhẹ nhàng nhưng đủ sức chạm đến trái tim sâu thẳm."
+    },
+    {
+        "id": 8,
+        "name": "Blossom of Youth",
+        "price": 200000,
+        "images": ["img/008-boy.jpg", "img/008-boy-2.jpg", "img/008-boy-3.jpg", "img/008-boy-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Blossom of Youth – tuổi trẻ nở rộ qua bó hồng pastel hồng nhạt tươi trẻ, ngọt ngào và tràn đầy sức sống. Những bông hồng được hái khi vừa chớm nở, giữ được độ tươi lâu, màu sắc nhẹ nhàng, trong trẻo như làn da thiếu nữ. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng hồng phấn, là món quà lý tưởng cho sinh nhật bạn bè, em gái, người yêu trẻ trung. Khi trao tặng, bạn đang gửi đi lời chúc tuổi trẻ mãi tươi đẹp, hạnh phúc và rực rỡ – một bó hoa đáng yêu, tràn ngập năng lượng tích cực."
+    },
+    {
+        "id": 9,
+        "name": "Pastel charm",
+        "price": 950000,
+        "images": ["img/009-pc.jpg", "img/009-pc-2.jpg", "img/009-pc-3.jpg", "img/009-pc-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Pastel charm – sự quyến rũ nhẹ nhàng, thanh lịch qua sắc hồng pastel dịu dàng và đầy duyên dáng. Mỗi bông hoa được chọn lọc kỹ càng, cánh hoa mịn màng, màu sắc nhạt nhưng tinh tế, kết hợp hài hòa với lá xanh và hoa phụ. Bó hoa được gói trong giấy cao cấp kèm nơ satin, phù hợp tặng sinh nhật, kỷ niệm ngày yêu nhau hay lời cảm ơn chân thành. Người nhận sẽ cảm nhận được sự tinh tế, nữ tính và tình cảm nhẹ nhàng từ bạn – một món quà đẹp, thanh lịch và để lại ấn tượng lâu dài."
+    },
+    {
+        "id": 10,
+        "name": "All for You",
+        "price": 600000,
+        "images": ["img/010-afy.jpg", "img/010-afy-2.jpg", "img/010-afy-3.jpg", "img/010-afy-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "All for You – tất cả dành cho em qua bó hồng hồng ngọt ngào, tươi tắn và tràn đầy yêu thương. Những bông hồng được hái từ vườn hoa sạch, màu hồng phấn nhẹ nhàng, cánh hoa dày dặn, hương thơm dịu nhẹ. Bó hoa được thiết kế đơn giản nhưng tinh tế, giấy gói kraft kèm ruy băng trắng, là lựa chọn hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay chỉ muốn gửi chút quan tâm bất ngờ. Khi trao tặng, bạn đang nói 'Tất cả những điều tốt đẹp nhất anh/em dành cho em/anh' – một món quà ấm áp, chân thành và khiến người nhận mỉm cười hạnh phúc."
+    },
+    {
+        "id": 11,
+        "name": "Heavenly Blush",
+        "price": 700000,
+        "images": ["img/011-hb.jpg", "img/011-hb-2.jpg", "img/011-hb-3.jpg", "img/011-hb-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.8,
+        "description": "Heavenly Blush – vẻ đẹp nhẹ nhàng, tinh tế như áng mây hồng phủ qua bó hoa cẩm tú cầu hồng pastel kết hợp hồng nhạt. Mỗi bông hoa được chọn từ giống nhập khẩu, cánh hoa mềm mại, màu sắc trong trẻo, kết hợp giấy gói đen-trắng hiện đại tạo nên sự sang trọng tối giản. Bó hoa tượng trưng cho tình yêu thuần khiết, lòng biết ơn và sự dịu dàng. Đây là món quà lý tưởng cho sinh nhật người yêu, kỷ niệm ngày cưới, hay những dịp bất ngờ chỉ để nói 'Em/anh xứng đáng được yêu thương'. Người nhận sẽ cảm nhận được sự tinh tế, lãng mạn và tình cảm sâu sắc từ bạn."
+    },
+    {
+        "id": 12,
+        "name": "Keep you in my heart",
+        "price": 2000000,
+        "images": ["img/012-kyimh.jpg", "img/012-kyimh-2.jpg", "img/012-kyimh-3.jpg", "img/012-kyimh-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.9,
+        "description": "Keep you in my heart – em mãi trong tim anh qua bó hồng hồng thanh thoát, kiêu sa và đầy lời hứa yêu thương vĩnh cửu. Những bông hồng được tuyển chọn từ giống cao cấp, màu hồng đậm nhạt hài hòa, cánh hoa dày mịn, hương thơm lưu luyến. Bó hoa được thiết kế sang trọng, giấy gói ánh kim kèm nơ satin, phù hợp cho sinh nhật, kỷ niệm ngày cưới hay cầu hôn. Khi trao tặng, bạn đang gửi đi thông điệp: 'Dù thời gian có trôi qua, em vẫn luôn ở trong tim anh' – một món quà đẹp, ý nghĩa và khiến người nhận xúc động."
+    },
+    {
+        "id": 13,
+        "name": "Spring day",
+        "price": 300000,
+        "images": ["img/013-sd.jpg", "img/013-sd-2.jpg", "img/013-sd-3.jpg", "img/013-sd-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Spring day – ngày xuân rực rỡ qua bó hoa vàng tươi sáng, mang đến niềm vui, hy vọng và năng lượng tích cực. Những bông hoa vàng được hái khi vừa nở, màu sắc rực rỡ, kết hợp lá xanh tươi mát tạo nên sự tươi mới. Bó hoa được gói đơn giản, giấy kraft kèm ruy băng vàng nhạt, là món quà tuyệt vời cho sinh nhật bạn bè, người thân hay chúc mừng thành công. Người nhận sẽ cảm nhận được sự lạc quan, vui vẻ và lời chúc mọi điều tốt đẹp nhất từ bạn – một bó hoa như tia nắng mùa xuân."
+    },
+    {
+        "id": 14,
+        "name": "Sunrise",
+        "price": 450000,
+        "images": ["img/014-sunrise.jpg", "img/014-sunrise-2.jpg", "img/014-sunrise-3.jpg", "img/014-sunrise-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Sunrise – bình minh rạng rỡ qua sắc vàng ấm áp, gửi gắm khởi đầu tươi đẹp, thành công và hạnh phúc. Mỗi bông hoa được chọn lọc cẩn thận, màu vàng rực rỡ nhưng không chói, kết hợp lá xanh và hoa phụ tạo sự hài hòa. Bó hoa được thiết kế tự nhiên, giấy gói kraft cao cấp, phù hợp tặng sinh nhật, chúc mừng thăng chức hay khởi đầu mới. Khi trao tặng, bạn đang nói 'Chúc em/anh một ngày mới tràn đầy ánh sáng và niềm vui' – một món quà ấm áp, tích cực và tràn đầy hy vọng."
+    },
+    {
+        "id": 15,
+        "name": "Victo rose",
+        "price": 300000,
+        "images": ["img/015-vr.jpg", "img/015-vr-2.jpg", "img/015-vr-3.jpg", "img/015-vr-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Victo rose – sự kết hợp nhã nhặn giữa hoa vàng và lá xanh, cùng cách gói đơn giản nhưng tinh tế, tạo nên món quà dành cho những ai yêu thích gu thẩm mỹ tối giản, sang trọng. Những bông hoa được hái thủ công, màu vàng nhẹ nhàng, tươi lâu, mang đến cảm giác thanh lịch và bình yên. Bó hoa phù hợp làm quà sinh nhật bạn bè, người thân hoặc đồng nghiệp, gửi gắm lời chúc sức khỏe, thành công và bình an. Người nhận sẽ cảm nhận được sự tinh tế, chu đáo và gu thẩm mỹ cao từ bạn – một bó hoa đẹp theo cách nhẹ nhàng nhất."
+    },
+    {
+        "id": 16,
+        "name": "Days of Sunshine",
+        "price": 1500000,
+        "images": ["img/016-dos.jpg", "img/016-dos-2.jpg", "img/016-dos-3.jpg", "img/016-dos-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Days of Sunshine – vẻ đẹp bừng sáng của hướng dương được làm dịu lại bởi hồng kem và lá bạc, tạo nên bản hòa ca màu sắc đầy thu hút. Mỗi bông hoa được chọn lọc từ cánh đồng tốt nhất, giữ độ tươi lâu, màu sắc rực rỡ nhưng hài hòa. Bó hoa được gói sang trọng, giấy cao cấp kèm nơ tinh tế, là món quà lý tưởng cho sinh nhật, chúc mừng thành công hay khởi đầu mới. Khi trao tặng, bạn đang gửi đi lời nhắn: 'Chúc em/anh một tương lai rực rỡ như ánh nắng' – một bó hoa tràn đầy năng lượng tích cực và tình cảm ấm áp."
+    },
+    {
+        "id": 17,
+        "name": "Tango",
+        "price": 600000,
+        "images": ["img/017-tango.jpg", "img/017-tango-2.jpg", "img/017-tango-3.jpg", "img/017-tango-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Mix", "Đỏ", "Cam"],
+        "rating": 4.8,
+        "description": "Tango – điệu nhảy nồng nhiệt qua sự hòa quyện đỏ cam sôi động, tràn đầy đam mê và năng lượng. Mỗi bông hoa được chọn lọc kỹ, màu sắc tương phản nhưng hài hòa, tạo nên bó hoa trẻ trung, cá tính. Bó hoa được thiết kế phóng khoáng, giấy gói kraft kèm ruy băng đỏ, phù hợp tặng sinh nhật bạn bè, người yêu năng động hay chúc mừng thành tựu. Người nhận sẽ cảm nhận được sự sôi nổi, nhiệt huyết và niềm vui từ bạn – một món quà vui tươi, nổi bật và đáng nhớ."
+    },
+    {
+        "id": 18,
+        "name": "My sun ",
+        "price": 150000,
+        "images": ["img/018-ms.jpg", "img/018-ms-2.jpg", "img/018-ms-3.jpg", "img/018-ms-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "My Sun – em chính là mặt trời của anh qua bó hoa hướng dương vàng rực rỡ kết hợp hồng kem nhẹ nhàng, mang đến năng lượng tích cực và hơi ấm yêu thương. Mỗi bông hoa được hái khi đẹp nhất, màu sắc tươi sáng, tươi lâu, tạo cảm giác rạng rỡ như nụ cười của em. Bó hoa được gói nghệ thuật với giấy kraft và ruy băng vàng nhạt, là món quà hoàn hảo cho sinh nhật, chúc mừng thành công hay chỉ đơn giản để nói 'Em là ánh sáng của anh mỗi ngày'. Khi trao tặng, người nhận sẽ cảm nhận được tình yêu ấm áp, sự quan tâm và niềm vui tràn đầy từ bạn."
+    },
+    {
+        "id": 19,
+        "name": "Golden Hour",
+        "price": 850000,
+        "images": ["img/019-gh.jpg", "img/019-gh-2.jpg", "img/019-gh-3.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Golden Hour – khoảnh khắc vàng óng ánh của hoàng hôn được tái hiện qua bó hoa vàng ấm áp, rực rỡ và đầy cảm xúc. Những bông hoa vàng được chọn lọc kỹ lưỡng, kết hợp hài hòa với lá xanh và một chút hồng nhạt tạo nên sự chuyển màu dịu dàng như ánh nắng cuối ngày. Bó hoa được thiết kế tự nhiên, giấy gói kraft cao cấp kèm ruy băng vàng ánh kim, là món quà lý tưởng cho sinh nhật, chúc mừng thành công hay gửi lời cảm ơn đặc biệt. Khi trao tặng, bạn đang gửi đi lời chúc: 'Chúc em/anh luôn tỏa sáng và hạnh phúc trong mọi khoảnh khắc' – một bó hoa ấm áp, ý nghĩa và tràn đầy năng lượng tích cực."
+    },
+    {
+        "id": 20,
+        "name": "Pure Romance",
+        "price": 1200000,
+        "images": ["img/020-pr.jpg", "img/020-pr-2.jpg", "img/020-pr-3.jpg", "img/020-pr-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Pure Romance – tình yêu thuần khiết, trong sáng được gửi gắm qua bó hồng hồng nhạt tinh khôi và thanh lịch. Mỗi bông hồng được hái thủ công từ giống cao cấp, cánh hoa mịn màng, màu hồng pastel nhẹ nhàng tượng trưng cho sự dịu dàng và chân thành. Bó hoa được sắp xếp tinh tế, kết hợp giấy gói trắng-kem kèm nơ satin, là lựa chọn hoàn hảo cho tỏ tình, kỷ niệm ngày yêu nhau, sinh nhật người yêu hay cầu hôn. Khi người nhận nhìn thấy bó hoa này, họ sẽ cảm nhận được sự thuần khiết, lãng mạn và tình yêu chân thành từ bạn – một món quà đẹp, tinh tế và khiến trái tim rung động."
+    },
+    {
+            "id": 21,
+            "name": "Blissful Moments",
+            "price": 950000,
+            "images": ["img/021-bm.jpg", "img/021-bm-2.jpg", "img/021-bm-3.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 4.9,
+            "description": "Blissful Moments – những khoảnh khắc hạnh phúc được gói gọn trong bó hồng hồng phấn ngọt ngào, tươi tắn và tràn đầy niềm vui. Mỗi bông hồng được hái thủ công khi cánh hoa vừa hé nở, giữ được độ tươi lâu, màu sắc nhẹ nhàng, trong trẻo như nụ cười của người nhận. Bó hoa được sắp xếp tự nhiên, kết hợp lá xanh mướt và giấy gói pastel kèm nơ satin mảnh mai, là món quà lý tưởng cho sinh nhật người yêu, kỷ niệm ngày cưới, hay chỉ đơn giản là muốn tạo ra một khoảnh khắc bất ngờ đầy cảm xúc. Khi trao tặng, bạn đang gửi đi lời nhắn: 'Anh/em muốn mọi khoảnh khắc bên em/anh đều tràn ngập hạnh phúc' – một bó hoa dịu dàng, lãng mạn và khiến người nhận mỉm cười rạng rỡ."
+        },
+        {
+            "id": 22,
+            "name": "Eternal Flame",
+            "price": 1800000,
+            "images": ["img/022-ef.jpg", "img/022-ef-2.jpg", "img/022-ef-3.jpg", "img/022-ef-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Eternal Flame – ngọn lửa tình yêu vĩnh cửu qua những đóa hồng đỏ rực rỡ, cao cấp và đầy đam mê. Mỗi bông hoa được tuyển chọn từ giống nhập khẩu, cánh hoa dày dặn, màu đỏ đậm đà như biểu tượng của tình yêu bất diệt, không bao giờ phai nhạt theo thời gian. Bó hoa được thiết kế sang trọng, giấy gói đen ánh kim kèm nơ đỏ rượu, phù hợp cho tỏ tình, kỷ niệm ngày cưới, Valentine hay những dịp muốn khẳng định tình cảm mãnh liệt. Khi người nhận nhìn thấy bó hoa này, họ sẽ cảm nhận được sức nóng của tình yêu, sự chân thành và lời hứa mãi mãi bên nhau – một món quà đẳng cấp, nồng nàn và khiến trái tim rung động mạnh mẽ."
+        },
+        {
+            "id": 23,
+            "name": "Sweet Whisper",
+            "price": 650000,
+            "images": ["img/023-sw.jpg", "img/023-sw-2.jpg", "img/023-sw-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 4.8,
+            "description": "Sweet Whisper – lời thì thầm ngọt ngào qua bó hồng hồng nhạt nhẹ nhàng, dịu dàng và đầy nữ tính. Những bông hồng được hái cẩn thận, cánh hoa mịn màng, màu sắc pastel thanh thoát, mang đến cảm giác e ấp và trong sáng. Bó hoa được gói tinh tế với giấy kraft trắng kèm ruy băng hồng phấn, là lựa chọn hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày yêu nhau hay chỉ muốn gửi chút quan tâm bất ngờ. Người nhận sẽ cảm nhận được sự dịu dàng, chân thành và tình cảm ngọt ngào từ bạn – một bó hoa nhỏ nhắn nhưng chứa đựng cả một câu chuyện tình yêu đẹp đẽ."
+        },
+        {
+            "id": 24,
+            "name": "Radiant Joy",
+            "price": 500000,
+            "images": ["img/024-rj.jpg", "img/024-rj-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 5.0,
+            "description": "Radiant Joy – niềm vui rạng rỡ qua bó hoa vàng tươi sáng, tràn đầy năng lượng tích cực và hy vọng. Mỗi bông hoa được chọn lọc từ cánh đồng tốt nhất, màu vàng rực rỡ nhưng hài hòa, kết hợp lá xanh tạo nên sự tươi mới và sống động. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng vàng nhạt, phù hợp tặng sinh nhật bạn bè, người thân, đồng nghiệp hay chúc mừng thành công. Khi trao tặng, bạn đang gửi đi lời chúc: 'Chúc em/anh luôn rạng rỡ và hạnh phúc như ánh nắng' – một món quà vui vẻ, ấm áp và khiến người nhận tràn đầy năng lượng tích cực."
+        },
+        {
+            "id": 25,
+            "name": "Lover's Dream",
+            "price": 1400000,
+            "images": ["img/025-ld.jpg", "img/025-ld-2.jpg", "img/025-ld-3.jpg", "img/025-ld-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Hồng", "Trắng"],
+            "rating": 4.9,
+            "description": "Lover's Dream – giấc mơ tình yêu qua sự hòa quyện hoàn hảo giữa hồng pastel và trắng tinh khôi, mang đến cảm giác lãng mạn, thuần khiết và mộng mơ. Mỗi bông hoa được hái thủ công, cánh hoa mềm mại, màu sắc nhẹ nhàng như một bức tranh tình yêu. Bó hoa được thiết kế tinh tế, giấy gói trắng ánh kim kèm nơ satin, là món quà lý tưởng cho tỏ tình, kỷ niệm ngày cưới, sinh nhật người yêu hay cầu hôn. Khi người nhận cầm bó hoa này, họ sẽ cảm nhận được giấc mơ tình yêu đang thành hiện thực – một món quà đẹp, sâu lắng và khiến trái tim rung động."
+        },
+        {
+            "id": 26,
+            "name": "Forever Bloom",
+            "price": 2200000,
+            "images": ["img/026-fb.jpg", "img/026-fb-2.jpg", "img/026-fb-3.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Forever Bloom – mãi mãi nở rộ qua bó hồng hồng cao cấp, sang trọng và tràn đầy lời hứa tình yêu vĩnh cửu. Những bông hồng được tuyển chọn từ giống nhập khẩu, cánh hoa dày mịn, màu hồng đậm nhạt hài hòa, hương thơm lưu luyến. Bó hoa được thiết kế luxury, giấy gói ánh kim đen-hồng kèm nơ satin, phù hợp cho sinh nhật người yêu, kỷ niệm ngày cưới hay những dịp đặc biệt. Khi trao tặng, bạn đang nói 'Tình yêu của anh/em sẽ mãi nở hoa như bó hoa này' – một món quà đẳng cấp, ý nghĩa và khiến người nhận cảm thấy được trân trọng sâu sắc."
+        },
+        {
+            "id": 27,
+            "name": "Sunny Smile",
+            "price": 400000,
+            "images": ["img/027-ss.jpg", "img/027-ss-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Sunny Smile – nụ cười rạng rỡ qua bó hoa hướng dương vàng tươi tắn, mang đến năng lượng tích cực và niềm vui bất tận. Mỗi bông hoa được hái khi đẹp nhất, màu vàng rực rỡ, kết hợp lá xanh tạo sự tươi mới và sống động. Bó hoa được gói vui tươi, giấy kraft kèm ruy băng vàng, là món quà tuyệt vời cho sinh nhật bạn bè, em gái hay chúc mừng ngày mới. Người nhận sẽ cảm nhận được sự lạc quan, ấm áp và nụ cười từ bạn – một bó hoa như tia nắng, giúp xua tan mọi buồn phiền."
+        },
+        {
+            "id": 28,
+            "name": "Passion Rose",
+            "price": 1100000,
+            "images": ["img/028-pr.jpg", "img/028-pr-2.jpg", "img/028-pr-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Passion Rose – đam mê cháy bỏng qua những đóa hồng đỏ rực rỡ, nồng nàn và đầy sức hút. Mỗi bông hoa được chọn lọc kỹ, cánh hoa dày dặn, màu đỏ đậm đà tượng trưng cho khát khao và tình yêu mãnh liệt. Bó hoa được sắp xếp nghệ thuật, giấy gói tối giản nhưng đẳng cấp, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay Valentine. Khi trao tặng, bạn đang gửi đi thông điệp: 'Tình yêu của anh/em dành cho em/anh là đam mê không nguôi' – một món quà nồng nhiệt, quyến rũ và khiến người nhận rung động."
+        },
+        {
+            "id": 29,
+            "name": "Gentle Breeze",
+            "price": 800000,
+            "images": ["img/029-gb.jpg", "img/029-gb-2.jpg", "img/029-gb-3.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+            "color": ["Mix", "Trắng", "Hồng"],
+            "rating": 4.8,
+            "description": "Gentle Breeze – làn gió dịu dàng qua bó hoa mix trắng hồng nhẹ nhàng, thanh thoát và mang đến cảm giác bình yên. Mỗi bông hoa được phối màu hài hòa, cánh hoa mềm mại, hương thơm thoang thoảng. Bó hoa được thiết kế tự nhiên, giấy gói kraft trắng kèm ruy băng mảnh, phù hợp tặng sinh nhật, kỷ niệm ngày cưới hay an ủi người thân. Người nhận sẽ cảm nhận được sự dịu dàng, quan tâm và bình yên từ bạn – một món quà nhẹ nhàng nhưng chạm đến trái tim sâu lắng."
+        },
+        {
+            "id": 30,
+            "name": "Cherry Blossom Love",
+            "price": 1300000,
+            "images": ["img/030-cbl.jpg", "img/030-cbl-2.jpg", "img/030-cbl-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Cherry Blossom Love – tình yêu hoa anh đào qua sắc hồng nhạt tinh khôi, lãng mạn và đầy thơ mộng. Mỗi bông hoa được chọn lọc cẩn thận, cánh hoa mỏng manh, màu hồng pastel như cánh hoa anh đào rơi, tượng trưng cho tình yêu mong manh nhưng đẹp đẽ. Bó hoa được thiết kế tinh tế, giấy gói trắng-hồng kèm nơ satin, là món quà lý tưởng cho tỏ tình, sinh nhật người yêu hay kỷ niệm. Khi trao tặng, bạn đang gửi đi giấc mơ tình yêu đẹp như hoa anh đào – một bó hoa thơ mộng, khiến người nhận cảm thấy đặc biệt và hạnh phúc."
+        },
+        {
+            "id": 31,
+            "name": "Bright Future",
+            "price": 700000,
+            "images": ["img/031-bf.jpg", "img/031-bf-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Bright Future – tương lai rạng ngời qua bó hoa vàng ấm áp, tươi sáng và tràn đầy hy vọng. Những bông hoa được hái thủ công, màu vàng rực rỡ nhưng hài hòa, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói sang trọng, giấy kraft cao cấp kèm ruy băng vàng, phù hợp chúc mừng sinh nhật, tốt nghiệp, thăng chức hay khởi đầu mới. Khi trao tặng, bạn đang gửi lời chúc: 'Chúc em/anh một tương lai sáng lạn và thành công' – một món quà tích cực, ấm áp và truyền cảm hứng."
+        },
+        {
+            "id": 32,
+            "name": "Romantic Glow",
+            "price": 1600000,
+            "images": ["img/032-rg.jpg", "img/032-rg-2.jpg", "img/032-rg-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Đỏ", "Hồng"],
+            "rating": 5.0,
+            "description": "Romantic Glow – ánh sáng lãng mạn qua sự hòa quyện đỏ hồng rực rỡ, nồng nàn và đầy cảm xúc. Mỗi bông hoa được chọn lọc kỹ, màu sắc chuyển dần hài hòa, tạo nên bó hoa như ánh đèn mờ ảo trong buổi tối tình yêu. Bó hoa được thiết kế sang trọng, giấy gói đen-hồng kèm nơ satin, phù hợp cho kỷ niệm ngày cưới, Valentine hay tỏ tình. Người nhận sẽ cảm nhận được sự lãng mạn, đam mê và tình yêu sâu đậm từ bạn – một món quà đẹp, quyến rũ và để lại ấn tượng khó quên."
+        },
+        {
+            "id": 33,
+            "name": "Pure Happiness",
+            "price": 550000,
+            "images": ["img/033-ph.jpg", "img/033-ph-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng", "Hồng"],
+            "rating": 4.8,
+            "description": "Pure Happiness – niềm hạnh phúc thuần khiết qua bó hoa mix vàng hồng tươi vui, rạng rỡ và tràn đầy năng lượng. Mỗi bông hoa được phối màu hài hòa, tươi lâu, mang đến cảm giác vui vẻ và lạc quan. Bó hoa được thiết kế dễ thương, giấy gói kraft pastel kèm ruy băng, là món quà lý tưởng cho sinh nhật bạn bè, em gái hay người thân. Khi trao tặng, bạn đang gửi đi nụ cười và niềm vui – một bó hoa nhỏ nhưng chứa đựng hạnh phúc lớn lao."
+        },
+        {
+            "id": 34,
+            "name": "Deep Affection",
+            "price": 2000000,
+            "images": ["img/034-da.jpg", "img/034-da-2.jpg", "img/034-da-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Deep Affection – tình cảm sâu đậm qua những đóa hồng đỏ cao cấp, sang trọng và chứa chan cảm xúc. Mỗi bông hoa được tuyển chọn từ vườn hoa tốt nhất, cánh hoa dày mịn, màu đỏ đậm đà tượng trưng cho tình yêu chân thành và bền vững. Bó hoa được thiết kế luxury, giấy gói ánh kim kèm nơ đỏ, phù hợp cho kỷ niệm ngày cưới, sinh nhật người yêu hay cầu hôn. Khi trao tặng, bạn đang nói 'Tình yêu của anh/em dành cho em/anh sâu đậm và không bao giờ thay đổi' – một món quà đẳng cấp, ý nghĩa và chạm đến trái tim."
+        },
+        {
+            "id": 35,
+            "name": "Fresh Dawn",
+            "price": 600000,
+            "images": ["img/035-fd.jpg", "img/035-fd-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Fresh Dawn – bình minh tươi mới qua bó hoa vàng rực rỡ, mang đến khởi đầu đầy hy vọng và năng lượng tích cực. Những bông hoa được hái khi vừa nở, màu sắc tươi sáng, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói đơn giản nhưng tinh tế, giấy kraft kèm ruy băng vàng, phù hợp chúc mừng sinh nhật, khởi nghiệp hay ngày mới. Người nhận sẽ cảm nhận được sự lạc quan, tươi trẻ và lời chúc tốt đẹp từ bạn – một bó hoa như tia nắng sớm mai."
+        },
+        {
+            "id": 36,
+            "name": "Tender Embrace",
+            "price": 900000,
+            "images": ["img/036-te.jpg", "img/036-te-2.jpg", "img/036-te-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Tender Embrace – cái ôm dịu dàng qua bó hồng hồng nhạt mềm mại, ấm áp và đầy yêu thương. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu hồng pastel tượng trưng cho sự dịu dàng và chân thành. Bó hoa được thiết kế nhẹ nhàng, giấy gói trắng-hồng kèm ruy băng satin, là món quà hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay an ủi. Khi trao tặng, bạn đang gửi đi cái ôm ấm áp và tình cảm chân thành – một bó hoa dịu dàng nhưng đủ sức làm tan chảy trái tim."
+        },
+        {
+            "id": 37,
+            "name": "Vivid Colors",
+            "price": 850000,
+            "images": ["img/037-vc.jpg", "img/037-vc-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Mix", "Đỏ", "Vàng"],
+            "rating": 4.8,
+            "description": "Vivid Colors – sắc màu sống động qua bó hoa mix đỏ vàng rực rỡ, tràn đầy năng lượng và niềm vui. Mỗi bông hoa được phối màu hài hòa, tươi lâu, tạo nên bó hoa trẻ trung và nổi bật. Bó hoa được thiết kế phóng khoáng, giấy gói kraft kèm ruy băng đa sắc, phù hợp tặng sinh nhật bạn bè, đồng nghiệp hay chúc mừng thành công. Người nhận sẽ cảm nhận được sự sôi động, vui vẻ và năng lượng tích cực từ bạn – một món quà rực rỡ và đáng nhớ."
+        },
+        {
+            "id": 38,
+            "name": "Soul Connection",
+            "price": 1700000,
+            "images": ["img/038-sc.jpg", "img/038-sc-2.jpg", "img/038-sc-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 5.0,
+            "description": "Soul Connection – sự kết nối tâm hồn qua sắc tím mộng mơ, sâu lắng và đầy thủy chung. Mỗi bông hoa tím được hái thủ công, cánh hoa mịn màng, màu tím nhạt tượng trưng cho tình yêu son sắt và chân thành. Bó hoa được thiết kế tinh tế, giấy gói tím-trắng kèm nơ satin, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang nói 'Linh hồn anh/em đã kết nối với em/anh mãi mãi' – một món quà lãng mạn, sâu sắc và khiến người nhận cảm thấy được thấu hiểu."
+        },
+        {
+            "id": 39,
+            "name": "Morning Glow",
+            "price": 450000,
+            "images": ["img/039-mg.jpg", "img/039-mg-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Morning Glow – ánh sáng buổi sáng qua bó hoa vàng ấm áp, tươi sáng và tràn đầy hy vọng. Những bông hoa được chọn lọc kỹ, màu vàng dịu nhẹ, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói tinh tế, giấy kraft kèm ruy băng vàng nhạt, phù hợp chúc mừng sinh nhật, ngày mới hay khởi đầu tốt đẹp. Người nhận sẽ cảm nhận được sự tích cực, ấm áp và lời chúc một ngày rạng rỡ từ bạn – một bó hoa như bình minh, mang lại năng lượng tốt lành."
+        },
+        {
+            "id": 40,
+            "name": "Heartfelt Rose",
+            "price": 1000000,
+            "images": ["img/040-hr.jpg", "img/040-hr-2.jpg", "img/040-hr-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Heartfelt Rose – lời yêu chân thành từ trái tim qua bó hồng đỏ tinh khôi, nồng nàn và đầy cảm xúc. Mỗi bông hoa được hái cẩn thận, cánh hoa dày dặn, màu đỏ đậm đà tượng trưng cho tình yêu chân thành và sâu sắc. Bó hoa được thiết kế đơn giản nhưng sang trọng, giấy gói kraft đỏ kèm nơ satin, là món quà lý tưởng cho sinh nhật người yêu, kỷ niệm ngày cưới hay tỏ tình. Khi trao tặng, bạn đang gửi đi trái tim mình – một bó hoa chân thành, ấm áp và khiến người nhận xúc động"
+        },
+        {
+            "id": 41,
+            "name": "Eternal Embrace",
+            "price": 1450000,
+            "images": ["img/041-ee.jpg", "img/041-ee-2.jpg", "img/041-ee-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Eternal Embrace – cái ôm vĩnh cửu qua bó hồng hồng kiêu sa, sang trọng và tràn đầy lời hứa yêu thương không phai. Mỗi bông hồng được tuyển chọn từ giống cao cấp nhập khẩu, cánh hoa dày mịn, màu hồng đậm nhạt hài hòa, hương thơm quyến rũ lan tỏa nhẹ nhàng. Bó hoa được thiết kế theo phong cách luxury, giấy gói ánh kim hồng-trắng kèm nơ satin tinh tế, là món quà hoàn hảo cho kỷ niệm ngày cưới, sinh nhật người yêu hay những dịp muốn khẳng định tình cảm bền vững. Khi trao tặng, bạn đang gửi đi thông điệp: 'Anh/em sẽ mãi ôm em/anh trong vòng tay yêu thương' – một bó hoa đẳng cấp, lãng mạn và khiến người nhận cảm thấy được trân trọng sâu sắc."
+        },
+        {
+            "id": 42,
+            "name": "Golden Whisper",
+            "price": 750000,
+            "images": ["img/042-gw.jpg", "img/042-gw-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Golden Whisper – lời thì thầm vàng óng qua bó hoa hướng dương và hồng kem nhẹ nhàng, mang đến sự ấm áp, rạng rỡ và hy vọng. Mỗi bông hoa được hái thủ công khi đẹp nhất, màu vàng tươi sáng nhưng không chói, kết hợp hài hòa với lá bạc tạo cảm giác sang trọng nhẹ nhàng. Bó hoa được gói tinh tế với giấy kraft cao cấp kèm ruy băng vàng nhạt, phù hợp tặng sinh nhật bạn bè, người thân hay chúc mừng thành công mới. Khi trao tặng, bạn đang gửi đi lời chúc thầm lặng nhưng chân thành: 'Chúc em/anh luôn tỏa sáng và hạnh phúc' – một món quà ấm áp, tích cực và khiến người nhận mỉm cười rạng rỡ."
+        },
+        {
+            "id": 43,
+            "name": "Velvet Romance",
+            "price": 2800000,
+            "images": ["img/043-vr.jpg", "img/043-vr-2.jpg", "img/043-vr-3.jpg", "img/043-vr-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Velvet Romance – tình yêu nhung mịn qua những đóa hồng đỏ cao cấp nhất, mềm mại, sang trọng và đầy đam mê. Mỗi bông hoa được chọn lọc kỹ lưỡng, cánh hoa dày như nhung, màu đỏ rượu vang đậm đà, hương thơm lưu luyến quyến rũ. Bó hoa được thiết kế theo phong cách luxury, giấy gói đen ánh kim kèm nơ satin đỏ, là lựa chọn hoàn hảo cho tỏ tình, kỷ niệm ngày cưới hay Valentine đặc biệt. Khi người nhận cầm bó hoa này, họ sẽ cảm nhận được sự nồng nàn, trân trọng và tình yêu đẳng cấp từ bạn – một món quà khiến trái tim rung động mạnh mẽ và đáng nhớ mãi mãi."
+        },
+        {
+            "id": 44,
+            "name": "Joyful Bloom",
+            "price": 380000,
+            "images": ["img/044-jb.jpg", "img/044-jb-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Hồng"],
+            "rating": 4.8,
+            "description": "Joyful Bloom – sự nở rộ vui tươi qua bó hồng hồng pastel rực rỡ, ngọt ngào và tràn đầy năng lượng tích cực. Những bông hồng được hái khi vừa chớm nở, giữ độ tươi lâu, màu sắc nhẹ nhàng như nụ cười trẻ thơ. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng hồng phấn, là món quà lý tưởng cho sinh nhật em gái, bạn thân hay người yêu trẻ trung. Khi trao tặng, bạn đang gửi đi lời chúc tuổi trẻ mãi nở hoa, hạnh phúc và rạng rỡ – một bó hoa đáng yêu, tràn ngập niềm vui và khiến người nhận cảm thấy được quan tâm."
+        },
+        {
+            "id": 45,
+            "name": "Midnight Passion",
+            "price": 1950000,
+            "images": ["img/045-mp.jpg", "img/045-mp-2.jpg", "img/045-mp-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Midnight Passion – đam mê nửa đêm qua sắc đỏ rực rỡ của những đóa hồng cao cấp, bí ẩn và đầy sức hút. Mỗi bông hoa được tuyển chọn từ vườn hoa đêm, cánh hoa dày dặn, màu đỏ đậm như rượu vang, tượng trưng cho tình yêu mãnh liệt và không thể kiềm chế. Bó hoa được thiết kế tối giản nhưng đẳng cấp, giấy gói đen mờ kèm nơ đỏ rượu, phù hợp cho những buổi hẹn hò lãng mạn, kỷ niệm ngày yêu nhau hay tỏ tình sâu sắc. Khi trao tặng, bạn đang gửi đi ngọn lửa đam mê trong đêm tối – một món quà quyến rũ, nồng nàn và khiến người nhận không thể quên."
+        },
+        {
+            "id": 46,
+            "name": "Sunlit Garden",
+            "price": 980000,
+            "images": ["img/046-sg.jpg", "img/046-sg-2.jpg", "img/046-sg-3.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Mix", "Vàng", "Hồng"],
+            "rating": 4.9,
+            "description": "Sunlit Garden – khu vườn ngập nắng qua bó hoa mix vàng hồng tươi sáng, rực rỡ và tràn đầy sức sống. Mỗi loại hoa được phối màu hài hòa, tươi lâu, mang đến cảm giác như bước vào một khu vườn mùa hè đầy ánh sáng. Bó hoa được thiết kế phóng khoáng theo phong cách Garden Style, giấy gói kraft xanh nhạt kèm ruy băng, phù hợp tặng sinh nhật, chúc mừng nhà mới hay khởi đầu mới. Người nhận sẽ cảm nhận được sự tươi mới, lạc quan và tình cảm ấm áp từ bạn – một món quà như tia nắng, giúp xua tan mọi mệt mỏi."
+        },
+        {
+            "id": 47,
+            "name": "Soft Devotion",
+            "price": 820000,
+            "images": ["img/047-sd.jpg", "img/047-sd-2.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Soft Devotion – sự tận tụy dịu dàng qua bó hồng hồng nhạt mềm mại, thanh lịch và chứa chan tình cảm chân thành. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu hồng pastel tượng trưng cho tình yêu thuần khiết và bền vững. Bó hoa được thiết kế tối giản, giấy gói trắng-hồng kèm nơ satin mảnh, là món quà hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay lời xin lỗi chân thành. Khi trao tặng, bạn đang nói 'Anh/em sẽ luôn ở bên em/anh một cách dịu dàng nhất' – một bó hoa nhẹ nhàng nhưng đủ sức chạm đến trái tim sâu thẳm."
+        },
+        {
+            "id": 48,
+            "name": "Vibrant Dawn",
+            "price": 520000,
+            "images": ["img/048-vd.jpg", "img/048-vd-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.8,
+            "description": "Vibrant Dawn – bình minh rực rỡ qua bó hoa vàng tươi tắn, mang đến khởi đầu mới đầy năng lượng và hy vọng. Những bông hoa được hái khi vừa nở, màu vàng sống động, kết hợp lá xanh tạo sự tươi mới và rạng ngời. Bó hoa được gói đơn giản nhưng tinh tế, giấy kraft kèm ruy băng vàng, phù hợp chúc mừng sinh nhật, tốt nghiệp hay ngày làm việc mới. Người nhận sẽ cảm nhận được sự tích cực, tươi trẻ và lời chúc một ngày tràn đầy sức sống từ bạn – một bó hoa như ánh bình minh, mang lại năng lượng tốt lành."
+        },
+        {
+            "id": 49,
+            "name": "Lavender Dream",
+            "price": 1150000,
+            "images": ["img/049-ld.jpg", "img/049-ld-2.jpg", "img/049-ld-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 5.0,
+            "description": "Lavender Dream – giấc mơ tím mộng mơ qua bó hoa tím nhạt thanh lịch, dịu dàng và đầy lãng mạn. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mềm mại, màu tím pastel tượng trưng cho sự thủy chung và tình yêu son sắt. Bó hoa được thiết kế tinh tế, giấy gói tím-trắng kèm nơ satin, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang gửi đi giấc mơ tình yêu đẹp đẽ và vĩnh cửu – một món quà mộng mơ, sâu sắc và khiến người nhận cảm thấy được yêu thương đặc biệt."
+        },
+        {
+            "id": 50,
+            "name": "Blissful Sunrise",
+            "price": 680000,
+            "images": ["img/050-bs.jpg", "img/050-bs-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng", "Hồng"],
+            "rating": 4.9,
+            "description": "Blissful Sunrise – bình minh hạnh phúc qua bó hoa mix vàng hồng rực rỡ, mang đến niềm vui và khởi đầu tươi đẹp. Mỗi bông hoa được phối màu hài hòa, tươi lâu, tạo cảm giác ấm áp và lạc quan. Bó hoa được thiết kế vui tươi, giấy gói kraft pastel kèm ruy băng, phù hợp tặng sinh nhật bạn bè, người thân hay chúc mừng thành công. Khi trao tặng, bạn đang gửi đi lời chúc một ngày mới tràn đầy hạnh phúc – một bó hoa như ánh nắng sớm, giúp người nhận bắt đầu ngày mới với nụ cười."
+        },
+        {
+            "id": 51,
+            "name": "Crimson Devotion",
+            "price": 1650000,
+            "images": ["img/051-cd.jpg", "img/051-cd-2.jpg", "img/051-cd-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Crimson Devotion – sự tận tụy đỏ rực qua những đóa hồng đỏ cao cấp, nồng nàn và chứa chan tình cảm chân thành. Mỗi bông hoa được tuyển chọn từ vườn hoa tốt nhất, cánh hoa dày dặn, màu đỏ rượu vang tượng trưng cho tình yêu sâu sắc và bền vững. Bó hoa được thiết kế sang trọng, giấy gói đen-hồng kèm nơ satin đỏ, là món quà lý tưởng cho kỷ niệm ngày cưới, sinh nhật người yêu hay tỏ tình. Khi trao tặng, bạn đang gửi đi trái tim tận tụy và tình yêu không thay đổi – một bó hoa đẳng cấp, ý nghĩa và chạm đến trái tim."
+        },
+        {
+            "id": 52,
+            "name": "Pastel Serenity",
+            "price": 920000,
+            "images": ["img/052-ps.jpg", "img/052-ps-2.jpg", "img/052-ps-3.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 4.9,
+            "description": "Pastel Serenity – sự thanh bình dịu dàng qua bó hồng pastel nhạt nhẹ, thanh lịch và mang đến cảm giác yên bình. Mỗi bông hoa được hái thủ công, cánh hoa mịn màng, màu hồng nhạt trong trẻo như mây trời. Bó hoa được thiết kế tối giản, giấy gói trắng-hồng kèm ruy băng satin, phù hợp tặng sinh nhật, kỷ niệm ngày cưới hay an ủi người thân. Người nhận sẽ cảm nhận được sự dịu dàng, bình yên và tình cảm chân thành từ bạn – một món quà nhẹ nhàng nhưng đủ sức xoa dịu mọi lo lắng."
+        },
+        {
+            "id": 53,
+            "name": "Radiant Love",
+            "price": 1350000,
+            "images": ["img/053-rl.jpg", "img/053-rl-2.jpg", "img/053-rl-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Đỏ", "Hồng"],
+            "rating": 5.0,
+            "description": "Radiant Love – tình yêu rạng rỡ qua sự hòa quyện đỏ hồng rực rỡ, nồng nàn và tràn đầy sức sống. Mỗi bông hoa được phối màu tinh tế, tươi lâu, tạo nên bó hoa như ánh sáng tỏa ra từ trái tim. Bó hoa được thiết kế sang trọng, giấy gói ánh kim kèm nơ satin, phù hợp cho sinh nhật người yêu, kỷ niệm ngày cưới hay Valentine. Khi trao tặng, bạn đang gửi đi tình yêu rạng ngời và chân thành – một món quà đẹp, ấm áp và khiến người nhận cảm thấy được yêu thương mãnh liệt."
+        },
+        {
+            "id": 54,
+            "name": "Fresh Harmony",
+            "price": 480000,
+            "images": ["img/054-fh.jpg", "img/054-fh-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Mix", "Vàng", "Trắng"],
+            "rating": 4.8,
+            "description": "Fresh Harmony – sự hài hòa tươi mới qua bó hoa mix vàng trắng nhẹ nhàng, thanh lịch và tràn đầy sức sống. Mỗi bông hoa được chọn lọc kỹ, màu sắc hài hòa, mang đến cảm giác bình yên và tươi mát. Bó hoa được thiết kế tự nhiên, giấy gói kraft trắng kèm ruy băng, phù hợp tặng sinh nhật bạn bè, người thân hay chúc mừng ngày mới. Người nhận sẽ cảm nhận được sự cân bằng, tươi mới và tình cảm chân thành từ bạn – một bó hoa như làn gió mát, giúp thư giãn và vui vẻ."
+        },
+        {
+            "id": 55,
+            "name": "Amour Eternal",
+            "price": 2100000,
+            "images": ["img/055-ae.jpg", "img/055-ae-2.jpg", "img/055-ae-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Amour Eternal – tình yêu vĩnh cửu qua những đóa hồng đỏ cao cấp, sang trọng và chứa chan lời hứa mãi mãi. Mỗi bông hoa được tuyển chọn từ giống nhập khẩu, cánh hoa dày mịn, màu đỏ đậm đà tượng trưng cho tình yêu bất diệt. Bó hoa được thiết kế luxury, giấy gói đen ánh kim kèm nơ đỏ, là món quà hoàn hảo cho kỷ niệm ngày cưới, sinh nhật người yêu hay cầu hôn. Khi trao tặng, bạn đang nói 'Tình yêu của anh/em sẽ mãi mãi như bó hoa này' – một món quà đẳng cấp, sâu sắc và khiến người nhận xúc động."
+        },
+        {
+            "id": 56,
+            "name": "Bright Blossom",
+            "price": 620000,
+            "images": ["img/056-bb.jpg", "img/056-bb-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Bright Blossom – sự nở rộ rạng rỡ qua bó hoa vàng tươi sáng, mang đến niềm vui và hy vọng mới. Những bông hoa được hái thủ công, màu vàng rực rỡ nhưng hài hòa, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói tinh tế, giấy kraft kèm ruy băng vàng nhạt, phù hợp chúc mừng sinh nhật, tốt nghiệp hay khởi đầu mới. Người nhận sẽ cảm nhận được sự tích cực, tươi trẻ và lời chúc một tương lai sáng lạn từ bạn – một bó hoa như ánh nắng, truyền cảm hứng và năng lượng tốt lành."
+        },
+        {
+            "id": 57,
+            "name": "Gentle Affection",
+            "price": 780000,
+            "images": ["img/057-ga.jpg", "img/057-ga-2.jpg", "img/057-ga-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Gentle Affection – tình cảm dịu dàng qua bó hồng hồng nhạt mềm mại, ấm áp và đầy yêu thương. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu hồng pastel tượng trưng cho sự dịu dàng và chân thành. Bó hoa được thiết kế nhẹ nhàng, giấy gói trắng-hồng kèm ruy băng satin, là món quà hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay an ủi. Khi trao tặng, bạn đang gửi đi cái ôm dịu dàng và tình cảm chân thành – một bó hoa nhẹ nhàng nhưng đủ sức làm tan chảy trái tim."
+        },
+        {
+            "id": 58,
+            "name": "Sunny Delight",
+            "price": 550000,
+            "images": ["img/058-sd.jpg", "img/058-sd-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.8,
+            "description": "Sunny Delight – niềm vui nắng vàng qua bó hoa hướng dương rực rỡ, mang đến năng lượng tích cực và nụ cười. Mỗi bông hoa được hái khi đẹp nhất, màu vàng tươi sáng, kết hợp lá xanh tạo sự sống động. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng vàng, phù hợp tặng sinh nhật bạn bè, em gái hay chúc mừng ngày mới. Người nhận sẽ cảm nhận được sự lạc quan, ấm áp và niềm vui từ bạn – một bó hoa như tia nắng, giúp xua tan mọi buồn phiền."
+        },
+        {
+            "id": 59,
+            "name": "Purple Whisper",
+            "price": 1050000,
+            "images": ["img/059-pw.jpg", "img/059-pw-2.jpg", "img/059-pw-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 5.0,
+            "description": "Purple Whisper – lời thì thầm tím mộng mơ qua bó hoa tím nhạt thanh lịch, lãng mạn và đầy thủy chung. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mềm mại, màu tím pastel tượng trưng cho tình yêu son sắt và e ấp. Bó hoa được thiết kế tinh tế, giấy gói tím-trắng kèm nơ satin, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang gửi đi lời thì thầm yêu thương dịu dàng – một món quà mộng mơ, sâu sắc và khiến người nhận cảm thấy được yêu thương đặc biệt."
+        },
+        {
+            "id": 60,
+            "name": "Happy Harmony",
+            "price": 720000,
+            "images": ["img/060-hh.jpg", "img/060-hh-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Mix", "Hồng", "Vàng"],
+            "rating": 4.9,
+            "description": "Happy Harmony – sự hài hòa hạnh phúc qua bó hoa mix hồng vàng tươi vui, rạng rỡ và tràn đầy năng lượng tích cực. Mỗi bông hoa được phối màu hài hòa, tươi lâu, mang đến cảm giác vui vẻ và cân bằng. Bó hoa được thiết kế dễ thương, giấy gói kraft pastel kèm ruy băng, là món quà lý tưởng cho sinh nhật bạn bè, người thân hay chúc mừng thành công. Khi trao tặng, bạn đang gửi đi nụ cười và niềm vui – một bó hoa nhỏ nhưng chứa đựng hạnh phúc lớn lao."
+        },
+        {
+            "id": 61,
+            "name": "Timeless Affection",
+            "price": 1850000,
+            "images": ["img/061-ta.jpg", "img/061-ta-2.jpg", "img/061-ta-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Timeless Affection – tình cảm vượt thời gian qua bó hồng đỏ cao cấp, sang trọng và chứa chan lời hứa mãi mãi. Mỗi bông hồng được tuyển chọn từ giống hảo hạng, cánh hoa dày mịn, màu đỏ rượu vang đậm đà, hương thơm quyến rũ lưu luyến. Bó hoa được thiết kế theo phong cách classic luxury, giấy gói đen ánh kim kèm nơ satin đỏ, là món quà hoàn hảo cho kỷ niệm ngày cưới, sinh nhật người yêu hay những dịp đặc biệt muốn khẳng định tình yêu bền vững. Khi trao tặng, bạn đang gửi đi thông điệp: 'Tình yêu của anh/em sẽ không bao giờ phai mờ theo năm tháng' – một bó hoa đẳng cấp, sâu lắng và khiến người nhận cảm thấy được trân trọng vĩnh cửu."
+        },
+        {
+            "id": 62,
+            "name": "Golden Serenity",
+            "price": 880000,
+            "images": ["img/062-gs.jpg", "img/062-gs-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Golden Serenity – sự thanh bình vàng óng qua bó hoa hướng dương và lá bạc nhẹ nhàng, mang đến cảm giác ấm áp, bình yên và tràn đầy hy vọng. Mỗi bông hoa được hái thủ công, màu vàng dịu nhẹ nhưng rạng rỡ, kết hợp hài hòa với lá xanh bạc tạo sự thanh lịch tinh tế. Bó hoa được gói tối giản nhưng sang trọng, giấy kraft trắng kèm ruy băng vàng nhạt, phù hợp tặng sinh nhật người thân, bạn bè hay chúc mừng một khởi đầu mới. Khi trao tặng, bạn đang gửi đi lời chúc thầm lặng: 'Chúc em/anh luôn tìm thấy sự bình yên và tỏa sáng trong cuộc sống' – một món quà nhẹ nhàng, ý nghĩa và khiến người nhận cảm thấy thư thái."
+        },
+        {
+            "id": 63,
+            "name": "Crimson Elegance",
+            "price": 2300000,
+            "images": ["img/063-ce.jpg", "img/063-ce-2.jpg", "img/063-ce-3.jpg", "img/063-ce-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Crimson Elegance – sự thanh lịch đỏ rực qua những đóa hồng đỏ cao cấp nhất, kiêu sa và đầy đam mê. Mỗi bông hoa được chọn lọc kỹ lưỡng, cánh hoa dày dặn, màu đỏ rượu vang đậm đà như biểu tượng của tình yêu tinh tế và mãnh liệt. Bó hoa được thiết kế luxury tối giản, giấy gói đen mờ kèm nơ satin đỏ, là lựa chọn hoàn hảo cho tỏ tình, kỷ niệm ngày cưới hay Valentine sang trọng. Khi người nhận cầm bó hoa này, họ sẽ cảm nhận được sự đẳng cấp, nồng nàn và tình yêu chân thành từ bạn – một món quà khiến trái tim rung động và để lại ấn tượng khó phai."
+        },
+        {
+            "id": 64,
+            "name": "Sweet Blossom",
+            "price": 420000,
+            "images": ["img/064-sb.jpg", "img/064-sb-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Hồng"],
+            "rating": 4.8,
+            "description": "Sweet Blossom – sự nở rộ ngọt ngào qua bó hồng hồng pastel tươi trẻ, đáng yêu và tràn đầy sức sống. Những bông hồng được hái khi vừa hé nở, giữ độ tươi lâu, màu hồng nhạt trong trẻo như nụ cười thiếu nữ. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng hồng phấn, là món quà lý tưởng cho sinh nhật em gái, bạn thân hay người yêu trẻ trung. Khi trao tặng, bạn đang gửi đi lời chúc tuổi trẻ mãi ngọt ngào, hạnh phúc và rạng rỡ – một bó hoa nhỏ nhắn nhưng chứa chan niềm vui và sự quan tâm chân thành."
+        },
+        {
+            "id": 65,
+            "name": "Midnight Romance",
+            "price": 2050000,
+            "images": ["img/065-mr.jpg", "img/065-mr-2.jpg", "img/065-mr-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Midnight Romance – lãng mạn đêm khuya qua sắc đỏ rực rỡ của những đóa hồng cao cấp, bí ẩn và đầy sức hút. Mỗi bông hoa được tuyển chọn từ vườn hoa đêm, cánh hoa dày mịn, màu đỏ đậm như rượu vang, tượng trưng cho tình yêu nồng nàn và không thể kiềm chế. Bó hoa được thiết kế tối giản nhưng đẳng cấp, giấy gói đen mờ kèm nơ đỏ rượu, phù hợp cho buổi hẹn hò lãng mạn, kỷ niệm ngày yêu nhau hay tỏ tình sâu sắc. Khi trao tặng, bạn đang gửi đi ngọn lửa tình yêu trong bóng tối – một món quà quyến rũ, nồng nhiệt và khiến người nhận không thể quên."
+        },
+        {
+            "id": 66,
+            "name": "Sunflower Harmony",
+            "price": 1050000,
+            "images": ["img/066-sh.jpg", "img/066-sh-2.jpg", "img/066-sh-3.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Sunflower Harmony – sự hài hòa hướng dương qua bó hoa vàng rực rỡ kết hợp lá xanh và hồng kem nhẹ nhàng, mang đến năng lượng tích cực và hơi ấm. Mỗi bông hoa được chọn lọc từ cánh đồng tốt nhất, màu vàng tươi sáng, tươi lâu, tạo cảm giác rạng rỡ như nụ cười. Bó hoa được thiết kế tự nhiên, giấy gói kraft cao cấp kèm ruy băng vàng, phù hợp tặng sinh nhật, chúc mừng thành công hay khởi đầu mới. Khi trao tặng, bạn đang gửi đi lời nhắn: 'Chúc em/anh luôn hướng về phía nắng và hạnh phúc' – một bó hoa ấm áp, tràn đầy hy vọng và tình cảm chân thành."
+        },
+        {
+            "id": 67,
+            "name": "Soft Passion",
+            "price": 950000,
+            "images": ["img/067-sp.jpg", "img/067-sp-2.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Soft Passion – đam mê dịu dàng qua bó hồng hồng nhạt mềm mại, thanh thoát và chứa chan tình cảm sâu sắc. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu hồng pastel tượng trưng cho tình yêu thuần khiết và chân thành. Bó hoa được thiết kế nhẹ nhàng, giấy gói trắng-hồng kèm ruy băng satin, là món quà hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay lời xin lỗi chân thành. Khi trao tặng, bạn đang nói 'Đam mê của anh/em dành cho em/anh là dịu dàng và vĩnh cửu' – một bó hoa nhẹ nhàng nhưng đủ sức chạm đến trái tim."
+        },
+        {
+            "id": 68,
+            "name": "Dawn Delight",
+            "price": 580000,
+            "images": ["img/068-dd.jpg", "img/068-dd-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.8,
+            "description": "Dawn Delight – niềm vui bình minh qua bó hoa vàng tươi sáng, mang đến khởi đầu mới đầy năng lượng và hy vọng. Những bông hoa được hái khi vừa nở, màu vàng rực rỡ nhưng hài hòa, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói tinh tế, giấy kraft kèm ruy băng vàng nhạt, phù hợp chúc mừng sinh nhật, ngày mới hay khởi nghiệp. Người nhận sẽ cảm nhận được sự tích cực, tươi trẻ và lời chúc một ngày tràn đầy sức sống từ bạn – một bó hoa như ánh bình minh, mang lại năng lượng tốt lành."
+        },
+        {
+            "id": 69,
+            "name": "Violet Elegance",
+            "price": 1250000,
+            "images": ["img/069-ve.jpg", "img/069-ve-2.jpg", "img/069-ve-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 5.0,
+            "description": "Violet Elegance – sự thanh lịch tím nhạt qua bó hoa tím pastel kiêu sa, mộng mơ và đầy nữ tính. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mềm mại, màu tím nhạt tượng trưng cho sự thủy chung và tình yêu son sắt. Bó hoa được thiết kế tinh tế, giấy gói tím-trắng kèm nơ satin, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang gửi đi vẻ đẹp thanh lịch và tình yêu chân thành – một món quà mộng mơ, sâu sắc và khiến người nhận cảm thấy đặc biệt."
+        },
+        {
+            "id": 70,
+            "name": "Joyful Sunrise",
+            "price": 650000,
+            "images": ["img/070-js.jpg", "img/070-js-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng", "Hồng"],
+            "rating": 4.9,
+            "description": "Joyful Sunrise – bình minh vui vẻ qua bó hoa mix vàng hồng rực rỡ, mang đến niềm vui và khởi đầu tươi đẹp. Mỗi bông hoa được phối màu hài hòa, tươi lâu, tạo cảm giác ấm áp và lạc quan. Bó hoa được thiết kế vui tươi, giấy gói kraft pastel kèm ruy băng, phù hợp tặng sinh nhật bạn bè, người thân hay chúc mừng thành công. Khi trao tặng, bạn đang gửi đi lời chúc một ngày mới tràn đầy hạnh phúc – một bó hoa như ánh nắng sớm, giúp người nhận bắt đầu ngày mới với nụ cười."
+        },
+        {
+            "id": 71,
+            "name": "Deep Crimson Love",
+            "price": 1750000,
+            "images": ["img/071-dcl.jpg", "img/071-dcl-2.jpg", "img/071-dcl-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Deep Crimson Love – tình yêu sâu đậm đỏ rực qua những đóa hồng đỏ cao cấp, nồng nàn và chứa chan cảm xúc chân thành. Mỗi bông hoa được tuyển chọn từ vườn hoa tốt nhất, cánh hoa dày dặn, màu đỏ rượu vang tượng trưng cho tình yêu bền vững và mãnh liệt. Bó hoa được thiết kế sang trọng, giấy gói đen-hồng kèm nơ satin đỏ, là món quà lý tưởng cho kỷ niệm ngày cưới, sinh nhật người yêu hay tỏ tình. Khi trao tặng, bạn đang gửi đi trái tim sâu đậm và tình yêu không thay đổi – một bó hoa đẳng cấp, ý nghĩa và chạm đến trái tim."
+        },
+        {
+            "id": 72,
+            "name": "Pastel Whisper",
+            "price": 980000,
+            "images": ["img/072-pw.jpg", "img/072-pw-2.jpg", "img/072-pw-3.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 4.9,
+            "description": "Pastel Whisper – lời thì thầm pastel qua bó hồng hồng nhạt nhẹ nhàng, thanh lịch và mang đến cảm giác yên bình. Mỗi bông hoa được hái thủ công, cánh hoa mịn màng, màu hồng nhạt trong trẻo như mây trời. Bó hoa được thiết kế tối giản, giấy gói trắng-hồng kèm ruy băng satin, phù hợp tặng sinh nhật, kỷ niệm ngày cưới hay an ủi người thân. Người nhận sẽ cảm nhận được sự dịu dàng, bình yên và tình cảm chân thành từ bạn – một món quà nhẹ nhàng nhưng đủ sức xoa dịu mọi lo lắng."
+        },
+        {
+            "id": 73,
+            "name": "Radiant Crimson",
+            "price": 1450000,
+            "images": ["img/073-rc.jpg", "img/073-rc-2.jpg", "img/073-rc-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Radiant Crimson – tình yêu rạng rỡ đỏ rực qua bó hồng đỏ cao cấp, nồng nàn và tràn đầy sức sống. Mỗi bông hoa được phối màu tinh tế, tươi lâu, tạo nên bó hoa như ánh sáng tỏa ra từ trái tim. Bó hoa được thiết kế sang trọng, giấy gói ánh kim kèm nơ satin, phù hợp cho sinh nhật người yêu, kỷ niệm ngày cưới hay Valentine. Khi trao tặng, bạn đang gửi đi tình yêu rạng ngời và chân thành – một món quà đẹp, ấm áp và khiến người nhận cảm thấy được yêu thương mãnh liệt."
+        },
+        {
+            "id": 74,
+            "name": "Fresh Golden Glow",
+            "price": 520000,
+            "images": ["img/074-fgg.jpg", "img/074-fgg-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.8,
+            "description": "Fresh Golden Glow – ánh sáng vàng tươi mới qua bó hoa vàng ấm áp, mang đến khởi đầu đầy hy vọng và năng lượng tích cực. Những bông hoa được hái thủ công, màu vàng dịu nhẹ, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói tinh tế, giấy kraft kèm ruy băng vàng nhạt, phù hợp chúc mừng sinh nhật, ngày mới hay khởi nghiệp. Người nhận sẽ cảm nhận được sự tích cực, tươi trẻ và lời chúc một ngày rạng rỡ từ bạn – một bó hoa như bình minh, mang lại năng lượng tốt lành."
+        },
+        {
+            "id": 75,
+            "name": "Eternal Crimson",
+            "price": 2200000,
+            "images": ["img/075-ec.jpg", "img/075-ec-2.jpg", "img/075-ec-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Eternal Crimson – tình yêu vĩnh cửu đỏ rực qua những đóa hồng đỏ cao cấp, sang trọng và chứa chan lời hứa mãi mãi. Mỗi bông hoa được tuyển chọn từ giống nhập khẩu, cánh hoa dày mịn, màu đỏ đậm đà tượng trưng cho tình yêu bất diệt. Bó hoa được thiết kế luxury, giấy gói đen ánh kim kèm nơ đỏ, là món quà hoàn hảo cho kỷ niệm ngày cưới, sinh nhật người yêu hay cầu hôn. Khi trao tặng, bạn đang nói 'Tình yêu của anh/em sẽ mãi mãi như bó hoa này' – một món quà đẳng cấp, sâu sắc và khiến người nhận xúc động."
+        },
+        {
+            "id": 76,
+            "name": "Bright Golden Hour",
+            "price": 680000,
+            "images": ["img/076-bgh.jpg", "img/076-bgh-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Bright Golden Hour – khoảnh khắc vàng óng ánh qua bó hoa vàng rực rỡ, mang đến niềm vui và hy vọng mới. Những bông hoa được chọn lọc kỹ, màu vàng sống động nhưng hài hòa, kết hợp lá xanh tạo sự tươi mới. Bó hoa được gói tinh tế, giấy kraft kèm ruy băng vàng, phù hợp chúc mừng sinh nhật, tốt nghiệp hay khởi đầu mới. Người nhận sẽ cảm nhận được sự tích cực, tươi trẻ và lời chúc một tương lai sáng lạn từ bạn – một bó hoa như ánh hoàng hôn, truyền cảm hứng và năng lượng tốt lành."
+        },
+        {
+            "id": 77,
+            "name": "Tender Crimson",
+            "price": 1050000,
+            "images": ["img/077-tc.jpg", "img/077-tc-2.jpg", "img/077-tc-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Tender Crimson – tình cảm dịu dàng đỏ rực qua bó hồng đỏ mềm mại, ấm áp và đầy yêu thương. Mỗi bông hoa được chăm chút tỉ mỉ, cánh hoa mịn màng, màu đỏ nhạt tượng trưng cho sự dịu dàng và chân thành. Bó hoa được thiết kế nhẹ nhàng, giấy gói trắng-đỏ kèm ruy băng satin, là món quà hoàn hảo cho sinh nhật người yêu, kỷ niệm ngày cưới hay an ủi. Khi trao tặng, bạn đang gửi đi cái ôm ấm áp và tình cảm chân thành – một bó hoa nhẹ nhàng nhưng đủ sức làm tan chảy trái tim."
+        },
+        {
+            "id": 78,
+            "name": "Sunny Blossom Joy",
+            "price": 600000,
+            "images": ["img/078-sbj.jpg", "img/078-sbj-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.8,
+            "description": "Sunny Blossom Joy – niềm vui nở rộ nắng vàng qua bó hoa hướng dương tươi tắn, mang đến năng lượng tích cực và nụ cười. Mỗi bông hoa được hái khi đẹp nhất, màu vàng rực rỡ, kết hợp lá xanh tạo sự sống động. Bó hoa được thiết kế vui tươi, giấy gói kraft kèm ruy băng vàng, phù hợp tặng sinh nhật bạn bè, em gái hay chúc mừng ngày mới. Người nhận sẽ cảm nhận được sự lạc quan, ấm áp và niềm vui từ bạn – một bó hoa như tia nắng, giúp xua tan mọi buồn phiền."
+        },
+        {
+            "id": 79,
+            "name": "Lavender Affection",
+            "price": 1180000,
+            "images": ["img/079-la.jpg", "img/079-la-2.jpg", "img/079-la-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 5.0,
+            "description": "Lavender Affection – tình cảm lavender qua bó hoa tím nhạt thanh lịch, dịu dàng và đầy lãng mạn. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mềm mại, màu tím pastel tượng trưng cho sự thủy chung và tình yêu son sắt. Bó hoa được thiết kế tinh tế, giấy gói tím-trắng kèm nơ satin, phù hợp cho tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang gửi đi tình cảm dịu dàng và vĩnh cửu – một món quà mộng mơ, sâu sắc và khiến người nhận cảm thấy được yêu thương đặc biệt."
+        },
+        {
+            "id": 80,
+            "name": "Happy Golden Day",
+            "price": 750000,
+            "images": ["img/080-hgd.jpg", "img/080-hgd-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Happy Golden Day – ngày vàng hạnh phúc qua bó hoa vàng rực rỡ, mang đến niềm vui và khởi đầu tươi đẹp. Mỗi bông hoa được phối màu hài hòa, tươi lâu, tạo cảm giác ấm áp và lạc quan. Bó hoa được thiết kế vui tươi, giấy gói kraft vàng kèm ruy băng, phù hợp tặng sinh nhật bạn bè, người thân hay chúc mừng thành công. Khi trao tặng, bạn đang gửi đi lời chúc một ngày tràn đầy hạnh phúc – một bó hoa như ánh nắng, giúp người nhận bắt đầu ngày mới với nụ cười rạng rỡ."
+        },
+        {
+            "id": 81,
+            "name": "Eternal Blossom",
+            "price": 2500000,
+            "images": ["img/081-eb.jpg", "img/081-eb-2.jpg", "img/081-eb-3.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "Eternal Blossom – sự nở rộ vĩnh cửu qua bó hồng hồng cao cấp, kiêu sa và tràn đầy lời hứa tình yêu bất diệt. Mỗi bông hoa được tuyển chọn từ giống nhập khẩu hảo hạng, cánh hoa dày mịn, màu hồng đậm nhạt hài hòa, hương thơm quyến rũ lưu luyến. Bó hoa được thiết kế theo phong cách luxury tối giản, giấy gói ánh kim hồng-trắng kèm nơ satin tinh tế, là món quà hoàn hảo cho kỷ niệm ngày cưới, sinh nhật người yêu hay cầu hôn đặc biệt. Khi trao tặng, bạn đang gửi đi thông điệp: 'Tình yêu của anh/em sẽ mãi nở hoa như bó hoa này, không bao giờ tàn úa' – một món quà đẳng cấp, sâu lắng và khiến người nhận cảm thấy được trân trọng vĩnh viễn."
+        },
+        {
+            "id": 82,
+            "name": "Golden Tranquility",
+            "price": 920000,
+            "images": ["img/082-gt.jpg", "img/082-gt-2.jpg"],
+            "category": ["Hoa Sinh Nhật"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Golden Tranquility – sự thanh thản vàng óng qua bó hoa hướng dương và lá bạc nhẹ nhàng, mang đến cảm giác bình yên, ấm áp và tràn đầy hy vọng. Mỗi bông hoa được hái thủ công, màu vàng dịu nhẹ nhưng rạng rỡ, kết hợp hài hòa với lá xanh bạc tạo sự thanh lịch tinh tế. Bó hoa được gói tối giản sang trọng, giấy kraft trắng kèm ruy băng vàng nhạt, phù hợp tặng sinh nhật người thân, bạn bè hay chúc mừng một giai đoạn mới trong cuộc sống. Khi trao tặng, bạn đang gửi đi lời chúc thầm lặng: 'Chúc em/anh luôn tìm thấy sự bình yên và tỏa sáng trong mọi khoảnh khắc' – một món quà nhẹ nhàng, ý nghĩa và khiến người nhận cảm thấy thư thái, an nhiên."
+        },
+        {
+            "id": 83,
+            "name": "Crimson Devotion",
+            "price": 2400000,
+            "images": ["img/083-cd.jpg", "img/083-cd-2.jpg", "img/083-cd-3.jpg", "img/083-cd-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Đỏ"],
+            "rating": 5.0,
+            "description": "Crimson Devotion – sự tận tụy đỏ rực qua những đóa hồng đỏ cao cấp nhất, nồng nàn và chứa chan tình cảm chân thành. Mỗi bông hoa được chọn lọc kỹ lưỡng từ vườn hoa tốt nhất, cánh hoa dày dặn, màu đỏ rượu vang đậm đà như biểu tượng của tình yêu mãnh liệt và bền vững. Bó hoa được thiết kế luxury tối giản, giấy gói đen mờ kèm nơ satin đỏ, là lựa chọn hoàn hảo cho tỏ tình, kỷ niệm ngày cưới hay Valentine sâu sắc. Khi người nhận cầm bó hoa này, họ sẽ cảm nhận được sự đẳng cấp, tận tụy và tình yêu chân thành từ bạn – một món quà khiến trái tim rung động mạnh mẽ và để lại ấn tượng khó phai."
+        },
+        {
+            "id": 84,
+            "name": "An Nhiên",
+            "price": 1600000,
+            "images": ["img/084-asob.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Mix"],
+            "rating": 4.9,
+            "description": "An Nhiên là bó hoa mix nhẹ nhàng với sắc trắng, kem và xanh nhạt thanh thoát, mang đến cảm giác bình yên, thanh thản trong những giây phút mất mát và tiếc thương sâu sắc. Mỗi loại hoa được chọn lựa cẩn thận, phối màu hài hòa tinh tế, tạo nên sự trang nghiêm nhưng vẫn dịu dàng, không phô trương. Bó hoa được thiết kế thanh lịch tối giản, giấy gói trắng-kem kèm ruy băng mảnh mai, phù hợp đặt trên bàn thờ hoặc gửi đến gia đình người đã khuất như lời chia buồn chân thành, mong linh hồn người ra đi được an nghỉ. Đây là cách bạn gửi gắm sự đồng cảm, tôn kính và lời cầu chúc bình an vĩnh cửu cho cả người ở lại lẫn người đã mất – một món quà ý nghĩa, trang nghiêm và chạm đến trái tim trong nỗi đau."
+        },
+        {
+            "id": 85,
+            "name": "Soft Echoes",
+            "price": 1000000,
+            "images": ["img/085-se.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Vàng"],
+            "rating": 5.0,
+            "description": "Soft Echoes – những tiếng vọng dịu dàng qua sắc vàng ấm áp, mang đến sự an ủi, tưởng nhớ và hy vọng trong những ngày buồn thương. Mỗi bông hoa vàng được hái thủ công cẩn thận, màu sắc nhẹ nhàng, tươi lâu, kết hợp lá xanh tạo sự thanh lịch và trang nghiêm. Bó hoa được gói tinh tế với giấy kraft kem kèm ruy băng vàng nhạt, phù hợp gửi lời chia buồn chân thành hoặc đặt trên bàn thờ như lời tri ân. Khi trao tặng, bạn đang gửi đi sự đồng cảm, lòng thành kính và lời chúc bình an – một món quà ý nghĩa, nhẹ nhàng nhưng chạm đến trái tim, giúp người ở lại cảm thấy được sẻ chia trong nỗi đau."
+        },
+        {
+            "id": 86,
+            "name": "Echoes of the Past",
+            "price": 3500000,
+            "images": ["img/086-eotp.jpg", "img/086-eotp-2.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Mix"],
+            "rating": 4.9,
+            "description": "Echoes of the Past – ký ức còn vang vọng qua bó hoa mix trang nghiêm với sắc trắng, kem và xanh nhạt thanh lịch, mang đến sự tôn kính và tưởng nhớ sâu sắc. Mỗi loại hoa được chọn lọc kỹ lưỡng, phối màu tinh tế, tạo nên tổng thể hài hòa, không phô trương nhưng đầy ý nghĩa. Bó hoa được thiết kế cao cấp, giấy gói trắng-kem kèm ruy băng mảnh, phù hợp đặt trên bàn thờ hoặc gửi đến gia đình người đã khuất như lời chia buồn chân thành và tri ân. Khi trao tặng, bạn đang gửi đi sự tưởng nhớ, đồng cảm và lời cầu nguyện bình an – một món quà trang trọng, ý nghĩa và để lại ấn tượng sâu sắc trong lòng người nhận."
+        },
+        {
+            "id": 87,
+            "name": "Silent Farewell",
+            "price": 1800000,
+            "images": ["img/087-sf.jpg", "img/087-sf-2.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Trắng"],
+            "rating": 5.0,
+            "description": "Silent Farewell – lời tiễn biệt thầm lặng qua sắc trắng tinh khiết, thanh tịnh và trang nghiêm, tượng trưng cho sự ra đi nhẹ nhàng và bình an. Mỗi bông hoa trắng được hái cẩn thận, cánh hoa mịn màng, hương thơm dịu nhẹ, mang đến cảm giác thanh thản và tôn kính. Bó hoa được thiết kế tối giản nhưng cao cấp, giấy gói trắng-kem kèm ruy băng mảnh mai, phù hợp đặt trên bàn thờ hoặc gửi đến gia đình người đã khuất như lời chia buồn chân thành. Đây là cách bạn bày tỏ sự tôn kính, đồng cảm và lời chúc linh hồn người ra đi được an nghỉ – một món quà giản dị nhưng chứa đựng tình cảm sâu sắc và ý nghĩa lớn lao."
+        },
+        {
+            "id": 88,
+            "name": "Heartfelt Sympathy",
+            "price": 3000000,
+            "images": ["img/088-hs.jpg", "img/088-hs-2.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Vàng"],
+            "rating": 4.9,
+            "description": "Heartfelt Sympathy – lòng chia buồn chân thành qua sắc vàng ấm áp, trang trọng và sâu sắc, mang đến sự an ủi và tưởng nhớ trong những ngày buồn thương. Mỗi bông hoa vàng được chọn lọc từ giống cao cấp, màu vàng nhạt dịu dàng, kết hợp lá xanh tạo sự thanh lịch và ấm áp. Bó hoa được thiết kế tinh tế, giấy gói kem-vàng kèm ruy băng mảnh, phù hợp gửi lời chia buồn hoặc đặt trên bàn thờ như lời tri ân. Khi trao tặng, bạn đang gửi đi sự đồng cảm, lòng thành kính và lời an ủi – một món quà ý nghĩa, ấm áp và giúp người ở lại cảm thấy được sẻ chia, đỡ đần trong nỗi đau."
+        },
+        {
+            "id": 89,
+            "name": "Eternal Peace",
+            "price": 9500000,
+            "images": ["img/089-ep.jpg"],
+            "category": ["Hoa Chia Buồn"],
+            "color": ["Trắng"],
+            "rating": 4.8,
+            "description": "Eternal Peace – bình an vĩnh cửu qua sắc trắng tinh khiết, thanh tịnh và an yên, tượng trưng cho sự ra đi nhẹ nhàng và linh hồn được nghỉ ngơi mãi mãi. Mỗi bông hoa trắng được hái thủ công cẩn thận, cánh hoa mịn màng, hương thơm dịu nhẹ, mang đến cảm giác trang nghiêm và tôn kính cao độ. Bó hoa được thiết kế cao cấp, giấy gói trắng ánh kim kèm ruy băng mảnh mai, là lựa chọn phù hợp cho những dịp tiễn biệt quan trọng, đặt trên bàn thờ hoặc gửi lời chia buồn sâu sắc. Khi trao tặng, bạn đang gửi đi lời cầu chúc bình an vĩnh cửu và sự tôn kính sâu sắc – một món quà trang trọng, ý nghĩa và để lại ấn tượng lâu dài trong lòng người nhận."
+        },
+        {
+            "id": 90,
+            "name": "Simply Your Taste",
+            "price": 450000,
+            "images": ["img/090-syt.jpg", "img/090-syt-2.jpg", "img/090-syt-3.jpg", "img/090-syt-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 4.7,
+            "description": "Simply Your Taste – bó hoa hồng nhạt pha trắng tinh khôi, gợi vẻ đẹp trong sáng, tự nhiên và thanh lịch theo gu thẩm mỹ tinh tế. Hồng Chiết Xạ được chọn lọc kỹ lưỡng, cánh hoa mịn màng, màu sắc nhẹ nhàng tượng trưng cho tình yêu thuần khiết, lòng biết ơn và sự quan tâm sâu sắc. Bó hoa được sắp xếp tự nhiên, giấy gói kraft cao cấp kèm ruy băng trắng-hồng, phù hợp tặng mẹ, bạn bè, người yêu trong sinh nhật, kỷ niệm hay chỉ đơn giản là món quà bất ngờ để nói 'Anh/em nghĩ về em/anh mỗi ngày'. Người nhận sẽ cảm nhận được sự dịu dàng, tinh tế và tình cảm chân thành từ bạn – một bó hoa thanh lịch, ý nghĩa và để lại ấn tượng lâu dài."
+        },
+        {
+            "id": 91,
+            "name": "Eternal Star",
+            "price": 900000,
+            "images": ["img/091-es.jpg", "img/091-es-2.jpg", "img/091-es-3.jpg", "img/091-es-4.jpg"],
+            "category": ["Hoa Sinh Nhật", "Hoa Cảm Ơn"],
+            "color": ["Mix"],
+            "rating": 4.6,
+            "description": "Eternal Star – ngôi sao vĩnh cửu qua sự kết hợp thanh thuần giữa tú cầu hồng nhập khẩu, tulip trắng tinh khiết và cẩm chướng hồng pastel, mang đến vẻ đẹp nhẹ nhàng, sang trọng và đầy tinh tế. Màu hồng trắng trong trẻo tạo cảm giác dịu dàng, hiện đại và ngọt ngào. Bó hoa được thiết kế theo phong cách tối giản cao cấp, giấy gói trắng-kem kèm ruy băng satin, tượng trưng cho tình yêu thuần khiết, sự biết ơn sâu sắc và vẻ đẹp ngọt ngào của người nhận. Đây là món quà lý tưởng cho sinh nhật, cảm ơn hoặc bất kỳ dịp nào cần sự tinh tế. Người nhận sẽ cảm nhận được sự trân trọng, lòng biết ơn và tình cảm sâu sắc từ bạn – một bó hoa đẹp, ý nghĩa và đáng nhớ."
+        },
+        {
+            "id": 92,
+            "name": "Soft Garden Light",
+            "price": 800000,
+            "images": ["img/092-sgl.jpg", "img/092-sgl-2.jpg", "img/092-sgl-3.jpg", "img/092-sgl-4.jpg"],
+            "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+            "color": ["Mix"],
+            "rating": 5.0,
+            "description": "Soft Garden Light – phong cách Garden Style với những đường nét phóng khoáng, mềm mại và tầng lớp hoa đan xen đầy cảm hứng, mang đến cảm giác như một khu vườn tự nhiên tràn đầy sức sống. Bó hoa đa dạng loại hoa, màu sắc hài hòa nhưng phong phú, tươi lâu và rực rỡ theo cách nhẹ nhàng nhất. Bó hoa được thiết kế hiện đại, giấy gói kraft cao cấp kèm ruy băng mảnh, phù hợp tặng người yêu, bạn bè hoặc lời cảm ơn chân thành trong dịp đặc biệt. Người nhận sẽ cảm nhận được sự tươi mới, lãng mạn và tình cảm phong phú từ bạn – một bó hoa đẹp theo cách tự nhiên, phóng khoáng và khiến trái tim rung động."
+        },
+        {
+            "id": 93,
+            "name": "My Christa",
+            "price": 3750000,
+            "images": ["img/093-mc.jpg", "img/093-mc-2.jpg", "img/093-mc-3.jpg", "img/093-mc-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Hồng"],
+            "rating": 5.0,
+            "description": "My Christa – Christa của anh qua bó hồng hồng kiêu sa, sang trọng và dành riêng cho người con gái đặc biệt nhất. Mỗi bông hồng được tuyển chọn từ giống cao cấp nhập khẩu, cánh hoa dày mịn, màu hồng đậm nhạt hài hòa, hương thơm quyến rũ lan tỏa. Bó hoa được thiết kế luxury với giấy gói ánh kim hồng-đen kèm nơ satin tinh tế, là món quà hoàn hảo cho sinh nhật, kỷ niệm ngày cưới hay tỏ tình. Khi trao tặng, bạn đang nói 'Em là Christa duy nhất và đặc biệt nhất trong tim anh' – một bó hoa đẳng cấp, lãng mạn và khiến người nhận cảm thấy được yêu thương, trân trọng một cách riêng biệt."
+        },
+        {
+            "id": 94,
+            "name": "Blush in Bloom",
+            "price": 800000,
+            "images": ["img/094-bib.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Hồng", "Tím"],
+            "rating": 5.0,
+            "description": "Blush in Bloom – sự nở rộ e ấp qua sự phối hợp tinh tế giữa hồng nhẹ nhàng và tím nhạt, mang đến vẻ đẹp dịu dàng, nữ tính và đầy cảm xúc. Màu hồng thể hiện sự dịu dàng, lòng biết ơn; màu tím mang ý nghĩa thủy chung, son sắt và tình yêu sâu sắc. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mịn màng, tạo nên thông điệp tình yêu phong phú nhưng luôn đầy quan tâm và chăm sóc. Bó hoa được gói hiện đại với giấy kraft trắng-hồng kèm ruy băng satin, phù hợp tặng người yêu trong dịp đặc biệt hoặc chỉ muốn bày tỏ tình cảm chân thành. Người nhận sẽ cảm nhận được sự tinh tế, lãng mạn và tình yêu sâu sắc từ bạn – một món quà đẹp, ý nghĩa và chạm đến trái tim."
+        },
+        {
+            "id": 95,
+            "name": "A Quiet You",
+            "price": 250000,
+            "images": ["img/095-aqy.jpg", "img/095-aqy-2.jpg", "img/095-aqy-3.jpg", "img/095-aqy-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Trắng"],
+            "rating": 4.8,
+            "description": "A Quiet You – sự dịu dàng thầm lặng qua bó hoa cẩm tú cầu trắng và mix nhẹ nhàng, mang đến vẻ đẹp mong manh, tinh tế và đầy cảm xúc. Hoa cẩm tú cầu tượng trưng cho tình yêu thuần khiết, lòng biết ơn và hy vọng vào sức mạnh của tình cảm bền vững qua thời gian. Mỗi bông hoa được hái thủ công, cánh hoa mềm mại, màu sắc trong trẻo như lời nhắc nhở rằng tình yêu cần sự kiên nhẫn và chăm sóc. Bó hoa được thiết kế tối giản với giấy gói kraft trắng kèm ruy băng mảnh, phù hợp tặng người yêu, bạn bè hoặc mẹ trong dịp sinh nhật, kỷ niệm. Người nhận sẽ cảm nhận được sự kiên trì, trân trọng và tình yêu sâu sắc từ bạn – một món quà nhẹ nhàng nhưng chạm đến trái tim một cách sâu lắng."
+        },
+        {
+            "id": 96,
+            "name": "You are my sky",
+            "price": 350000,
+            "images": ["img/096-yams.jpg", "img/096-yams-2.jpg", "img/096-yams-3.jpg", "img/096-yams-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Xanh", "Vàng"],
+            "rating": 4.9,
+            "description": "You are my sky – em là bầu trời của anh qua bó hoa mix xanh vàng rộng lớn, bao la và tràn đầy yêu thương. Màu xanh mang sự bình yên, tự do; màu vàng mang hy vọng và niềm vui rạng rỡ. Mỗi bông hoa được phối màu hài hòa, tươi lâu, tạo cảm giác rộng mở và ấm áp như bầu trời bao la. Bó hoa được thiết kế tự nhiên với giấy gói kraft xanh-vàng kèm ruy băng mảnh, phù hợp tặng sinh nhật, kỷ niệm ngày yêu nhau hay chỉ muốn bày tỏ tình cảm chân thành. Khi trao tặng, bạn đang nói 'Em là bầu trời rộng lớn và đẹp nhất của anh mỗi ngày' – một món quà lãng mạn, tươi mới và khiến người nhận mỉm cười hạnh phúc."
+        },
+        {
+            "id": 97,
+            "name": "Sweet Girl",
+            "price": 450000,
+            "images": ["img/097-sg.jpg", "img/097-sg-2.jpg", "img/097-sg-3.jpg", "img/097-sg-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Mix", "Vàng"],
+            "rating": 5.0,
+            "description": "Sweet Girl – cô gái ngọt ngào qua bó hoa mix vàng tươi vui, đáng yêu và rạng rỡ như nụ cười em. Mỗi bông hoa được chọn lọc kỹ, màu vàng nhạt kết hợp hoa phụ tạo sự vui tươi, trẻ trung và ngọt ngào. Bó hoa được thiết kế dễ thương với giấy gói kraft pastel kèm ruy băng vàng-hồng, là món quà hoàn hảo cho sinh nhật bạn gái, em gái hay người yêu. Người nhận sẽ cảm nhận được sự quan tâm, yêu chiều và tình cảm ngọt ngào từ bạn – một bó hoa đáng yêu, tràn đầy hạnh phúc và khiến trái tim rung động theo cách nhẹ nhàng nhất."
+        },
+        {
+            "id": 98,
+            "name": "Closer",
+            "price": 550000,
+            "images": ["img/098-closer.jpg", "img/098-closer-2.jpg", "img/098-closer-3.jpg", "img/098-closer-4.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 4.7,
+            "description": "Closer – gần nhau hơn qua sắc tím mộng mơ, lãng mạn và đầy cảm xúc sâu lắng. Màu tím nhạt tượng trưng cho sự thủy chung, son sắt và khát khao gắn bó chặt chẽ hơn mỗi ngày. Mỗi bông hoa được hái thủ công, cánh hoa mịn màng, hương thơm dịu nhẹ lan tỏa. Bó hoa được thiết kế tinh tế với giấy gói tím-trắng kèm nơ satin, phù hợp tỏ tình, kỷ niệm ngày yêu nhau hay cầu hôn. Khi trao tặng, bạn đang nói 'Anh/em muốn được gần em/anh hơn mỗi ngày, mãi mãi bên nhau' – một món quà lãng mạn, sâu sắc và khiến trái tim rung động theo cách ngọt ngào nhất."
+        },
+        {
+            "id": 99,
+            "name": "Violet blush",
+            "price": 300000,
+            "images": ["img/099-vb.jpg", "img/099-vb-2.jpg"],
+            "category": ["Hoa Tình Yêu"],
+            "color": ["Tím"],
+            "rating": 4.6,
+            "description": "Violet blush – má hồng tím nhạt qua bó hoa tím e ấp, dịu dàng và đầy nữ tính, mang đến vẻ đẹp lãng mạn và ngọt ngào. Màu tím pastel tượng trưng cho sự e thẹn, thủy chung và tình yêu chân thành. Mỗi bông hoa được chọn lọc kỹ, cánh hoa mềm mại, tạo cảm giác nhẹ nhàng, tinh tế như má hồng ửng đỏ của cô gái đang yêu. Bó hoa được gói tối giản với giấy kraft tím nhạt kèm ruy băng mảnh, phù hợp tặng sinh nhật, kỷ niệm hay chỉ muốn bày tỏ tình cảm bất ngờ. Người nhận sẽ cảm nhận được sự dịu dàng, nữ tính và tình yêu chân thành từ bạn – một món quà đẹp, thanh lịch và đáng yêu theo cách riêng biệt."
+        }
+]
