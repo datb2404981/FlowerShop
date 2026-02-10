@@ -14,7 +14,7 @@
     
     /* 3. Màu nền chính: Trắng sứ (Sạch và sáng hơn màu Kem cũ) */
     /* Trong hình mẫu nền rất trắng, pha chút xíu hồng cực nhẹ */
-    --bg-cream: #FFFFFF; 
+    --bg-cream:  #ffffff; 
     
     /* 4. Màu nền phụ (Cho các thẻ Card, Sidebar): Trắng tinh */
     --bg-white: #FFFFFF;
@@ -179,3 +179,4 @@ img{
 }
 
 /* Cấu  */
+
