@@ -52,7 +52,7 @@ function setCart(cart) {
   localStorage.setItem("shoppingCart", JSON.stringify(cart));
 }
 
-// ======= RENDER
+// ======= NHÓM RENDER
 // Sinh toàn bộ HTML cho toàn bộ LocalStorage để bơm vào trang chính
 function renderCart() {
   const cart = getCart();
