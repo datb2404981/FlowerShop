@@ -84,12 +84,21 @@ function initCartLogic(productInfo) {
 
     //increase
     minus.addEventListener("click", () => {
-        if (count > 1) updateCount(count - 1);
+        if (count > 1) 
+            updateCount(count - 1);
     });
 
     //decrease
     plus.addEventListener("click", () => {
         updateCount(count + 1);
+    });
+
+    countEl.addEventListener("change", (e) => {
+        let val = parseInt(e.target.value);
+        if (isNaN(val) || val < 1) 
+            val = 1;
+        
+        updateCount(val);
     });
 
     //add to cart
@@ -122,7 +131,9 @@ function initCartLogic(productInfo) {
         localStorage.setItem("shoppingCart", JSON.stringify(cart));
         updateHeaderBadge();
         
-        alert(`Đã thêm ${count} sản phẩm vào giỏ!`);
+        // alert(`Đã thêm ${count} sản phẩm vào giỏ!`);
+
+        showToast(`Đã thêm ${count} sản phẩm vào giỏ!`);
     });
 }
 //upd the quantity of items on the shopping cart icon
@@ -132,7 +143,7 @@ function updateHeaderBadge() {
     cart.forEach(item => totalQty += item.quantity);
     const badge = document.querySelector("my-header .badge");
     if (badge) {
-        badge.innerText = totalQty;
+        badge.innerText = totalQty > 99 ? '99+' : totalQty;
         badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
     }
 }
@@ -207,12 +218,12 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(products => {
             const product = products.find(p => p.id === productId);
             if (product) {
-                //1. Random
+                // Random
                 let min = 500;
                 let max = 5000;
                 const sharedReviewCount = Math.floor(Math.random() * ((max-min)+1)) + min; //the number of reviews
 
-                // 2. Pass this number to both functions
+                // Pass this number to both functions
                 renderProductDetails(product, sharedReviewCount); 
                 renderReviews(product.rating, sharedReviewCount);
                 
@@ -312,7 +323,6 @@ let dist = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
             dist = { 5: 20, 4: 20, 3: 40, 2: 10, 1: 10 };
             break;
 
-        // --- 4. Trường hợp còn lại (Thấp hơn 3.0) ---
         default:
             dist = { 5: 5, 4: 10, 3: 20, 2: 30, 1: 35 };
             break;
@@ -362,7 +372,7 @@ function generateStars(rating) {
             let percent = (rating - Math.floor(rating)) * 100;
             starsHtml += `
                 <i class="bi bi-star-fill" style="
-                    background: linear-gradient(90deg, var(--text-accent) ${percent}%, #ffffff ${percent}%);
+                    background: linear-gradient(90deg, var(--text-accent) ${percent}%, var(--bg-white) ${percent}%);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     display: inline-block;
@@ -370,8 +380,28 @@ function generateStars(rating) {
                 "></i>`;
         } 
         else //empty
-            // color: transparent (hoặc white) kết hợp với text-stroke sẽ tạo hiệu ứng chỉ có viền
+            // color: transparent / white kết hợp với text-stroke sẽ tạo hiệu ứng chỉ có viền
             starsHtml += `<i class="bi bi-star-fill" style="color: white; ${strokeStyle}"></i>`;
     }
     return starsHtml;
+}
+
+// ================== CUSTOM TOAST ==================
+let toastTimeout; 
+
+function showToast(message) {
+    const toast = document.getElementById('custom-toast');
+    const toastMsg = document.getElementById('toast-message');
+
+    if (!toast || !toastMsg) 
+        return;
+
+    toastMsg.innerText = message;
+    toast.classList.add('show');
+
+    clearTimeout(toastTimeout);
+
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
 }
