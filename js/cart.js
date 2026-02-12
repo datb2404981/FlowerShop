@@ -1,3 +1,4 @@
+// Hàm update icon trên giỏ hàng
 function updateHeaderBadge() {
   const cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
   let totalQty = 0;
@@ -299,13 +300,30 @@ document.addEventListener("click", function (e) {
 });
 
 // Xóa toàn bộ giỏ hàng
+
+const clearCartModal = new bootstrap.Modal(
+  document.getElementById("confirmClearCartModal"),
+);
+const btnConfirmAction = document.getElementById("btn-confirm-clear-action");
+
+document.addEventListener("click", function (e) {
+  if (e.target.closest(".btn-remove-all")) {
+    // Thay vì confirm(), ta mở Modal
+    clearCartModal.show();
+  }
+});
+
+btnConfirmAction.addEventListener("click", function () {
+  clearCart(); // Gọi hàm xóa đã viết sẵn của bạn
+  clearCartModal.hide(); // Đóng modal sau khi xóa
+});
+
 function clearCart() {
   const items = document.querySelectorAll(".item");
-
   items.forEach((item, index) => {
     setTimeout(() => {
       item.classList.add("removing");
-    }, index * 50); // lệch nhịp cho đẹp
+    }, index * 50);
   });
 
   setTimeout(
@@ -317,13 +335,6 @@ function clearCart() {
     300 + items.length * 50,
   );
 }
-document.addEventListener("click", function (e) {
-  if (e.target.closest(".btn-remove-all")) {
-    if (confirm("Bạn có chắc muốn xóa toàn bộ giỏ hàng không?")) {
-      clearCart();
-    }
-  }
-});
 
 // ============== CHECKBOX
 // Hàm đổi trạng thái checked trên local storage

@@ -393,7 +393,7 @@
 
 /* ================== CART ITEM ================== */
 .item {
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 /* ================== ITEM IMAGE ================== */
@@ -403,10 +403,10 @@
 }
 
 .item-img {
-  width: 180px;
+  width: 160px;
   height: 220px;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
@@ -472,6 +472,12 @@
 
 /* ================== ACTION BUTTONS (QTY + REMOVE) ================== */
 
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .removeAll-btn {
   margin-top: 10px;
   display: flex;
@@ -536,12 +542,12 @@
   border: none;
   margin-top: 5px;
   margin-left: 5px;
-  border: none; /* Xóa khung đen */
-  background: none; /* Xóa nền mặc định */
-  padding: 0; /* Xóa khoảng cách thừa */
+  border: none;
+  background: none;
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 5px; /* Khoảng cách giữa icon và chữ Xóa */
+  gap: 5px;
   cursor: pointer;
 }
 
@@ -726,6 +732,12 @@
 }
 
 /* Hiệu ứng cho các item được checkbox chọn */
+.item {
+  box-sizing: border-box;
+  padding: 30px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
 .item.is-checked {
   background: rgba(170, 9, 9, 0.06); /* primary nhưng nhạt */
   border-radius: 16px;
@@ -783,7 +795,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  /* Đổ bóng sâu giống nút thanh toán */
   box-shadow:
     0 6px 16px rgba(170, 9, 9, 0.25),
     0 12px 30px rgba(170, 9, 9, 0.15);
@@ -791,7 +802,7 @@
 
 .btn-go-home:hover {
   background: var(--primary-hover);
-  transform: translateY(-3px); /* Bay lên nhẹ */
+  transform: translateY(-3px);
   box-shadow:
     0 10px 24px rgba(170, 9, 9, 0.35),
     0 18px 40px rgba(170, 9, 9, 0.2);
@@ -812,7 +823,6 @@
   transform: translateX(-5px); /* Icon mũi tên trượt nhẹ sang trái */
 }
 
-/* Thêm hiệu ứng loé sáng (glare) cho giống nút xịn */
 .btn-go-home {
   position: relative;
   overflow: hidden;
@@ -836,4 +846,47 @@
 
 .btn-go-home:hover::before {
   left: 100%;
+}
+
+/* ==== MODAL ==== */
+/* Khung chính của Modal */
+#confirmClearCartModal .modal-content {
+  border-radius: 20px; /* Bo góc đồng bộ với các item giỏ hàng */
+  border: none;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Nội dung văn bản */
+#confirmClearCartModal .modal-body p {
+  font-family: var(--font-header); /* Dùng font header của bạn */
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  color: #333;
+}
+
+/* Tùy chỉnh các nút bấm */
+#confirmClearCartModal .btn {
+  padding: 8px 20px;
+  border-radius: 10px; /* Bo góc nút */
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Nút "Để tôi xem lại" */
+#confirmClearCartModal .btn-light {
+  background-color: #f8f9fa;
+  border: 1px solid #eee;
+  color: #666;
+}
+
+/* Nút "Đồng ý, xóa hết" */
+#confirmClearCartModal .btn-danger {
+  background-color: var(--primary-color) !important;
+  border: none;
+}
+
+#confirmClearCartModal .btn-danger:hover {
+  filter: brightness(90%);
+  transform: translateY(-1px);
 }

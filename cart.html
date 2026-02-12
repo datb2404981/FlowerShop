@@ -88,6 +88,40 @@
     <my-footer></my-footer>
     <!-- end FOOTER -->
 
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="confirmClearCartModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+          <div class="modal-body">
+            <p>
+              Bạn có chắc muốn <strong>xóa toàn bộ</strong> giỏ hàng?<br />
+              <span style="font-size: 0.9rem; color: #999"
+                >Hành động này không thể khôi phục.</span
+              >
+            </p>
+          </div>
+          <div
+            class="modal-footer border-0 d-flex justify-content-center gap-3"
+          >
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+              Để tôi xem lại
+            </button>
+            <button
+              type="button"
+              id="btn-confirm-clear-action"
+              class="btn btn-danger"
+            >
+              Đồng ý, xóa hết
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- CDN js Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
