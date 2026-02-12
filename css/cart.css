@@ -890,3 +890,114 @@
   filter: brightness(90%);
   transform: translateY(-1px);
 }
+
+/* ================== SUMMARY CARD (Giống Cart Page) ================== */
+.summary-card {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+  padding: 25px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12),
+    0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+  color: var(--text-main);
+  font-family: var(--font-header);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Item nhỏ trong Checkout */
+.item-img-small {
+  width: 60px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.qty-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primary-color);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.in4-item-name-small {
+  font-family: var(--font-header);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+/* Các dòng tiền */
+.summary-header p,
+.summary-money p {
+  font-family: var(--font-header);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.summary-money {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.summary-total .summary-header p,
+.summary-total .summary-money p {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.vnd-unit {
+  font-size: 0.65em;
+  vertical-align: super;
+  margin-left: 2px;
+  color: var(--text-light);
+}
+
+/* ================== COUPON INPUT ================== */
+.coupon-input {
+  border-radius: 12px 0 0 12px !important;
+  border: 1px solid #eee !important;
+  padding: 10px 15px !important;
+  font-size: 0.9rem !important;
+}
+
+.btn-apply-coupon {
+  border-radius: 0 12px 12px 0 !important;
+  background: #f8f9fa;
+  border: 1px solid #eee !important;
+  border-left: none !important;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0 15px;
+}
+
+.btn-apply-coupon:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.btn-checkout:disabled {
+  background-color: #ccc !important;
+  border-color: #bbb !important;
+  cursor: not-allowed;
+  transform: none !important; /* Không cho nhảy lên khi hover */
+  box-shadow: none !important;
+  opacity: 0.7;
+}

@@ -427,9 +427,28 @@ function calculateSummary() {
 
   document.querySelector(".summary-total .summary-money p").innerHTML =
     formatPriceHTML(subtotal);
+
+  updateCheckoutButtonStatus();
 }
 
 // Nút thanh toán
 document.addEventListener("click", function (e) {
   if (e.target.closest(".btn-checkout")) window.location.href = "checkout.html";
 });
+
+// Hàm kiểm tra xem có ít nhất 1 sản phẩm được chọn không để bật/tắt nút thanh toán
+function updateCheckoutButtonStatus() {
+  const cart = getCart();
+  // Kiểm tra xem có item nào có checked === true không
+  const hasCheckedItem = cart.some((item) => item.checked === true);
+
+  const checkoutBtn = document.querySelector(".btn-checkout");
+
+  if (checkoutBtn) {
+    if (hasCheckedItem) {
+      checkoutBtn.disabled = false;
+    } else {
+      checkoutBtn.disabled = true;
+    }
+  }
+}
