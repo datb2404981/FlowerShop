@@ -217,7 +217,8 @@
     font-size: large;
     text-align: justify;
 }
-/* --- ADD TO CART & COUNTER --- */
+
+/* === ADD TO CART & COUNTER === */
 .add-to-cart-container {
     margin-top: 30px;
     display: flex;
@@ -234,7 +235,6 @@
     overflow: hidden;
 }
 
-/* Gom logic hover của counter vào đây cho gọn */
 .counter button:hover i {
     color: var(--primary-hover);
     transition: var(--transition);
@@ -244,7 +244,7 @@
     background: var(--primary-color);
     color: #FFFFFF;
     border: none;
-    padding: 0 30px; /* Dùng padding ngang, chiều cao fix bởi height */
+    padding: 0 30px; 
     height: 47px;
     border-radius: 10px;
     font-weight: 600;
@@ -427,7 +427,7 @@
 }
 
 @media (max-width: 992px) {
-    /* horizontal -> vertical. */
+    /* horizontal -> vertical */
     .product-detail {
         flex-direction: column;
         align-items: center;
@@ -488,7 +488,7 @@
         padding: 0 20px;
     }
 
-    /* fix broken photo frame issue on your phone. */
+    /* fix broken photo frame issue on your phone */
     .related-item .img-box {
         height: auto;       
         aspect-ratio: 1/1;  
@@ -500,4 +500,47 @@
         width: 65px;
         height: 65px;
     }
+}
+
+
+/* ================== CUSTOM TOAST ================== */
+.toast-container {
+    position: fixed;
+    top: 30px; 
+    left: 50%; 
+    transform: translateX(-50%) translateY(-100px); 
+    
+    background-color: var(--bg-white); 
+    padding: 15px 25px;
+    border-radius: 8px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+    
+    display: flex;
+    align-items: center;
+    z-index: 9999; 
+    
+    visibility: hidden;
+    transition: all 0.3s ease-in-out; 
+    border-left: 5px solid #28a745; 
+}
+
+.toast-container.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); 
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.toast-icon {
+    color: #28a745; 
+    font-size: 22px;
 }
