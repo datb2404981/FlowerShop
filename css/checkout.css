@@ -304,6 +304,7 @@ hr {
   display: flex;
   flex-direction: column;
   max-height: calc(100vh - 100px); /* Giới hạn chiều cao card theo màn hình */
+  margin-bottom: 30px;
 }
 
 /* ===== SUMMARY CARD (CARD TỔNG) ===== */
@@ -435,7 +436,6 @@ hr {
   color: white;
   border: none;
   border-radius: 10px;
-  text-transform: uppercase;
   transition: 0.3s;
   font-family: var(--font-heading);
   font-size: 28px;
