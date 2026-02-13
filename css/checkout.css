@@ -380,21 +380,28 @@ hr {
 
 .item-name {
   font-family: var(--font-heading);
-  font-size: 15px;
+  font-size: 17px;
   margin: 0 0 2px 0;
-  color: var(--text-main);
+  color: var(--primary-color);
 }
 
 .item-amount,
 .item-price {
-  font-size: 12px;
+  font-size: 14px;
   color: #777;
   margin: 0 !important;
   line-height: 1.4;
 }
 
+.item-price {
+  color: black;
+}
+
 .summary-footer {
-  border-top: 2px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+
+  border-top: 2px solid #eee;
   padding-top: 15px;
   background: #fff;
   flex-shrink: 0;
@@ -428,9 +435,10 @@ hr {
   color: white;
   border: none;
   border-radius: 10px;
-  font-weight: bold;
   text-transform: uppercase;
   transition: 0.3s;
+  font-family: var(--font-heading);
+  font-size: 28px;
 }
 
 .btn-checkout:hover {
@@ -442,8 +450,6 @@ hr {
 .summary-item {
   display: flex !important;
   align-items: center;
-  gap: 12px;
-
   /* Hiệu ứng đổ bóng đơn giản */
   background-color: #fff;
   border-radius: 12px;
@@ -453,6 +459,10 @@ hr {
   /* Khoảng cách */
   padding: 10px !important;
   margin: 0 0 12px 0 !important;
+}
+
+.col-12.col-lg-5 h2 {
+  margin-bottom: 23px;
 }
 
 .vnd-unit {

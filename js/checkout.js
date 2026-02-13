@@ -218,11 +218,13 @@ function createSummaryItemHTML(item) {
       <div class="item-img col-3">
         <img src="${item.image}" alt="${item.name}" />
       </div>
-      <div class="item-info col">
+      <div class="item-info col-4">
         <h3 class="item-name">${item.name}</h3>
+      </div>
+      <div class="item-info col-5">
         <p class="item-amount">Số lượng: ${item.quantity}</p>
         <p class="item-price">
-          Đơn giá: ${formatPriceHTML(item.price)}
+          Đơn giá: <b>${formatPriceHTML(item.price)}</b>
         </p>
       </div>
     </div>
