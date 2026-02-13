@@ -92,62 +92,58 @@ function renderCart() {
     let currentItemHTML = `
 <hr />
 <!-- Sản phẩm -->
-<article class="item row ${checkedClass}" data-id="${id}">
-  <!-- Ảnh sản phẩm -->
-  <div class="img-col col-12 col-lg-3">
-    <img class="item-img" src="${img}" />
-  </div>
-  <!-- Thông tin sản phẩm -->
-  <div class="item-info col-7 col-lg-5">
-    <h2 class="in4-item-name">${name}</h2>
-    <p class="item-info-text">Đơn giá: ${formatPriceHTML(price)}</p>
-
-    <div class="action-button">
-      <div class="quantity-control fancy-qty d-flex align-items-center">
-        <button class="qty-btn btn-minus" data-id="${id}" type="button">
-          <i class="bi bi-dash"></i>
-        </button>
+<div class="row">
+  <div class="check-thanhtoan col-1">
         <input
-          type="number"
-          class="form-control text-center quantity-input"
-          value="${quantity}"
-          min="1"
           data-id="${id}"
+          class="form-check-input item-checkbox"
+          type="checkbox"
+          ${item.checked ? "checked" : ""}
+          value=""
+          id="checkDefault${id}"
         />
-        <button class="qty-btn btn-plus" data-id="${id}" type="button">
-          <i class="bi bi-plus"></i>
-        </button>
       </div>
-      <div class="remove-btn">
-        <button class="btn-remove" data-id="${id}">
-          <i class="bi bi-trash3"></i>
-          <span class="remove-btn-text">Xóa</span>
-        </button>
+  <article class="item row ${checkedClass} col-11" data-id="${id}">
+    <!-- Ảnh sản phẩm -->
+    <div class="img-col col-12 col-lg-4">
+      <img class="item-img" src="${img}" />
+    </div>
+    <!-- Thông tin sản phẩm -->
+    <div class="item-info col-7 col-lg-4">
+      <h2 class="in4-item-name">${name}</h2>
+    </div>
+  
+    <!-- checkbox - Thành tiền-->
+    <div class="item-price col-5 col-lg-4">
+      <div class="price-total">
+        <p class="total-text">Thành tiền:</p>
+        <p class="total-money" data-id="${id}">${formatPriceHTML(price * quantity)}</p>
+      </div>
+      <div class="action-button">
+        <div class="quantity-control fancy-qty d-flex align-items-center">
+          <button class="qty-btn btn-minus" data-id="${id}" type="button">
+            <i class="bi bi-dash"></i>
+          </button>
+          <input
+            type="number"
+            class="form-control text-center quantity-input"
+            value="${quantity}"
+            min="1"
+            data-id="${id}"
+          />
+          <button class="qty-btn btn-plus" data-id="${id}" type="button">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+        <div class="remove-btn">
+          <button class="btn-remove" data-id="${id}">
+            <i class="bi bi-trash3"></i>
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- checkbox - Thành tiền-->
-  <div class="item-price col-5 col-lg-4">
-    <div class="check-thanhtoan">
-      <label class="form-check-label" for="checkDefault${id}">
-        Chọn để thanh toán
-      </label>
-      <input
-        data-id="${id}"
-        class="form-check-input item-checkbox"
-        type="checkbox"
-        ${item.checked ? "checked" : ""}
-        value=""
-        id="checkDefault${id}"
-      />
-    </div>
-    <div class="price-total">
-      <p class="total-text">Thành tiền:</p>
-      <p class="total-money" data-id="${id}">${formatPriceHTML(price * quantity)}</p>
-    </div>
-  </div>
-</article>
+  </article>
+</div>
 
     `;
     fullHTML += currentItemHTML;
@@ -155,17 +151,28 @@ function renderCart() {
 
   document.querySelector(".items-list").innerHTML =
     `
-<div class="check-all">
-  <label class="form-check-label" for="checkAll">
-    Chọn tất cả sản phẩm</label
-  >
-  <input
-    class="form-check-input"
-    type="checkbox"
-    value=""
-    id="checkAll"
-  />
-</div>  
+<div class='check-all row'>
+  <div class="col-1 checkbox-checkall">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      value=""
+      id="checkAll"
+    />
+  </div>
+  <div class='col-11 label-checkall'>
+    <label class="form-check-label" for="checkAll">
+        Chọn tất cả sản phẩm</label
+      >
+
+      <div class="removeAll-btn">
+        <button class="btn btn-remove-all">
+            <i class="bi bi-trash3"></i>
+            <span>Xóa giỏ hàng</span>
+        </button>
+    </div>
+  </div>  
+</div>
   ` + fullHTML;
 
   calculateSummary();
@@ -350,7 +357,6 @@ function toggleItemChecked(id, isChecked) {
   syncCheckAll();
 }
 
-// Hàm bắt sự kiện checkbox
 document.addEventListener("change", function (e) {
   if (e.target.classList.contains("item-checkbox")) {
     const checkbox = e.target;
@@ -359,12 +365,14 @@ document.addEventListener("change", function (e) {
 
     toggleItemChecked(id, isChecked);
 
-    const article = checkbox.closest(".item");
+    const rowWrapper = checkbox.closest(".row");
+    const article = rowWrapper.querySelector(".item");
+
+    if (!article) return;
 
     article.classList.toggle("is-checked", isChecked);
     article.classList.toggle("not-checked", !isChecked);
 
-    // Tính lại tổng tiền
     calculateSummary();
   }
 });
@@ -452,3 +460,28 @@ function updateCheckoutButtonStatus() {
     }
   }
 }
+
+document.addEventListener("click", function (e) {
+  const itemEl = e.target.closest(".item");
+  if (!itemEl) return;
+
+  // Không toggle nếu click vào các control này
+  if (
+    e.target.closest(".btn-plus") ||
+    e.target.closest(".btn-minus") ||
+    e.target.closest(".btn-remove") ||
+    e.target.closest(".quantity-input") ||
+    e.target.closest(".item-checkbox")
+  ) {
+    return;
+  }
+
+  const id = itemEl.dataset.id;
+
+  const checkbox = document.querySelector(`.item-checkbox[data-id="${id}"]`);
+
+  if (!checkbox) return;
+
+  // Click thật vào checkbox (trigger đầy đủ logic)
+  checkbox.click();
+});
