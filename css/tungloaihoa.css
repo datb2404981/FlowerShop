@@ -41,10 +41,7 @@
   color: transparent;
   font-style: italic;
   font-weight: normal;
-}
-.anhdautrang h1{
-    font-size: 70pt;
-    margin-bottom: 20px;
+  font-size: 60pt;
 }
 #ten-hoa{
     text-align: center;
@@ -84,8 +81,12 @@
     .anhdautrang1{
         height: 450px;
     }
-    .anhdautrang1 h1{
-        font-size: 40 pt;
+    .Gioithieu h1{
+        font-size: 40pt;
+    }
+    .Gioithieu{
+        margin-bottom: 200px;
+        margin-top: 200px;
     }
     .noidungnho{
         flex-direction: column;
@@ -99,5 +100,6 @@
     }
 }
 .Gioithieu{
-    margin-top: 350px;;
+    margin-top: 300px;
+    object-fit: cover;
 }
