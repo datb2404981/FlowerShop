@@ -1,0 +1,173 @@
+.container{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;     
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.group{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "hoa1 hoa2 hoa3";
+    gap: 100px;
+    justify-items: center; 
+    width: 100%;
+    max-width: 1200px;
+   
+}
+.object{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.object img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    max-width: 300px;
+}
+.object p{
+    margin-top: 10px;
+    width: fit-content;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.object p:hover,a:hover{
+    background-color: rgba(129, 5, 65);
+    color:#fff;
+}
+@media screen and (max-width:480px) {
+    .group{
+    grid-template-columns: 1fr ;
+    grid-template-areas:"hao1";
+    }
+    .anhdautrang img{
+        height: 200px;
+        width: 100%;
+    }
+    .anhdautrang h1,.anhdautrang h2 {
+        text-shadow: #ffffff 0px 2px 70px;
+        object-fit: cover;
+        display: flex;
+        flex-direction: column;
+        float: left;
+    }
+    .anhdautrang h1{
+        font-size: 20pt;
+    }
+    .daude{
+        text-align: center;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .Gioithieu h1{
+        font-size: 30pt;
+    }
+}
+
+
+.anhdautrang h1,.anhdautrang h2{
+    box-shadow: 0 2px 0px rgba(255,255,255,0.3);
+    text-shadow: #ffffff 0px 2px 70px;
+    object-fit: cover;
+    
+}
+.gioithieu{
+    text-align: center;
+    margin-top: 200px;
+}
+.anhdautrang h1{
+    font-size: 60pt;
+}
+.daude {
+    text-align: center;
+    margin-top: 20px;
+}
+.daude h1{
+    font-size: 50pt;
+}
+.daude h3{
+    text-decoration: none;
+    font-weight: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.hoacacmua ul{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: center;
+    gap:20px;
+    list-style: none;
+}
+.hoacacmua{
+    text-align: center;
+    background-color: rgb(250, 228, 222);
+    padding: 20px 0;
+    width: 100%;
+}
+.anhdautrang img{
+    display: flex;
+    width: 95%;
+    height: 700px;
+    object-fit: cover;
+}
+.anhdautrang{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-top: 20px;
+}
+.gioithieu{ 
+    position: absolute;
+    bottom: 70px;          
+    left: 40px;            
+    color: white;          
+    text-align: left;
+    width: 80%;
+    margin-left: 30px;
+    z-index: 1;
+}
+.gioithieu h1{
+    color: thistle;
+    font-family: Bodoni Moda, serif;
+    font-size: 60pt;
+    background: linear-gradient(
+    to right, 
+    #bf953f, 
+    #fcf6ba, 
+    #b38728, 
+    #fbf5b7, 
+    #aa771c
+  );
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+.gioithieu h2{
+    color: white;
+    font-family: Montserrat, sans-serif;
+    font-size: 20pt;
+    
+}
+.gthoa {
+    text-align: left;
+}
+.gthoa h2{
+    margin-top: 20px;
+}
+.container h1{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}

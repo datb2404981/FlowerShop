@@ -1,0 +1,116 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.lienhe{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: rgba(253, 248, 234, 0.8);
+    width: 100%;
+    max-width: 700px;
+    padding: 60px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    height: 700px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18pt;
+    font-weight: 300;
+}
+.onhaplieu{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    background: transparent;
+}
+#thu-ngo{
+    width: 80%;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+textarea{
+    width: 100%;
+    line-height: 20px;
+}
+.lienhe form{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:8px
+}
+h1{
+    font-style: italic;
+}
+h2{
+    font-weight: 1px;
+    color: #877e7e;
+    margin-top: 15px;
+    font-family: dancing script, cursive;
+    font-size: 15pt;
+    margin-bottom: 25px;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+    border-bottom: 2px solid #877e7e;
+}
+button{
+    background-color: #877e7e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+select{
+    appearance: none;                           
+}
+::placeholder{
+    color: rgba(93, 0, 30, 0.4); 
+    font-style: italic;
+    font-weight: 300;
+    opacity: 1;
+}
+#luachon:invalid{
+    color: rgba(93, 0, 30, 0.4);}
+
+#luachon:valid {
+    color: black;
+}
+#logo{
+    width: 50px;
+    height: 30px;
+    object-fit: cover;
+}
+.Dong1{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.thongtinchung{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: rgba(253, 248, 234, 0.8);
+    width: 100%;
+    height: 300px;
+    z-index: 1;
+}
+.sodienthoai,.diachi,.email{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+.ghechoi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

@@ -1,0 +1,103 @@
+.anhdautrang1{
+    background-image:linear-gradient(rgba(55, 48, 48, 0.366)), url(../assets/images/img/anhheader/z7509202202055_9719e74f0c291904763a25820e340807.jpg);
+    width: 100%;
+    height: 660px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: start-left;
+    flex-direction: column;
+    margin: 20px 0;
+}
+.anhdautrang1 h1,.anhdautrang1 h2{
+    object-fit: cover;
+    font-family: Dacing Script;
+    font-weight: bold  ;
+    letter-spacing: 1px; 
+    box-shadow: 0 2px 0px rgba(240, 222, 222, 0.66);
+    text-shadow: #080808 1px 2px 70px;
+    color:aliceblue
+    
+}
+.anhdautrang1 h2{
+    font-family: Montserrat, sans-serif;
+    font-size: 20pt;
+    font-style: italic;
+    font-weight: normal;
+}
+.Gioithieu h1{
+    background: linear-gradient(
+    to right, 
+    #bf953f, 
+    #fcf6ba, 
+    #b38728, 
+    #fbf5b7, 
+    #aa771c
+  );
+  
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  font-style: italic;
+  font-weight: normal;
+}
+.anhdautrang h1{
+    font-size: 70pt;
+    margin-bottom: 20px;
+}
+#ten-hoa{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;}
+.noidung{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    gap:40px
+}
+.noidungnho{
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: row;
+    width: 100%;
+    gap:30px;
+    text-align:justify;
+}
+.noidungnho img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    float: right;
+}
+.trai,.phai{
+    flex: 1;
+}
+
+@media screen and (max-width: 480px) {
+    .anhdautrang1{
+        height: 450px;
+    }
+    .anhdautrang1 h1{
+        font-size: 40 pt;
+    }
+    .noidungnho{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .noidungnho img{
+        height: 250px;
+    }
+    .phai{
+        order: -1;
+    }
+}
+.Gioithieu{
+    margin-top: 350px;;
+}
