@@ -47,7 +47,7 @@
 @media screen and (max-width:480px) {
     .group{
     grid-template-columns: 1fr ;
-    grid-template-areas:"hao1";
+    grid-template-areas:"hoa1";
     }
     .anhdautrang img{
         height: 200px;
