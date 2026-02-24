@@ -1,0 +1,991 @@
+[{
+        "id": 1,
+        "name": "Real Love",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/001-reallove.jpg", "assets/images/imgProduct/001-reallove-2.jpg", "assets/images/imgProduct/001-reallove-3.jpg", "assets/images/imgProduct/001-reallove-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 5.0,
+        "description": "Tình yêu chân thực rực cháy qua sắc hồng đỏ nồng nàn, dành tặng người thương trong ngày đặc biệt."
+    },
+    {
+        "id": 2,
+        "name": "With All My Heart",
+        "price": 800000,
+        "images": ["assets/images/imgProduct/002-wamh.jpg", "assets/images/imgProduct/002-wamh-2.jpg", "assets/images/imgProduct/002-wamh-3.jpg", "assets/images/imgProduct/002-wamh-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "Gửi trọn trái tim qua bó hồng đỏ sang trọng, lời yêu thương chân thành nhất."
+    },
+    {
+        "id": 3,
+        "name": "Keep Loving You",
+        "price": 500000,
+        "images": ["assets/images/imgProduct/003-kly.jpg", "assets/images/imgProduct/003-kly-2.jpg", "assets/images/imgProduct/003-kly-3.jpg", "assets/images/imgProduct/003-kly-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 5.0,
+        "description": "Mãi mãi yêu em – bó hồng đỏ tinh tế, lời hứa yêu thương không phai."
+    },
+    {
+        "id": 4,
+        "name": "Flamme d'Amour",
+        "price": 1200000,
+        "images": ["assets/images/imgProduct/004-flammeDamour.jpg", "assets/images/imgProduct/004-flammeDamour-2.jpg", "assets/images/imgProduct/004-flammeDamour-3.jpg", "assets/images/imgProduct/004-flammeDamour-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "Ngọn lửa tình yêu bùng cháy qua sắc đỏ rực rỡ, dành cho khoảnh khắc lãng mạn mãnh liệt."
+    },
+    {
+        "id": 5,
+        "name": "Love You",
+        "price": 750000,
+        "images": ["assets/images/imgProduct/005-ly.jpg", "assets/images/imgProduct/005-ly-2.jpg", "assets/images/imgProduct/005-ly-3.jpg", "assets/images/imgProduct/005-ly-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.8,
+        "description": "Anh yêu em – bó hồng đỏ giản dị nhưng chứa chan tình cảm chân thành."
+    },
+    {
+        "id": 6,
+        "name": "Velvet Sonnet",
+        "price": 3750000,
+        "images": ["assets/images/imgProduct/006-vs.jpg", "assets/images/imgProduct/006-vs-2.jpg", "assets/images/imgProduct/006-vs-3.jpg", "assets/images/imgProduct/006-vs-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.7,
+        "description": "Bài thơ tình nhung mịn với hồng đỏ cao cấp, sang trọng và đầy cảm xúc."
+    },
+    {
+        "id": 7,
+        "name": "Gentle Love",
+        "price": 750000,
+        "images": ["assets/images/imgProduct/007-gl.jpg", "assets/images/imgProduct/007-gl-2.jpg", "assets/images/imgProduct/007-gl-3.jpg", "assets/images/imgProduct/007-gl-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.6,
+        "description": "Tình yêu dịu dàng qua những đóa hồng đỏ mềm mại, ấm áp và sâu lắng."
+    },
+    {
+        "id": 8,
+        "name": "Blossom of Youth",
+        "price": 200000,
+        "images": ["assets/images/imgProduct/008-boy.jpg", "assets/images/imgProduct/008-boy-2.jpg", "assets/images/imgProduct/008-boy-3.jpg", "assets/images/imgProduct/008-boy-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Tuổi trẻ nở rộ – bó hồng pastel tươi trẻ, ngọt ngào và tràn đầy sức sống."
+    },
+    {
+        "id": 9,
+        "name": "Pastel charm",
+        "price": 950000,
+        "images": ["assets/images/imgProduct/009-pc.jpg", "assets/images/imgProduct/009-pc-2.jpg", "assets/images/imgProduct/009-pc-3.jpg", "assets/images/imgProduct/009-pc-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Sự quyến rũ nhẹ nhàng của sắc hồng pastel, thanh lịch và đầy duyên dáng."
+    },
+    {
+        "id": 10,
+        "name": "All for You",
+        "price": 600000,
+        "images": ["assets/images/imgProduct/010-afy.jpg", "assets/images/imgProduct/010-afy-2.jpg", "assets/images/imgProduct/010-afy-3.jpg", "assets/images/imgProduct/010-afy-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Tất cả dành cho em – bó hồng hồng ngọt ngào, dành riêng cho người thương."
+    },
+    {
+        "id": 11,
+        "name": "Heavenly Blush",
+        "price": 700000,
+        "images": ["assets/images/imgProduct/011-hb.jpg", "assets/images/imgProduct/011-hb-2.jpg", "assets/images/imgProduct/011-hb-3.jpg", "assets/images/imgProduct/011-hb-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.8,
+        "description": "Bó hoa cẩm tú cầu hồng pastel mang vẻ đẹp nhẹ nhàng và tinh tế, như một áng mây mềm mại phủ sắc hồng dịu. Sự kết hợp giữa giấy gói đen – trắng giúp tôn lên nét hiện đại và sang trọng. Hoa cẩm tú cầu tượng trưng cho tình yêu thuần khiết và lòng biết ơn chân thành. Đây là món quà lý tưởng để gửi tặng trong ngày kỷ niệm, sinh nhật người thương hoặc những dịp tặng bất ngờ không nhân lý do, như một lời nhắn “vì bạn xứng đáng được yêu thương.”"
+    },
+    {
+        "id": 12,
+        "name": "Keep you in my heart",
+        "price": 2000000,
+        "images": ["assets/images/imgProduct/012-kyimh.jpg", "assets/images/imgProduct/012-kyimh-2.jpg", "assets/images/imgProduct/012-kyimh-3.jpg", "assets/images/imgProduct/012-kyimh-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.9,
+        "description": "Em mãi trong tim anh – bó hồng hồng thanh thoát, lời hứa yêu thương vĩnh cửu."
+    },
+    {
+        "id": 13,
+        "name": "Spring day",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/013-sd.jpg", "assets/images/imgProduct/013-sd-2.jpg", "assets/images/imgProduct/013-sd-3.jpg", "assets/images/imgProduct/013-sd-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Ngày xuân rực rỡ – bó hoa vàng tươi sáng, mang đến niềm vui và hy vọng mới."
+    },
+    {
+        "id": 14,
+        "name": "Sunrise",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/014-sunrise.jpg", "assets/images/imgProduct/014-sunrise-2.jpg", "assets/images/imgProduct/014-sunrise-3.jpg", "assets/images/imgProduct/014-sunrise-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Bình minh rạng rỡ – sắc vàng ấm áp, gửi gắm khởi đầu tươi đẹp và thành công."
+    },
+    {
+        "id": 15,
+        "name": "Victo rose",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/015-vr.jpg", "assets/images/imgProduct/015-vr-2.jpg", "assets/images/imgProduct/015-vr-3.jpg", "assets/images/imgProduct/015-vr-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Sự kết hợp màu sắc nhã nhặn giữa hoa và lá cùng cách gói đơn giản đã tạo nên một món quà phù hợp với những ai có gu thẩm mỹ tinh tế, yêu thích sự đơn giản nhưng vẫn đầy tính sang trọng."
+    },
+    {
+        "id": 16,
+        "name": "Days of Sunshine",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/016-dos.jpg", "assets/images/imgProduct/016-dos-2.jpg", "assets/images/imgProduct/016-dos-3.jpg", "assets/images/imgProduct/016-dos-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Vẻ đẹp bừng sáng của hướng dương được làm mềm mại hơn bởi sắc kem của hoa hồng và lá bạc, tạo nên một bản hòa ca màu sắc đầy thu hút. Với thiết kế gói giấy sang trọng và chỉnh chu, bó hoa này không chỉ là một món quà, mà còn là lời nhắn nhủ về một tương lai tươi sáng và thành công rực rỡ gửi đến người thương."
+    },
+    {
+        "id": 17,
+        "name": "Tango",
+        "price": 600000,
+        "images": ["assets/images/imgProduct/017-tango.jpg", "assets/images/imgProduct/017-tango-2.jpg", "assets/images/imgProduct/017-tango-3.jpg", "assets/images/imgProduct/017-tango-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Mix", "Đỏ", "Cam"],
+        "rating": 4.8,
+        "description": "Điệu tango nồng nhiệt – mix đỏ cam sôi động, tràn đầy đam mê và năng lượng."
+    },
+    {
+        "id": 18,
+        "name": "My sun ",
+        "price": 150000,
+        "images": ["assets/images/imgProduct/018-ms.jpg", "assets/images/imgProduct/018-ms-2.jpg", "assets/images/imgProduct/018-ms-3.jpg", "assets/images/imgProduct/018-ms-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Vàng"],
+        "rating": 4.7,
+        "description": "Em là mặt trời của anh – hướng dương vàng ấm áp, luôn hướng về em."
+    },
+    {
+        "id": 19,
+        "name": "From My Heart",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/019-fmh.jpg", "assets/images/imgProduct/019-fmh-2.jpg", "assets/images/imgProduct/019-fmh-3.jpg", "assets/images/imgProduct/019-fmh-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Cam"],
+        "rating": 4.6,
+        "description": "Từ trái tim anh – sắc cam ấm áp, gửi gắm tình cảm chân thành và nồng hậu."
+    },
+    {
+        "id": 20,
+        "name": "Mercy",
+        "price": 200000,
+        "images": ["assets/images/imgProduct/020-mercy.jpg", "assets/images/imgProduct/020-mercy-2.jpg", "assets/images/imgProduct/020-mercy-3.jpg", "assets/images/imgProduct/020-mercy-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Tựa như một lời an ủi dịu dàng, Mercy thầm thì những thông điệp của sự tha thứ, lòng bao dung và tình cảm chân thành. Mercy – món quà gửi trao những yêu thương nhẹ nhàng, thích hợp để sẻ chia, động viên, hay đơn giản là mang đến cho ai đó một ngày thật dịu êm."
+    },
+    {
+        "id": 21,
+        "name": "Blue Breeze",
+        "price": 750000,
+        "images": ["assets/images/imgProduct/021-bb.jpg", "assets/images/imgProduct/021-bb-2.jpg", "assets/images/imgProduct/021-bb-3.jpg", "assets/images/imgProduct/021-bb-4.jpg"],
+        "category": ["Hoa Sinh Nhật"],
+        "color": ["Mix", "Xanh"],
+        "rating": 5.0,
+        "description": "Một bó hoa mang theo cảm giác của gió sớm và nắng nhẹ. Sự kết hợp giữa các gam màu pastel – xanh lá, trắng, hồng phớt và điểm nhấn xanh dương – tạo nên một tổng thể dịu dàng, dễ thương nhưng không hề mờ nhạt. // Bó hoa này không phô trương, cũng chẳng cần lời nói lớn – chỉ cần trao đi là đủ khiến người nhận cảm thấy được nâng niu, yêu thương. Rất phù hợp để tặng sinh nhật, kỷ niệm, hoặc đơn giản là dành cho ai đó xứng đáng được nhận một ngày thật nhẹ nhàng và dịu mát."
+    },
+    {
+        "id": 22,
+        "name": "Hydrangea in Blue",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/022-hib.jpg", "assets/images/imgProduct/022-hib-2.jpg", "assets/images/imgProduct/022-hib-3.jpg", "assets/images/imgProduct/022-hib-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Xanh"],
+        "rating": 5.0,
+        "description": "Bó hoa cẩm tú cầu xanh baby được trang trí cùng bóng bạc ánh kim, mang phong cách hiện đại và trẻ trung. Màu xanh biểu trưng cho niềm tin, sự bền vững và lời chúc may mắn, phù hợp cho Valentine, kỷ niệm tình yêu hoặc sinh nhật người yêu."
+    },
+    {
+        "id": 23,
+        "name": "Sky dream",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/023-sd.jpg", "assets/images/imgProduct/023-sd-2.jpg", "assets/images/imgProduct/023-sd-3.jpg", "assets/images/imgProduct/023-sd-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Chúc Mừng", "Hoa Tốt Nghiệp", "Hoa Cảm Ơn"],
+        "color": ["Xanh"],
+        "rating": 4.8,
+        "description": "Bó hoa với hồng xanh baby, cẩm chướng xanh, đồng tiền và cát tường trắng tạo nên cảm giác mát lành và sang trọng. Tông xanh – trắng tượng trưng cho niềm tin, bình yên và khởi đầu mới, rất phù hợp để tặng trong dịp khai trương, tốt nghiệp hoặc chúc mừng thành công."
+    },
+    {
+        "id": 24,
+        "name": "Heartflutter",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/024-heartflutter.jpg", "assets/images/imgProduct/024-heartflutter-2.jpg", "assets/images/imgProduct/024-heartflutter-3.jpg", "assets/images/imgProduct/024-heartflutter-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "Tim rung động trước sắc đỏ quyến rũ, dành cho khoảnh khắc rung rinh đầu tiên."
+    },
+    {
+        "id": 25,
+        "name": "Everlasting Love",
+        "price": 2500000,
+        "images": ["assets/images/imgProduct/025-el.jpg", "assets/images/imgProduct/025-el-2.jpg", "assets/images/imgProduct/025-el-3.jpg", "assets/images/imgProduct/025-el-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 5.0,
+        "description": "Tình yêu vĩnh cửu – hồng đỏ trường tồn, bền vững vượt thời gian."
+    },
+    {
+        "id": 26,
+        "name": "Dating",
+        "price": 250000,
+        "images": ["assets/images/imgProduct/026-dating.jpg", "assets/images/imgProduct/026-dating-2.jpg", "assets/images/imgProduct/026-dating-3.jpg", "assets/images/imgProduct/026-dating-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Đỏ"],
+        "rating": 4.9,
+        "description": "Buổi hẹn hò hoàn hảo với hồng đỏ lãng mạn, ngọt ngào và quyến rũ."
+    },
+    {
+        "id": 27,
+        "name": "Morning kiss",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/027-mk.jpg", "assets/images/imgProduct/027-mk-2.jpg", "assets/images/imgProduct/027-mk-3.jpg", "assets/images/imgProduct/027-mk-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Đỏ", "Hồng"],
+        "rating": 5.0,
+        "description": "Nụ hôn buổi sáng dịu dàng – mix đỏ hồng tươi mới, đánh thức tình yêu."
+    },
+    {
+        "id": 28,
+        "name": "Delicate Sweetness",
+        "price": 500000,
+        "images": ["assets/images/imgProduct/028-ds.jpg", "assets/images/imgProduct/028-ds-2.jpg", "assets/images/imgProduct/028-ds-3.jpg", "assets/images/imgProduct/028-ds-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Đỏ", "Trắng"],
+        "rating": 4.9,
+        "description": "Ngọt ngào tinh tế – mix đỏ trắng nhẹ nhàng, dịu dàng và quyến rũ."
+    },
+    {
+        "id": 29,
+        "name": "Remember you",
+        "price": 500000,
+        "images": ["assets/images/imgProduct/029-ry.jpg", "assets/images/imgProduct/029-ry-2.jpg", "assets/images/imgProduct/029-ry-3.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Tím"],
+        "rating": 4.8,
+        "description": "Nhớ em từng giây – sắc tím mộng mơ, nhẹ nhàng và sâu lắng."
+    },
+    {
+        "id": 30,
+        "name": "Romantic Date",
+        "price": 200000,
+        "images": ["assets/images/imgProduct/030-rd.jpg", "assets/images/imgProduct/030-rd-2.jpg", "assets/images/imgProduct/030-rd-3.jpg", "assets/images/imgProduct/030-rd-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.7,
+        "description": "Hẹn hò lãng mạn – bó hồng hồng ngọt ngào, tạo không khí yêu thương."
+    },
+    {
+        "id": 31,
+        "name": "All Consuming Love",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/031-acl.jpg", "assets/images/imgProduct/031-acl-2.jpg", "assets/images/imgProduct/031-acl-3.jpg", "assets/images/imgProduct/031-acl-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Hồng", "Vàng"],
+        "rating": 4.6,
+        "description": "Tình yêu bao trùm – mix hồng vàng rực rỡ, nồng nàn và mãnh liệt."
+    },
+    {
+        "id": 32,
+        "name": "Subtle Warmth",
+        "price": 180000,
+        "images": ["assets/images/imgProduct/032-sw.jpg", "assets/images/imgProduct/032-sw-2.jpg", "assets/images/imgProduct/032-sw-3.jpg", "assets/images/imgProduct/032-sw-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Tím"],
+        "rating": 5.0,
+        "description": "Sự ấm áp tinh tế – sắc tím nhẹ nhàng, mang lại bình yên và gần gũi."
+    },
+    {
+        "id": 33,
+        "name": "Lavender Sky",
+        "price": 1800000,
+        "images": ["assets/images/imgProduct/033-ls.jpg", "assets/images/imgProduct/033-ls-2.jpg", "assets/images/imgProduct/033-ls-3.jpg", "assets/images/imgProduct/033-ls-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Tím", "Xanh"],
+        "rating": 5.0,
+        "description": "Bầu trời oải hương – mix tím xanh mơ màng, lãng mạn và đầy chất thơ."
+    },
+    {
+        "id": 34,
+        "name": "Everyday with you",
+        "price": 200000,
+        "images": ["assets/images/imgProduct/034-ewy.jpg", "assets/images/imgProduct/034-ewy-2.jpg", "assets/images/imgProduct/034-ewy-3.jpg", "assets/images/imgProduct/034-ewy-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Trắng", "Xanh"],
+        "rating": 5.0,
+        "description": "Mỗi ngày bên em đều đẹp – mix trắng xanh tươi mát, bình yên và hạnh phúc."
+    },
+    {
+        "id": 35,
+        "name": "Simple beauty",
+        "price": 550000,
+        "images": ["assets/images/imgProduct/035-sb.jpg", "assets/images/imgProduct/035-sb-2.jpg", "assets/images/imgProduct/035-sb-3.jpg", "assets/images/imgProduct/035-sb-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Trắng", "Vàng"],
+        "rating": 4.8,
+        "description": "Vẻ đẹp giản đơn – mix trắng vàng thanh lịch, tinh tế và cuốn hút."
+    },
+    {
+        "id": 36,
+        "name": "Garden style",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/036-gs.jpg", "assets/images/imgProduct/036-gs-2.jpg", "assets/images/imgProduct/036-gs-3.jpg", "assets/images/imgProduct/036-gs-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Vàng", "Cam"],
+        "rating": 4.9,
+        "description": "Vườn quê tự nhiên – mix vàng cam rực rỡ, tràn đầy sức sống và tươi vui."
+    },
+    {
+        "id": 37,
+        "name": "Poetic Garden",
+        "price": 750000,
+        "images": ["assets/images/imgProduct/037-pg.jpg", "assets/images/imgProduct/037-pg-2.jpg", "assets/images/imgProduct/037-pg-3.jpg", "assets/images/imgProduct/037-pg-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Đỏ", "Hồng"],
+        "rating": 5.0,
+        "description": "Khu vườn thơ – mix đỏ hồng lãng mạn, nơi tình yêu thành những vần thơ đẹp."
+    },
+    {
+        "id": 38,
+        "name": "Galaxy",
+        "price": 1000000,
+        "images": ["assets/images/imgProduct/038-galaxy.jpg", "assets/images/imgProduct/038-galaxy-2.jpg", "assets/images/imgProduct/038-galaxy-3.jpg", "assets/images/imgProduct/038-galaxy-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Trắng", "Hồng"],
+        "rating": 4.9,
+        "description": "Dải ngân hà thu nhỏ – mix trắng hồng lung linh, huyền ảo và lãng mạn."
+    },
+    {
+        "id": 39,
+        "name": "Creamy Rosé",
+        "price": 700000,
+        "images": ["assets/images/imgProduct/039-cr.jpg", "assets/images/imgProduct/039-cr-2.jpg", "assets/images/imgProduct/039-cr-3.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Hồng kem mềm mại – thanh lịch như ly rosé, nhẹ nhàng và tinh tế."
+    },
+    {
+        "id": 40,
+        "name": "Shine on me",
+        "price": 1400000,
+        "images": ["assets/images/imgProduct/040-som.jpg", "assets/images/imgProduct/040-som-2.jpg", "assets/images/imgProduct/040-som-3.jpg", "assets/images/imgProduct/040-som-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Hồng"],
+        "rating": 4.9,
+        "description": "Tỏa sáng lên em – mix hồng rực rỡ, mang đến ánh hào quang yêu thương."
+    },
+    {
+        "id": 41,
+        "name": "Romantic heart",
+        "price": 500000,
+        "images": ["assets/images/imgProduct/041-rh.jpg", "assets/images/imgProduct/041-rh-2.jpg", "assets/images/imgProduct/041-rh-3.jpg", "assets/images/imgProduct/041-rh-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.8,
+        "description": "Trái tim lãng mạn – bó hồng hồng ngọt ngào, đong đầy cảm xúc."
+    },
+    {
+        "id": 42,
+        "name": "Lunar Pearl",
+        "price": 2800000,
+        "images": ["assets/images/imgProduct/042-lp.jpg", "assets/images/imgProduct/042-lp-2.jpg", "assets/images/imgProduct/042-lp-3.jpg", "assets/images/imgProduct/042-lp-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.7,
+        "description": "Lunar Pearl là bó hoa hồng Pink Floyd rực rỡ trong nền giấy gói đen sang trọng, tạo hiệu ứng “glow” nổi bật như ánh sao giữa bầu trời đêm. Sắc hồng được cân bằng bởi những cành scabiosa mềm mại và điểm xuyết thêm những cành tulip hồng pastel nổi bật tạo cảm giác hiện đại, kiêu kỳ nhưng vẫn tinh tế—phù hợp mọi dịp chúc mừng, sinh nhật, kỷ niệm hay tỏ tình."
+    },
+    {
+        "id": 43,
+        "name": "A Day with You",
+        "price": 1100000,
+        "images": ["assets/images/imgProduct/043-adwy.jpg", "assets/images/imgProduct/043-adwy-2.jpg", "assets/images/imgProduct/043-adwy-3.jpg", "assets/images/imgProduct/043-adwy-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Hồng"],
+        "rating": 4.6,
+        "description": "Một ngày bên em là tất cả – mix hồng nhẹ nhàng, ấm áp và hạnh phúc."
+    },
+    {
+        "id": 44,
+        "name": "Say you do",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/044-syd.jpg", "assets/images/imgProduct/044-syd-2.jpg", "assets/images/imgProduct/044-syd-3.jpg", "assets/images/imgProduct/044-syd-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Em đồng ý chứ? – bó hồng hồng ngọt ngào, dành cho lời tỏ tình hoàn hảo."
+    },
+    {
+        "id": 45,
+        "name": "Landing on you",
+        "price": 650000,
+        "images": ["assets/images/imgProduct/045-loy.jpg", "assets/images/imgProduct/045-loy-2.jpg", "assets/images/imgProduct/045-loy-3.jpg", "assets/images/imgProduct/045-loy-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Xanh"],
+        "rating": 5.0,
+        "description": "Bó hoa mang phong cách garden – đồng nội tự nhiên, được kết hợp từ hoa sao xanh nhập khẩu và green bell (cỏ đồng tiền). Hoa sao xanh với sắc xanh baby siêu dễ thương, trẻ trung và hiện đại, tạo điểm nhấn tinh tế giữa nền xanh mướt mát. Tổng thể bó hoa gợi cảm giác tươi mới, bình yên và tràn đầy năng lượng tích cực – món quà lý tưởng cho những ai yêu sự nhẹ nhàng, tự nhiên và tinh tế."
+    },
+    {
+        "id": 46,
+        "name": "My Queen",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/046-mq.jpg", "assets/images/imgProduct/046-mq-2.jpg", "assets/images/imgProduct/046-mq-3.jpg", "assets/images/imgProduct/046-mq-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Xanh", "Vàng"],
+        "rating": 5.0,
+        "description": "Nữ hoàng của anh – mix xanh vàng quý phái, tôn vinh vẻ đẹp rực rỡ của em."
+    },
+    {
+        "id": 47,
+        "name": "Noble Success",
+        "price": 1800000,
+        "images": ["assets/images/imgProduct/047-ns.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Vàng"],
+        "rating": 4.8,
+        "description": "Chúc mừng thành công lớn – sắc vàng sang trọng, quyền quý và thịnh vượng."
+    },
+    {
+        "id": 48,
+        "name": "Where It Lingers",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/048-wil.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Mix", "Xanh"],
+        "rating": 4.9,
+        "description": "Niềm vui lưu luyến – mix xanh hiện đại, tươi mới cho khởi đầu thuận lợi."
+    },
+    {
+        "id": 49,
+        "name": "Enduring",
+        "price": 2500000,
+        "images": ["assets/images/imgProduct/049-enduring.jpg", "assets/images/imgProduct/049-enduring-2.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Mix", "Xanh", "Vàng"],
+        "rating": 5.0,
+        "description": "Bền vững phát triển – mix xanh vàng hài hòa, chúc thịnh vượng lâu dài."
+    },
+    {
+        "id": 50,
+        "name": "Be All You Can Be",
+        "price": 2300000,
+        "images": ["assets/images/imgProduct/050-baycb.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Mix"],
+        "rating": 4.9,
+        "description": "Khơi dậy tiềm năng tốt nhất – bó mix tươi sáng, tràn đầy động lực và thành công."
+    },
+    {
+        "id": 51,
+        "name": "Auspicious Beginning",
+        "price": 4000000,
+        "images": ["assets/images/imgProduct/051-ab.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Khởi đầu may mắn – sắc vàng rực rỡ, chúc tài lộc và thịnh vượng."
+    },
+    {
+        "id": 52,
+        "name": "Love Magic",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/052-lm.jpg", "assets/images/imgProduct/052-lm-2.jpg", "assets/images/imgProduct/052-lm-3.jpg", "assets/images/imgProduct/052-lm-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Sự kết hợp tinh tế giữa những đóa hồng vàng victo, điểm xuyết hoa baby, calimero trắng tinh khôi và gree wicky xanh tươi mát, tạo nên một bó hoa vừa trang nhã vừa ấm áp. Thích hợp cho các dịp chúc mừng, tri ân hay đơn giản là thay lời muốn nói đầy chân thành và tinh tế."
+    },
+    {
+        "id": 53,
+        "name": "Congratulatory Flower Stand",
+        "price": 1000000,
+        "images": ["assets/images/imgProduct/053-cfs.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Mix", "Xanh", "Cam"],
+        "rating": 4.8,
+        "description": "Lời chúc mừng trang trọng – kệ mix xanh cam trẻ trung, nổi bật và ý nghĩa."
+    },
+    {
+        "id": 54,
+        "name": "The Journey to Success",
+        "price": 2500000,
+        "images": ["assets/images/imgProduct/054-tjts.jpg", "assets/images/imgProduct/054-tjts-2.jpg"],
+        "category": ["Hoa Khai Trương", "Hoa Chúc Mừng"],
+        "color": ["Mix", "Trắng", "Xanh"],
+        "rating": 4.7,
+        "description": "Hành trình đến thành công – mix trắng xanh thanh lịch, chúc mọi điều tốt đẹp."
+    },
+    {
+        "id": 55,
+        "name": "Great Fortune",
+        "price": 1800000,
+        "images": ["assets/images/imgProduct/055-gf.jpg"],
+        "category": ["Hoa Khai Trương"],
+        "color": ["Mix", "Vàng"],
+        "rating": 4.6,
+        "description": "Kệ hoa với tone màu vàng-xanh hiện đại, trẻ trung thật sự nổi bật so với các kệ hoa truyền thống mang ý nghĩa về một lời chúc đại cát đại lợi trong các sự kiện quan trọng. Thích hợp tặng trong dịp chúc mừng, khai trương, kỉ niệm."
+    },
+    {
+        "id": 56,
+        "name": "Sunny Bloom",
+        "price": 550000,
+        "images": ["assets/images/imgProduct/056-sb.jpg"],
+        "category": ["Hoa Chúc Mừng"],
+        "color": ["Mix"],
+        "rating": 5.0,
+        "description": "Nở rộ niềm vui – bó mix tươi sáng, lan tỏa hạnh phúc và may mắn."
+    },
+    {
+        "id": 57,
+        "name": "Mini Succulent Flower Stand",
+        "price": 1800000,
+        "images": ["assets/images/imgProduct/057-msfs.jpg"],
+        "category": ["Hoa Khai Trương", "Hoa Chúc Mừng"],
+        "color": ["Mix", "Xanh", "Vàng"],
+        "rating": 5.0,
+        "description": "Kệ hoa này kết hợp sự mềm mại của hoa hồng vàng rực rỡ với vẻ kiên cố của sen đá, tạo nên một cảm giác hài hòa giữa sự thanh lịch và sức mạnh. Sen đá với nhiều sắc thái từ xanh lơ đến xanh đậm, biểu tượng cho sự kiên nhẫn và sự sống lâu dài, còn hoa hồng vàng mang ý nghĩa của tình bạn, niềm vui và sự quan tâm. Mẫu hoa được bao bọc bởi giấy gói màu kem nhạt và được trang trí bằng ruy-băng màu vàng, tăng thêm vẻ đẹp tao nhã và ấm áp. Tác phẩm này không chỉ đẹp về mặt thẩm mỹ mà còn gửi gắm thông điệp về sự bền vững, thịnh vượng và tình bạn chân thành. Kệ hoa như một lời chúc phúc dành cho người nhận, hy vọng rằng những phẩm chất tốt đẹp nhất sẽ theo họ trong mọi hành trình của cuộc sống."
+    },
+    {
+        "id": 58,
+        "name": "Little Green Wishes",
+        "price": 1900000,
+        "images": ["assets/images/imgProduct/058-lgw.jpg"],
+        "category": ["Hoa Khai Trương", "Hoa Chúc Mừng"],
+        "color": ["Mix", "Xanh", "Đỏ"],
+        "rating": 5.0,
+        "description": "Kệ hoa này nổi bật với những bông hoa sen đá xanh mát, biểu tượng của sự bền bỉ, được kết hợp với những bông hoa hồng đỏ đằm thắm là biểu tượng của sự nhiệt huyết và đam mê. Tổng thể màu sắc đối lập và bố cục cân đối của mẫu hoa này tượng trưng cho một lời chúc của sự vững bền và thịnh vượng, cùng với tình yêu mãnh liệt và sức sống tràn trề. Đây là một món quà lý tưởng để chúc mừng những thành tựu lớn, hoặc biểu đạt lòng biết ơn và sự quan tâm sâu sắc."
+    },
+    {
+        "id": 59,
+        "name": "Azure Tulip",
+        "price": 1700000,
+        "images": ["assets/images/imgProduct/059-at.jpg", "assets/images/imgProduct/059-at-2.jpg", "assets/images/imgProduct/059-at-3.jpg", "assets/images/imgProduct/059-at-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Chúc Mừng"],
+        "color": ["Xanh"],
+        "rating": 4.8,
+        "description": "Sự kết hợp đầy tinh tế giữa Tulip và Cẩm Tú Cầu nhập khẩu trong sắc thái xanh azure thanh thoát. \"Azure Tulip\" là bản hòa ca của sự dịu dàng và tĩnh lặng, mang đến không khí trong lành và tươi mát như một buổi bình minh. Bó hoa hoàn hảo cho những tâm hồn yêu vẻ đẹp tinh khiết và hiện đại."
+    },
+    {
+        "id": 60,
+        "name": "Rainbow love",
+        "price": 350000,
+        "images": ["assets/images/imgProduct/060-rl.jpg", "assets/images/imgProduct/060-rl-2.jpg", "assets/images/imgProduct/060-rl-3.jpg", "assets/images/imgProduct/060-rl-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Xanh"],
+        "rating": 4.9,
+        "description": "Bó hoa hồng xanh dương không chỉ mang đến vẻ đẹp độc đáo mà còn là biểu tượng của sự bình yên và hòa nhập. Mỗi bông hoa tượng trưng cho những khả năng và bước ngoặt mới mẻ trong cuộc sống, nhắc nhở chúng ta rằng thế giới xung quanh luôn đầy ắp điều kỳ diệu để khám phá. Hãy để sự tinh tế và màu sắc độc đáo của bó hoa này truyền cảm hứng cho bạn mỗi ngày, giúp bạn nhìn thế giới bằng con mắt mới mẻ và tràn đầy hy vọng."
+    },
+    {
+        "id": 61,
+        "name": "Perfect Love",
+        "price": 350000,
+        "images": ["assets/images/imgProduct/061-pl.jpg", "assets/images/imgProduct/061-pl-2.jpg", "assets/images/imgProduct/061-pl-3.jpg", "assets/images/imgProduct/061-pl-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Tình yêu hoàn hảo – sắc vàng ấm áp, tinh tế và trọn vẹn."
+    },
+    {
+        "id": 62,
+        "name": "A Symphony of Hydrangeas",
+        "price": 1700000,
+        "images": ["assets/images/imgProduct/062-asoh.jpg", "assets/images/imgProduct/062-asoh-2.jpg", "assets/images/imgProduct/062-asoh-3.jpg", "assets/images/imgProduct/062-asoh-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Mix", "Hồng", "Xanh"],
+        "rating": 4.9,
+        "description": "Bó hoa là sự hòa quyện tinh tế giữa cẩm tú cầu hồng và xanh baby, tựa như những áng mây bồng bềnh mềm mại, lan tỏa năng lượng tích cực và dịu dàng. Hai gam màu nhẹ nhàng hòa hợp, tượng trưng cho tình yêu, tình bạn và niềm vui sum vầy. Đây là món quà hoàn hảo cho sinh nhật, những dịp kỷ niệm đặc biệt hay một lời tỏ tình ngọt ngào và bất ngờ."
+    },
+    {
+        "id": 63,
+        "name": "Loving Happiness",
+        "price": 650000,
+        "images": ["assets/images/imgProduct/063-lh.jpg", "assets/images/imgProduct/063-lh-2.jpg", "assets/images/imgProduct/063-lh-3.jpg", "assets/images/imgProduct/063-lh-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Mix", "Xanh"],
+        "rating": 5.0,
+        "description": "Tựa như một bản hòa ca nhẹ nhàng, bó hoa Yêu Thương Hạnh Phúc mang trong mình sắc trắng tinh khôi, vàng kem ấm áp, và xanh lá dịu mát. Mỗi bông hoa như lời chúc bình an, mỗi sắc màu như ánh nắng vỗ về trái tim, mang đến cảm giác ấm áp, nhẹ nhàng và trọn vẹn yêu thương. Yêu Thương Hạnh Phúc – bó hoa dành tặng cho những khoảnh khắc đáng nhớ: sinh nhật, lời chúc may mắn, hay đơn giản là để nói: \"Chúc bạn mỗi ngày đều ngập tràn niềm vui và bình yên.\""
+    },
+    {
+        "id": 64,
+        "name": "Whisper of nature",
+        "price": 600000,
+        "images": ["assets/images/imgProduct/064-won.jpg", "assets/images/imgProduct/064-won-2.jpg", "assets/images/imgProduct/064-won-3.jpg", "assets/images/imgProduct/064-won-4.jpg"],
+        "category": ["Hoa Cảm Ơn"],
+        "color": ["Mix", "Trắng", "Xanh"],
+        "rating": 4.9,
+        "description": "Bó hoa như một khoảng thở dịu dàng của thiên nhiên. Hồng trắng thuần khiết, Scabiosa mong manh, Green Bell xanh mát, và điểm xuyết sen đá – tất cả hòa vào nhau tạo nên một tổng thể thanh thoát, tinh khiết mà sâu lắng. Không cần rực rỡ, không cần sắc màu quá nổi bật – chỉ cần một chút lặng xanh cũng đủ khiến tâm hồn ai đó thấy nhẹ nhàng hơn. Phù hợp để tặng cho người bạn yêu quý, hoặc chính bạn – như một lời nhắc rằng: “Yên bình là điều quý giá nhất.”"
+    },
+    {
+        "id": 65,
+        "name": "Golden Rose",
+        "price": 1000000,
+        "images": ["assets/images/imgProduct/065-gr.jpg", "assets/images/imgProduct/065-gr-2.jpg", "assets/images/imgProduct/065-gr-3.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Vàng"],
+        "rating": 4.8,
+        "description": "Hoa hồng Đà Lạt theo mùa là sự lựa chọn hoàn hảo cho những ai yêu thích vẻ đẹp tự nhiên và thanh lịch. Những bông hoa hồng này được trồng trong điều kiện khí hậu lý tưởng của Đà Lạt, nên chúng không chỉ có chất lượng xuất sắc mà còn sở hữu màu sắc rực rỡ và hấp dẫn. Hơn nữa, việc mua hoa theo mùa còn giúp bạn tiết kiệm chi phí nhờ vào giá cả phải chăng hơn so với các loại hoa nhập khẩu."
+    },
+    {
+        "id": 66,
+        "name": "Shimmering Roses",
+        "price": 500000,
+        "images": ["assets/images/imgProduct/066-sr.jpg", "assets/images/imgProduct/066-sr-2.jpg", "assets/images/imgProduct/066-sr-3.jpg", "assets/images/imgProduct/066-sr-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Hồng"],
+        "rating": 4.7,
+        "description": "Những đóa hồng lấp lánh sắc hồng, mang vẻ đẹp lung linh và ngọt ngào tri ân."
+    },
+    {
+        "id": 67,
+        "name": "A Shining Moment",
+        "price": 200000,
+        "images": ["assets/images/imgProduct/067-asm.jpg", "assets/images/imgProduct/067-asm-2.jpg", "assets/images/imgProduct/067-asm-3.jpg", "assets/images/imgProduct/067-asm-4.jpg"],
+        "category": ["Hoa Cảm Ơn", "Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 4.6,
+        "description": "Khoảnh khắc tỏa sáng – sắc cam rực rỡ, chúc mừng thành công và niềm vui."
+    },
+    {
+        "id": 68,
+        "name": "Soft Seasonal Light",
+        "price": 400000,
+        "images": ["assets/images/imgProduct/068-ssl.jpg", "assets/images/imgProduct/068-ssl-2.jpg", "assets/images/imgProduct/068-ssl-3.jpg", "assets/images/imgProduct/068-ssl-4.jpg"],
+        "category": ["Hoa Cảm Ơn"],
+        "color": ["Mix"],
+        "rating": 5.0,
+        "description": "Có lẽ bao mùa hè trôi qua đều đầy ắp những kỉ niệm mà con người cứ thích lưu giữ mãi đến độ hôm nay nắng về lại được dịp ra hong phơi. Một chút hương hoa thoang thoảng hay làn gió nhẹ khẽ đung đưa qua tay cũng đủ khiến cho trái tim này xuyến xao. Đôi chân cứ lơ đãng bước qua những góc phố, con đường quen thuộc mà ngỡ như là mới. Mùa hè thu năm ấy hai ta yêu nhau say đắm."
+    },
+    {
+        "id": 69,
+        "name": "Dancing Spring Blooms",
+        "price": 600000,
+        "images": ["assets/images/imgProduct/069-dsb.jpg"],
+        "category": ["Hoa Cảm Ơn"],
+        "color": ["Mix"],
+        "rating": 5.0,
+        "description": "Hoa xuân nhảy múa – mix rực rỡ, gửi lời cảm ơn tràn đầy niềm vui."
+    },
+    {
+        "id": 70,
+        "name": "A Burst of Happiness",
+        "price": 700000,
+        "images": ["assets/images/imgProduct/070-aboh.jpg", "assets/images/imgProduct/070-aboh-2.jpg", "assets/images/imgProduct/070-aboh-3.jpg", "assets/images/imgProduct/070-aboh-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Mix", "Cam"],
+        "rating": 5.0,
+        "description": "Bùng nổ hạnh phúc – mix cam tươi vui, lan tỏa năng lượng tích cực và biết ơn."
+    },
+    {
+        "id": 71,
+        "name": "Petals of Appreciation",
+        "price": 550000,
+        "images": ["assets/images/imgProduct/071-poa.jpg", "assets/images/imgProduct/071-poa-2.jpg", "assets/images/imgProduct/071-poa-3.jpg", "assets/images/imgProduct/071-poa-4.jpg"],
+        "category": ["Hoa Cảm Ơn"],
+        "color": ["Hồng"],
+        "rating": 4.8,
+        "description": "Những cánh hồng gửi lời tri ân chân thành, dịu dàng và sâu sắc."
+    },
+    {
+        "id": 72,
+        "name": "Pure love",
+        "price": 350000,
+        "images": ["assets/images/imgProduct/072-pl.jpg", "assets/images/imgProduct/072-pl-2.jpg", "assets/images/imgProduct/072-pl-3.jpg"],
+        "category": ["Hoa Cảm Ơn"],
+        "color": ["Mix"],
+        "rating": 4.9,
+        "description": "Bó hoa là sự kết hợp nhẹ nhàng giữa hồng Pink Ohara, đồng tiền hồng, cẩm chướng pastel và cát tường trắng, mang lại cảm giác tinh tế và ngọt ngào. Sắc hồng phấn hòa cùng trắng kem tạo nên vẻ đẹp thanh khiết, tượng trưng cho tình yêu dịu dàng và sự chân thành trong cảm xúc. Thiết kế được gói trong giấy trong suốt cùng nơ hồng mềm mại, tôn lên nét hiện đại và sang trọng. Bó hoa thích hợp để tặng người yêu, bạn gái hoặc đồng nghiệp nữ trong các dịp kỷ niệm, sinh nhật, 8/3 hay 20/10, như một lời chúc yêu thương đầy tinh tế."
+    },
+    {
+        "id": 73,
+        "name": "Sunny",
+        "price": 400000,
+        "images": ["assets/images/imgProduct/073-sunny.jpg", "assets/images/imgProduct/073-sunny-2.jpg", "assets/images/imgProduct/073-sunny-3.jpg", "assets/images/imgProduct/073-sunny-4.jpg"],
+        "category": ["Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 5.0,
+        "description": "1 bó hoa hướng dương dành cho người thân yêu của mình vào những dịp quan trọng thì còn gì tuyệt vời hơn nữa. Hoa hướng dương là loài hoa đại diện cho tình bạn, tình yêu, sự thăng tiến trong công việc, sự thành công trong học tập...Hướng về phía mặt trời và để lại bóng tối sau lưng."
+    },
+    {
+        "id": 74,
+        "name": "Dreaming",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/074-dreaming.jpg", "assets/images/imgProduct/074-dreaming-2.jpg", "assets/images/imgProduct/074-dreaming-3.jpg", "assets/images/imgProduct/074-dreaming-4.jpg"],
+        "category": ["Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 4.9,
+        "description": "Hoa hướng dương là biểu tượng của sức sống, sự nhiệt huyết và niềm lạc quan. Nổi tiếng với khả năng hướng về phía mặt trời, loài hoa này thường được liên kết với ý niệm về sự theo đuổi ánh sáng và tích cực. Trong việc tặng hoa, hướng dương mang theo thông điệp của sự ấm áp, tình bạn, ngưỡng mộ và lòng trung thành."
+    },
+    {
+        "id": 75,
+        "name": "Celebrating Success",
+        "price": 350000,
+        "images": ["assets/images/imgProduct/075-cs.jpg", "assets/images/imgProduct/075-cs-2.jpg", "assets/images/imgProduct/075-cs-3.jpg", "assets/images/imgProduct/075-cs-4.jpg"],
+        "category": ["Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 5.0,
+        "description": "Chúc mừng thành công rực rỡ – sắc cam năng động, lạc quan và tự hào."
+    },
+    {
+        "id": 76,
+        "name": "Sunny soul",
+        "price": 150000,
+        "images": ["assets/images/imgProduct/076-ss.jpg", "assets/images/imgProduct/076-ss-2.jpg", "assets/images/imgProduct/076-ss-3.jpg", "assets/images/imgProduct/076-ss-4.jpg"],
+        "category": ["Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 4.9,
+        "description": "Linh hồn tươi sáng – hướng dương vàng, chúc tương lai rạng ngời."
+    },
+    {
+        "id": 77,
+        "name": "Sunlit Day",
+        "price": 1500000,
+        "images": ["assets/images/imgProduct/077-sd.jpg", "assets/images/imgProduct/077-sd-2.jpg", "assets/images/imgProduct/077-sd-3.jpg", "assets/images/imgProduct/077-sd-4.jpg"],
+        "category": ["Hoa Tốt Nghiệp"],
+        "color": ["Cam"],
+        "rating": 4.8,
+        "description": "Ngày nắng ấm áp – sắc cam rực rỡ, chúc ngày tốt nghiệp tràn đầy hy vọng."
+    },
+    {
+        "id": 78,
+        "name": "Eternal Rest",
+        "price": 1450000,
+        "images": ["assets/images/imgProduct/078-er.jpg", "assets/images/imgProduct/078-er-2.jpg", "assets/images/imgProduct/078-er-3.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Mix"],
+        "rating": 4.7,
+        "description": "Nguyện linh hồn yên nghỉ vĩnh cửu trong bình an và thanh thản."
+    },
+    {
+        "id": 79,
+        "name": "Condolence Flower Stand",
+        "price": 850000,
+        "images": ["assets/images/imgProduct/079-cfs.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Vàng"],
+        "rating": 4.6,
+        "description": "Kệ hoa viếng vàng trang nghiêm, gửi lời chia buồn sâu sắc và tôn kính."
+    },
+    {
+        "id": 80,
+        "name": "Sympathy Flower Stand",
+        "price": 650000,
+        "images": ["assets/images/imgProduct/080-sfs.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Trắng"],
+        "rating": 5.0,
+        "description": "Kệ hoa trắng tinh khôi, bày tỏ sự chia sẻ và an ủi chân thành."
+    },
+    {
+        "id": 81,
+        "name": "Into Stillness",
+        "price": 1300000,
+        "images": ["assets/images/imgProduct/081-is.jpg", "assets/images/imgProduct/081-is-2.jpg", "assets/images/imgProduct/081-is-3.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Mix", "Tím"],
+        "rating": 5.0,
+        "description": "Bước vào sự tĩnh lặng – mix tím nhẹ nhàng, an yên và an ủi."
+    },
+    {
+        "id": 82,
+        "name": "Deep condolences",
+        "price": 850000,
+        "images": ["assets/images/imgProduct/082-dc.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Mix"],
+        "rating": 5.0,
+        "description": "Lời chia buồn sâu sắc – bó mix trang nghiêm, gửi gắm lòng thành kính."
+    },
+    {
+        "id": 83,
+        "name": "Rest in peace",
+        "price": 1350000,
+        "images": ["assets/images/imgProduct/083-rip.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Hồng"],
+        "rating": 4.8,
+        "description": "Nguyện cầu yên nghỉ trong sắc hồng dịu dàng, đầy lòng thành kính."
+    },
+    {
+        "id": 84,
+        "name": "A State of Being",
+        "price": 1600000,
+        "images": ["assets/images/imgProduct/084-asob.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Mix"],
+        "rating": 4.9,
+        "description": "Trạng thái an nhiên – bó mix nhẹ nhàng, mang lại sự thanh thản."
+    },
+    {
+        "id": 85,
+        "name": "Soft Echoes",
+        "price": 1000000,
+        "images": ["assets/images/imgProduct/085-se.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Vàng"],
+        "rating": 5.0,
+        "description": "Những tiếng vọng dịu dàng – sắc vàng ấm áp, an ủi và tưởng nhớ."
+    },
+    {
+        "id": 86,
+        "name": "Echoes of the Past",
+        "price": 3500000,
+        "images": ["assets/images/imgProduct/086-eotp.jpg", "assets/images/imgProduct/086-eotp-2.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Mix"],
+        "rating": 4.9,
+        "description": "Ký ức còn vang vọng – bó mix trang nghiêm, gửi lời tưởng nhớ sâu sắc."
+    },
+    {
+        "id": 87,
+        "name": "Silent Farewell",
+        "price": 1800000,
+        "images": ["assets/images/imgProduct/087-sf.jpg", "assets/images/imgProduct/087-sf-2.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Trắng"],
+        "rating": 5.0,
+        "description": "Sinh ly tử biệt đều là những khoảnh khắc phải đi qua của một đời người. Khi một người rời bỏ thế gian này sẽ để lại vô vàn sự đau buồn và niềm thương tiếc trong lòng những người đang còn ở lại. Đến tiễn biệt người đã khuất, để thể hiện sự tôn kính và an ủi người thân của họ, nhiều người sẽ chọn gửi gắm những lời động viên chia sẻ của bản thân lên những kệ hoa viếng, vòng hoa chia buồn."
+    },
+    {
+        "id": 88,
+        "name": "Heartfelt sympathy",
+        "price": 3000000,
+        "images": ["assets/images/imgProduct/088-hs.jpg", "assets/images/imgProduct/088-hs-2.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Vàng"],
+        "rating": 4.9,
+        "description": "Lòng chia buồn chân thành – sắc vàng ấm áp, trang trọng và sâu sắc."
+    },
+    {
+        "id": 89,
+        "name": "Eternal Peace",
+        "price": 9500000,
+        "images": ["assets/images/imgProduct/089-ep.jpg"],
+        "category": ["Hoa Chia Buồn"],
+        "color": ["Trắng"],
+        "rating": 4.8,
+        "description": "Bình an vĩnh cửu – sắc trắng tinh khiết, thanh tịnh và an yên."
+    },
+    {
+        "id": 90,
+        "name": "Simply Your Taste",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/090-syt.jpg", "assets/images/imgProduct/090-syt-2.jpg", "assets/images/imgProduct/090-syt-3.jpg", "assets/images/imgProduct/090-syt-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 4.7,
+        "description": "Bó hoa mang sắc hồng nhạt pha trắng tinh khôi, gợi vẻ đẹp trong sáng và tự nhiên. Hồng Chiết Xạ tượng trưng cho tình yêu thuần khiết, lời cảm ơn và sự quan tâm sâu sắc. Phù hợp để tặng mẹ, bạn bè hoặc người thương trong dịp sinh nhật, ngày kỷ niệm, hoặc chỉ đơn giản là món quà không cần lý do để gửi chút dịu dàng bất ngờ."
+    },
+    {
+        "id": 91,
+        "name": "Eternal Star",
+        "price": 900000,
+        "images": ["assets/images/imgProduct/091-es.jpg", "assets/images/imgProduct/091-es-2.jpg", "assets/images/imgProduct/091-es-3.jpg", "assets/images/imgProduct/091-es-4.jpg"],
+        "category": ["Hoa Sinh Nhật", "Hoa Cảm Ơn"],
+        "color": ["Mix"],
+        "rating": 4.6,
+        "description": "Bó hoa là sự kết hợp thanh thuần giữa tú cầu hồng nhập khẩu, tulip trắng tinh khiết và cẩm chướng hồng pastel tạo nên tổng thể dịu dàng, hiện đại và đầy tinh tế. Tông màu hồng trắng trong trẻo mang cảm giác nhẹ nhàng, sang trọng, phù hợp cho mọi dịp cần sự tinh tế. Ý nghĩa của bó hoa tượng trưng cho tình yêu thuần khiết, sự biết ơn sâu sắc và vẻ đẹp ngọt ngào của người nhận."
+    },
+    {
+        "id": 92,
+        "name": "Soft Garden Light",
+        "price": 800000,
+        "images": ["assets/images/imgProduct/092-sgl.jpg", "assets/images/imgProduct/092-sgl-2.jpg", "assets/images/imgProduct/092-sgl-3.jpg", "assets/images/imgProduct/092-sgl-4.jpg"],
+        "category": ["Hoa Tình Yêu", "Hoa Cảm Ơn"],
+        "color": ["Mix"],
+        "rating": 5.0,
+        "description": "Bó hoa được thiết kế theo đúng tinh thần Garden Style – phong cách khu vườn tự nhiên với những đường nét phóng khoáng, mềm mại và tầng lớp hoa đan xen đầy cảm hứng. Sự kết hợp đa dạng nhiều loại hoa tạo nên tổng thể đa màu sắc nhưng vẫn hài hòa, hiện đại và đầy sức sống."
+    },
+    {
+        "id": 93,
+        "name": "My Christa",
+        "price": 3750000,
+        "images": ["assets/images/imgProduct/093-mc.jpg", "assets/images/imgProduct/093-mc-2.jpg", "assets/images/imgProduct/093-mc-3.jpg", "assets/images/imgProduct/093-mc-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Hồng"],
+        "rating": 5.0,
+        "description": "Christa của anh – bó hồng hồng kiêu sa, dành riêng cho người con gái đặc biệt."
+    },
+    {
+        "id": 94,
+        "name": "Blush in Bloom",
+        "price": 800000,
+        "images": ["assets/images/imgProduct/094-bib.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Hồng", "Tím"],
+        "rating": 5.0,
+        "description": "Bó hoa này là sự phối hợp tinh tế giữa các sắc thái của tình yêu và sự chân thành. Màu hồng nhẹ nhàng thể hiện sự dịu dàng và lòng biết ơn, trong khi màu tím nhạt mang ý nghĩa của sự thủy chung và son sắt. Mỗi bông hoa không chỉ là một vẻ đẹp riêng biệt mà còn cùng nhau tạo nên một thông điệp hòa quyện: tình yêu phong phú nhưng luôn đầy ắp sự quan tâm và chăm sóc. Sự kết hợp này không chỉ là một món quà cho người nhận mà còn là biểu hiện của sự tinh tế trong cách thể hiện tình cảm."
+    },
+    {
+        "id": 95,
+        "name": "A Quiet You",
+        "price": 250000,
+        "images": ["assets/images/imgProduct/095-aqy.jpg", "assets/images/imgProduct/095-aqy-2.jpg", "assets/images/imgProduct/095-aqy-3.jpg", "assets/images/imgProduct/095-aqy-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Trắng"],
+        "rating": 4.8,
+        "description": "Hoa cẩm tú cầu, với vẻ đẹp mong manh và dịu dàng như một lời nhắc nhở rằng sự chú ý và quan tâm không chỉ giúp một mối quan hệ phát triển mà còn giúp vượt qua được những thử thách và thời gian. Trong một thế giới nơi mọi thứ có thể dễ dàng vỡ vụn, hoa cẩm tú cầu như một biểu tượng cho niềm tin và hy vọng vào sức mạnh của tình yêu và tình bạn, đòi hỏi sự kiên nhẫn và lòng kiên trì để phát triển và bảo vệ. Do đó, một bó hoa cẩm tú cầu không chỉ là một món quà đẹp, mà còn là một lời hứa về sự kiên trì và trân trọng, một nhắc nhở về giá trị của việc chăm sóc những điều tốt đẹp trong cuộc sống của chúng ta."
+    },
+    {
+        "id": 96,
+        "name": "You are my sky",
+        "price": 350000,
+        "images": ["assets/images/imgProduct/096-yams.jpg", "assets/images/imgProduct/096-yams-2.jpg", "assets/images/imgProduct/096-yams-3.jpg", "assets/images/imgProduct/096-yams-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Xanh", "Vàng"],
+        "rating": 4.9,
+        "description": "Em là bầu trời của anh – mix xanh vàng rộng lớn, bao la và tràn đầy yêu thương."
+    },
+    {
+        "id": 97,
+        "name": "Sweet Girl",
+        "price": 450000,
+        "images": ["assets/images/imgProduct/097-sg.jpg", "assets/images/imgProduct/097-sg-2.jpg", "assets/images/imgProduct/097-sg-3.jpg", "assets/images/imgProduct/097-sg-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Mix", "Vàng"],
+        "rating": 5.0,
+        "description": "Cô gái ngọt ngào – mix vàng tươi vui, đáng yêu và rạng rỡ như nụ cười em."
+    },
+    {
+        "id": 98,
+        "name": "Closer",
+        "price": 550000,
+        "images": ["assets/images/imgProduct/098-closer.jpg", "assets/images/imgProduct/098-closer-2.jpg", "assets/images/imgProduct/098-closer-3.jpg", "assets/images/imgProduct/098-closer-4.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Tím"],
+        "rating": 4.7,
+        "description": "Gần nhau hơn – sắc tím mộng mơ, kéo hai trái tim xích lại gần nhau."
+    },
+    {
+        "id": 99,
+        "name": "Violet blush",
+        "price": 300000,
+        "images": ["assets/images/imgProduct/099-vb.jpg", "assets/images/imgProduct/099-vb-2.jpg"],
+        "category": ["Hoa Tình Yêu"],
+        "color": ["Tím"],
+        "rating": 4.6,
+        "description": "Má hồng tím nhạt – sự e ấp dịu dàng, lãng mạn và đầy nữ tính."
+    }
+]
