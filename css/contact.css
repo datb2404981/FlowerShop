@@ -72,12 +72,13 @@ input:focus, textarea:focus, select:focus{
     border-bottom: 2px solid #877e7e;
 }
 button{
-    background-color: #877e7e;
+    background-color: #431026c8;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 15px;
 }
 select{
     appearance: none;                           

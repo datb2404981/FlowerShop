@@ -1,13 +1,13 @@
 .anhdautrang1{
-    background-image:linear-gradient(rgba(55, 48, 48, 0.366)), url(../assets/images/img/anhheader/z7509202202055_9719e74f0c291904763a25820e340807.jpg);
+    background-image:linear-gradient(rgba(5, 5, 5, 0.64)), url(../assets/images/img/anhheader/z7509202202055_9719e74f0c291904763a25820e340807.jpg);
     width: 100%;
     height: 660px;
     background-size: cover;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 0 auto;
+    position: relative;
 }
 .anhdautrang1 h1,.anhdautrang1 h2{
     object-fit: cover;
@@ -41,7 +41,7 @@
   color: transparent;
   font-style: italic;
   font-weight: normal;
-  font-size: 60pt;
+  font-size: 70pt;
 }
 #ten-hoa{
     text-align: center;
@@ -82,19 +82,32 @@
 #mo-ta1,#mo-ta2,#mo-ta3{
     font-size: 15.5pt;
 }
+
+.Gioithieu{
+    object-fit: cover;
+    position: absolute;           
+    color: white;          
+    text-align: center;
+    width: 100%;
+    z-index: 1;
+}
+
 @media screen and (max-width: 480px) {
     #ten-hoa{
         font-size: 30pt;
     }
     .anhdautrang1{
         height: 450px;
+        width: 100%;
+        position: relative;
     }
     .Gioithieu h1{
-        font-size: 40pt;
+        font-size: 30pt !important;
+        object-fit: cover;
     }
-    .Gioithieu{
-        margin-bottom: 200px;
-        margin-top: 200px;
+    .Gioithieu h2{
+        font-size: 18pt !important;
+        object-fit: cover;
     }
     .noidungnho{
         flex-direction: column;
@@ -106,8 +119,4 @@
     .phai{
         order: -1;
     }
-}
-.Gioithieu{
-    margin-top: 300px;
-    object-fit: cover;
 }
