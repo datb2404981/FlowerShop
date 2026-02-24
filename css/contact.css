@@ -22,7 +22,24 @@ main{
     border: none;
     border-bottom: 1px solid #ccc;
     background: transparent;
+    border: none;
+    border-bottom: 1px solid #ccc; 
+    background: transparent;
+    resize: none;         
+    overflow: hidden;     
+    display: inline-block;
+    font-family: inherit; 
+    font-size: inherit;
 }
+textarea.onhaplieu{
+    width: 100%;
+    line-height: 20px;
+    resize: none;
+    overflow: hidden;
+    vertical-align: bottom;
+    height: auto;
+}
+
 #thu-ngo{
     width: 80%;
     font-size: 18px;
@@ -86,6 +103,7 @@ select{
     display: flex;
     align-items: center;
     gap: 20px;
+    width: 100%;
 }
 .thongtinchung{
     display: flex;
@@ -126,4 +144,9 @@ select{
         padding: 20px;
     }
     
+}
+#thongbaottlh{
+    display: none;
+    color: #2ecc71;
+    margin-top: 10px;
 }

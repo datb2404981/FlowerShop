@@ -23,22 +23,44 @@
         <h1>Liên Hệ Với Chúng Tôi</h1>
         <h2>Lắng nghe từng rung động, phục vụ bằng cả trái tim.</h2>
         <div class="lienhe">
-            <p class="Dong1"><input id="thu-ngo" class="onhaplieu" placeholder="Thư Ngỏ"><img id="logo"
-                    src="assets/images/Log.png "></p>
-            <form class="Thongtin" method="post">
-                <p> Gửi lời nhắn đến FlowerShop,</p>
-                <p>Mình tên là <input class="onhaplieu" placeholder="Nhập tên của bạn" required></p>
+            <form class="Thongtin" id="formttlh" onsubmit="submit_ttlh(event)">
+                <div class="Dong1">
+                    <textarea id="thu-ngo" class="onhaplieu" placeholder="Thư Ngỏ" autocomplete="off"></textarea><img id="logo"
+                        src="assets/images/Log.png">
+                </div>
+                <span class="text-phu">Gửi lời nhắn đến FlowerShop,</span>
+                <p>Mình tên là <input class="onhaplieu" placeholder="Nhập tên của bạn" autocomplete="off" required></p>
                 <p>Mình đang quan tâm đến <select required id="luachon" class="onhaplieu" name="interest">
                         <option value="" disabled selected hidden>Chọn nhu cầu của bạn</option>
                         <option value="hoa">Hoa</option>
                         <option value="dichvu">Dịch vụ</option>
                     </select> cho sự kiện sắp tới của mình </p>
                 <p>FlowerShop có thể liên hệ mình qua email: <input type="email" class="onhaplieu"
-                        placeholder="Nhập email của bạn"></p>
+                        placeholder="Nhập email của bạn" autocomplete="off"></p>
                 <p>Dưới đây là một vài chi tiết mà mình đang ấp ủ: <br><textarea class="onhaplieu"
-                        placeholder="Nhập chi tiết" required></textarea></p>
+                        placeholder="Nhập chi tiết" autocomplete="off" required></textarea></p>
                 <button type="submit">Gửi Thư Ngỏ</button>
+                <p id="thongbaottlh">✨Đã gửi thành công!</p>
             </form>
+            <script>
+                function submit_ttlh(e) {
+                    e.preventDefault();
+                    document.getElementById('thongbaottlh').style.display = 'block';
+                    e.target.reset();
+                    setTimeout(() => {
+                        document.getElementById('thongbaottlh').style.display = 'none';
+                    }, 3000);
+                }
+            </script>
+            <script>
+                const textareas = document.querySelectorAll('.onhaplieu');
+                textareas.forEach(el => {
+                    el.addEventListener('input', function () {
+                        this.style.height = 'auto';
+                        this.style.height = (this.scrollHeight) + 'px';
+                    });
+                });
+            </script>
         </div>
         <h1 class="ghechoi">Ghé thăm chúng tôi</h1>
         <div class="thongtinchung">

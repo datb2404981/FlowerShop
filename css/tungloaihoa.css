@@ -76,8 +76,16 @@
 .trai,.phai{
     flex: 1;
 }
-
+#ten-hoa{
+    font-size: 50pt;
+}
+#mo-ta1,#mo-ta2,#mo-ta3{
+    font-size: 15.5pt;
+}
 @media screen and (max-width: 480px) {
+    #ten-hoa{
+        font-size: 30pt;
+    }
     .anhdautrang1{
         height: 450px;
     }
