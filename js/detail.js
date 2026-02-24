@@ -301,28 +301,31 @@ function renderReviews(avgRating, totalCount) {
 let dist = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
 
     switch (true) {
-        case (avgRating === 5.0):
-            dist = { 5: 100, 4: 0, 3: 0, 2: 0, 1: 0 };
+case (avgRating === 5.0):
+            dist = { 5: 100, 4: 0, 3: 0, 2: 0, 1: 0 }; 
             break;
-        case (avgRating === 4.9):
-            dist = { 5: 92, 4: 7, 3: 1, 2: 0, 1: 0 };
+        case (avgRating >= 4.9):
+            dist = { 5: 90, 4: 10, 3: 0, 2: 0, 1: 0 }; 
             break;
-        case (avgRating === 4.8):
-            dist = { 5: 85, 4: 12, 3: 2, 2: 1, 1: 0 };
+        case (avgRating >= 4.8):
+            dist = { 5: 80, 4: 20, 3: 0, 2: 0, 1: 0 }; 
             break;
-        case (avgRating === 4.7):
-            dist = { 5: 78, 4: 15, 3: 5, 2: 1, 1: 1 };
+        case (avgRating >= 4.7):
+            dist = { 5: 75, 4: 20, 3: 5, 2: 0, 1: 0 }; 
             break;
-        case (avgRating === 4.6):
-            dist = { 5: 70, 4: 20, 3: 8, 2: 1, 1: 1 };
+        case (avgRating >= 4.6):
+            dist = { 5: 65, 4: 30, 3: 5, 2: 0, 1: 0 }; 
             break;
         case (avgRating >= 4.0):
-            dist = { 5: 60, 4: 25, 3: 10, 2: 3, 1: 2 };
+            dist = { 5: 40, 4: 35, 3: 15, 2: 5, 1: 5 }; 
+            break;
+        case (avgRating >= 3.5):
+            dist = { 5: 25, 4: 40, 3: 25, 2: 5, 1: 5 }; 
             break;
         case (avgRating >= 3.0):
-            dist = { 5: 20, 4: 20, 3: 40, 2: 10, 1: 10 };
+            dist = { 5: 15, 4: 20, 3: 40, 2: 15, 1: 10 };
             break;
-
+            
         default:
             dist = { 5: 5, 4: 10, 3: 20, 2: 30, 1: 35 };
             break;
