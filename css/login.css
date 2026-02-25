@@ -1,0 +1,41 @@
+.login-wrapper {
+    min-height: calc(100vh - 160px);
+    display: flex;
+}
+
+#img-login {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), 
+                      url('../assets/images/imgLogin/login.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#login-section {
+    background-color: #fff;
+    min-height: 100%;
+}
+
+
+.custom-input {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+    border-radius: 0;
+    padding-left: 0;
+    transition: 0.3s;
+}
+
+.custom-input:focus {
+    box-shadow: none;
+    border-bottom: 1px solid #4b0d1d;
+}
+
+.btn-signin {
+    background-color: #4b0d1d; 
+    border: none;
+    font-weight: 500;
+}
+
+.btn-signin:hover {
+    background-color: #350914;
+}
