@@ -42,7 +42,7 @@ textarea.onhaplieu{
 
 #thu-ngo{
     width: 80%;
-    font-size: 18px;
+    font-size: inherit;
     padding: 10px;
     margin-bottom: 30px;
 }
@@ -150,4 +150,23 @@ select{
     display: none;
     color: #2ecc71;
     margin-top: 10px;
+}
+#alert{
+    display: none; /* Mặc định là ẩn */
+    position: fixed;
+    top: 13%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 15px;
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.nutdong{
+    display: block;
+    padding: 2px 4px;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+    
 }

@@ -40,27 +40,23 @@
                 <p>Dưới đây là một vài chi tiết mà mình đang ấp ủ: <br><textarea class="onhaplieu"
                         placeholder="Nhập chi tiết" autocomplete="off" required></textarea></p>
                 <button type="submit">Gửi Thư Ngỏ</button>
-                <p id="thongbaottlh">✨Đã gửi thành công!</p>
+                <div id="alert">
+                    <div class="noidungthongbao">✨Đã gửi thành công!</div>
+                    <button class="nutdong" onclick="dongalert()">Đóng</button>
+                </div>
             </form>
             <script>
                 function submit_ttlh(e) {
                     e.preventDefault();
-                    document.getElementById('thongbaottlh').style.display = 'block';
+                    document.getElementById('alert').style.display = 'block';
                     e.target.reset();
-                    setTimeout(() => {
-                        document.getElementById('thongbaottlh').style.display = 'none';
-                    }, 3000);
                 }
             </script>
             <script>
-                const textareas = document.querySelectorAll('.onhaplieu');
-                textareas.forEach(el => {
-                    el.addEventListener('input', function () {
-                        this.style.height = 'auto';
-                        this.style.height = (this.scrollHeight) + 'px';
-                    });
-                });
-            </script>
+            function dongalert(e) {
+                    document.getElementById('alert').style.display = 'none';
+                    
+                }</script>
         </div>
         <h1 class="ghechoi">Ghé thăm chúng tôi</h1>
         <div class="thongtinchung">
