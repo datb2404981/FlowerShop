@@ -626,3 +626,9 @@ hr {
 .modal-hidden {
   display: none !important;
 }
+
+.summary-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

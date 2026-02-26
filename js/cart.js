@@ -105,11 +105,11 @@ function renderCart() {
       </div>
   <article class="item row ${checkedClass} col-11" data-id="${id}">
     <!-- Ảnh sản phẩm -->
-    <div class="img-col col-12 col-lg-4">
+    <div class="img-col col-4 col-lg-4">
       <img class="item-img" src="${img}" />
     </div>
     <!-- Thông tin sản phẩm -->
-    <div class="item-info col-7 col-lg-4">
+    <div class="item-info col-4 col-lg-4">
       <h2 class="in4-item-name">${name}</h2>
     </div>
   
@@ -168,7 +168,7 @@ function renderCart() {
       <div class="removeAll-btn">
         <button class="btn btn-remove-all">
             <i class="bi bi-trash3"></i>
-            <span>Xóa giỏ hàng</span>
+            <span class="xoaGioHang">Xóa giỏ hàng</span>
         </button>
     </div>
   </div>  
