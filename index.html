@@ -5,83 +5,78 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang Chủ</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/detail.css">
+  <link rel="stylesheet" href="css/custom.css">
   <link rel="icon" type="image/x-icon" href="https://static.vecteezy.com/system/resources/previews/020/190/945/non_2x/flower-icon-free-vector.jpg">
 </head>
 
 <body>
   <my-header></my-header>
-  <div>
-        <main class="container my-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold text-uppercase" style="color: #d63384;">Danh Mục Hoa Tươi</h2>
-            <p class="text-muted">Giao hoa nhanh chóng - Tận tâm phục vụ</p>
+  
+  <main class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-uppercase category-title">Danh Mục Hoa Tươi</h2>
+        <p class="text-muted">Giao hoa nhanh chóng - Tận tâm phục vụ</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 flower-card">
+                <img src="https://360fruit.vn/uploads/file/99-binh-hoa-hong-dep-nhat-nam-2019-binh-hoa-lo-hoa-hong1.jpg" 
+                    class="card-img-top flower-img" alt="Hoa Hồng">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Hoa Hồng Đỏ</h5>
+                    <p class="card-text price-text">250.000 VNĐ</p>
+                    <a href="#" class="btn btn-outline-danger w-100 btn-buy">Chọn mua</a>
+                </div>
+            </div>
         </div>
 
-        <div class="row g-4">
-            
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="https://360fruit.vn/uploads/file/99-binh-hoa-hong-dep-nhat-nam-2019-binh-hoa-lo-hoa-hong1.jpg" 
-                        class="card-img-top" alt="Hoa Hồng" style="height: 200px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Hoa Hồng Đỏ</h5>
-                        <p class="card-text text-danger fw-bold">250.000 VNĐ</p>
-                        <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Chọn mua</a>
-                    </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 flower-card">
+                <img src="https://i.pinimg.com/736x/c1/cd/90/c1cd904229069dc08717e43303a6c93a.jpg" 
+                    class="card-img-top flower-img" alt="Hoa Hướng Dương">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Hoa Hướng Dương</h5>
+                    <p class="card-text price-text">180.000 VNĐ</p>
+                    <a href="#" class="btn btn-outline-danger w-100 btn-buy">Chọn mua</a>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="https://i.pinimg.com/736x/c1/cd/90/c1cd904229069dc08717e43303a6c93a.jpg" 
-                        class="card-img-top" alt="Hoa Hướng Dương" style="height: 200px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Hoa Hướng Dương</h5>
-                        <p class="card-text text-danger fw-bold">180.000 VNĐ</p>
-                        <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Chọn mua</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="https://phale.com.vn/wp-content/uploads/2024/06/meo-chon-hoa-tulip-dep.jpg" 
-                        class="card-img-top" alt="Hoa Tulip" style="height: 200px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Hoa Tulip Hồng</h5>
-                        <p class="card-text text-danger fw-bold">320.000 VNĐ</p>
-                        <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Chọn mua</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="https://lh6.googleusercontent.com/proxy/UDLXPlTYSjZ9rDs6BXxs8od0zut4Qo9j2BGY_mls8K4pR81WhfJI_pGNb2qTlawlH07BAQPscvRIceFtpZFnYP3YY8U7PzUmYE-ObKzQLdL6QosgI25zY5Rw_La09afBBZloO-x-p9Veo8qTI0aWT9PamSeJlbBx2airYRPv" 
-                        class="card-img-top" alt="Hoa Cẩm Tú Cầu" style="height: 200px; object-fit: cover;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Cẩm Tú Cầu Lam</h5>
-                        <p class="card-text text-danger fw-bold">450.000 VNĐ</p>
-                        <a href="#" class="btn btn-outline-danger w-100 rounded-pill">Chọn mua</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </main>
-  </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 flower-card">
+                <img src="https://phale.com.vn/wp-content/uploads/2024/06/meo-chon-hoa-tulip-dep.jpg" 
+                    class="card-img-top flower-img" alt="Hoa Tulip">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Hoa Tulip Hồng</h5>
+                    <p class="card-text price-text">320.000 VNĐ</p>
+                    <a href="#" class="btn btn-outline-danger w-100 btn-buy">Chọn mua</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm border-0 flower-card">
+                <img src="https://lh6.googleusercontent.com/proxy/UDLXPlTYSjZ9rDs6BXxs8od0zut4Qo9j2BGY_mls8K4pR81WhfJI_pGNb2qTlawlH07BAQPscvRIceFtpZFnYP3YY8U7PzUmYE-ObKzQLdL6QosgI25zY5Rw_La09afBBZloO-x-p9Veo8qTI0aWT9PamSeJlbBx2airYRPv" 
+                    class="card-img-top flower-img" alt="Hoa Cẩm Tú Cầu">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Cẩm Tú Cầu Lam</h5>
+                    <p class="card-text price-text">450.000 VNĐ</p>
+                    <a href="#" class="btn btn-outline-danger w-100 btn-buy">Chọn mua</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </main>
+
   <my-footer></my-footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  <script src="js/components.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-  </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-  integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous">
-  </script>
-<script src="js/components.js"></script>
 </html>
