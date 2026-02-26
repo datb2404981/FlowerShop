@@ -41,22 +41,23 @@
                         placeholder="Nhập chi tiết" autocomplete="off" required></textarea></p>
                 <button type="submit">Gửi Thư Ngỏ</button>
                 <div id="alert">
-                    <div class="noidungthongbao">✨Đã gửi thành công!</div>
-                    <button class="nutdong" onclick="dongalert()">Đóng</button>
+                    <div class="noidungthongbao">
+                        <i class="bi bi-check-circle-fill toast-icon"></i>
+                        <span class="tb">✨Đã gửi thành công!</span>
+                    </div>
+                    </div>
                 </div>
             </form>
             <script>
                 function submit_ttlh(e) {
                     e.preventDefault();
-                    document.getElementById('alert').style.display = 'block';
+                    const alertBox = document.getElementById('alert'); 
+                   alertBox.style.display = 'block';
+                    setTimeout(() => {alertBox.style.display='none';
+                    }, 2000);
                     e.target.reset();
                 }
             </script>
-            <script>
-            function dongalert(e) {
-                    document.getElementById('alert').style.display = 'none';
-                    
-                }</script>
         </div>
         <h1 class="ghechoi">Ghé thăm chúng tôi</h1>
         <div class="thongtinchung">

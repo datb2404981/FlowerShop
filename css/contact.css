@@ -161,12 +161,7 @@ select{
     padding: 2px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.nutdong{
-    display: block;
-    padding: 2px 4px;
-    font-size: 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-left: auto;
-    
+.toast-icon {
+    color: #28a745; 
+    font-size: 22px;
 }
