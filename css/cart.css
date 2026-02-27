@@ -1,0 +1,717 @@
+/* ================== CART PAGE ================== */
+.cart-page {
+  margin-left: 30px;
+}
+
+.description {
+  color: var(--text-light);
+  font-family: var(--font-header);
+  font-style: italic;
+}
+
+/* ================== CART ITEM ================== */
+.item {
+  margin: 50px 0;
+  box-sizing: border-box;
+  padding: 30px;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+}
+
+/* ================== ITEM IMAGE ================== */
+.img-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100px; /* Tăng hoặc giảm tùy ý bạn muốn ảnh to hay nhỏ */
+  height: 150px;
+}
+
+.item-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1; /* Cố định tỉ lệ 1:1 */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-left: 40px;
+}
+
+.form-check-input.item-checkbox {
+  display: none;
+}
+
+hr {
+  margin: 3px 0px;
+  color: #ccc;
+}
+
+.item.row {
+  display: flex;
+
+  margin: 6px 0;
+  padding: 10px 0;
+}
+/* ================== ITEM INFO (TEXT) ================== */
+.item-info {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin-left: 15px;
+  margin-right: 40px;
+  padding-left: 30px;
+}
+
+.in4-item-name {
+  margin-top: 10px;
+  font-family: var(--font-header);
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 25px;
+}
+
+.item-info-text {
+  margin-top: 10px;
+  font-family: var(--font-header);
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.items-list {
+  box-sizing: border-box;
+  padding-right: 40px;
+}
+
+/* ================== QUANTITY CONTROL (+ -) ================== */
+.fancy-qty {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  width: fit-content;
+  background: #fff;
+}
+
+.fancy-qty .quantity-input {
+  border: none;
+  width: 50px;
+  height: 20px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fancy-qty .quantity-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.fancy-qty .qty-btn {
+  border: none;
+  background: transparent;
+  width: 36px;
+  height: 36px;
+  color: var(--primary-color);
+  font-size: 1rem;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.fancy-qty .qty-btn:hover {
+  background: rgba(100, 13, 51, 0.08);
+}
+
+.fancy-qty .qty-btn:active {
+  transform: scale(0.9);
+}
+
+/* ================== ACTION BUTTONS (QTY + REMOVE) ================== */
+
+.removeAll-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-check-input {
+  height: 15px;
+  width: 15px;
+  margin-top: 13px;
+}
+
+.form-check-label {
+  font-size: 16px;
+  font-family: var(--font-header);
+}
+
+.form-check-label:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.check-all {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.check-all .form-check-input {
+  margin-top: 5px;
+  margin-left: 7px;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.action-button {
+  margin-top: auto;
+  display: flex;
+  height: 30px;
+}
+
+.remove-btn,
+.remove-btn-text {
+  font-family: Var(--font-heading);
+  color: var(--text-light);
+}
+
+.btn-remove-all {
+  font-family: Var(--font-heading);
+  color: var(--text-light);
+  font-size: larger;
+  padding: 0;
+  padding-bottom: 3px;
+  background: none;
+  border: none;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  margin: 0px;
+  padding: 0;
+  height: 40px;
+}
+
+.remove-btn:visited {
+  border: none;
+}
+
+.remove-btn-text:hover,
+.remove-btn:hover {
+  color: var(--primary-color);
+}
+
+/* ================== PRICE SECTION ================== */
+.item-price {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-header);
+  font-weight: 500;
+  font-size: x-large;
+  padding: 0px;
+  color: var(--text-main);
+}
+
+.price-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.total-text {
+  font-family: var(--font-header);
+  font-size: large;
+  color: var(--text-light);
+  margin: 0;
+}
+
+.total-money {
+  font-weight: bold;
+  font-size: 22px;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.vnd-unit {
+  font-size: 0.65em;
+  vertical-align: super;
+  margin-left: 2px;
+  color: var(--text-light);
+}
+
+/* ================== SUMMARY (RIGHT SIDE) ================== */
+.summary-card {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+  padding: 25px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.12),
+    0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+
+  margin-bottom: 20px;
+}
+
+.summary-header p,
+.summary-money p {
+  font-family: var(--font-header);
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.summary-total .summary-header p,
+.summary-total .summary-money p {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--primary-color);
+}
+
+.summary-money {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.summary-total .summary-header p,
+.summary-total .summary-money p {
+  font-size: 25px;
+}
+
+.summary-subtotal,
+.summary-total {
+  margin: 20px 0;
+}
+
+/* ================== CHECKOUT BUTTON ================== */
+.btn-checkout {
+  width: 100%;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+
+  box-shadow:
+    0 6px 16px rgba(170, 9, 9, 0.25),
+    0 12px 30px rgba(170, 9, 9, 0.15);
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-checkout:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(170, 9, 9, 0.35),
+    0 18px 40px rgba(170, 9, 9, 0.2);
+}
+
+.btn-checkout:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(170, 9, 9, 0.2);
+}
+
+.btn-checkout:disabled {
+  background-color: #ccc !important;
+  border-color: #bbb !important;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+  opacity: 0.7;
+}
+
+.checkout-icon {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-checkout:hover .checkout-icon {
+  transform: translateX(6px);
+  color: white;
+}
+
+.btn h2 {
+  color: white;
+}
+
+/* ================== RESPONSIVE (TABLET & MOBILE) ================== */
+@media (max-width: 576px) {
+  .item-img {
+    width: 360px;
+    height: 440px;
+  }
+
+  .item-info,
+  .item-price {
+    margin-top: 30px;
+  }
+}
+
+/* ================== ANIMATION ================== */
+.total-money.bump {
+  animation: bump 0.25s ease;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.item.removing {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.3s ease;
+}
+
+.item.is-checked {
+  background: rgba(170, 9, 9, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
+  animation: pulseSelect 0.25s ease;
+}
+
+@keyframes pulseSelect {
+  0% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+main {
+  margin-bottom: 40px;
+}
+/* TRANG GIỎ HÀNG TRỐNG */
+.empty-cart-container {
+  background-color: rgb(255, 229, 233);
+  padding: 20px 0;
+  border: 3px dashed var(--primary-color);
+  border-radius: 40px;
+  margin-bottom: 40px;
+}
+
+.empty-desc {
+  font-family: var(--font-body);
+  font-size: large;
+}
+
+.btn-go-home {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--primary-color);
+  color: #fff !important;
+  text-decoration: none !important;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-family: var(--font-header);
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 6px 16px rgba(170, 9, 9, 0.25),
+    0 12px 30px rgba(170, 9, 9, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-go-home:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 24px rgba(170, 9, 9, 0.35),
+    0 18px 40px rgba(170, 9, 9, 0.2);
+}
+
+.btn-go-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+.btn-go-home:hover::before {
+  left: 100%;
+}
+
+.btn-go-home i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-go-home:hover i {
+  transform: translateX(-5px);
+}
+
+/* ==== MODAL & CHECKOUT DETAILS ==== */
+/* --- Khung Modal chính (Kết hợp code cũ của bạn) --- */
+#confirmClearCartModal .modal-content {
+  border-radius: 20px; /* Giữ nguyên 20px theo code của bạn */
+  border: none;
+  padding: 25px; /* Tăng padding một chút cho thoáng */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* --- Nội dung thông báo --- */
+#confirmClearCartModal .modal-body {
+  padding: 20px 0;
+}
+
+#confirmClearCartModal .modal-body p {
+  font-family: var(--font-header);
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 0;
+}
+
+#confirmClearCartModal .modal-body strong {
+  color: var(--primary-color);
+}
+
+/* --- Khu vực nút bấm --- */
+#confirmClearCartModal .modal-footer {
+  padding: 0;
+  margin-top: 15px;
+}
+
+/* Nút Hủy (Xem lại) */
+#confirmClearCartModal .btn-light {
+  background-color: #fdfdfd;
+  color: var(--text-light);
+  border: 1px solid #eee;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-family: var(--font-header);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#confirmClearCartModal .btn-light:hover {
+  background-color: #f1f1f1;
+  color: var(--text-main);
+}
+
+/* Nút Xóa (Kết hợp code cũ và thêm hiệu ứng) */
+#confirmClearCartModal .btn-danger {
+  background-color: var(--primary-color) !important;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 12px;
+  font-family: var(--font-header);
+  font-weight: 500;
+  color: white;
+  box-shadow: 0 4px 10px rgba(170, 9, 9, 0.15);
+  transition: all 0.3s ease;
+}
+
+#confirmClearCartModal .btn-danger:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(170, 9, 9, 0.25);
+}
+
+/* --- Animation mượt mà khi hiện Modal --- */
+.modal.fade .modal-dialog {
+  transform: scale(0.9);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/* ================== COUPON INPUT ================== */
+.coupon-input {
+  border-radius: 12px 0 0 12px !important;
+  border: 1px solid #eee !important;
+  padding: 10px 15px !important;
+  font-size: 0.9rem !important;
+}
+
+.btn-apply-coupon {
+  border-radius: 0 12px 12px 0 !important;
+  background: #f8f9fa;
+  border: 1px solid #eee !important;
+  border-left: none !important;
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0 15px;
+}
+
+.btn-apply-coupon:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.check-thanhtoan {
+  padding: 0px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 10px;
+}
+
+.form-check-input.item-checkbox {
+  margin: 0px;
+}
+
+.item {
+  margin: 0px;
+}
+
+/* CHỈNH SỬA NÚT REMOVE */
+/* Container chứa cả cụm nút */
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Khoảng cách giữa bộ cộng trừ và nút xóa */
+  margin-top: auto; /* Đẩy xuống dưới cùng của cột info/price */
+}
+
+/* Tùy chỉnh nút xóa hình tròn */
+.btn-remove {
+  width: 36px; /* Bằng chiều cao của bộ cộng trừ fancy-qty */
+  height: 36px;
+  border-radius: 50%; /* Tạo hình tròn */
+  background-color: rgba(
+    170,
+    9,
+    9,
+    0.1
+  ); /* Màu nền nhạt của primary (thay mã màu nếu cần) */
+  color: var(--primary-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Icon bên trong nhỏ lại cho hài hòa */
+.btn-remove i {
+  font-size: 1rem;
+  line-height: 0;
+}
+
+/* Hiệu ứng khi hover */
+.btn-remove:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(170, 9, 9, 0.2);
+}
+
+/* Đảm bảo bộ cộng trừ và nút xóa cùng hàng */
+.fancy-qty {
+  margin-bottom: 0 !important;
+}
+
+.checkbox-checkall {
+  width: 10px;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.label-checkall {
+  display: flex;
+  justify-content: space-between;
+}
+
+.removeAll-btn,
+.removeAll-btn .btn {
+  padding: 0;
+  margin: 0;
+}
+
+/* Container chứa nút xóa tất cả */
+.removeAll-btn {
+  display: flex;
+  align-items: center;
+}
+
+/* Style cho nút Xóa giỏ hàng */
+.btn-remove-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+  font-family: var(--font-header);
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: none;
+  border: 1px solid transparent;
+  padding: 5px 12px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-remove-all i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-remove-all:hover {
+  color: var(--primary-color);
+  background-color: rgba(170, 9, 9, 0.05);
+}
+
+.btn-remove-all:hover i {
+  transform: rotate(-10deg) scale(1.2);
+}
+
+.removeAll-btn .btn:focus {
+  box-shadow: none;
+}

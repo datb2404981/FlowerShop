@@ -1,0 +1,628 @@
+/* ===== CHỮ ĐẦU TRANG ===== */
+.head-page {
+  text-align: center;
+}
+
+.header-desc {
+  font-family: var(--font-header);
+  font-style: italic;
+}
+
+/* ====== FORM SECTION 1: THÔNG TIN MUA HÀNG ====== */
+
+.number-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  font-family: var(--font-heading);
+  color: white;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+hr {
+  color: gray;
+}
+.section-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-heading h3 {
+  margin: 0 0 0 8px;
+}
+
+.customer-inf {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.05),
+    0 20px 48px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.customer-inf:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 30px rgba(170, 9, 9, 0.08),
+    0 25px 60px rgba(0, 0, 0, 0.08);
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-weight: 550;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.custom-input {
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: var(--primary-hover);
+  box-shadow: 0 0 0 0.25 rgba(170, 9, 9, 0.1);
+  outline: none;
+}
+
+/* CSS người mua */
+.recipient-box {
+  background-color: #f9f9f9;
+  border: 1px dashed var(--primary-color);
+}
+
+.recipient-box .form-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* CSS nút checkbox */
+
+.form-check-input {
+  width: 1em;
+  height: 1em;
+  margin-top: 0;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Khi checkbox được tích chọn */
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  filter: drop-shadow(0 0 5px rgba(170, 9, 9, 0.3));
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(170, 9, 9, 0.15);
+  border-color: var(--primary-color);
+}
+
+.form-check-label {
+  color: var(--text-main);
+  font-family: var(--font-header);
+  font-size: 1.05rem;
+  padding-left: 5px;
+}
+
+.des-checkbox {
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+/* ====== FORM SECTION 2: THỜI GIAN NHẬN HÀNG ====== */
+
+.custom-input-icon {
+  border-radius: 10px 0 0 10px !important;
+  border: 1px solid #dee2e6;
+  border-right: none;
+}
+
+.input-group .custom-input {
+  border-radius: 0 10px 10px 0 !important;
+}
+
+.input-group:focus-within .custom-input-icon {
+  border-color: var(--primary-hover);
+  color: var(--primary-color);
+}
+
+/* --- CUSTOM DROPDOWN CHO SECTION 1 --- */
+.custom-dropdown-addr .dropdown-menu {
+  background-color: var(--bg-cream) !important;
+  border: 1px solid rgba(170, 9, 9, 0.1) !important;
+  border-radius: 10px;
+  z-index: 1050;
+}
+
+.custom-dropdown-addr .dropdown-item {
+  color: var(--primary-color) !important;
+  font-family: "Playfair Display", serif;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.custom-dropdown-addr .dropdown-item:hover {
+  background-color: rgba(100, 13, 51, 0.1) !important;
+  padding-left: 25px;
+  transform: skewX(-5deg);
+  color: var(--primary-hover) !important;
+}
+
+.custom-dropdown-addr .btn.disabled {
+  background-color: #fdfaf6 !important;
+  border-color: #eee !important;
+  opacity: 0.7;
+}
+
+/* --- CUSTOM DROPDOWN CHO SECTION 2 --- */
+
+/* Nút bấm chính (đóng vai trò như ô input) */
+#dropdownTimeButton {
+  background-color: var(--bg-cream) !important;
+  color: var(--primary-color) !important;
+  font-family: "Playfair Display", serif !important;
+  border: 1px solid rgba(170, 9, 9, 0.2) !important;
+  text-align: left;
+  padding: 12px 15px;
+}
+
+#dropdownTimeButton:focus {
+  box-shadow: 0 0 0 0.25rem rgba(100, 13, 51, 0.1) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+/* Menu sổ xuống */
+.custom-dropdown-time .dropdown-menu {
+  --bs-dropdown-link-hover-bg: rgba(100, 13, 51, 0.1);
+  --bs-dropdown-link-active-bg: rgba(100, 13, 51, 0.2);
+
+  background-color: var(--bg-cream) !important;
+  border: 1px solid rgba(170, 9, 9, 0.1) !important;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 10px 0;
+}
+
+/* Từng item trong danh sách */
+.custom-dropdown-time .dropdown-item {
+  color: var(--primary-color) !important;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown-time .dropdown-item:hover {
+  background-color: var(--bs-dropdown-link-hover-bg) !important;
+  color: var(--primary-hover) !important;
+  padding-left: 30px;
+  transform: skewX(-5deg);
+}
+
+/* ====== SECTION 3 THANH TOÁN ===== */
+.payment-detail-box {
+  transition: all 0.3s ease-in-out;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+.payment-detail-box:not(.d-none) {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SECTION 4: KÈM THIỆP ===== */
+
+.btn-outline-main {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.btn-outline-main:hover {
+  background-color: transparent !important;
+  color: var(--primary-color) !important;
+
+  box-shadow: 0 8px 15px rgba(170, 9, 9, 0.2) !important;
+
+  transform: translateY(-2px);
+}
+
+.btn-outline-main:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(170, 9, 9, 0.1) !important;
+}
+
+.checkout-section {
+  transition: all 0.3s ease;
+}
+
+.checkout-section .card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  border: 1px dashed #ee9ca7 !important;
+}
+
+.checkout-section:hover .card {
+  box-shadow: 0 10px 25px rgba(170, 9, 9, 0.1) !important;
+  transform: translateY(-5px);
+  border-style: solid !important;
+  border-color: var(--primary-color) !important;
+  background: #ffffff !important;
+}
+
+.checkout-section:hover .icon-box i {
+  transform: scale(1.2);
+  color: var(--primary-hover) !important;
+  transition: all 0.3s ease;
+}
+
+.checkout-section:hover h5 {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+/* ===== SUMMARY CARD CONTAINER ===== */
+.summary-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px; /* Giảm padding tổng để tiết kiệm chỗ */
+  border: none;
+  box-shadow: 0 15px 35px rgba(170, 9, 9, 0.08);
+
+  position: sticky;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 100px); /* Giới hạn chiều cao card theo màn hình */
+  margin-bottom: 30px;
+}
+
+/* ===== SUMMARY CARD (CARD TỔNG) ===== */
+.summary-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 15px 35px rgba(170, 9, 9, 0.08);
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(
+    110vh - 140px
+  ); /* Giới hạn chiều cao card để không mất nút */
+}
+
+.summary-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+/* ===== DANH SÁCH SẢN PHẨM (CUỘN) ===== */
+.summary-items-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+  margin-bottom: 15px;
+}
+
+/* Thanh cuộn siêu mảnh */
+.summary-items-list::-webkit-scrollbar {
+  width: 4px;
+}
+.summary-items-list::-webkit-scrollbar-track {
+  background: #f9f9f9;
+}
+.summary-items-list::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
+/* ===== ITEM NHỎ GỌN  ===== */
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  margin: 0 !important;
+}
+
+.item-img {
+  width: 60px !important;
+  height: 60px !important;
+  flex: 0 0 60px !important;
+  padding: 0 !important;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+.item-img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.item-info {
+  padding-left: 0 !important;
+}
+
+.item-name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  margin: 0 0 2px 0;
+  color: var(--primary-color);
+}
+
+.item-amount,
+.item-price {
+  font-size: 14px;
+  color: #777;
+  margin: 0 !important;
+  line-height: 1.4;
+}
+
+.item-price {
+  color: black;
+}
+
+.summary-footer {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.total-label {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+.total-value {
+  font-family: var(--font-header);
+  color: var(--primary-color);
+  font-weight: 800;
+  font-size: 19px;
+}
+
+.btn-checkout {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
+  font-family: var(--font-heading);
+  font-size: 28px;
+}
+
+.btn-checkout:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(170, 9, 9, 0.2);
+}
+
+.summary-item {
+  display: flex !important;
+  align-items: center;
+  /* Hiệu ứng đổ bóng đơn giản */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+
+  /* Khoảng cách */
+  padding: 10px !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.col-12.col-lg-5 h2 {
+  margin-bottom: 23px;
+}
+
+.vnd-unit {
+  font-size: 0.65em;
+  vertical-align: super;
+  margin-left: 2px;
+  color: var(--text-light);
+}
+
+/* BẮT LỖI */
+.input-error {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.2) !important;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 4px;
+  min-height: 14px;
+}
+
+.btn-checkout:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dropdown-error .btn.custom-input {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.2) !important;
+}
+
+/* CSS CHO MODAL */
+/* ===== SUCCESS MODAL ===== */
+/* ===== SUCCESS MODAL OVERLAY ===== */
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Làm tối nền */
+  backdrop-filter: blur(4px); /* Làm mờ nền phía sau cho xịn */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+/* ===== MODAL BOX ===== */
+.success-modal {
+  background: #ffffff;
+  width: 90%;
+  max-width: 450px;
+  padding: 40px 30px;
+  border-radius: 25px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: modalBounce In 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hiệu ứng hiện ra hơi nảy nhẹ cho sinh động */
+@keyframes modalBounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== ICON THÀNH CÔNG ===== */
+.success-icon {
+  font-size: 80px;
+  color: #28a745; /* Màu xanh lá truyền thống hoặc dùng var(--primary-color) nếu thích */
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: scaleCheck 0.6s ease-in-out;
+}
+
+@keyframes scaleCheck {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== TEXT NỘI DUNG ===== */
+.success-title {
+  font-family: var(--font-header);
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.success-desc {
+  font-family: var(--font-body);
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.success-desc strong {
+  color: var(--primary-color);
+}
+
+/* ===== NÚT BẤM (ACTIONS) ===== */
+.success-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.success-actions .btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Nút Về trang chủ (Màu chủ đạo) */
+.btn-main {
+  background-color: var(--primary-color);
+  color: white !important;
+  border: none;
+}
+
+.btn-main:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(170, 9, 9, 0.2);
+}
+
+/* Nút Quay về giỏ hàng (Outline) */
+.btn-outline-secondary {
+  border: 1px solid #ddd;
+  background: transparent;
+  color: #666;
+}
+
+.btn-outline-secondary:hover {
+  background: #f8f9fa;
+  border-color: #bbb;
+  color: #333;
+}
+
+/* Class để ẩn/hiện modal bằng JS */
+.modal-hidden {
+  display: none !important;
+}
