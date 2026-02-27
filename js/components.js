@@ -43,6 +43,18 @@ class MyHeader extends HTMLElement {
         text-shadow: 0 0 1px currentColor;
         transition: all 0.3s ease;
       }
+
+      /* Tùy chỉnh ô Search */
+      .search-input-premium::placeholder {
+        color: #bfaab3 !important;
+        font-style: italic;
+        font-size: 0.95rem;
+      }
+      .search-input-premium:focus {
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 6px 20px rgba(100, 13, 51, 0.12) !important;
+        outline: none;
+      }
     </style>
 
     <header>
@@ -57,15 +69,22 @@ class MyHeader extends HTMLElement {
           </a>
 
           <div class="d-flex align-items-center gap-3 order-lg-last ms-auto">
-            <a href="#" class="text-decoration-none"><i class="bi bi-search" style="font-size: 1.2rem; color: var(--primary-color);"></i></a>
+            <!-- Form Tìm Kiếm -->
+            <form action="${basePath}index.html" method="GET" class="position-relative d-flex align-items-center m-0" id="searchForm">
+              <input type="text" name="search" id="searchInput" class="search-input-premium form-control rounded-pill" placeholder="Tìm hoa yêu thích..." 
+                style="width: 0px; padding: 0px; opacity: 0; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); border: 1.5px solid var(--primary-color); background-color: #fff; box-shadow: 0 4px 15px rgba(100, 13, 51, 0.06); font-family: var(--font-body); font-size: 1rem; color: var(--primary-color); position: absolute; right: 0; z-index: 100; padding-right: 40px; outline: none; height: 40px;">
+              <button type="button" id="searchBtnToggle" class="btn btn-link p-0 text-decoration-none shadow-none border-0 bg-transparent" style="z-index: 101; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; position: relative;">
+                <i class="bi bi-search" style="font-size: 1.35rem; color: var(--primary-color); transition: all 0.3s ease;"></i>
+              </button>
+            </form>
             
             <a href="${basePath}cart.html" class="text-decoration-none position-relative">
-                <i class="bi bi-bag-fill" style="font-size: 1.2rem; color: var(--primary-color);"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">0</span>
+                <i class="bi bi-bag-fill" style="font-size: 1.35rem; color: var(--primary-color);"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem; border: 2px solid var(--bg-cream);">0</span>
             </a>
 
             <a href="${basePath}login.html" class="text-decoration-none d-none d-sm-block">
-                <i class="bi bi-person-circle" style="font-size: 1.3rem; color: var(--primary-color);"></i>
+                <i class="bi bi-person-circle" style="font-size: 1.45rem; color: var(--primary-color);"></i>
             </a>
 
             <!-- Nút hamburger menu đưa qua bên phải ngoài cùng rẽ bằng d-lg-none -->
@@ -121,6 +140,68 @@ class MyHeader extends HTMLElement {
       </nav>
     </header>
     `;
+
+    // Khởi tạo Logic hiệu ứng Tìm Kiếm cho Form
+    const searchBtn = this.querySelector("#searchBtnToggle");
+    const searchInput = this.querySelector("#searchInput");
+    const searchForm = this.querySelector("#searchForm");
+    const searchIcon = searchBtn.querySelector("i");
+    let searchOpen = false;
+
+    if (searchBtn && searchInput) {
+      // Mở sẵn search bar nếu đang có parameter search ở URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlSearch = urlParams.get("search");
+      if (urlSearch) {
+        searchInput.value = urlSearch;
+        searchOpen = true;
+        // Kích thước co giãn linh hoạt trên Mobile
+        searchInput.style.width = window.innerWidth < 576 ? "160px" : "220px";
+        searchInput.style.padding = "5px 35px 5px 15px";
+        searchInput.style.opacity = "1";
+        searchIcon.classList.remove("bi-search");
+        searchIcon.classList.add("bi-x-lg");
+      }
+
+      searchBtn.addEventListener("click", (e) => {
+        if (!searchOpen) {
+          // Mở ô nhập liệu
+          searchInput.style.width = window.innerWidth < 576 ? "160px" : "220px";
+          searchInput.style.padding = "5px 35px 5px 15px";
+          searchInput.style.opacity = "1";
+          searchIcon.classList.remove("bi-search");
+          searchIcon.classList.add("bi-x-lg");
+          searchInput.focus();
+          searchOpen = true;
+        } else {
+          // Nếu có nội dung thì Submit form để tìm kiếm
+          if (searchInput.value.trim() !== "" && urlSearch !== searchInput.value.trim()) {
+            searchForm.submit();
+          } else {
+            // Nếu ô trống (hoặc y nguyên) thì Đóng lại
+            searchInput.style.width = "0px";
+            searchInput.style.padding = "0px";
+            searchInput.style.opacity = "0";
+            searchIcon.classList.remove("bi-x-lg");
+            searchIcon.classList.add("bi-search");
+            if (!urlSearch) searchInput.value = "";
+            searchOpen = false;
+
+            // Tùy chọn: Nhấn X ở trang tìm kiếm để tự return về index gốc
+            if (urlSearch) {
+              window.location.href = `${basePath}index.html`;
+            }
+          }
+        }
+      });
+
+      // Bắt sự kiện Enter (ngăn không submit nếu để trống)
+      searchForm.addEventListener("submit", (e) => {
+        if (searchInput.value.trim() === "") {
+          e.preventDefault();
+        }
+      });
+    }
   }
 }
 

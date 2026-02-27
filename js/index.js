@@ -156,6 +156,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchPrice && matchOccasion && matchColor;
     });
 
+    // Độc giả: Lọc bằng Thanh Tìm Kiếm (Dành cho Search Form phía trên Header)
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get("search");
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase().replace(/-/g, " ").trim();
+      filteredProducts = filteredProducts.filter((product) =>
+        product.name.toLowerCase().includes(q),
+      );
+
+      // Update the product title if search exists
+      const pageTitle = document.querySelector(".products-section h2");
+      if (pageTitle) {
+        pageTitle.innerHTML = `Kết quả cho: <span style="color: #666; font-style: italic;">"${searchQuery}"</span>`;
+      }
+    } else {
+      // Khôi phục title nếu không search
+      const pageTitle = document.querySelector(".products-section h2");
+      if (pageTitle && pageTitle.innerHTML.includes("Kết quả cho")) {
+        pageTitle.innerHTML = "Tất Cả Sản Phẩm";
+      }
+    }
+
     currentPage = 1; // Reset trang về 1 mỗi khi lọc
     renderPaginatedProducts();
   }
@@ -315,6 +337,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Đổ dữ liệu vào trang danh sách (nếu có productList)
       applyFilters(); // Bắt đầu từ applyFilters để khởi động sort & paginated render
+
+      // Tự động cuộn xuống phần sản phẩm nếu người dùng đang Tìm kiếm
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("search") && document.querySelector(".products-section")) {
+        setTimeout(() => {
+          document
+            .querySelector(".products-section")
+            .scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
 
       // -- LỌC BEST SELLER (Lấy chuẩn 4 sản phẩm đánh giá 5 sao giá cao nhất) --
       if (productBestSeller) {
