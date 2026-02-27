@@ -43,13 +43,6 @@ class MyHeader extends HTMLElement {
             <ul class="navbar-nav mx-auto mb-0 gap-1 gap-lg-3 flex-row justify-content-center" 
                 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500; color: var(--primary-color);">
               
-              <li class="nav-item">
-                <a class="nav-link ${isActive("shop.html")} text-center px-1" href="${basePath}shop.html">
-                  <span class="d-none d-lg-inline">Sản phẩm</span>
-                  <i class="bi bi-shop d-lg-none" style="font-size: 1.2rem;" title="Sản phẩm"></i>
-                </a>
-              </li>
-              
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-center px-1" href="#" role="button" data-bs-toggle="dropdown">
                   <span class="d-none d-lg-inline">Chủ đề</span>

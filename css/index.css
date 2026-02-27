@@ -43,3 +43,39 @@
     border-color: #d63384;
     color: #fff;
 }
+
+/* Bọc quanh ảnh để chứa lớp overlay đổ gradient */
+.banner-wrapper {
+  position: relative;
+  margin: 0 auto; /* Căn giữa */
+  width: calc(100vw - 30px); /* Cách lề 10px mỗi bên */
+  max-height: 700px;
+  overflow: hidden; /* Cắt gọn lớp đổ màu nếu vượt ra ngoài */
+  transition: all 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+/* Ảnh trải dài hoàn toàn vừa khớp chiều dọc ngang của wrapper */
+.banner-wrapper img {
+  display: block;
+  width: 100%; 
+  max-height: 700px; 
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Đây là lớp gradient mờ (blend) đi từ dưới lên trên */
+.banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Blend đen đậm dần về bên dưới (0.8 tởi trong suốt) */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+  pointer-events: none; /* Tránh cản trở chuột khi nhấn hoặc rê vào */
+}
+
+/* Khi rê chuột vào, ảnh bên trong sẽ phóng to lên (giữ nguyên kích thước banner do đã cài overflow: hidden ở wrapper) */
+.banner-wrapper:hover img {
+  transform: scale(1.05); /* Phóng to ảnh lên 5% bên trong wrapper */
+}

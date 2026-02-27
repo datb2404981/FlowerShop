@@ -1,0 +1,346 @@
+.banner {
+  display: flex; /* Cho left và right nằm ngang */
+  align-items: stretch; /* Kéo dài theo chiều dọc để bằng nhau */
+  min-height: 600px;
+  background: #ede4d8;
+  max-width: 1600px; /* Giới hạn chiều rộng tối đa */
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden; /* Ẩn phần thừa khi bo góc */
+  margin-bottom: 40px;
+}
+.left-banner {
+  width: 50%;
+  padding: 60px;
+  display: flex; /* Cho các phần tử trong left-banner xếp dọc */
+  flex-direction: column; /* Cho các phần tử trong left-banner xếp dọc */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+}
+.banner-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #777;
+}
+.left-banner h1 {
+  font-size: 70px;
+  font-weight: 700;
+  color: #6b0f0f;
+  margin: 20px 0;
+  line-height: 1.1;
+}
+.left-banner p {
+  font-size: 16px;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.right-banner {
+  width: 50%;
+}
+.right-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.click-banner {
+  display: flex;
+
+  gap: 35px;
+  margin-top: 20px;
+}
+.wiki-banner {
+  border: none;
+  background: #640d33;
+  border-radius: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: background 1s;
+  transition: all 0.3s ease;
+}
+.wiki-banner:hover {
+  background: #8f1e4f;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.shop-banner {
+  border: none;
+  background: #640d33;
+  border-radius: 30px;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: background 1s;
+  transition: all 0.3s ease;
+}
+.shop-banner:hover {
+  background: #8f1e4f;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filter {
+  background-color: #ede4d8;
+  /* Nền trắng giống --bg-white */
+
+  padding: 25px;
+  /* Tạo khoảng cách bên trong khung */
+
+  border-radius: 20px;
+  /* Bo góc theo hệ thống (--border-radius: 8px) */
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* Đổ bóng nhẹ giống biến --shadow */
+}
+
+.filter-header {
+  display: flex;
+  /* Cho title và reset nằm ngang */
+
+  justify-content: space-between;
+  /* Đẩy 1 cái sang trái, 1 cái sang phải */
+
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
+
+  margin-bottom: 10px;
+  /* Cách nhóm phía dưới */
+}
+
+.filter-title {
+  font-size: 1.2rem;
+  /* To hơn chữ thường */
+
+  color: #640d33;
+  /* Màu primary của nhóm */
+}
+
+.filter-reset {
+  font-size: 0.95rem;
+  /* Nhỏ hơn tiêu đề */
+
+  color: #8f1e4f;
+  /* Màu hover primary */
+
+  cursor: pointer;
+  /* Khi hover hiện bàn tay */
+
+  transition: 0.3s ease;
+  /* Hiệu ứng mượt khi hover */
+}
+
+.filter-reset:hover {
+  text-transform: underline;
+  transform: scale(1.15);
+  /* Hover có gạch chân */
+  transition: 1s ease;
+  opacity: 0.8;
+  /* Nhẹ đi khi hover */
+}
+
+.filter-group-price,
+.filter-group-color {
+  margin-bottom: 30px;
+  /* Tạo khoảng cách giữa các nhóm */
+}
+
+.filter-group-title {
+  font-size: 1rem;
+  /* Kích thước tiêu đề nhóm */
+
+  font-weight: 600;
+  /* Làm đậm hơn text thường */
+
+  margin-bottom: 12px;
+  /* Cách checkbox bên dưới */
+
+  color: #2c2c2c;
+  /* text-main */
+}
+
+.filter-option {
+  display: flex;
+  /* Checkbox và chữ nằm ngang */
+
+  align-items: center;
+  /* Căn giữa theo chiều dọc */
+
+  gap: 8px;
+  /* Khoảng cách giữa checkbox và chữ */
+
+  margin-bottom: 10px;
+  /* Khoảng cách giữa các dòng */
+
+  font-size: 0.95rem;
+  /* Nhỏ hơn tiêu đề */
+
+  color: #666666;
+  /* text-light */
+
+  cursor: pointer;
+  /* Hover có bàn tay */
+
+  transition: 1s ease;
+  /* Mượt khi hover */
+}
+
+.filter-option input {
+  accent-color: #640d33;
+  /* Đổi màu checkbox sang màu primary */
+}
+
+.filter-option:hover {
+  color: #640d33;
+
+  /* Hover đổi sang màu primary */
+}
+
+.filter-colors {
+  display: flex;
+  /* Các màu nằm ngang */
+
+  flex-wrap: wrap;
+  /* Tự xuống dòng khi không đủ chỗ */
+
+  gap: 12px;
+  /* Khoảng cách giữa các màu */
+}
+
+.color-option input {
+  display: none;
+  /* Ẩn checkbox mặc định */
+}
+
+.color-box {
+  width: 26px;
+  /* Kích thước vòng tròn */
+  display: inline-block; /* Cho phép đặt kích thước và margin */
+  height: 26px;
+
+  border-radius: 50%;
+  /* Biến thành hình tròn */
+
+  border: 2px solid #ddd;
+  /* Viền xám nhẹ */
+
+  transition: 1s ease;
+  /* Hiệu ứng mượt */
+}
+
+/* Khi checkbox được chọn */
+.color-option input:checked + .color-box {
+  border: 3px solid #640d33;
+  /* Viền primary khi active */
+
+  transform: scale(1.15);
+  /* Phóng to nhẹ */
+
+  box-shadow: 0 0 0 2px rgba(100, 13, 51, 0.15);
+  /* Tạo vòng sáng nhẹ bên ngoài */
+}
+
+/* Hover nhẹ khi rê chuột */
+.color-box:hover {
+  transform: scale(1.3);
+}
+
+.red {
+  background: #d63928;
+} /* Đỏ */
+.pink {
+  background: #cc548a;
+} /* Hồng */
+.yellow {
+  background: #f4c430;
+} /* Vàng */
+.orange {
+  background: #f39c12;
+} /* Cam */
+.blue {
+  background: #3498db;
+} /* Xanh */
+.purple {
+  background: #8e44ad;
+} /* Tím */
+.white {
+  background: #ffffff;
+  border: 2px solid #ccc;
+}
+
+/* Card tổng */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Khung ảnh */
+.product-card-img {
+  overflow: hidden; /* Giữ ảnh không tràn */
+}
+
+/* Ảnh sản phẩm */
+.product-card-img img {
+  width: 100%; /* Ảnh full chiều ngang */
+  height: 260px; /* Chiều cao cố định để các card đều nhau */
+  object-fit: cover; /* Không méo ảnh */
+  transition: transform 0.4s ease; /* Hiệu ứng zoom */
+}
+
+/* Zoom ảnh khi hover */
+.product-card:hover .product-card-img img {
+  transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Phần thông tin */
+.product-card-info {
+  padding: 16px; /* Khoảng cách bên trong */
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Tên sản phẩm */
+.product-card-info-name {
+  font-family: "Prata", serif; /* Font tiêu đề phụ theo nhóm */
+  font-size: 1.1rem; /* Kích thước chữ */
+  margin-bottom: 8px; /* Cách giá tiền */
+  color: #640d33; /* Màu chủ đạo berry */
+  transition: all 0.3s ease; /* Hiệu ứng đổi màu */
+}
+
+/* Đổi màu tên khi hover */
+.product-card:hover .product-card-info-name {
+  color: #8f1e4f; /* Màu hover */
+}
+
+/* Giá tiền */
+.product-card-info-price {
+  font-weight: 700; /* Chữ đậm */
+  font-size: 1rem; /* Kích thước chuẩn */
+  color: #2c2c2c; /* Màu chữ chính */
+  margin-bottom: 10px; /* Cách rating */
+}
+
+/* Rating */
+.product-card-info-rating {
+  display: flex; /* Cho icon và số nằm cùng hàng */
+  justify-content: center; /* Căn giữa */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  gap: 6px; /* Khoảng cách giữa icon và số */
+  font-size: 0.9rem; /* Nhỏ hơn giá tiền */
+  color: #666666; /* Màu chữ phụ */
+}
+
+/* Icon sao */
+.product-card-info-rating img {
+  width: 16px; /* Kích thước icon */
+  height: 16px;
+}
