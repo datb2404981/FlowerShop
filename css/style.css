@@ -1,52 +1,50 @@
-
 /* 1. IMPORT FONT */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap");
 
 /* 2. Global Variable*/
 :root {
-    /* --- BẢNG MÀU MỚI (BERRY & PORCELAIN) --- */
-    
-    /* 1. Màu chủ đạo (Logo, Nút bấm, Icon): Đổi từ Đỏ gạch sang Đỏ Mận (Plum/Berry) */
-    --primary-color: #640D33; 
-    
-    /* 2. Màu Hover (Khi di chuột vào): Sáng hơn một chút */
-    --primary-hover: #8F1E4F;
-    
-    /* 3. Màu nền chính: Trắng sứ (Sạch và sáng hơn màu Kem cũ) */
-    /* Trong hình mẫu nền rất trắng, pha chút xíu hồng cực nhẹ */
-    --bg-cream: #FFFFFF; 
-    
-    /* 4. Màu nền phụ (Cho các thẻ Card, Sidebar): Trắng tinh */
-    --bg-white: #FFFFFF;
-    
-    /* 5. Màu chữ: Đen xám hiện đại (Đừng dùng đen tuyền #000) */
-    --text-main: #2C2C2C;
-    --text-light: #666666;
-    --text-accent: #D4AF37;  /* Màu Vàng Gold (Dùng cho icon ngôi sao, điểm nhấn) */
+  /* --- BẢNG MÀU MỚI (BERRY & PORCELAIN) --- */
 
-    /* --- FONTS --- */
-    --font-heading: 'Yeseva One', cursive; /* Logo dùng font này */
-    --font-body: 'Lato', sans-serif;
-    --font-header: 'Prata', serif;  /* Font tiêu đề phụ */
-    
-    /* --- CẤU HÌNH KHÁC --- */
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  /* 1. Màu chủ đạo (Logo, Nút bấm, Icon): Đổi từ Đỏ gạch sang Đỏ Mận (Plum/Berry) */
+  --primary-color: #640d33;
 
-    /* --- KÍCH THƯỚC (SPACING) --- */
-    --container-width: 1200px;
-    --container-width-mobile: 100%;
-    --container-padding: 15px;
+  /* 2. Màu Hover (Khi di chuột vào): Sáng hơn một chút */
+  --primary-hover: #8f1e4f;
+
+  /* 3. Màu nền chính: Trắng sứ (Sạch và sáng hơn màu Kem cũ) */
+  /* Trong hình mẫu nền rất trắng, pha chút xíu hồng cực nhẹ */
+  --bg-cream: #ffffff;
+
+  /* 4. Màu nền phụ (Cho các thẻ Card, Sidebar): Trắng tinh */
+  --bg-white: #ffffff;
+
+  /* 5. Màu chữ: Đen xám hiện đại (Đừng dùng đen tuyền #000) */
+  --text-main: #2c2c2c;
+  --text-light: #666666;
+  --text-accent: #d4af37; /* Màu Vàng Gold (Dùng cho icon ngôi sao, điểm nhấn) */
+
+  /* --- FONTS --- */
+  --font-heading: "Yeseva One", cursive; /* Logo dùng font này */
+  --font-body: "Lato", sans-serif;
+  --font-header: "Prata", serif; /* Font tiêu đề phụ */
+
+  /* --- CẤU HÌNH KHÁC --- */
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+  /* --- KÍCH THƯỚC (SPACING) --- */
+  --container-width: 1200px;
+  --container-width-mobile: 100%;
+  --container-padding: 15px;
 }
 
 /* 3. CSS reset & base styles */
-*{
+* {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;  /*Giữ kích thức không bị phình */
+  box-sizing: border-box; /*Giữ kích thức không bị phình */
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -65,30 +63,35 @@ body {
   flex-direction: column;
 }
 
-main, .container {
+main,
+.container {
   flex: 1;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Var(--font-heading);
   color: var(--primary-color);
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
   transition: var(--transition);
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-img{
+img {
   max-width: 100%;
   display: block;
 }
-
 
 /* --- CẤU HÌNH RIÊNG CHO HEADER --- */
 /* 1. Nền và kích thước Navbar */
@@ -98,24 +101,24 @@ img{
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.5) !important; 
-  backdrop-filter: blur(10px); 
-  -webkit-backdrop-filter: blur(10px); 
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   padding: 10px 0 !important;
 }
 
 /* 2. Logo Flower Shop (Phải to và đậm đà) */
 .navbar-brand {
-  font-family: 'Yeseva One', cursive !important; 
-  font-size: 2.2rem !important; 
+  font-family: "Yeseva One", cursive !important;
+  font-size: 2.2rem !important;
   color: var(--primary-color) !important;
   letter-spacing: 0.5px;
 }
 
 /* 3. Menu chữ (Home, Sản phẩm...) */
 .nav-link {
-  font-family: 'Playfair Display', serif !important;
+  font-family: "Playfair Display", serif !important;
   /* Font có chân sang trọng */
   font-size: 1.1rem !important;
   font-weight: 500 !important;
@@ -155,25 +158,28 @@ img{
   --bs-dropdown-link-active-bg: rgba(100, 13, 51, 0.2);
   --bs-dropdown-link-hover-color: var(--primary-hover);
   --bs-dropdown-link-active-color: var(--primary-hover);
-  
+
   /* Critical for preventing Navbar expansion */
-  position: absolute !important; 
+  position: absolute !important;
   z-index: 2000 !important;
-  
+
   background-color: var(--bg-cream) !important;
-  border: 1px solid rgba(0,0,0,0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
 }
 
 .dropdown-item {
   color: var(--primary-color) !important;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   transition: all 0.2s ease;
 }
 
-.dropdown-item:hover, .dropdown-item:focus {
-  background-color: var(--bs-dropdown-link-hover-bg) !important; /* Use variable */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(
+    --bs-dropdown-link-hover-bg
+  ) !important; /* Use variable */
   color: var(--bs-dropdown-link-hover-color) !important;
   padding-left: 20px; /* Slide effect */
 }
