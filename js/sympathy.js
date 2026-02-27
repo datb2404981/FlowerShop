@@ -21,7 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render danh sách sản phẩm
   function renderProducts(data) {
     if (data.length === 0) {
-      productList.innerHTML = `<p class="text-center text-muted py-5">Không tìm thấy sản phẩm phù hợp với bộ lọc.</p>`;
+      productList.innerHTML = `
+      <div class="col-12 d-flex justify-content-center align-items-center" style="min-height: 400px;">
+        <p class="text-muted text-center m-0" style="font-size: 1.1rem;">Không tìm thấy sản phẩm phù hợp<br>với bộ lọc.</p>
+      </div>`;
       return;
     }
 
@@ -86,9 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Lọc theo màu (ít nhất 1 màu khớp)
       if (selectedColors.length > 0) {
-        matchColor = selectedColors.some((color) =>
-          product.color.includes(color),
-        );
+        matchColor = selectedColors.some((color) => product.color.includes(color));
       }
 
       return matchPrice && matchColor;

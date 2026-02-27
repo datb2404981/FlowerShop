@@ -18,21 +18,45 @@ class MyHeader extends HTMLElement {
    <style>
       .nav-link { transition: all 0.3s ease; }
       .nav-link:hover, .nav-link.active { transform: scale(1.05); text-shadow: 0 0 1px currentColor; color: var(--primary-hover) !important; }
+      
+      /* Đồng bộ hiệu ứng nút Menu Mobile giống y hệt với các mục nav-link */
+      .navbar-toggler {
+        transition: all 0.3s ease;
+        border: none !important;
+        background: transparent !important;
+      }
+      
+      /* Tắt triệt để cái viền màu đen xấu xí do Bootstrap tự tạo khi click */
+      .navbar-toggler:focus, .navbar-toggler:active {
+        box-shadow: none !important;
+        outline: none !important;
+      }
+      
+      /* Áp dụng hover và active y hệt ".nav-link" */
+      .navbar-toggler:hover, .navbar-toggler[aria-expanded="true"] {
+        transform: scale(1.1); /* Phóng to lên chút xíu */
+      }
+      
+      /* Đổi màu icon bên trong y hệt chữ link khi hover */
+      .navbar-toggler:hover i, .navbar-toggler[aria-expanded="true"] i {
+        color: var(--primary-hover) !important;
+        text-shadow: 0 0 1px currentColor;
+        transition: all 0.3s ease;
+      }
     </style>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--bg-cream); padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05);">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--bg-cream); padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.31);">
         <div class="container-fluid align-items-center">
 
-          <button class="navbar-toggler border-0 px-1" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <a class="navbar-brand me-0 mx-auto mx-lg-0" href="${basePath}index.html" 
+          <a class="navbar-brand me-0" href="${basePath}index.html" 
              style="font-family: 'Yeseva One', cursive; font-size: 1.8rem; color: var(--primary-color);">
-             <i class="bi bi-flower1 d-lg-none"></i> <span class="d-none d-lg-inline">Flower Shop</span> </a>
+             <!-- Ảnh logo thay thế cho icon hoa -->
+             <img class="d-lg-none" src="${basePath}assets/images/Log.png" alt="Flower Shop" style="height: 35px; width: auto; object-fit: contain;"> 
+             <span class="d-none d-lg-inline">Flower Shop</span> 
+          </a>
 
-          <div class="d-flex align-items-center gap-3 order-lg-last">
+          <div class="d-flex align-items-center gap-3 order-lg-last ms-auto">
             <a href="#" class="text-decoration-none"><i class="bi bi-search" style="font-size: 1.2rem; color: var(--primary-color);"></i></a>
             
             <a href="${basePath}cart.html" class="text-decoration-none position-relative">
@@ -40,9 +64,14 @@ class MyHeader extends HTMLElement {
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">0</span>
             </a>
 
-            <a href="${basePath}setting.html" class="text-decoration-none d-none d-sm-block">
+            <a href="${basePath}login.html" class="text-decoration-none d-none d-sm-block">
                 <i class="bi bi-person-circle" style="font-size: 1.3rem; color: var(--primary-color);"></i>
             </a>
+
+            <!-- Nút hamburger menu đưa qua bên phải ngoài cùng rẽ bằng d-lg-none -->
+            <button class="navbar-toggler border-0 px-1 d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="bi bi-list" style="font-size: 1.8rem; color: var(--primary-color);"></i>
+            </button>
           </div>
 
           <div class="collapse navbar-collapse justify-content-center" id="mobileMenu">
@@ -50,7 +79,7 @@ class MyHeader extends HTMLElement {
                 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 500; color: var(--primary-color);">
               
               <li class="nav-item">
-                <a class="nav-link ${isActive("builder.html")}" href="${basePath}builder.html" style="color: #D81B60; font-weight: bold;">
+                <a class="nav-link ${isActive("arragingPage.html")}" href="${basePath}arragingPage.html" style="color: #D81B60; font-weight: bold;">
                   <i class="bi bi-palette d-lg-none me-2"></i>Tự cắm hoa
                 </a>
               </li>
@@ -63,6 +92,7 @@ class MyHeader extends HTMLElement {
                   <li><a class="dropdown-item" href="${basePath}occasions/birthday.html">Sinh nhật</a></li>
                   <li><a class="dropdown-item" href="${basePath}occasions/valentine.html">Valentine</a></li>
                   <li><a class="dropdown-item" href="${basePath}occasions/grand_opening.html">Khai trương</a></li>
+                  <li><a class="dropdown-item" href="${basePath}occasions/sympathy.html">Lễ tang</a></li>
                 </ul>
               </li>
               
@@ -73,7 +103,7 @@ class MyHeader extends HTMLElement {
               </li>
 
               <li class="nav-item d-sm-none">
-                <a class="nav-link ${isActive("setting.html")}" href="${basePath}setting.html">
+                <a class="nav-link ${isActive("login.html")}" href="${basePath}login.html">
                   <i class="bi bi-person-circle me-2"></i>Tài khoản
                 </a>
               </li>
