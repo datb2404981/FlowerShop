@@ -1,0 +1,98 @@
+{
+    "flower": [
+        {
+            "id": 0,
+            "name": "Rose",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Rose.png"
+        },
+        {
+            "id": 1,
+            "name": "Blossom Purple Tulip",
+            "price": 15000,
+            "path": "assets/images/flowerImages/blossom_purple_tuplip.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Camellia",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Camellia_thumnail.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Blue Cornflower",
+            "price": 15000,
+            "path": "assets/images/flowerImages/cornflower_blue_thumnail.webp"
+        },
+        {
+            "id": 4,
+            "name": "Daisy",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Daisy_thumnail.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Forget me not",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Forget_me_not_thumnail.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Hydrangea",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Hydrangea_thumnail.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Lavender",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Lavender_thumnail.webp"
+        },
+        {
+            "id": 8,
+            "name": "Lisianthus",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Lisianthus_thumnail.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Pink Magnolia",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp"
+        },
+        {
+            "id": 10,
+            "name": "Pink Peony",
+            "price": 15000,
+            "path": "assets/images/flowerImages/Pink_peony_thumnail.jpg"
+        }
+    ],
+    "bouquet": [
+        {
+            "id": 0,
+            "name": "Normal",
+            "price": 15000,
+            "path": "assets/images/bouquets/bouquet01_texture.png"
+        },
+        {
+            "id": 1,
+            "name": "Normal",
+            "price": 15000,
+            "path": "assets/images/bouquets/Bouquet02_texture.png"
+        },
+        {
+            "id": 2,
+            "name": "Normal",
+            "price": 15000,
+            "path": "assets/images/bouquets/bouquet01.png"
+        }
+    ],
+    "decorations": [
+         {
+            "id": 0,
+            "name": "Duong Xi",
+            "price": 15000,
+            "path": "assets/images/decorations/DuongXi_texture.png"
+        }
+    ]
+}
