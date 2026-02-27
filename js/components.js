@@ -80,7 +80,7 @@ class MyHeader extends HTMLElement {
 
               <li class="nav-item d-none d-lg-block">
                 <a class="nav-link ${isActive("about.html")} text-center px-1" href="${basePath}about.html">
-                  About
+                  Liên Hệ
                 </a>
               </li>
               
