@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap');
+
+.container{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;     
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.group{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "hoa1 hoa2 hoa3";
+    gap: 100px;
+    justify-items: center; 
+    width: 100%;
+    max-width: 1200px;
+   
+}
+.object{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+
+.object img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    max-width: 300px;
+}
+.object p{
+    margin-top: 10px;
+    width: fit-content;
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+.object a{
+    display: block;
+    width: 100%;
+}
+.object:hover{
+    background: rgba(170, 9, 9, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
+    animation: pulseSelect 0.25s ease;
+    padding: 15px;
+}
+
+.gthoa {
+    text-align: left;
+}
+.gthoa h2{
+    margin-top: 20px;
+}
+.container h1{
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width:480px) {
+    .group{
+    grid-template-columns: 1fr ;
+    grid-template-areas:"hoa1";
+    }
+}
+
+/* Bọc quanh ảnh để chứa lớp overlay đổ gradient */
+.banner-wrapper {
+  position: relative;
+  border-radius: 20px;
+  margin: 0 auto; /* Căn giữa */
+  width: calc(100vw - 100px); /* Cách lề 10px mỗi bên */
+  max-height: 700px;
+  overflow: hidden; /* Cắt gọn lớp đổ màu nếu vượt ra ngoài */
+  transition: all 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+}
+
+/* Ảnh trải dài hoàn toàn vừa khớp chiều dọc ngang của wrapper */
+.banner-wrapper img {
+  display: block;
+  width: 100%; 
+  max-height: 700px; 
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* Lớp phủ mờ sang trọng, quyền lực */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient kết hợp màu mận chín (primary-color) ở đáy và mờ dần lên trên */
+  background: linear-gradient(to top, rgba(100, 13, 51, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
+  backdrop-filter: blur(3px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
+  pointer-events: none; 
+}
+
+/* Khi rê chuột vào, ảnh bên trong sẽ phóng to lên */
+.banner-wrapper:hover img {
+  transform: scale(1.05); /* Phóng to ảnh lên 5% bên trong wrapper */
+}
+
+/* --- PHẦN NỘI DUNG CHỮ TRÊN BANNER --- */
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Căn giữa tuyệt đối ngang dọc */
+  width: 100%;
+  padding: 0 20px;
+  color: #fff; /* Đổi về màu Trắng để tương phản rực rỡ trên nền tối */
+  z-index: 2; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Tiêu đề phụ (rất nhỏ, in hoa) */
+.banner-subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #f8cdda; /* Điểm nhấn một chút màu cánh sen nhạt cực đẹp */
+}
+
+/* Tiêu đề chính (Chữ siêu to, dùng font có chân) */
+.banner-title {
+  font-family: var(--font-heading);
+  font-size: 6.5rem; /* Kích thước siêu lớn và hoành tráng */
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+  text-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Bóng đổ cho chữ có chiều sâu 3D */
+}
+
+/* Đoạn text mô tả */
+.banner-desc {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 300;
+  opacity: 0.95;
+  line-height: 1.6;
+  max-width: 600px; /* Thu gọn chiều rông để văn bản cắt dòng tinh tế hơn */
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+/* Nút bấm trên banner (Nâng cấp giao diện nút) */
+.banner-content .btn-buy {
+  background-color: transparent !important;
+  border: 1px solid #fff !important;
+  color: #fff !important;
+  border-radius: 5px; /* Vuông vắn đúng chuẩn Luxury */
+  padding: 12px 35px !important;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: all 0.4s ease;
+  margin-top: 25px !important;
+}
+
+.banner-content .btn-buy:hover {
+  background-color: #ffffff !important;
+  color: var(--primary-color) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Trải nghiệm Responsive trên màn hình nhỏ (Mobile) */
+@media (max-width: 768px) {
+  .banner-wrapper {
+    width: calc(100vw - 30px); /* Bớt thụt lề hai bên trên điện thoại để banner to ra */
+    min-height: 450px; /* Đảm bảo khối banner đủ cao không bị chèn ép chữ */
+  }
+  .banner-wrapper img {
+    min-height: 450px; /* Bắt buộc hình tối thiểu cũng phải cao bằng wrapper */
+  }
+  .banner-title {
+    font-size: 3.2rem; /* Thu nhỏ tiêu đề thêm một chút nữa tránh rớt dòng xấu */
+    letter-spacing: 1px;
+  }
+  .banner-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+  .banner-desc {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+  .banner-content .btn-buy {
+    padding: 10px 25px !important;
+    font-size: 0.8rem;
+    margin-top: 15px !important;
+  }
+}
