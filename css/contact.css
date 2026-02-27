@@ -144,7 +144,6 @@ select{
         height: auto;
         padding: 20px;
     }
-    
 }
 #thongbaottlh{
     display: none;
@@ -160,7 +159,9 @@ select{
     border-radius: 15px;
     padding: 2px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    white-space: nowrap;
 }
+
 .toast-icon {
     color: #28a745; 
     font-size: 22px;
