@@ -12,8 +12,8 @@
 /* Ảnh trải dài hoàn toàn vừa khớp chiều dọc ngang của wrapper */
 .banner-wrapper img {
   display: block;
-  width: 100%; 
-  max-height: 700px; 
+  width: 100%;
+  max-height: 700px;
   object-fit: cover;
   transition: all 0.3s ease;
 }
@@ -26,9 +26,13 @@
   width: 100%;
   height: 100%;
   /* Gradient kết hợp màu mận chín (primary-color) ở đáy và mờ dần lên trên */
-  background: linear-gradient(to top, rgba(100, 13, 51, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(100, 13, 51, 0.9) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   backdrop-filter: blur(3px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* Khi rê chuột vào, ảnh bên trong sẽ phóng to lên */
@@ -45,7 +49,7 @@
   width: 100%;
   padding: 0 20px;
   color: #fff; /* Đổi về màu Trắng để tương phản rực rỡ trên nền tối */
-  z-index: 2; 
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,7 +115,9 @@
 /* Trải nghiệm Responsive trên màn hình nhỏ (Mobile) */
 @media (max-width: 768px) {
   .banner-wrapper {
-    width: calc(100vw - 30px); /* Bớt thụt lề hai bên trên điện thoại để banner to ra */
+    width: calc(
+      100vw - 30px
+    ); /* Bớt thụt lề hai bên trên điện thoại để banner to ra */
     min-height: 450px; /* Đảm bảo khối banner đủ cao không bị chèn ép chữ */
   }
   .banner-wrapper img {
@@ -169,7 +175,7 @@
 /* Card tổng */
 .product-card {
   background-color: #ffffff;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -214,50 +220,69 @@
 
 /* Tên sản phẩm */
 .product-card-info-name {
-  font-family: "Prata", serif;
-  /* Font tiêu đề phụ theo nhóm */
-  font-size: 1.1rem;
-  /* Kích thước chữ */
+  font-family: var(--font-heading); /* Yeseva One for bold look */
+  font-size: 1.15rem;
   margin-bottom: 8px;
-  /* Cách giá tiền */
   color: #640d33;
-  /* Màu chủ đạo berry */
   transition: all 0.3s ease;
-  /* Hiệu ứng đổi màu */
 }
 
-/* Đổi màu tên khi hover */
-.product-card:hover .product-card-info-name {
+.product-card-info:hover .product-card-info-name {
   color: #8f1e4f;
-  /* Màu hover */
+}
+
+.product-card-info-bottom {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important; /* Vertically center children */
+  margin-top: 15px;
+  line-height: 1; /* Match baselines better */
 }
 
 /* Giá tiền */
 .product-card-info-price {
-  font-weight: 700;
-  /* Chữ đậm */
-  font-size: 1rem;
-  /* Kích thước chuẩn */
-  color: #2c2c2c;
-  /* Màu chữ chính */
-  margin-bottom: 10px;
-  /* Cách rating */
+  font-family: "Prata", serif;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  color: #333333 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.price-currency {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.6em;
+  font-weight: 600;
+  color: #666666;
+  margin-left: 3px;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em; /* Manual superscript positioning */
 }
 
 /* Rating */
 .product-card-info-rating {
-  display: flex;
-  /* Cho icon và số nằm cùng hàng */
-  justify-content: center;
-  /* Căn giữa */
-  align-items: center;
-  /* Căn giữa theo chiều dọc */
-  gap: 6px;
-  /* Khoảng cách giữa icon và số */
-  font-size: 0.9rem;
-  /* Nhỏ hơn giá tiền */
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px;
+  font-size: 1.05rem;
   color: #666666;
-  /* Màu chữ phụ */
+  margin-bottom: 0;
+}
+
+.product-card-info-rating i {
+  color: var(--text-accent);
+  font-size: 1.1rem;
+  line-height: 1;
+  display: inline-block;
+  margin-top: -3px; /* Visual nudge for better alignment */
+}
+
+.product-card-info-rating span {
+  display: inline-block;
+  line-height: 1;
 }
 
 /* Icon sao */
@@ -320,7 +345,7 @@
 
 /* The Checkmark */
 .filter-option input[type="checkbox"]:checked::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 1px;
   left: 5px;
@@ -346,25 +371,33 @@
 }
 
 @keyframes pulseSelect {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* --- Premium Sort Dropdown --- */
-.custom-sort-btn {
-  border-radius: 20px !important;
+.custom-sort-btn,
+.custom-filter-btn {
+  border-radius: 15px !important;
   border: 1.5px solid #eaeaea !important;
-  padding: 8px 18px !important;
+  padding: 6px 16px !important;
   color: #555 !important;
   font-weight: 500;
   font-size: 0.95rem;
   transition: all 0.3s ease;
-  min-width: 190px;
 }
 
 .custom-sort-btn:hover,
+.custom-filter-btn:hover,
 .custom-sort-btn:focus,
+.custom-filter-btn:focus,
 .custom-sort-dropdown.show .custom-sort-btn {
   border-color: #8b1c31 !important;
   color: #8b1c31 !important;
@@ -383,13 +416,19 @@
   border-radius: 16px !important;
   padding: 10px 0 !important;
   min-width: 220px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
   animation: fadeDropdown 0.2s ease;
 }
 
 @keyframes fadeDropdown {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .custom-sort-menu .dropdown-item {
@@ -429,7 +468,7 @@
   .filter.position-sticky {
     position: static !important;
     top: auto !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
     border: 1px solid #f2f2f2;
     padding: 20px !important;
     margin-bottom: 24px;
@@ -439,37 +478,56 @@
   .product-card-img img {
     height: 200px;
   }
-  
+
   /* Dropdown sắp xếp chiếm full chiều ngang trên mobile */
-  .custom-sort-dropdown, .custom-sort-btn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 575.98px) {
   /* Tối ưu chiều cao ảnh cho màn Mobile 2 cột */
   .product-card-img img {
-    height: 150px; 
+    height: 150px;
   }
-  
+
   /* Giảm Padding trong thông tin thẻ card */
   .product-card-info {
     padding: 12px 10px;
   }
-  
+
   /* Giảm size chữ card trên mobile cho cân đối */
   .product-card-info-name {
     font-size: 0.95rem;
     margin-bottom: 4px;
   }
-  
+
   .product-card-info-price {
     font-size: 0.95rem !important;
     margin-bottom: 6px;
   }
-  
+
   /* Giảm header text */
   h2[style*="2.2rem"] {
     font-size: 1.8rem !important;
+  }
+}
+
+.custom-filter-btn i {
+  margin-right: 6px;
+  color: inherit;
+}
+.custom-filter-btn[aria-expanded="true"] {
+  border-color: #8b1c31 !important;
+  color: #8b1c31 !important;
+}
+
+.actions-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .actions-wrapper {
+    width: auto;
+    justify-content: flex-end;
   }
 }

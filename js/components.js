@@ -8,7 +8,10 @@ class MyHeader extends HTMLElement {
     const currentFile = window.location.pathname.split("/").pop();
     const isActive = (fileName) => {
       // Nếu file hiện tại trùng tên HOẶC (đang ở trang chủ mà file là index.html)
-      if (currentFile === fileName || (currentFile === "" && fileName === "index.html")) {
+      if (
+        currentFile === fileName ||
+        (currentFile === "" && fileName === "index.html")
+      ) {
         return "active";
       }
       return "";
@@ -175,7 +178,10 @@ class MyHeader extends HTMLElement {
           searchOpen = true;
         } else {
           // Nếu có nội dung thì Submit form để tìm kiếm
-          if (searchInput.value.trim() !== "" && urlSearch !== searchInput.value.trim()) {
+          if (
+            searchInput.value.trim() !== "" &&
+            urlSearch !== searchInput.value.trim()
+          ) {
             searchForm.submit();
           } else {
             // Nếu ô trống (hoặc y nguyên) thì Đóng lại

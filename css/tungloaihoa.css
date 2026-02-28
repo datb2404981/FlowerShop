@@ -1,57 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap');
-#ten-hoa{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 25px;}
-.noidung{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    text-align: justify;
-    font-size: 18px;
-    line-height: 1.6;
-    gap:40px
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap");
+#ten-hoa {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
-.noidungnho{
-    display: flex;
-    margin-bottom: 30px;
-    flex-direction: row;
-    width: 100%;
-    gap:30px;
-    text-align:justify;
+.noidung {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.6;
+  gap: 40px;
 }
-.noidungnho img{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    float: right;
+.noidungnho {
+  display: flex;
+  margin-bottom: 30px;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+  text-align: justify;
 }
-.trai,.phai{
-    flex: 1;
+.noidungnho img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  float: right;
 }
-#ten-hoa{
-    font-size: 50pt;
+.trai,
+.phai {
+  flex: 1;
 }
-#mo-ta1,#mo-ta2,#mo-ta3{
-    font-size: 15.5pt;
+#ten-hoa {
+  font-size: 50pt;
+}
+#mo-ta1,
+#mo-ta2,
+#mo-ta3 {
+  font-size: 15.5pt;
 }
 @media screen and (max-width: 480px) {
-    #ten-hoa{
-        font-size: 30pt;
-    }
-    .noidungnho{
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .noidungnho img{
-        height: 250px;
-    }
-    .phai{
-        order: -1;
-    }
+  #ten-hoa {
+    font-size: 30pt;
+  }
+  .noidungnho {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .noidungnho img {
+    height: 250px;
+  }
+  .phai {
+    order: -1;
+  }
 }
 .banner-wrapper {
   position: relative;
@@ -66,8 +70,8 @@
 /* Ảnh trải dài hoàn toàn vừa khớp chiều dọc ngang của wrapper */
 .banner-wrapper img {
   display: block;
-  width: 100%; 
-  max-height: 700px; 
+  width: 100%;
+  max-height: 700px;
   object-fit: cover;
   transition: all 0.4s ease;
 }
@@ -80,9 +84,13 @@
   width: 100%;
   height: 100%;
   /* Gradient kết hợp màu mận chín (primary-color) ở đáy và mờ dần lên trên */
-  background: linear-gradient(to top, rgba(100, 13, 51, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(100, 13, 51, 0.9) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   backdrop-filter: blur(3px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 /* Khi rê chuột vào, ảnh bên trong sẽ phóng to lên */
@@ -99,7 +107,7 @@
   width: 100%;
   padding: 0 20px;
   color: #fff; /* Đổi về màu Trắng để tương phản rực rỡ trên nền tối */
-  z-index: 2; 
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,7 +115,7 @@
 
 /* Tiêu đề phụ (rất nhỏ, in hoa) */
 .banner-subtitle {
-  font-family:  var(--font-heading);
+  font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 5px;
@@ -140,11 +148,12 @@
   color: #ffffff;
 }
 
-
 /* Trải nghiệm Responsive trên màn hình nhỏ (Mobile) */
 @media (max-width: 768px) {
   .banner-wrapper {
-    width: calc(100vw - 30px); /* Bớt thụt lề hai bên trên điện thoại để banner to ra */
+    width: calc(
+      100vw - 30px
+    ); /* Bớt thụt lề hai bên trên điện thoại để banner to ra */
     min-height: 450px; /* Đảm bảo khối banner đủ cao không bị chèn ép chữ */
   }
   .banner-wrapper img {

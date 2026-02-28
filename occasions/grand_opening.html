@@ -19,45 +19,34 @@
     <link rel="stylesheet" href="/css/detail.css" />
     <link rel="stylesheet" href="/css/event.css" />
   </head>
-  
+  <body>
     <my-header></my-header>
     <section class="banner">
       <div class="left-banner">
         <span class="banner-sub">THE PROSPERITY COLLECTION</span>
-        <h1>HOA CHO DỊP KHAI TRUONG</h1>
+        <h1>HOA CHO DỊP KHAI TRƯƠNG</h1>
         <p>
-          Dịp khai trương là một sự kiện quan trọng đánh dấu sự khởi đầu mới mẻ và hoa là lựa chọn không thể thiếu.
+          Dịp khai trương là một sự kiện quan trọng đánh dấu sự khởi đầu mới mẻ
+          và hoa là lựa chọn không thể thiếu.
         </p>
         <div class="click-banner">
           <a href="/wiki.html" class="wiki-banner">Thông tin về hoa</a>
-          <a href="/shop.html" class="shop-banner">Tất cả sản phẩm</a>
+          <a href="/index.html" class="shop-banner">Tất cả sản phẩm</a>
         </div>
       </div>
       <div class="right-banner">
-        <img
-          src="/assets/images/imgProduct/mn9kB.jpg"
-        />
+        <img src="/assets/images/imgProduct/mn9kB.jpg" />
       </div>
     </section>
     <div class="container my-5">
-      <button
-    class="btn btn-outline-dark d-md-none mb-3"
-    type="button"
-    data-bs-toggle="collapse"
-    data-bs-target="#filterCollapse"
-  >
-    <i class="bi bi-funnel"></i> Bộ lọc
-  </button>
-
- 
       <div class="row">
         <!-- Filter -->
-         <div class="col-md-3 collapse d-md-block" id="filterCollapse">
-          <div class="filter">
+        <div class="col-lg-3 collapse d-lg-block mb-4" id="filterCollapse">
+          <div class="filter position-sticky">
             <div class="filter-header">
               <h4 class="filter-title">Filters</h4>
-              <span class="filter-reset">
-                <i class="bi bi-arrow-clockwise"></i>
+              <span class="filter-reset" title="Khôi phục">
+                <i class="bi bi-arrow-counterclockwise"></i>
               </span>
             </div>
 
@@ -88,63 +77,325 @@
             <div class="filter-group-color">
               <h6 class="filter-group-title">Màu hoa</h6>
 
-              <div class="filter-colors">
-                <!-- ĐỎ -->
-                <label class="color-option">
-                  <input type="checkbox" value="Đỏ" />
-                  <span class="color-box red"></span>
+              <div class="filter-colors d-flex flex-wrap gap-3">
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Đỏ"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box red rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #8b1c31;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Đỏ"
+                  ></span>
                 </label>
-
-                <!-- HỒNG -->
-                <label class="color-option">
-                  <input type="checkbox" value="Hồng" />
-                  <span class="color-box pink"></span>
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Hồng"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box pink rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #f1a2c0;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Hồng"
+                  ></span>
                 </label>
-
-                <!-- VÀNG -->
-                <label class="color-option">
-                  <input type="checkbox" value="Vàng" />
-                  <span class="color-box yellow"></span>
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Trắng"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box white rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #ffffff;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #eee;
+                    "
+                    title="Trắng"
+                  ></span>
                 </label>
-
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Vàng"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box yellow rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #f4c430;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Vàng"
+                  ></span>
+                </label>
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Tím"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box purple rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #a65fdb;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Tím"
+                  ></span>
+                </label>
                 <!-- CAM -->
-                <label class="color-option">
-                  <input type="checkbox" value="Cam" />
-                  <span class="color-box orange"></span>
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Cam"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box orange rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #f67a21;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Cam"
+                  ></span>
                 </label>
-
                 <!-- XANH -->
-                <label class="color-option">
-                  <input type="checkbox" value="Xanh" />
-                  <span class="color-box blue"></span>
-                </label>
-
-                <!-- TÍM -->
-                <label class="color-option">
-                  <input type="checkbox" value="Tím" />
-                  <span class="color-box purple"></span>
-                </label>
-
-                <!-- TRẮNG -->
-                <label class="color-option">
-                  <input type="checkbox" value="Trắng" />
-                  <span class="color-box white"></span>
+                <label
+                  class="color-option position-relative m-0"
+                  style="cursor: pointer"
+                >
+                  <input
+                    type="checkbox"
+                    value="Xanh"
+                    class="position-absolute opacity-0"
+                  />
+                  <span
+                    class="color-box blue rounded-circle d-inline-block shadow-sm transition-all"
+                    style="
+                      background: #2a75d3;
+                      width: 28px;
+                      height: 28px;
+                      border: 2px solid #fff;
+                    "
+                    title="Xanh"
+                  ></span>
                 </label>
               </div>
+              <style>
+                .filter-colors input[type="checkbox"]:checked + .color-box {
+                  transform: scale(1.15);
+                  box-shadow: 0 0 0 3px rgba(100, 13, 51, 0.4) !important;
+                  border-color: #fff !important;
+                }
+                .filter-colors .color-box:hover {
+                  transform: scale(1.1);
+                }
+              </style>
             </div>
           </div>
         </div>
 
-       
-        <div class="col-md-9">
+        <div class="col-lg-9">
+          <div
+            class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-end border-bottom pb-4 mb-4"
+          >
+            <div class="mb-3 mb-sm-0">
+              <h2
+                class="mb-2"
+                style="
+                  font-family: &quot;Prata&quot;, serif;
+                  color: #8b1c31;
+                  font-size: 2.2rem;
+                  font-weight: 600;
+                "
+              >
+                Tất Cả Sản Phẩm
+              </h2>
+            </div>
+
+            <div class="actions-wrapper mt-3 mt-sm-0">
+              <button
+                class="btn custom-filter-btn d-lg-none shadow-none d-flex justify-content-center align-items-center bg-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#filterCollapse"
+                aria-expanded="false"
+              >
+                <i class="bi bi-funnel"></i> Bộ lọc
+              </button>
+              <div class="dropdown custom-sort-dropdown position-relative">
+                <button
+                  class="btn custom-sort-btn shadow-none d-flex justify-content-between align-items-center bg-white"
+                  type="button"
+                  id="sortDropdownBtn"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span id="sort-selected-text">Sắp xếp: Nổi bật</span>
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end custom-sort-menu border-0 shadow-lg py-2 mt-2"
+                  aria-labelledby="sortDropdownBtn"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item active d-flex align-items-center"
+                      href="#"
+                      data-value="featured"
+                      ><i class="bi bi-check2 me-2 check-icon"></i>Sắp xếp: Nổi
+                      bật</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center"
+                      href="#"
+                      data-value="price-asc"
+                      ><i class="bi bi-check2 me-2 check-icon"></i>Giá: Thấp đến
+                      Cao</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center"
+                      href="#"
+                      data-value="price-desc"
+                      ><i class="bi bi-check2 me-2 check-icon"></i>Giá: Cao đến
+                      Thấp</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item d-flex align-items-center"
+                      href="#"
+                      data-value="rating"
+                      ><i class="bi bi-check2 me-2 check-icon"></i>Đánh giá cao
+                      nhất</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <select id="sort-select" style="display: none">
+                <option value="featured">Sắp xếp: Nổi bật</option>
+                <option value="price-asc">Giá: Thấp đến Cao</option>
+                <option value="price-desc">Giá: Cao đến Thấp</option>
+                <option value="rating">Đánh giá cao nhất</option>
+              </select>
+            </div>
+          </div>
           <!-- Product grid -->
-           <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4" id="product-list">
-             <!-- Sản phẩm sẽ được render ở đây -->
-          
+          <div
+            class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"
+            id="product-list"
+          >
+            <!-- Sản phẩm sẽ được render ở đây -->
+          </div>
+
+          <!-- Phân trang -->
+          <div class="d-flex justify-content-center mt-5 w-100">
+            <ul
+              id="pagination"
+              class="pagination border-0 flex-wrap justify-content-center"
+              style="font-family: &quot;Lato&quot;, sans-serif"
+            >
+              <!-- JS thiết lập -->
+            </ul>
+            <style>
+              #pagination {
+                gap: 8px; /* Khoảng cách giữa các số */
+                flex-wrap: wrap; /* Cho phép rớt dòng trên điện thoại */
+                justify-content: center;
+              }
+              #pagination .page-item .page-link {
+                border: none;
+                color: #555;
+                font-size: 1.05rem;
+                font-weight: 500;
+                border-radius: 50% !important;
+                width: 42px;
+                height: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+                background-color: transparent;
+                transition: all 0.25s ease;
+              }
+              #pagination .page-item.active .page-link {
+                background-color: #8b1c31; /* Màu đỏ mận (Berry) */
+                color: white;
+                box-shadow: 0 4px 12px rgba(139, 28, 49, 0.25);
+              }
+              #pagination .page-item .page-link:hover:not(.active) {
+                background-color: #f4eaec; /* Hồng pastel trong suốt mờ */
+                color: #8b1c31;
+              }
+              #pagination .page-item .page-link:focus {
+                box-shadow: none;
+              }
+              #pagination .page-item.disabled .page-link {
+                color: #bbb;
+                background-color: transparent;
+              }
+
+              /* Responsive cho Mobile: Giảm size tròn và khoảng cách ép buộc vào dòng */
+              @media (max-width: 575.98px) {
+                #pagination {
+                  gap: 3px !important;
+                }
+                #pagination .page-item .page-link {
+                  width: 30px !important;
+                  height: 30px !important;
+                  font-size: 0.85rem !important;
+                }
+              }
+            </style>
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <my-footer></my-footer>
   </body>
   <script

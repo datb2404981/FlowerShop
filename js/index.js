@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Format giá tiền theo dấu . tiếng anh và chữ vnđ cực nhỏ ở góc
   function formatPrice(price) {
     return (
-      price.toLocaleString("en-US") +
-      `<sup style="font-size: 0.65em; font-weight: 600; margin-left: 2px; text-transform: lowercase;">vnđ</sup>`
+      price.toLocaleString("en-US") + '<sup class="price-currency">vnđ</sup>'
     );
   }
 
@@ -60,10 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="product-card-info">
               <h5 class="product-card-info-name">${product.name}</h5>
-              <p class="product-card-info-price" style="font-size: 1.15rem;">${formatPrice(product.price)}</p>
-              <div class="product-card-info-rating">
-                <img src="${basePath}assets/images/logo_rating.png" alt="rating" />
-                <span>${product.rating}</span>
+              <div class="product-card-info-bottom">
+                <div class="product-card-info-rating">
+                  <i class="bi bi-star-fill" style="color: var(--text-accent); -webkit-text-stroke: 1px var(--text-accent);"></i>
+                  <span>${product.rating}</span>
+                </div>
+                <p class="product-card-info-price" >${formatPrice(product.price)}</p>
               </div>
             </div>
           </div>
@@ -90,10 +91,12 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="product-card-info">
               <h5 class="product-card-info-name">${product.name}</h5>
-              <p class="product-card-info-price" style="font-size: 1.15rem;">${formatPrice(product.price)}</p>
-              <div class="product-card-info-rating">
-                <img src="${basePath}assets/images/logo_rating.png" alt="rating" />
-                <span>${product.rating}</span>
+              <div class="product-card-info-bottom">
+                <div class="product-card-info-rating">
+                  <i class="bi bi-star-fill" style="color: var(--text-accent); -webkit-text-stroke: 1px var(--text-accent);"></i>
+                  <span>${product.rating}</span>
+                </div>
+                <p class="product-card-info-price" >${formatPrice(product.price)}</p>
               </div>
             </div>
           </div>
@@ -123,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Áp dụng lọc
   function applyFilters() {
-    const { selectedPrices, selectedOccasions, selectedColors } = getActiveFilters();
+    const { selectedPrices, selectedOccasions, selectedColors } =
+      getActiveFilters();
 
     filteredProducts = allProducts.filter((product) => {
       let matchPrice = true;
@@ -145,12 +149,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Lọc theo chủ đề (Occasion)
       if (selectedOccasions.length > 0) {
-        matchOccasion = selectedOccasions.some((occ) => product.category.includes(occ));
+        matchOccasion = selectedOccasions.some((occ) =>
+          product.category.includes(occ),
+        );
       }
 
       // Lọc theo màu
       if (selectedColors.length > 0) {
-        matchColor = selectedColors.some((color) => product.color.includes(color));
+        matchColor = selectedColors.some((color) =>
+          product.color.includes(color),
+        );
       }
 
       return matchPrice && matchOccasion && matchColor;
@@ -202,7 +210,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cập nhật nhãn đếm sản phẩm
     if (productCountLabel) {
-      let showingEnd = Math.min(currentPage * itemsPerPage, sortedProducts.length);
+      let showingEnd = Math.min(
+        currentPage * itemsPerPage,
+        sortedProducts.length,
+      );
       let showingStart =
         sortedProducts.length === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
       productCountLabel.textContent = `Hiển thị ${showingStart}-${showingEnd} trong số ${sortedProducts.length} sản phẩm`;
@@ -249,7 +260,14 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentPage <= 3) {
         pages.push(1, 2, 3, 4, "...", totalPages);
       } else if (currentPage >= totalPages - 2) {
-        pages.push(1, "...", totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+        pages.push(
+          1,
+          "...",
+          totalPages - 3,
+          totalPages - 2,
+          totalPages - 1,
+          totalPages,
+        );
       } else {
         pages.push(
           1,
@@ -308,7 +326,8 @@ document.addEventListener("DOMContentLoaded", () => {
           renderPaginatedProducts();
 
           // Cuộn nhẹ lên đầu Danh sách sản phẩm (Tùy chọn cho xịn)
-          const listTop = productList.getBoundingClientRect().top + window.scrollY - 100;
+          const listTop =
+            productList.getBoundingClientRect().top + window.scrollY - 100;
           window.scrollTo({ top: listTop, behavior: "smooth" });
         }
       });
@@ -340,7 +359,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Tự động cuộn xuống phần sản phẩm nếu người dùng đang Tìm kiếm
       const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get("search") && document.querySelector(".products-section")) {
+      if (
+        urlParams.get("search") &&
+        document.querySelector(".products-section")
+      ) {
         setTimeout(() => {
           document
             .querySelector(".products-section")
@@ -366,7 +388,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Gắn sự kiện thay đổi checkbox
   priceCheckboxes.forEach((cb) => cb.addEventListener("change", applyFilters));
-  occasionCheckboxes.forEach((cb) => cb.addEventListener("change", applyFilters));
+  occasionCheckboxes.forEach((cb) =>
+    cb.addEventListener("change", applyFilters),
+  );
   colorCheckboxes.forEach((cb) => cb.addEventListener("change", applyFilters));
 
   // Sự kiện khi Sort thay đổi
@@ -378,7 +402,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Gắn sự kiện cho Dropdown Menu Custom UI
-  const sortItems = document.querySelectorAll(".custom-sort-menu .dropdown-item");
+  const sortItems = document.querySelectorAll(
+    ".custom-sort-menu .dropdown-item",
+  );
   const sortSelectedText = document.getElementById("sort-selected-text");
 
   if (sortItems.length > 0 && sortSelect) {
