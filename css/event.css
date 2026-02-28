@@ -4,10 +4,12 @@
   min-height: 600px;
   background: #ede4d8;
   max-width: 1600px; /* Giới hạn chiều rộng tối đa */
-  margin: 0 auto;
+  margin: 0 20px 40px 20px;
   border-radius: 20px;
   overflow: hidden; /* Ẩn phần thừa khi bo góc */
   margin-bottom: 40px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
 }
 .left-banner {
   width: 50%;
@@ -53,10 +55,10 @@
 .wiki-banner {
   border: none;
   background: #640d33;
-  border-radius: 30px;
+  border-radius: 20px;
   color: #ffffff;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 20px 20px;
   transition: background 1s;
   transition: all 0.3s ease;
 }
@@ -68,10 +70,10 @@
 .shop-banner {
   border: none;
   background: #640d33;
-  border-radius: 30px;
+  border-radius: 20px;
   color: #ffffff;
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 20px 20px;
   transition: background 1s;
   transition: all 0.3s ease;
 }
@@ -82,7 +84,7 @@
 }
 
 .filter {
-  background-color: #ede4d8;
+  background-color: #ffffff;
   /* Nền trắng giống --bg-white */
 
   padding: 25px;
@@ -91,10 +93,19 @@
   border-radius: 20px;
   /* Bo góc theo hệ thống (--border-radius: 8px) */
 
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
   /* Đổ bóng nhẹ giống biến --shadow */
+  transition: all 0.3s ease;
 }
 
+.filter:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1);
+}
 .filter-header {
   display: flex;
   /* Cho title và reset nằm ngang */
@@ -118,26 +129,27 @@
 }
 
 .filter-reset {
-  font-size: 0.95rem;
-  /* Nhỏ hơn tiêu đề */
-
+  font-size: 1.45rem; /* Kích thước icon đẹp */
   color: #8f1e4f;
-  /* Màu hover primary */
-
   cursor: pointer;
-  /* Khi hover hiện bàn tay */
-
-  transition: 0.3s ease;
-  /* Hiệu ứng mượt khi hover */
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }
 
 .filter-reset:hover {
-  text-transform: underline;
-  transform: scale(1.15);
-  /* Hover có gạch chân */
-  transition: 1s ease;
-  opacity: 0.8;
-  /* Nhẹ đi khi hover */
+  color: #640d33;
+}
+
+.filter-reset i {
+  transition: transform 0.5s ease;
+}
+
+.filter-reset:hover i {
+  transform: rotate(360deg); /* Hiệu ứng quay 1 vòng đẹp như Chrome */
 }
 
 .filter-group-price,
@@ -182,7 +194,7 @@
   cursor: pointer;
   /* Hover có bàn tay */
 
-  transition: 1s ease;
+  transition: 0.5s ease;
   /* Mượt khi hover */
 }
 
@@ -225,7 +237,7 @@
   border: 2px solid #ddd;
   /* Viền xám nhẹ */
 
-  transition: 1s ease;
+  transition: 0.5s ease;
   /* Hiệu ứng mượt */
 }
 
@@ -281,6 +293,7 @@
 .product-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(170, 9, 9, 0.06);
 }
 
 /* Khung ảnh */
@@ -309,8 +322,8 @@
 
 /* Tên sản phẩm */
 .product-card-info-name {
-  font-family: "Prata", serif; /* Font tiêu đề phụ theo nhóm */
-  font-size: 1.1rem; /* Kích thước chữ */
+  font-family: "Yeseva One", serif; /* Font tiêu đề phụ theo nhóm */
+  font-size: 1.3rem; /* Kích thước chữ */
   margin-bottom: 8px; /* Cách giá tiền */
   color: #640d33; /* Màu chủ đạo berry */
   transition: all 0.3s ease; /* Hiệu ứng đổi màu */
@@ -327,12 +340,13 @@
   font-size: 1rem; /* Kích thước chuẩn */
   color: #2c2c2c; /* Màu chữ chính */
   margin-bottom: 10px; /* Cách rating */
+  text-align: right;
 }
 
 /* Rating */
 .product-card-info-rating {
   display: flex; /* Cho icon và số nằm cùng hàng */
-  justify-content: center; /* Căn giữa */
+  justify-content: flex-start; /* Căn giữa */
   align-items: center; /* Căn giữa theo chiều dọc */
   gap: 6px; /* Khoảng cách giữa icon và số */
   font-size: 0.9rem; /* Nhỏ hơn giá tiền */
@@ -343,4 +357,63 @@
 .product-card-info-rating img {
   width: 16px; /* Kích thước icon */
   height: 16px;
+}
+
+/* ==================== RESPONSIVE BANNER ==================== */
+@media (max-width: 767.98px) {
+  .banner {
+    flex-direction: column;
+    min-height: 420px;
+    border-radius: 15px;
+    margin: 0 15px 25px 15px; /* ← Chỉnh nhỏ hơn cho mobile */
+    width: calc(100% - 30px); /* ← Đảm bảo có cách lề */
+  }
+
+  .left-banner {
+    width: 100%;
+    padding: 40px 25px;
+    text-align: center;
+  }
+
+  .right-banner {
+    display: none;
+  }
+
+  .left-banner h1 {
+    font-size: 42px;
+    margin: 15px 0 20px;
+  }
+  .banner-sub {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+  .left-banner p {
+    font-size: 15px;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .click-banner {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .wiki-banner,
+  .shop-banner {
+    padding: 16px 25px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Tăng độ tương phản một chút khi không có ảnh */
+.banner {
+  background: #ede4d8;
+}
+
+@media (min-width: 1621px) {
+  .banner {
+    margin: 0 auto 40px auto; /* Căn giữa đẹp */
+    width: 100%; /* Trở lại 100% để max-width hoạt động */
+  }
 }

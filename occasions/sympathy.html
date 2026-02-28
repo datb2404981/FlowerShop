@@ -40,13 +40,25 @@
       </div>
     </section>
     <div class="container my-5">
+      <button
+    class="btn btn-outline-dark d-md-none mb-3"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#filterCollapse"
+  >
+    <i class="bi bi-funnel"></i> Bộ lọc
+  </button>
+
+
       <div class="row">
         <!-- Filter -->
-        <div class="col-md-3">
+        <div class="col-md-3 collapse d-md-block" id="filterCollapse">
           <div class="filter">
             <div class="filter-header">
               <h4 class="filter-title">Filters</h4>
-              <span class="filter-reset">Reset</span>
+              <span class="filter-reset">
+                <i class="bi bi-arrow-clockwise"></i>
+              </span>
             </div>
 
             <div class="filter-group-price">
