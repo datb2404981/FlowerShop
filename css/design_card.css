@@ -781,3 +781,96 @@ body {
 #btn-add-to-cart:hover i {
   transform: rotate(90deg) scale(1.1);
 }
+
+/* RESPONSIVE ĐIỆN THOẠI */
+@media (max-width: 991.98px) {
+  .page-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .preview-panel {
+    position: relative;
+    top: 0;
+    height: 50vh;
+    width: 100%;
+    padding: 20px;
+    order: 1;
+  }
+
+  .card-canvas {
+    height: 90%;
+    max-width: 100%;
+  }
+
+  .design-tool-panel {
+    order: 2;
+    height: auto;
+    overflow-y: visible;
+    padding-bottom: 50px;
+    border-right: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .color-palette {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px !important;
+  }
+
+  .color-circle {
+    flex-shrink: 0;
+  }
+
+  .ratio-selector {
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .ratio-list {
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+  }
+
+  .ratio-btn {
+    flex-shrink: 0;
+  }
+
+  .image-sample-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bg-sample-img {
+    width: 100px;
+    flex-shrink: 0;
+  }
+  .color-palette::-webkit-scrollbar,
+  .ratio-list::-webkit-scrollbar,
+  .image-sample-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .color-palette::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+  }
+
+  .card-management-section {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background: white;
+    padding: 15px;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  }
+}

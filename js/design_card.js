@@ -32,12 +32,20 @@ function initCard() {
     loadCard();
   }
 }
-
+function saveWidthCanvas() {
+  const card = JSON.parse(localStorage.getItem("card")) || {};
+  const canvas = document.querySelector(".card-canvas");
+  card.canvasWidth = canvas.offsetWidth;
+  localStorage.setItem("card", JSON.stringify(card));
+}
+saveWidthCanvas();
 //  ========== Chức năng chọn tỉ lệ thiệp ==========
 // Hàm lưu ratio bất kì
 function saveRatio(ratio) {
   const card = JSON.parse(localStorage.getItem("card")) || {};
+  const canvas = document.querySelector(".card-canvas");
   card.ratio = ratio;
+
   localStorage.setItem("card", JSON.stringify(card));
 }
 
@@ -557,7 +565,7 @@ function enableDeleteText() {
     // Nếu đang focus vào textarea hoặc input thì không xóa
     if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
 
-    if ((e.key === "Delete" || e.key === "Backspace") && activeText) {
+    if (e.key === "Delete" && activeText) {
       activeText.remove();
       activeText = null;
       document.querySelector(".text-control-panel").classList.add("d-none");
