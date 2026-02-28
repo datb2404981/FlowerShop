@@ -128,7 +128,7 @@ class MyHeader extends HTMLElement {
               </li>
 
               <li class="nav-item d-none d-lg-block">
-                <a class="nav-link ${isActive("about.html")} text-center px-1" href="${basePath}about.html">
+                <a class="nav-link ${isActive("contact.html")} text-center px-1" href = "${basePath}contact.html" >
                   Liên Hệ
                 </a>
               </li>
