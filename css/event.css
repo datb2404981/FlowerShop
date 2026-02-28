@@ -473,21 +473,24 @@
   }
 }
 
-/* Kích thước riêng cho banner Valentine để gọn gàng hơn */
-.banner.banner-valentine {
-  min-height: auto;
-  height: 600px;
+/* Kích thước riêng cho banner Valentine để gọn gàng hơn (Chỉ áp dụng trên Desktop) */
+@media (min-width: 768px) {
+  .banner.banner-valentine {
+    min-height: auto;
+    height: 600px;
+  }
+  .banner.banner-valentine .left-banner {
+    padding: 40px 60px;
+  }
+  .banner.banner-valentine .left-banner h1 {
+    margin: 15px 0;
+  }
+  .banner.banner-valentine .right-banner img {
+    /* Di chuyển nội dung bức ảnh xuống 50px so với viền trên */
+    object-position: center 1px;
+  }
 }
-.banner.banner-valentine .left-banner {
-  padding: 40px 60px;
-}
-.banner.banner-valentine .left-banner h1 {
-  margin: 15px 0;
-}
-.banner.banner-valentine .right-banner img {
-  /* Di chuyển nội dung bức ảnh xuống 50px so với viền trên */
-  object-position: center 1px;
-}
+
 
 /* --- Filter Item Select & Hover Effects --- */
 .filter-option {
