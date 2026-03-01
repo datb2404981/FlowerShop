@@ -4,12 +4,8 @@ let currentImageIndex = 0;
 function initGallery() {
   const mainImages = document.querySelectorAll(".default .main-img img");
   const thumbnails = document.querySelectorAll(".default .thumb-list div");
-  const lightboxMainImages = document.querySelectorAll(
-    ".lightbox .main-img img",
-  );
-  const lightboxThumbnails = document.querySelectorAll(
-    ".lightbox .thumb-list div",
-  );
+  const lightboxMainImages = document.querySelectorAll(".lightbox .main-img img");
+  const lightboxThumbnails = document.querySelectorAll(".lightbox .thumb-list div");
   const lightbox = document.querySelector(".lightbox");
   // const iconClose = document.querySelector(".icon-close");
   const iconPrev = document.querySelector(".icon-prev");
@@ -27,9 +23,7 @@ function initGallery() {
 
   // assign a click event to the list of thumbnails
   thumbnails.forEach((thumb, index) => {
-    thumb.addEventListener("click", () =>
-      changeImage(index, mainImages, thumbnails),
-    );
+    thumb.addEventListener("click", () => changeImage(index, mainImages, thumbnails));
   });
 
   lightboxThumbnails.forEach((thumb, index) => {
@@ -49,17 +43,8 @@ function initGallery() {
   if (iconPrev) {
     iconPrev.onclick = () => {
       if (currentImageIndex <= 0)
-        changeImage(
-          mainImages.length - 1,
-          lightboxMainImages,
-          lightboxThumbnails,
-        );
-      else
-        changeImage(
-          currentImageIndex - 1,
-          lightboxMainImages,
-          lightboxThumbnails,
-        );
+        changeImage(mainImages.length - 1, lightboxMainImages, lightboxThumbnails);
+      else changeImage(currentImageIndex - 1, lightboxMainImages, lightboxThumbnails);
     };
   }
 
@@ -67,12 +52,7 @@ function initGallery() {
     iconNext.onclick = () => {
       if (currentImageIndex >= mainImages.length - 1)
         changeImage(0, lightboxMainImages, lightboxThumbnails);
-      else
-        changeImage(
-          currentImageIndex + 1,
-          lightboxMainImages,
-          lightboxThumbnails,
-        );
+      else changeImage(currentImageIndex + 1, lightboxMainImages, lightboxThumbnails);
     };
   }
 
@@ -243,8 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Random
         let min = 500;
         let max = 5000;
-        const sharedReviewCount =
-          Math.floor(Math.random() * (max - min + 1)) + min; //the number of reviews
+        const sharedReviewCount = Math.floor(Math.random() * (max - min + 1)) + min; //the number of reviews
 
         // Pass this number to both functions
         renderProductDetails(product, sharedReviewCount);
@@ -279,7 +258,6 @@ function renderProductDetails(product, reviewCount) {
   if (breadCategory && product.category && product.category.length > 0) {
     breadCategory.innerText = product.category[0];
   }
-
   const smallStars = document.getElementById("small-stars");
   const smallCount = document.getElementById("small-count");
 
