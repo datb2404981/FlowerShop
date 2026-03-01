@@ -452,7 +452,7 @@ const handleSend = (item, typeName) => {
     const id = item.getAttribute("data");
     const currentType = item.getAttribute("type");
 
-    
+
     let allElements = [];
     let currentElement = null;
     let currentZIndex = 0;
@@ -499,12 +499,12 @@ const handleSend = (item, typeName) => {
     }
 
     if (targetElement) {
-        
+
         let temp = currentElement.element.state.zIndex;
         currentElement.element.state.zIndex = targetElement.element.state.zIndex;
         targetElement.element.state.zIndex = temp;
 
-        
+
         WorkSpaceEle.innerHTML = renderNode();
         let NodeList = WorkSpaceEle.querySelectorAll(".node");
         SetEvent(currentType, NodeList, {}, [], []);
@@ -728,7 +728,7 @@ ResetButtonEle.addEventListener('click', () => {
 })
 
 
-const HandleSendDataLocal = () => {
+const HandleSendDataLocal = async() => {
     let total = 0;
     const outputList = Object.entries(SelectedFlowerList).map(([key, value]) => {
         total += value.item.price;
@@ -739,11 +739,29 @@ const HandleSendDataLocal = () => {
         }
     })
 
-    const output = {
-        total,
-        item: outputList
-    }
+    const Localdata = localStorage.getItem('shoppingCart');
+    let data = JSON.parse(Localdata) || [];
 
-    localStorage.setItem('pay_list', JSON.stringify(output));
+    await domtoimage.toPng(document.getElementById('capture'))
+        .then(function (dataUrl) {
+            // Tạo thẻ img và gán ảnh vừa chụp
+            data = [
+                ...data,
+                {
+                    "id": 3,
+                    "name": "Your design",
+                    "price": total,
+                    "image": dataUrl,
+                    "quantity": 1,
+                    "checked": false
+                }
+            ]
+            console.log(dataUrl)
+        })
+        .catch(function (error) {
+            console.error('Lỗi khi chụp ảnh:', error);
+        });
+
+    localStorage.setItem('shoppingCart', JSON.stringify(data));
 }
 
