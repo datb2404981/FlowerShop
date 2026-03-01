@@ -72,19 +72,29 @@
             "id": 0,
             "name": "Normal",
             "price": 15000,
-            "path": "assets/images/bouquets/bouquet01_texture.png"
+            "path": "assets/images/bouquets/bouquet01_texture.png",
+            "texture": "assets/images/bouquets/bouquet01_texture.png"
         },
         {
             "id": 1,
             "name": "Normal",
             "price": 15000,
-            "path": "assets/images/bouquets/Bouquet02_texture.png"
+            "path": "assets/images/bouquets/Bouquet02_texture.png",
+            "texture": "assets/images/bouquets/Bouquet02_texture.png"
         },
         {
             "id": 2,
             "name": "Normal",
             "price": 15000,
-            "path": "assets/images/bouquets/bouquet01.png"
+            "path": "assets/images/bouquets/bouquet03_thumbnail.jpg",
+            "texture": "assets/images/bouquets/bouquet03_texture.png"
+        },
+        {
+            "id": 3,
+            "name": "Normal",
+            "price": 15000,
+            "path": "assets/images/bouquets/bouquet04_thumbnail.jpg",
+            "texture": "assets/images/bouquets/bouquet04_texture.png"
         }
     ],
     "decorations": [

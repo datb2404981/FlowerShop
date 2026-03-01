@@ -49,7 +49,10 @@ const itemFlower = (data, amount) => {
                     <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
                         <span class="content-flower-name">${item.name}</span>
-                        <span class="content-flower-price">${item.price} VND</span>
+                        <span class="content-flower-price">
+                            <span>Price: </span>
+                            ${item.price} VND
+                        </span>
                         <div class="button-flower-container">
                             <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn">
                                 -
@@ -226,7 +229,7 @@ const renderPriceContainer = () => {
                 <p>${lengthList} items</p>
             </span>
             <span class="price-total-box">
-                <span class="price-total">${Total}</span>
+                <span class="price-total">${Total} VND</span>
             </span>
         </div>
         
@@ -250,7 +253,7 @@ const handleBoquetWorkSpace = (data) => {
 
     data.forEach((item, index) => {
         BouquetItemEle[index].addEventListener('click', () => {
-            BouquetWSEle.style.backgroundImage = `url('${item.path}')`;
+            BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
             setSelectedList(item, 1);
 
             priceContainerEle.innerHTML = renderPriceContainer();
@@ -431,7 +434,10 @@ const renderNode = () => {
 const renderMenu = () => {
     return `
         <div id="flip" class="menu-item">flip</div>
-        <div id="sendback" class="menu-item">Send to back</div>
+        <div id="sendbackward" class="menu-item">Send backward</div>
+        <div id="sendforward" class="menu-item">Send forward</div>
+        <div id="sendtoback" class="menu-item">Send to back</div>
+        <div id="sendtofont" class="menu-item">Send to font</div>
     `
 }
 
@@ -442,37 +448,123 @@ const handleFip = (item) => {
     contextMenuEle.innerHTML = ""
 }
 
-const handleSendBack = (item) => {
+const handleSend = (item, typeName) => {
     const id = item.getAttribute("data");
-    const type = item.getAttribute("type");
-    const nodelist = WorkSpaceEle.querySelectorAll(".node");
+    const currentType = item.getAttribute("type");
 
-    let index = 0;
-    let newIndex = 0;
-    let oldIndex = 0;
-    for (let i = 0; i < DataStructure[type].length; i++) {
-        if (DataStructure[type][i].id === id) {
-
-            oldIndex = parseInt(window.getComputedStyle(item).zIndex);
     
-             for (let k=0; k<DataStructure[type].length; k++){
-                if ( DataStructure[type][k].state.zIndex === oldIndex-1){
-                    newIndex = parseInt(window.getComputedStyle(nodelist[k]).zIndex);
-                    index = k;
-                    break;
-                }
+    let allElements = [];
+    let currentElement = null;
+    let currentZIndex = 0;
+
+    Object.entries(DataStructure).forEach(([type, items]) => {
+        items.forEach((element) => {
+            allElements.push({
+                element: element,
+                type: type
+            });
+            if (element.id === id) {
+                currentElement = { element: element, type: type };
+                currentZIndex = element.state.zIndex;
             }
+        });
+    });
 
-            DataStructure[type][i].state.zIndex = newIndex;
-            DataStructure[type][index].state.zIndex = oldIndex;
+    if (!currentElement) {
+        contextMenuEle.innerHTML = "";
+        return;
+    }
 
-            break;
+    // sort m
+    allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
+
+    let targetElement = null;
+
+    if (typeName === "forward") {
+        // finding nearest smaller zindex
+        for (let item of allElements) {
+            if (item.element.state.zIndex > currentZIndex) {
+                targetElement = item;
+                break;
+            }
+        }
+    } else if (typeName === "backward") {
+        // finding nearest bigger zindex
+        for (let i = allElements.length - 1; i >= 0; i--) {
+            if (allElements[i].element.state.zIndex < currentZIndex) {
+                targetElement = allElements[i];
+                break;
+            }
         }
     }
 
-    nodelist[index].style.zIndex = oldIndex;
+    if (targetElement) {
+        
+        let temp = currentElement.element.state.zIndex;
+        currentElement.element.state.zIndex = targetElement.element.state.zIndex;
+        targetElement.element.state.zIndex = temp;
 
-    item.style.zIndex = newIndex;
+        
+        WorkSpaceEle.innerHTML = renderNode();
+        let NodeList = WorkSpaceEle.querySelectorAll(".node");
+        SetEvent(currentType, NodeList, {}, [], []);
+    }
+
+    contextMenuEle.innerHTML = "";
+}
+
+const handleSendUPD = (item, typeName) => {
+    const id = item.getAttribute("data");
+    const currentType = item.getAttribute("type");
+
+    //init
+    let allElements = [];
+    let currentElement = null;
+    let maxZIndex = 0;
+    let minZIndex = Infinity;
+
+    Object.entries(DataStructure).forEach(([type, items]) => {
+        items.forEach((element) => {
+            allElements.push({
+                element: element,
+                type: type
+            });
+            if (element.id === id) {
+                currentElement = { element: element, type: type };
+            }
+            maxZIndex = Math.max(maxZIndex, element.state.zIndex);
+            minZIndex = Math.min(minZIndex, element.state.zIndex);
+        });
+    });
+
+    if (!currentElement) {
+        contextMenuEle.innerHTML = "";
+        return;
+    }
+
+    if (typeName === "back") {
+        // push it in the back
+        allElements.forEach(item => {
+            if (item.element.id !== currentElement.element.id && item.element.state.zIndex < currentElement.element.state.zIndex) {
+                item.element.state.zIndex++;
+            }
+        });
+        currentElement.element.state.zIndex = minZIndex - 1;
+    } else if (typeName === "font") {
+        // push it to the top
+        allElements.forEach(item => {
+            if (item.element.id !== currentElement.element.id && item.element.state.zIndex > currentElement.element.state.zIndex) {
+                item.element.state.zIndex--;
+            }
+        });
+        currentElement.element.state.zIndex = maxZIndex + 1;
+    }
+
+    // Rerender canvas
+    WorkSpaceEle.innerHTML = renderNode();
+    let NodeList = WorkSpaceEle.querySelectorAll(".node");
+    SetEvent(currentType, NodeList, {}, [], []);
+
     contextMenuEle.innerHTML = "";
 }
 
@@ -496,10 +588,16 @@ const HandMenuContext = (itemHtml) => {
         contextMenuEle.innerHTML = renderMenu();
 
         const flip = contextMenuEle.querySelector("#flip");
-        const sendback = contextMenuEle.querySelector("#sendback");
+        const sendbackward = contextMenuEle.querySelector("#sendbackward");
+        const sendforward = contextMenuEle.querySelector("#sendforward");
+        const sendtoback = contextMenuEle.querySelector("#sendtoback");
+        const sendtofont = contextMenuEle.querySelector("#sendtofont");
 
         flip.addEventListener('click', () => handleFip(itemHtml));
-        sendback.addEventListener('click', () => handleSendBack(itemHtml));
+        sendbackward.addEventListener('click', () => handleSend(itemHtml, "backward"));
+        sendforward.addEventListener('click', () => handleSend(itemHtml, "forward"));
+        sendtoback.addEventListener('click', () => handleSendUPD(itemHtml, "back"));
+        sendtofont.addEventListener('click', () => handleSendUPD(itemHtml, "font"));
     })
 }
 //------------------
@@ -604,13 +702,14 @@ ResetButtonEle.addEventListener('click', () => {
     priceContainerEle.innerHTML = "";
 
     WorkSpaceEle.innerHTML = "";
+    BouquetWSEle.style.backgroundImage = `url('')`
+    console.log("maihfewugwueygeyug")
 
     const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
     if (ListAmount.length > 0) {
         ListAmount.forEach((item, index) => {
             if (item.textContent !== "0") {
                 item.innerHTML = 0;
-                console.log("hello")
             }
         })
     }
@@ -629,10 +728,10 @@ ResetButtonEle.addEventListener('click', () => {
 })
 
 
-const HandleSendDataLocal = ()=>{
+const HandleSendDataLocal = () => {
     let total = 0;
-    const outputList = Object.entries(SelectedFlowerList).map(([key, value])=>{
-        total += value.item.price; 
+    const outputList = Object.entries(SelectedFlowerList).map(([key, value]) => {
+        total += value.item.price;
         return {
             name: value.item.name,
             price: value.item.price,
@@ -647,3 +746,4 @@ const HandleSendDataLocal = ()=>{
 
     localStorage.setItem('pay_list', JSON.stringify(output));
 }
+
