@@ -249,15 +249,6 @@ function renderProductDetails(product, reviewCount) {
          priceContainer.innerHTML = `<p>${formattedPrice}</p>`;
     }
 
-    //upd breadcrumb
-    const breadName = document.getElementById('bread-name');
-    const breadCategory = document.getElementById('bread-category');
-    
-    if (breadName) breadName.innerText = product.name;
-    if (breadCategory && product.category && product.category.length > 0) {
-        breadCategory.innerText = product.category[0]; 
-    }
-
     const smallStars = document.getElementById('small-stars');
     const smallCount = document.getElementById('small-count');
     
