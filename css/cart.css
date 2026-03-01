@@ -132,7 +132,6 @@ hr {
 }
 
 /* ================== ACTION BUTTONS (QTY + REMOVE) ================== */
-
 .removeAll-btn {
   margin-top: 10px;
   display: flex;
@@ -358,19 +357,6 @@ hr {
 
 .btn h2 {
   color: white;
-}
-
-/* ================== RESPONSIVE (TABLET & MOBILE) ================== */
-@media (max-width: 576px) {
-  .item-img {
-    width: 360px;
-    height: 440px;
-  }
-
-  .item-info,
-  .item-price {
-    margin-top: 30px;
-  }
 }
 
 /* ================== ANIMATION ================== */
@@ -714,4 +700,134 @@ main {
 
 .removeAll-btn .btn:focus {
   box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+  .cart-page {
+    margin: 0px;
+    padding: 25px;
+  }
+  .container {
+    padding: 0;
+  }
+  .img-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 50px;
+    height: 70px;
+  }
+
+  .item-img {
+    height: 70px;
+    margin: 0;
+  }
+
+  .in4-item-name {
+    margin-top: 10px;
+    font-family: var(--font-header);
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 12px;
+  }
+
+  .total-text {
+    font-family: var(--font-header);
+    font-size: 10px;
+    color: var(--text-light);
+    margin: 0;
+  }
+  .items-list {
+    padding: 0;
+  }
+  .item-info {
+    padding: 0;
+    margin: 0;
+    margin-left: 10px;
+  }
+  .total-money {
+    font-size: 10px;
+  }
+  .check-thanhtoan {
+    margin: 0;
+  }
+  .item-price {
+    margin: 0;
+  }
+
+  .summary {
+    padding: 0;
+    margin: 0;
+  }
+  .row {
+    margin: 0px;
+  }
+
+  .action-button {
+    margin-top: 8px;
+    gap: 6px;
+  }
+
+  .fancy-qty {
+    border-radius: 12px;
+  }
+
+  .fancy-qty .qty-btn {
+    width: 24px; /* Nút cộng trừ nhỏ hơn nữa */
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .fancy-qty .quantity-input {
+    width: 37px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .btn-remove {
+    width: 24px; /* Nút xóa nhỏ bằng nút cộng trừ */
+    height: 24px;
+    background-color: rgba(170, 9, 9, 0.05);
+  }
+
+  .btn-remove i {
+    font-size: 0.75rem;
+  }
+
+  .summary-card {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .summary-card h3 {
+    font-size: 20px;
+  }
+
+  .btn-checkout h2 {
+    font-size: 18px;
+  }
+  .item {
+    height: 90px;
+  }
+  .form-check-label,
+  .xoaGioHang {
+    font-size: 10px;
+  }
+  .form-check-label {
+    display: flex;
+    align-items: center;
+  }
+  .label-checkall {
+    padding-left: 9px;
+  }
+  #tongCong {
+    font-size: 20px;
+  }
+  #tongCongText {
+    font-size: 22px;
+  }
 }

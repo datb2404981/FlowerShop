@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/design_card.css" />
+  </head>
+  <body>
+    <!--HEADER-->
+    <my-header></my-header>
+
+    <!--PAGE CONTENT-->
+    <div class="design-page container-fluid">
+      <div class="row page-container">
+        <!--DESIGN TOOLS PANEL-->
+        <div class="design-tool-panel col-lg-4">
+          <h1 id="page-heading">Thiết kế thiệp</h1>
+          <p id="heading-desc">Nơi những lời chúc trở thành kỷ niệm...</p>
+          <!-- ==== CHỨC NĂNG CHỌN BACKGROUND ==== -->
+          <section class="tool-section background-section">
+            <h5 class="section-title">Background</h5>
+            <!-- chọn loại background -->
+            <div class="bg-type-selector d-flex gap-2 mb-3">
+              <button
+                class="btn btn-outline-dark bg-type-btn active"
+                data-type="color"
+              >
+                Màu sắc
+              </button>
+
+              <button
+                class="btn btn-outline-dark bg-type-btn"
+                data-type="image"
+              >
+                Hình ảnh
+              </button>
+            </div>
+
+            <!-- COLOR PANEL -->
+            <div class="bg-color-panel">
+              <div class="color-palette d-flex flex-wrap gap-2">
+                <!-- Bảng màu -->
+                <div
+                  class="color-circle"
+                  data-color="#ffffff"
+                  style="background: #ffffff"
+                ></div>
+
+                <div
+                  class="color-circle"
+                  data-color="#f8d7da"
+                  style="background: #f8d7da"
+                ></div>
+
+                <div
+                  class="color-circle"
+                  data-color="#d1e7dd"
+                  style="background: #d1e7dd"
+                ></div>
+
+                <div
+                  class="color-circle"
+                  data-color="#cff4fc"
+                  style="background: #cff4fc"
+                ></div>
+
+                <div
+                  class="color-circle"
+                  data-color="#fff3cd"
+                  style="background: #fff3cd"
+                ></div>
+
+                <div
+                  class="color-circle"
+                  data-color="#e2e3e5"
+                  style="background: #e2e3e5"
+                ></div>
+
+                <!-- Chọn màu tùy thích -->
+                <label class="color-circle custom-color-circle">
+                  <input type="color" id="custom-color-input" hidden />
+
+                  <span class="plus-icon">+</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- IMAGE PANEL -->
+            <div class="bg-image-panel d-none">
+              <!-- nhập URL -->
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="bg-image-url"
+                  placeholder="Nhập vào URL hình ảnh"
+                />
+
+                <button class="btn btn-dark mt-2 w-100" id="btn-apply-bg-image">
+                  Áp dụng
+                </button>
+              </div>
+
+              <!-- image mẫu -->
+              <div class="image-sample-grid">
+                <img
+                  src="https://png.pngtree.com/background/20250105/original/pngtree-vintage-style-greeting-card-background-with-flowers-picture-image_16135076.jpg"
+                  class="bg-sample-img"
+                />
+                <img
+                  src="https://marketplace.canva.com/EAGmgPzSuEo/1/0/800w/canva-green-and-orange-watercolor-floral-background-card-mtRm3MgtFCo.jpg"
+                  class="bg-sample-img"
+                />
+                <img
+                  src="https://img.freepik.com/free-vector/hand-drawn-floral-wallpaper_52683-67169.jpg?semt=ais_hybrid&w=740&q=80"
+                  class="bg-sample-img"
+                />
+                <img
+                  src="https://i.pinimg.com/736x/72/d6/8c/72d68c954b0f5c32b8163072b5c68b22.jpg"
+                  class="bg-sample-img"
+                />
+              </div>
+            </div>
+          </section>
+
+          <!-- ==== CHỨC NĂNG THÊM TEXT VÀ CHỈNH SỬA TEXT ==== -->
+          <section class="tool-section text-section">
+            <h4 class="section-title">TEXT</h4>
+
+            <!-- ADD TEXT BUTTON -->
+            <button id="btn-add-text" class="btn btn-primary w-100 mb-3">
+              <i class="bi bi-plus-lg"></i>
+              Thêm văn bản
+            </button>
+
+            <!-- TEXT CONTROL PANEL -->
+            <div class="text-control-panel d-none">
+              <!-- TEXT CONTENT -->
+              <div class="mb-3">
+                <label class="form-label">Nội dung</label>
+                <textarea
+                  id="text-content-input"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Nhập lời chúc..."
+                ></textarea>
+              </div>
+
+              <!-- FONT FAMILY -->
+              <div class="mb-3">
+                <label class="form-label">Font chữ</label>
+                <div class="custom-dropdown" id="font-dropdown">
+                  <div class="dropdown-selected">
+                    <span id="current-font">Arial</span>
+                    <i class="bi bi-chevron-down"></i>
+                  </div>
+                  <ul class="dropdown-list">
+                    <li data-value="Arial" style="font-family: Arial">Arial</li>
+                    <li
+                      data-value="'Times New Roman', serif"
+                      style="font-family: &quot;Times New Roman&quot;"
+                    >
+                      Times New Roman
+                    </li>
+                    <li
+                      data-value="'Dancing Script', cursive"
+                      style="font-family: &quot;Dancing Script&quot;"
+                    >
+                      Dancing Script
+                    </li>
+                    <li
+                      data-value="'Pinyon Script', cursive"
+                      style="font-family: &quot;Pinyon Script&quot;"
+                    >
+                      Pinyon Script
+                    </li>
+                    <li
+                      data-value="'Playfair Display', serif"
+                      style="font-family: &quot;Playfair Display&quot;"
+                    >
+                      Playfair Display
+                    </li>
+                    <li
+                      data-value="'Montserrat', sans-serif"
+                      style="font-family: &quot;Montserrat&quot;"
+                    >
+                      Montserrat
+                    </li>
+                    <li
+                      data-value="'Be Vietnam Pro', sans-serif"
+                      style="font-family: &quot;Be Vietnam Pro&quot;"
+                    >
+                      Be Vietnam Pro
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- TEXT SIZE -->
+              <div class="mb-3">
+                <label class="form-label">
+                  Kích thước: <span id="font-size-label">32</span>px
+                </label>
+
+                <input
+                  type="range"
+                  id="font-size-slider"
+                  class="form-range"
+                  min="12"
+                  max="120"
+                  value="32"
+                />
+              </div>
+
+              <!-- TEXT COLOR -->
+              <div class="mb-3">
+                <label class="form-label">Màu chữ</label>
+
+                <input
+                  type="color"
+                  id="text-color-input"
+                  class="form-control form-control-color"
+                  value="#000000"
+                />
+              </div>
+
+              <!-- ALIGN -->
+              <div class="mb-3">
+                <label class="form-label">Căn chỉnh</label>
+
+                <div class="btn-group w-100">
+                  <button
+                    class="btn btn-outline-secondary text-align-btn"
+                    data-align="left"
+                  >
+                    <i class="bi bi-text-left"></i>
+                  </button>
+
+                  <button
+                    class="btn btn-outline-secondary text-align-btn"
+                    data-align="center"
+                  >
+                    <i class="bi bi-text-center"></i>
+                  </button>
+
+                  <button
+                    class="btn btn-outline-secondary text-align-btn"
+                    data-align="right"
+                  >
+                    <i class="bi bi-text-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- CHỌN KIỂU TRANG TRÍ -->
+              <div class="mb-3">
+                <label class="form-label">Định dạng</label>
+                <div class="btn-group w-100">
+                  <button
+                    class="btn btn-outline-secondary text-style-btn"
+                    data-style="bold"
+                  >
+                    <i class="bi bi-type-bold"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary text-style-btn"
+                    data-style="italic"
+                  >
+                    <i class="bi bi-type-italic"></i>
+                  </button>
+                  <button
+                    class="btn btn-outline-secondary text-style-btn"
+                    data-style="underline"
+                  >
+                    <i class="bi bi-type-underline"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="card-management-section mt-4 pt-4 border-top">
+            <button
+              id="btn-add-to-cart"
+              class="btn btn-dark w-100 py-3 mb-3 d-flex justify-content-between align-items-center px-4"
+            >
+              <div class="text-start">
+                <span class="d-block fw-bold">Đính kèm vào đơn hàng</span>
+                <small class="opacity-75 fw-normal"
+                  >+ 20.000<span class="vnd-unit">vnđ</span> phí in ấn
+                </small>
+              </div>
+              <i class="bi bi-check-lg fs-4"></i>
+            </button>
+
+            <p
+              id="card-error-msg"
+              class="text-danger small mb-2 d-none"
+              style="font-weight: 500"
+            ></p>
+
+            <div class="text-center">
+              <button
+                id="btn-delete-card"
+                class="btn btn-link text-danger text-decoration-none p-0"
+              >
+                <i class="bi bi-trash3 me-1"></i> Xóa thiết kế hiện tại
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!--PREVIEW PANEL-->
+        <div class="preview-panel col-lg-8">
+          <!-- RATIO SELECTOR -->
+          <div class="ratio-selector">
+            <h4 class="mb-4">Chọn tỉ lệ thiệp</h4>
+
+            <div class="ratio-list">
+              <button class="ratio-btn" data-ratio="1/1">
+                <div class="ratio-preview ratio-1-1">1:1</div>
+              </button>
+
+              <button class="ratio-btn" data-ratio="3/4">
+                <div class="ratio-preview ratio-3-4">3:4</div>
+              </button>
+
+              <button class="ratio-btn" data-ratio="4/3">
+                <div class="ratio-preview ratio-4-3">4:3</div>
+              </button>
+
+              <button class="ratio-btn" data-ratio="custom">
+                <div class="ratio-preview ratio-custom">
+                  <i class="bi bi-gear-fill"></i>
+                </div>
+              </button>
+            </div>
+            <!-- Custom tự nhập tỉ lệ-->
+            <div id="custom-ratio-box" class="custom-input-group d-none">
+              <div
+                class="d-flex align-items-center justify-content-center gap-2 mt-4"
+              >
+                <input type="number" id="w-input" class="custom-field" />
+                <span class="fw-bold">:</span>
+                <input type="number" id="h-input" class="custom-field" />
+                <button id="btn-go" class="btn-go">
+                  <i class="bi bi-check-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KHUNG THIỆP TRẮNG -->
+          <div class="card-canvas d-none"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER-->
+    <my-footer></my-footer>
+
+    <!--LINK JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/components.js"></script>
+    <script src="js/design_card.js"></script>
+  </body>
+</html>

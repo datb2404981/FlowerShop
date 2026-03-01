@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout Page</title>
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700&family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Pinyon+Script&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -661,31 +664,68 @@
                   <h5 class="mb-0 fw-bold">Gửi gắm lời chúc</h5>
                 </div>
 
-                <div
-                  class="card border-0 rounded-4"
-                  style="
-                    background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
-                    border: 1px dashed #ee9ca7 !important;
-                  "
-                >
-                  <div class="card-body p-4 text-center">
-                    <h6 class="fw-bold mb-2">
-                      Món quà ý nghĩa hơn với một tấm thiệp!
-                    </h6>
-                    <p class="small text-muted mb-4">
-                      Món quà sẽ trọn vẹn hơn nữa nếu đi kèm một lời chúc ngọt
-                      ngào. Bạn có muốn tự tay thiết kế một chiếc thiệp xinh xắn
-                      không?
-                    </p>
+                <div id="card-section-container" class="card-section-panel">
+                  <div
+                    class="card border-0 rounded-4"
+                    style="
+                      background: linear-gradient(
+                        135deg,
+                        #fff5f5 0%,
+                        #fff 100%
+                      );
+                      border: 1px dashed #ee9ca7 !important;
+                    "
+                  >
+                    <div class="card-body p-4 text-center">
+                      <h6 class="fw-bold mb-2">
+                        Món quà ý nghĩa hơn với một tấm thiệp!
+                      </h6>
+                      <p class="small text-muted mb-4">
+                        Món quà sẽ trọn vẹn hơn nữa nếu đi kèm một lời chúc ngọt
+                        ngào. Bạn có muốn tự tay thiết kế một chiếc thiệp xinh
+                        xắn không?
+                      </p>
 
-                    <div class="row g-3 justify-content-center">
-                      <div class="col-md-8">
-                        <a
-                          href="card-designer.html"
-                          class="btn btn-outline-main w-100 py-2 rounded-pill mb-3"
-                        >
-                          Thiết kế thiệp riêng của bạn
+                      <div class="row g-3 justify-content-center">
+                        <div class="col-md-8">
+                          <a
+                            href="design_card.html"
+                            class="btn btn-outline-main w-100 py-2 rounded-pill mb-3"
+                          >
+                            Thiết kế thiệp riêng của bạn
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card-preview d-none">
+                  <div class="card-preview-content">
+                    <div class="card-visual">
+                      <div id="card-render-preview" class="card-render-box">
+                        <i class="bi bi-fonts"></i>
+                      </div>
+                    </div>
+
+                    <div class="card-details">
+                      <div class="card-header-info">
+                        <span class="card-title">Thiệp thiết kế riêng</span>
+                        <span class="card-badge">Đã đính kèm</span>
+                      </div>
+
+                      <p class="card-price">Phí in ấn: <span>20.000đ</span></p>
+
+                      <div class="card-actions">
+                        <a href="design_card.html" class="btn-edit-card">
+                          <i class="bi bi-pencil-square"></i> Chỉnh sửa
                         </a>
+                        <button
+                          class="btn-delete-card"
+                          onclick="removeCardAttached()"
+                        >
+                          <i class="bi bi-trash3"></i> Xóa thiệp
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -713,8 +753,8 @@
                 </div>
 
                 <div class="footer-row">
-                  <span>Phụ phí:</span>
-                  <span class="summary-extra">-</span>
+                  <span>Tiền thiệp:</span>
+                  <span class="summary-extra" id="card-price">-</span>
                 </div>
                 <div class="footer-row">
                   <span class="total-label">Tổng cộng:</span>

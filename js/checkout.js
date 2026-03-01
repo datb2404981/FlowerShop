@@ -269,6 +269,10 @@ function renderSummaryItems() {
 
 function updateSummaryTotal(amount) {
   const subTotalEl = document.querySelector(".summary-subtotal");
+  let cardPrice = 0;
+  if (localStorage.getItem("card")) {
+    cardPrice = JSON.parse(localStorage.getItem("card")).price;
+  }
   const totalEl = document.querySelector(".summary-total");
 
   if (subTotalEl) {
@@ -279,7 +283,13 @@ function updateSummaryTotal(amount) {
     totalEl.innerHTML = formatPriceHTML(amount);
   }
 
-  document.querySelector(".total-value").innerHTML = formatPriceHTML(amount);
+  if (cardPrice) {
+    document.getElementById("card-price").innerHTML =
+      formatPriceHTML(cardPrice);
+  }
+  document.querySelector(".total-value").innerHTML = formatPriceHTML(
+    amount + cardPrice,
+  );
 }
 
 renderSummaryItems();
@@ -312,6 +322,7 @@ document.querySelector(".btn-checkout").addEventListener("click", function (e) {
   if (!isValid) return;
 
   // OK hết → cho phép xử lý thanh toán
+  removeCardAttached();
   showSuccessModal();
 });
 
@@ -522,3 +533,69 @@ document.addEventListener("click", function (e) {
     window.location.href = "cart.html"; // đổi đúng tên file giỏ hàng
   }
 });
+
+// ===== CHỨC NĂNG TẢI LÊN CÁI THIỆP TỪ LOCAL STORAGE
+function previewCard() {
+  const card = JSON.parse(localStorage.getItem("card"));
+  const panel = document.querySelector(".card-section-panel");
+  const preview = document.querySelector(".card-preview");
+  const renderBox = document.getElementById("card-render-preview");
+
+  if (card && card.isAttached) {
+    panel.classList.add("d-none");
+    preview.classList.remove("d-none");
+
+    renderBox.style.aspectRatio = card.ratio || "4/3";
+
+    // background
+    if (card.background?.type === "image") {
+      renderBox.style.backgroundImage = `url('${card.background.value}')`;
+      renderBox.style.backgroundColor = "transparent";
+    } else {
+      renderBox.style.backgroundColor = card.background?.value || "#fff";
+      renderBox.style.backgroundImage = "none";
+    }
+
+    renderBox.innerHTML = "";
+    renderBox.style.position = "relative";
+    renderBox.style.overflow = "hidden";
+
+    if (card.texts?.length > 0) {
+      const scale = renderBox.offsetWidth / card.canvasWidth;
+
+      card.texts.forEach((t) => {
+        const textEl = document.createElement("div");
+        textEl.innerText = t.content;
+
+        const originalX = parseFloat(t.x);
+        const originalY = parseFloat(t.y);
+        const originalFontSize = parseFloat(t.fontSize);
+
+        Object.assign(textEl.style, {
+          position: "absolute",
+          left: originalX * scale + "px",
+          top: originalY * scale + "px",
+          color: t.color,
+          fontFamily: t.fontFamily,
+          fontSize: originalFontSize * scale + "px",
+          fontWeight: t.fontWeight,
+          fontStyle: t.fontStyle,
+          textDecoration: t.textDecoration,
+          textAlign: t.align,
+          whiteSpace: "pre-wrap",
+          pointerEvents: "none",
+        });
+
+        renderBox.appendChild(textEl);
+      });
+    }
+  } else {
+    panel.classList.remove("d-none");
+    preview.classList.add("d-none");
+  }
+}
+previewCard();
+
+function removeCardAttached() {
+  localStorage.removeItem("card");
+}
