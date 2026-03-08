@@ -825,8 +825,21 @@ const HandleSendDataLocal = async () => {
   const Localdata = localStorage.getItem("shoppingCart");
   let data = JSON.parse(Localdata) || [];
 
+  const captureNode = document.getElementById("capture");
+  const scale = 0.3; // Thu nhỏ đi 3 lần để nhẹ bộ nhớ
+
   await domtoimage
-    .toJpeg(document.getElementById("capture"), { quality: 0.5 })
+    .toJpeg(captureNode, {
+      quality: 0.5,
+      width: captureNode.offsetWidth * scale,
+      height: captureNode.offsetHeight * scale,
+      style: {
+        transform: `scale(${scale})`,
+        transformOrigin: "top left",
+        width: `${captureNode.offsetWidth}px`,
+        height: `${captureNode.offsetHeight}px`,
+      },
+    })
     .then(function (dataUrl) {
       // Tạo thẻ img và gán ảnh vừa chụp
       data = [
