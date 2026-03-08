@@ -1,6 +1,11 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
+<<<<<<< HEAD
 fliterItem[0].classList.add("seleted-filter-box");
 const filterName = ["bouquet", "flower", "decorations"];
+=======
+fliterItem[1].classList.add('seleted-filter-box')
+const filterName = ['bouquet', 'flower', 'decorations']
+>>>>>>> ChiTrong
 
 let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
@@ -15,9 +20,12 @@ const setSelectedList = (item, amountItem) => {
 };
 
 //filter selected
-let itemSelected = filterName[0];
+let itemSelected = filterName[1];
+
+const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
+<<<<<<< HEAD
   item.addEventListener("click", () => {
     fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
     item.classList.add("seleted-filter-box");
@@ -33,11 +41,30 @@ const getDataFlower = async () => {
   console.log(main);
   return main;
 };
+=======
+    item.addEventListener('click', () => {
+        fliterItem.forEach(it => it.classList.remove('seleted-filter-box'));
+        filterItemSignELe.forEach(it => it.classList.add('hidden'));
+        item.classList.add('seleted-filter-box');
+        filterItemSignELe[index].classList.remove('hidden');
+        renderListItem(filterName[index]);
+        itemSelected = filterName[index];
+    })
+})
+
+//get date
+const getDataFlower = async () => {
+    const data = await fetch('flower.json');
+    const main = await data.json();
+    return main
+}
+>>>>>>> ChiTrong
 
 //
 const ListItem = document.querySelector(".list-selection");
 let handleIncrease;
 let handleDescrease;
+let handleDeleteAll;
 let currentData = [];
 
 const itemFlower = (data, amount) => {
@@ -47,17 +74,26 @@ const itemFlower = (data, amount) => {
       .map((item, index) => {
         return `
                 <div class="itemFlower">
-                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
+                    <div class="item-flower-img" style="background-image: url('${item.path}');" onclick="handleIncrease(${index})"></div>
                     <div class="content-flower-item">
-                        <span class="content-flower-name">${item.name}</span>
-                        <span class="content-flower-price">${item.price} VND</span>
-                        <div class="button-flower-container">
-                            <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn">
-                                -
-                            </button>
-                            <span class="amount-flower-item">${amount[index] || 0}</span>
-                            <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
-                                +
+                        <span class="content-flower-name ellipsis">${item.name}</span>
+                        <span class="content-flower-price">
+                            <span>Price: </span>
+                            ${formatNumber(item.price)} 
+                            <span class="cast">vnđ</span>
+                        </span>
+                        <div class="button-container">
+                            <div class="button-flower-container">
+                                <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn button-flower-reverse">
+                                    -
+                                </button>
+                                <span class="amount-flower-item">${amount[index] || 0}</span>
+                                <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
+                                    +
+                                </button>
+                            </div>
+                            <button onclick="handleDeleteAll(${index})" class="button-flower-item delete-btn">
+                                <i class="bi bi-trash3"></i>
                             </button>
                         </div>
                     </div>
@@ -70,6 +106,7 @@ const itemFlower = (data, amount) => {
 };
 
 const renderBouquet = (data) => {
+<<<<<<< HEAD
   let html = "";
   if (data) {
     html = data
@@ -77,9 +114,26 @@ const renderBouquet = (data) => {
         return `
                 <div class="itemFlower bouquet-item">
                     <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
+=======
+    let html = "";
+    if (data) {
+        html = data.map((item) => {
+            return `
+                <div class="itemFlower">
+                    <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
+>>>>>>> ChiTrong
                     <div class="content-flower-item">
-                        <span>${item.name}</span>
-                        <span>${item.price}</span>
+                        <span class="content-flower-name">${item.name}</span>
+                        <span class="content-flower-price">
+                            <span>Price: </span>
+                            ${formatNumber(item.price)} 
+                            <span class="cast">vnđ</span>
+                        </span>
+                        <div class="button-container">
+                            <button onclick="deleteBouquet()" class="button-flower-item delete-btn">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;
@@ -88,6 +142,18 @@ const renderBouquet = (data) => {
   }
   return html;
 };
+
+const deleteBouquet = () => {
+    const BouquetWSEle = document.querySelector(".bouquet-render")
+    BouquetWSEle.style.backgroundImage = `url('')`;
+
+    const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+        return value.item.type != "bouquet";
+    }))
+    SelectedFlowerList = temp;
+
+    priceContainerEle.innerHTML = renderPriceContainer();
+}
 
 //--------------
 const amountFlo = [];
@@ -104,10 +170,143 @@ const renderListItem = async (selected) => {
     const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
     const ListAmountArr = Array.from(ListAmount);
 
+<<<<<<< HEAD
     if (amountFlo.length < ListAmount.length) {
       ListAmount.forEach(() => {
         amountFlo.push(0);
       });
+=======
+        if (amountFlo.length < ListAmount.length) {
+            ListAmount.forEach(() => {
+                amountFlo.push(0);
+            })
+        }
+
+        console.log(amountFlo)
+
+        handleIncrease = (id) => {
+            amountFlo[id]++;
+            ListAmountArr[id].innerHTML = amountFlo[id];
+
+            setSelectedList(currentData[id], amountFlo[id])
+            console.log(SelectedFlowerList)
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+
+            appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
+        }
+
+        handleDescrease = (id) => {
+            if (amountFlo[id] > 0)
+                amountFlo[id]--;
+            else return;
+            ListAmountArr[id].innerHTML = amountFlo[id];
+
+            setSelectedList(currentData[id], amountFlo[id])
+            if (amountFlo[id] == 0) {
+                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                    return value.amountItem != 0;
+                }))
+                SelectedFlowerList = temp;
+            }
+            console.log(SelectedFlowerList)
+            priceContainerEle.innerHTML = renderPriceContainer()
+
+            deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
+        }
+
+        handleDeleteAll = (id) => {
+            if (amountFlo[id] === 0) return;
+            amountFlo[id] = 0;
+            ListAmountArr[id].innerHTML = amountFlo[id];
+
+            setSelectedList(currentData[id], amountFlo[id])
+            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                return value.amountItem != 0;
+            }))
+            SelectedFlowerList = temp;
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+            const newarr = DataStructure["flower"].filter((item) => {
+                return item.name != currentData[id].name;
+            })
+            DataStructure["flower"] = newarr;
+            WorkSpaceEle.innerHTML = renderNode();
+        }
+        //-----------
+
+        // selected BOUQUET
+    } else if (selected === 'bouquet') {
+        ListItem.innerHTML = renderBouquet(data.bouquet);
+
+        handleBoquetWorkSpace(data.bouquet);
+
+        // decorations
+    } else if (selected === 'decorations') {
+        ListItem.innerHTML = itemFlower(data.decorations, amountDeco);
+        //--------
+        const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
+        const ListAmountArr = Array.from(ListAmount);
+
+        if (amountDeco.length < ListAmount.length) {
+            ListAmount.forEach(() => {
+                amountDeco.push(0);
+            })
+        }
+
+        console.log(amountDeco)
+
+        handleIncrease = (id) => {
+            amountDeco[id]++;
+            ListAmountArr[id].innerHTML = amountDeco[id];
+
+            setSelectedList(data.decorations[id], amountDeco[id])
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+
+            appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
+        }
+
+        handleDescrease = (id) => {
+            if (amountDeco[id] > 0)
+                amountDeco[id]--;
+            else return;
+            ListAmountArr[id].innerHTML = amountDeco[id];
+
+            setSelectedList(data.decorations[id], amountDeco[id])
+            if (amountDeco[id] == 0) {
+                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                    return value.amountItem != 0;
+                }))
+                SelectedFlowerList = temp;
+            }
+            console.log(amountDeco)
+            priceContainerEle.innerHTML = renderPriceContainer()
+
+            deleteNode("decorations", DataStructure.decorations[id].name, data, ListAmountArr, amountDeco);
+        }
+
+        handleDeleteAll = (id) => {
+            if (amountDeco[id] === 0) return;
+            amountDeco[id] = 0;
+            ListAmountArr[id].innerHTML = amountDeco[id];
+
+            setSelectedList(data.decorations[id], amountDeco[id])
+            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                return value.amountItem != 0;
+            }))
+            SelectedFlowerList = temp;
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+            const newarr = DataStructure["decorations"].filter((item) => {
+                return item.name != data.decorations[id].name;
+            })
+            DataStructure["decorations"] = newarr;
+            WorkSpaceEle.innerHTML = renderNode();
+        }
+    } else {
+        ListItem.innerHTML = ""
+>>>>>>> ChiTrong
     }
 
     console.log(amountFlo);
@@ -220,7 +419,11 @@ const renderListItem = async (selected) => {
 };
 
 //init
+<<<<<<< HEAD
 renderListItem(filterName[0]);
+=======
+renderListItem(filterName[1])
+>>>>>>> ChiTrong
 
 // button flower
 
@@ -239,6 +442,7 @@ const renderPriceContainer = () => {
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
+<<<<<<< HEAD
                 <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${value.item.price}</span>
             </li>`
                 : ""
@@ -246,6 +450,12 @@ const renderPriceContainer = () => {
         `;
     })
     .join("");
+=======
+                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
+            </li>`: ""}
+        `
+    }).join("");
+>>>>>>> ChiTrong
 
   const lengthList = Object.keys(SelectedFlowerList).length;
   const result_html = `
@@ -253,11 +463,12 @@ const renderPriceContainer = () => {
           lengthList !== 0
             ? `<div class="price-total-container">
             <span class="amount-item-seleted">
-                seleted item
-                <p>${lengthList} items</p>
+                Selected
+                <p>${lengthList} ${lengthList === 1 ? 'item' : 'items'}</p>
             </span>
             <span class="price-total-box">
-                <span class="price-total">${Total}</span>
+                <span class="price-total">${formatNumber(Total)}</span>
+                <span class="total-cast">vnđ</span>
             </span>
         </div>
         
@@ -281,10 +492,17 @@ const BouquetWSEle = document.querySelector(".bouquet-render");
 const handleBoquetWorkSpace = (data) => {
   const BouquetItemEle = document.querySelectorAll(".bouquet-item");
 
+<<<<<<< HEAD
   data.forEach((item, index) => {
     BouquetItemEle[index].addEventListener("click", () => {
       BouquetWSEle.style.backgroundImage = `url('${item.path}')`;
       setSelectedList(item, 1);
+=======
+    data.forEach((item, index) => {
+        BouquetItemEle[index].addEventListener('click', () => {
+            BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
+            setSelectedList(item, 1);
+>>>>>>> ChiTrong
 
       priceContainerEle.innerHTML = renderPriceContainer();
     });
@@ -326,6 +544,7 @@ const WorkSpaceEle = document.querySelector(".canva");
 let zindex = 0;
 
 const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
+<<<<<<< HEAD
   const id = generateId();
   zindex++;
   DataStructure[type].push({
@@ -341,6 +560,23 @@ const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
       zIndex: zindex,
     },
   });
+=======
+    const id = generateId();
+    zindex++;
+    DataStructure[type].push({
+        id: id,
+        path: itemObj.texture,
+        name: itemObj.name,
+        state: {
+            pos: {
+                left: 10,
+                top: 10
+            },
+            rotation: 0,
+            zIndex: zindex
+        }
+    })
+>>>>>>> ChiTrong
 
   WorkSpaceEle.innerHTML = renderNode();
 
@@ -450,7 +686,9 @@ const renderNode = () => {
                 <div class="node" data="${item.id}" type="${key}" name="${item.name}"
                     style="background-image: url(${item.path}); left: ${item.state.pos.left}px; top: ${item.state.pos.top}px; transform: rotate(${item.state.rotation}deg); z-index:${item.state.zIndex};" 
                 >
-                    <div class="rotate-area"></div>
+                    <div class="rotate-area">
+                        <i class="rotate-icon bi bi-arrow-clockwise"></i>
+                    </div>
                 </div>
             `;
         })
@@ -464,14 +702,25 @@ const renderNode = () => {
 
 //render context menu
 const renderMenu = () => {
+<<<<<<< HEAD
   return `
         <div id="flip" class="menu-item">flip</div>
         <div id="sendback" class="menu-item">Send to back</div>
     `;
 };
+=======
+    return `
+        <div id="sendbackward" class="menu-item">Send backward</div>
+        <div id="sendforward" class="menu-item">Send forward</div>
+        <div id="sendtoback" class="menu-item">Send to back</div>
+        <div id="sendtofont" class="menu-item">Send to font</div>
+    `
+}
+>>>>>>> ChiTrong
 
 const contextMenuEle = document.querySelector(".menu-context");
 
+<<<<<<< HEAD
 const handleFip = (item) => {
   item.style.transform = "scaleX(-1)";
   contextMenuEle.innerHTML = "";
@@ -494,6 +743,55 @@ const handleSendBack = (item) => {
           newIndex = parseInt(window.getComputedStyle(nodelist[k]).zIndex);
           index = k;
           break;
+=======
+const handleSend = (item, typeName) => {
+    const id = item.getAttribute("data");
+    const currentType = item.getAttribute("type");
+
+
+    let allElements = [];
+    let currentElement = null;
+    let currentZIndex = 0;
+
+    Object.entries(DataStructure).forEach(([type, items]) => {
+        items.forEach((element) => {
+            allElements.push({
+                element: element,
+                type: type
+            });
+            if (element.id === id) {
+                currentElement = { element: element, type: type };
+                currentZIndex = element.state.zIndex;
+            }
+        });
+    });
+
+    if (!currentElement) {
+        contextMenuEle.innerHTML = "";
+        return;
+    }
+
+    // sort m
+    allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
+
+    let targetElement = null;
+
+    if (typeName === "forward") {
+        // finding nearest smaller zindex
+        for (let item of allElements) {
+            if (item.element.state.zIndex > currentZIndex) {
+                targetElement = item;
+                break;
+            }
+        }
+    } else if (typeName === "backward") {
+        // finding nearest bigger zindex
+        for (let i = allElements.length - 1; i >= 0; i--) {
+            if (allElements[i].element.state.zIndex < currentZIndex) {
+                targetElement = allElements[i];
+                break;
+            }
+>>>>>>> ChiTrong
         }
       }
 
@@ -504,11 +802,83 @@ const handleSendBack = (item) => {
     }
   }
 
+<<<<<<< HEAD
   nodelist[index].style.zIndex = oldIndex;
 
   item.style.zIndex = newIndex;
   contextMenuEle.innerHTML = "";
 };
+=======
+    if (targetElement) {
+
+        let temp = currentElement.element.state.zIndex;
+        currentElement.element.state.zIndex = targetElement.element.state.zIndex;
+        targetElement.element.state.zIndex = temp;
+
+
+        WorkSpaceEle.innerHTML = renderNode();
+        let NodeList = WorkSpaceEle.querySelectorAll(".node");
+        SetEvent(currentType, NodeList, {}, [], []);
+    }
+
+    contextMenuEle.innerHTML = "";
+}
+
+const handleSendUPD = (item, typeName) => {
+    const id = item.getAttribute("data");
+    const currentType = item.getAttribute("type");
+
+    //init
+    let allElements = [];
+    let currentElement = null;
+    let maxZIndex = 0;
+    let minZIndex = Infinity;
+
+    Object.entries(DataStructure).forEach(([type, items]) => {
+        items.forEach((element) => {
+            allElements.push({
+                element: element,
+                type: type
+            });
+            if (element.id === id) {
+                currentElement = { element: element, type: type };
+            }
+            maxZIndex = Math.max(maxZIndex, element.state.zIndex);
+            minZIndex = Math.min(minZIndex, element.state.zIndex);
+        });
+    });
+
+    if (!currentElement) {
+        contextMenuEle.innerHTML = "";
+        return;
+    }
+
+    if (typeName === "back") {
+        // push it in the back
+        allElements.forEach(item => {
+            if (item.element.id !== currentElement.element.id && item.element.state.zIndex < currentElement.element.state.zIndex) {
+                item.element.state.zIndex++;
+            }
+        });
+        currentElement.element.state.zIndex = minZIndex - 1;
+    } else if (typeName === "font") {
+        // push it to the top
+        allElements.forEach(item => {
+            if (item.element.id !== currentElement.element.id && item.element.state.zIndex > currentElement.element.state.zIndex) {
+                item.element.state.zIndex--;
+            }
+        });
+        currentElement.element.state.zIndex = maxZIndex + 1;
+    }
+
+    // Rerender canvas
+    WorkSpaceEle.innerHTML = renderNode();
+    let NodeList = WorkSpaceEle.querySelectorAll(".node");
+    SetEvent(currentType, NodeList, {}, [], []);
+
+    contextMenuEle.innerHTML = "";
+}
+>>>>>>> ChiTrong
 
 WorkSpaceEle.addEventListener("mousedown", () => {
   contextMenuEle.innerHTML = "";
@@ -531,10 +901,24 @@ const HandMenuContext = (itemHtml) => {
     const flip = contextMenuEle.querySelector("#flip");
     const sendback = contextMenuEle.querySelector("#sendback");
 
+<<<<<<< HEAD
     flip.addEventListener("click", () => handleFip(itemHtml));
     sendback.addEventListener("click", () => handleSendBack(itemHtml));
   });
 };
+=======
+        const sendbackward = contextMenuEle.querySelector("#sendbackward");
+        const sendforward = contextMenuEle.querySelector("#sendforward");
+        const sendtoback = contextMenuEle.querySelector("#sendtoback");
+        const sendtofont = contextMenuEle.querySelector("#sendtofont");
+
+        sendbackward.addEventListener('click', () => handleSend(itemHtml, "backward"));
+        sendforward.addEventListener('click', () => handleSend(itemHtml, "forward"));
+        sendtoback.addEventListener('click', () => handleSendUPD(itemHtml, "back"));
+        sendtofont.addEventListener('click', () => handleSendUPD(itemHtml, "font"));
+    })
+}
+>>>>>>> ChiTrong
 //------------------
 
 let isDragging = false;
@@ -633,6 +1017,7 @@ ResetButtonEle.addEventListener("click", () => {
 
   priceContainerEle.innerHTML = "";
 
+<<<<<<< HEAD
   WorkSpaceEle.innerHTML = "";
 
   const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
@@ -647,6 +1032,19 @@ ResetButtonEle.addEventListener("click", () => {
   for (let i = 0; i < amountFlo.length; i++) {
     if (amountFlo[i] !== 0) {
       amountFlo[i] = 0;
+=======
+    WorkSpaceEle.innerHTML = "";
+    BouquetWSEle.style.backgroundImage = `url('')`
+    console.log("maihfewugwueygeyug")
+
+    const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
+    if (ListAmount.length > 0) {
+        ListAmount.forEach((item, index) => {
+            if (item.textContent !== "0") {
+                item.innerHTML = 0;
+            }
+        })
+>>>>>>> ChiTrong
     }
   }
 
@@ -673,5 +1071,60 @@ const HandleSendDataLocal = () => {
     item: outputList,
   };
 
+<<<<<<< HEAD
   localStorage.setItem("pay_list", JSON.stringify(output));
 };
+=======
+
+const HandleSendDataLocal = async () => {
+    let total = 0;
+    Object.entries(SelectedFlowerList).forEach(([key, value]) => {
+        total += value.item.price * value.amountItem;
+    })
+
+    const Localdata = localStorage.getItem('shoppingCart');
+    let data = JSON.parse(Localdata) || [];
+
+    await domtoimage.toPng(document.getElementById('capture'))
+        .then(function (dataUrl) {
+            // Tạo thẻ img và gán ảnh vừa chụp
+            data = [
+                ...data,
+                {
+                    "id": 3,
+                    "name": "Your design",
+                    "price": total,
+                    "image": dataUrl,
+                    "quantity": 1,
+                    "checked": false
+                }
+            ]
+            console.log(dataUrl)
+        })
+        .catch(function (error) {
+            console.error('Lỗi khi chụp ảnh:', error);
+        });
+
+    localStorage.setItem('shoppingCart', JSON.stringify(data));
+}
+
+const formatNumber = (num) => {
+    let [integerPart, decimalPart] = num.toString().split('.');
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
+}
+
+const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
+
+
+priceAppearanceBtnEle.addEventListener('click', (item) => {
+    if (priceContainerEle.classList.contains('hidden')) {
+        priceContainerEle.classList.remove('hidden');
+    } else priceContainerEle.classList.add('hidden')
+})
+
+const page = document.querySelector(".arraging");
+window.addEventListener('resize', () => {
+    
+});
+>>>>>>> ChiTrong

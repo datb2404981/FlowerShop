@@ -18,8 +18,17 @@
 }
 
 :root {
+<<<<<<< HEAD
   --primary-ligter: #640d33b5;
   --primary-more-ligter: #640d3355;
+=======
+    --primary-ligter: #640d33b5;
+    --primary-more-ligter: #640d3355;
+    --primary-ligter-nogradient: #e2ced7;
+    --primary-description: #cda2b5bf;
+    --primary-hyper-visual: #ffe5f1bf;
+    --primary-buton-hover: #bc316d;
+>>>>>>> ChiTrong
 }
 
 .arraging {
@@ -35,9 +44,27 @@
   box-sizing: content-box;
 }
 
+@media (max-width: 996px) {
+    .arraging {
+        height: calc(100vh - 55px);
+        margin-top: 55px !important;
+    }
+}
+
 body {
+<<<<<<< HEAD
   padding: 0;
   margin: 0;
+=======
+    padding: 0;
+    margin: 0;
+
+    font-family: var(--font-header);
+}
+
+.title-container{
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+>>>>>>> ChiTrong
 }
 
 .sidebar-titlebox {
@@ -45,12 +72,23 @@ body {
   margin-left: 8px;
   line-height: 16px;
 
+<<<<<<< HEAD
   margin-bottom: 12px;
 }
 
 .sidebar {
   width: 300px;
   height: 100%;
+=======
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 310px;
+    height: 100%;
+>>>>>>> ChiTrong
 
   display: flex;
   flex-direction: column;
@@ -58,16 +96,30 @@ body {
 }
 
 .title-sidebar {
+<<<<<<< HEAD
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
+=======
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+>>>>>>> ChiTrong
 }
 
 .subtitle-sidebar {
   font-size: 0.9rem;
   font-style: italic;
 
+<<<<<<< HEAD
   color: var(--primary-ligter);
+=======
+    color: var(--primary-ligter);
+    text-align: center;
+
+>>>>>>> ChiTrong
 }
 
 .filter-box {
@@ -82,15 +134,69 @@ body {
 }
 
 .filter-box-item {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+>>>>>>> ChiTrong
 
   width: 40px;
   height: 40px;
 
+<<<<<<< HEAD
   margin-bottom: 4px;
   margin-right: 8px;
+=======
+    border-radius: 6px;
+    color: var(--primary-color);
+
+    margin-bottom: 4px;
+    margin-right: 8px;
+
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.filter-item-sign{
+    position: absolute;
+    z-index: -10;
+    
+    width: 100%;
+    height: 5px;
+
+    background-color: var(--primary-ligter);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+
+    transition: all;
+    animation-name: floatdown;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    top: calc(100% + 2px);
+    left: 0;
+}
+
+@keyframes floatdown{
+    0%{
+        transform: translateY(-2px);
+    }
+    70%{
+        transform: translateY(2px);
+    }
+    85%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+>>>>>>> ChiTrong
 }
 
 .flower-icon {
@@ -104,6 +210,7 @@ body {
 }
 
 .filter-box-item:hover {
+<<<<<<< HEAD
   background-color: #ff549ec7;
   color: white;
 
@@ -113,6 +220,20 @@ body {
 .seleted-filter-box {
   background-color: var(--primary-hover);
   color: var(--bg-cream);
+=======
+    background-color: #ff549ec7;
+    color: white !important;
+    transform: translateY(-4px);
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.seleted-filter-box {
+    background-color: var(--primary-hover);
+    color: var(--bg-cream) !important;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+>>>>>>> ChiTrong
 }
 
 /* item list */
@@ -125,8 +246,15 @@ body {
   flex-direction: column;
   overflow-y: auto;
 
+<<<<<<< HEAD
   padding: 4px;
   margin: 8px 0;
+=======
+    padding: 4px;
+    margin: 8px 0;
+
+    font-family: var(--font-body);
+>>>>>>> ChiTrong
 }
 
 .itemFlower {
@@ -134,6 +262,7 @@ body {
   align-items: center;
   flex-shrink: 0;
 
+<<<<<<< HEAD
   width: 100%;
   height: 100px;
 
@@ -142,6 +271,17 @@ body {
 
   border-radius: 8px;
   color: var(--primary-color);
+=======
+    width: 100%;
+    height: 120px;
+
+    margin-bottom: 8px;
+    background-color: #fff;
+
+    border-radius: 8px;
+    color: var(--primary-color);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+>>>>>>> ChiTrong
 
   user-select: none;
 }
@@ -150,6 +290,7 @@ body {
 }
 
 .item-flower-img {
+<<<<<<< HEAD
   width: 90px;
   height: 90px;
 
@@ -162,12 +303,37 @@ body {
 
 .content-flower-item {
   margin-left: 8px;
+=======
+    width: 100px;
+    height: 100px;
+
+    flex-shrink: 0;
+    border-radius: 8px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    transition: all;
+    transition-duration: 400ms;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+    }
+}
+
+.content-flower-item {
+    margin-left: 12px;
+>>>>>>> ChiTrong
 
   display: flex;
   flex-direction: column;
 }
 
 .content-flower-name {
+<<<<<<< HEAD
   font-size: 1.1rem;
   font-weight: bolder;
 }
@@ -177,13 +343,74 @@ body {
   color: #640d33b5;
 
   margin-top: -6px;
+=======
+    font-size: 1.2rem;
+    font-weight: bolder;
+
+
+}
+
+.content-flower-price {
+    font-size: 1rem;
+    color: #640d33b5;
+    font-weight: bolder;
+
+    position: relative;
+    margin-top: -2px;
+    margin-bottom: 4px;
+}
+
+.cast {
+    color: var(--primary-color);
+    position: absolute;
+    font-size: 0.7rem;
+    margin-left: 3px;
+
+    top: 0;
+}
+
+.button-container {
+    display: flex;
+}
+
+.delete-btn {
+    margin-left: 8px;
+    color: var(--primary-hover);
+    background-color: var(--primary-ligter-nogradient) !important;
+    border-radius: 50%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    transition: all;
+    transition-duration: 300ms;
+
+
+    &:hover {
+        background-color: rgb(255, 112, 134) !important;
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+        transform: translateY(-4px);
+    }
+>>>>>>> ChiTrong
 }
 
 .button-flower-container {
   display: flex;
   width: 110px;
 
+<<<<<<< HEAD
   justify-content: space-between;
+=======
+    justify-content: space-between;
+    background-color: var(--bg-cream);
+
+    align-items: center;
+    border-radius: 18px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-flower-reverse{
+    border-radius: 0 !important;
+    border-top-left-radius: 18px !important;
+    border-bottom-left-radius: 18px !important;
+>>>>>>> ChiTrong
 }
 
 .button-flower-item {
@@ -194,6 +421,7 @@ body {
   width: 30px;
   height: 30px;
 
+<<<<<<< HEAD
   border: none;
   outline: none;
 
@@ -204,6 +432,23 @@ body {
     background-color: var(--primary-hover);
     color: var(--bg-cream);
   }
+=======
+    border: none;
+    outline: none;
+    background-color: var(--bg-cream);
+    transition: all;
+    transition-duration: 300ms;
+
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: var(--primary-buton-hover);
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+        color: var(--bg-cream);
+    }
+>>>>>>> ChiTrong
 }
 
 .amount-flower-item {
@@ -216,10 +461,18 @@ body {
   justify-content: center;
   align-items: center;
 
+<<<<<<< HEAD
   flex: 1;
   background-color: rgb(255, 255, 255);
 
   overflow: hidden;
+=======
+    flex: 1;
+    background-color: var(--bg-scream);
+
+    overflow: hidden;
+    z-index: 0;
+>>>>>>> ChiTrong
 }
 
 /* price container */
@@ -242,9 +495,22 @@ body {
   font-size: 1rem;
   font-weight: bolder;
 
+<<<<<<< HEAD
   user-select: none;
 
   z-index: 100;
+=======
+    user-select: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+
+    z-index: 100;
+    transition: all;
+    transition-duration: 200ms;
+}
+
+.price-container:hover {
+    transform: translateY(-4px);
+>>>>>>> ChiTrong
 }
 
 .price-total-container {
@@ -259,6 +525,7 @@ body {
 }
 
 .amount-item-seleted {
+<<<<<<< HEAD
   font-weight: lighter;
   font-style: italic;
 }
@@ -268,12 +535,38 @@ body {
 
 .price-total {
   font-size: 2rem;
+=======
+    font-weight: lighter;
+    font-style: italic;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-total-box {
+    position: relative;
+}
+
+.price-total {
+    font-size: 1.6rem;
+    margin-right: 36px;
+}
+
+.total-cast {
+    position: absolute;
+    font-size: 1.1rem;
+
+    top: 0;
+    right: 0;
+>>>>>>> ChiTrong
 }
 
 .button-add-cart {
   width: 80%;
   height: 40px;
 
+<<<<<<< HEAD
   border-radius: 8px;
   outline: none;
   border: none;
@@ -285,6 +578,28 @@ body {
   &:hover {
     background-color: var(--primary-hover);
   }
+=======
+    border-radius: 16px;
+    outline: none;
+    border: none;
+
+    margin-bottom: 8px;
+    background-color: var(--primary-color);
+    color: var(--bg-cream);
+    font-weight: bolder;
+    font-size: 1.4rem;
+
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    font-family: var(--font-heading);
+
+    transition: all;
+    transition-duration: 300ms;
+    &:hover {
+        transform: translateY(-4px);
+        background-color: var(--primary-hover);
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+    }
+>>>>>>> ChiTrong
 }
 
 .list-price {
@@ -324,7 +639,30 @@ body {
   background-repeat: no-repeat;
 }
 
+.canva-title {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-size: 100px;
+
+    white-space: nowrap;
+
+    top: -10px;
+    color: var(--primary-hyper-visual);
+    z-index: -2;
+}
+
+.canva-subtitle {
+    margin-top: -30px;
+    font-size: 20px;
+    color: var(--primary-hyper-visual);
+
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+}
+
 .canva {
+<<<<<<< HEAD
   position: absolute;
   left: 0;
   top: 0;
@@ -334,6 +672,15 @@ body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+=======
+    position: absolute;
+
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+>>>>>>> ChiTrong
 }
 
 .node {
@@ -354,6 +701,7 @@ body {
 }
 
 .rotate-area {
+<<<<<<< HEAD
   position: absolute;
   background-color: black;
 
@@ -363,10 +711,68 @@ body {
 
   top: -4px;
   right: -4px;
+=======
+    position: absolute;
+    border-radius: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: -24px;
+>>>>>>> ChiTrong
 
   cursor: grab;
 
+<<<<<<< HEAD
   display: none;
+=======
+    display: none;
+
+    &:hover {
+        background-color: var(--primary-more-ligter);
+    }
+}
+
+.rotate-area::before {
+    content: "";
+    position: absolute;
+
+    height: calc(100% + 12px);
+    width: 10px;
+
+    top: calc(-50% - 12px);
+    left: -8px;
+}
+
+.rotate-area::after {
+    content: "";
+    position: absolute;
+
+    border-top: 1px dashed rgb(148, 148, 151);
+
+    height: calc(100% + 12px);
+    width: 10px;
+
+    top: 50%;
+    left: -8px;
+}
+
+.rotate-icon {
+    position: absolute;
+
+    top: -1.5px;
+    left: 1px;
+
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+>>>>>>> ChiTrong
 }
 
 .node:hover .rotate-area {
@@ -382,13 +788,19 @@ body {
   bottom: 10px;
   left: 10px;
 
+<<<<<<< HEAD
   padding: 8px;
   background-color: rgba(121, 121, 127, 0.788);
+=======
+    padding: 8px;
+    background-color: var(--primary-ligter);
+>>>>>>> ChiTrong
 
   display: flex;
   justify-content: center;
   align-items: center;
 
+<<<<<<< HEAD
   border-radius: 8px;
   cursor: pointer;
 
@@ -397,6 +809,22 @@ body {
   &:hover {
     background-color: #b6b6b6bd;
   }
+=======
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.507);
+
+    color: var(--bg-cream);
+    transition: all;
+    transition-duration: 400ms;
+
+    &:hover {
+        background-color: var(--primary-ligter-nogradient);
+        color: var(--primary-color);
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+        transform: translateY(-4px);
+    }
+>>>>>>> ChiTrong
 }
 
 .reset-icon {
@@ -408,7 +836,11 @@ body {
 
 /* menucontext */
 .menu-context {
+<<<<<<< HEAD
   position: absolute;
+=======
+    position: absolute;
+>>>>>>> ChiTrong
 
   width: 200px;
 
@@ -423,15 +855,78 @@ body {
 }
 
 .menu-item {
+<<<<<<< HEAD
   width: 100%;
   height: 24px;
   padding-inline-start: 8px;
+=======
+    width: 100%;
+    height: 24px;
+    padding-inline-start: 8px;
+>>>>>>> ChiTrong
 
   margin: 4px 0;
   color: var(--bg-cream);
   cursor: pointer;
 
+<<<<<<< HEAD
   &:hover {
     background-color: var(--primary-ligter);
   }
 }
+=======
+    &:hover {
+        background-color: var(--primary-ligter);
+    }
+}
+
+.price-app-btn {
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+
+    bottom: 10px;
+    right: 10px;
+
+    background-color: var(--primary-ligter);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.507);
+
+    color: var(--bg-cream);
+    transition: all;
+    transition-duration: 400ms;
+
+    &:hover {
+        background-color: var(--primary-ligter-nogradient);
+        color: var(--primary-color);
+        box-shadow: 4px 4px 8px rgba(240, 82, 82, 0.507);
+        transform: translateY(-4px);
+    }
+}
+
+.price-app-btn-icon {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 4px;
+    top: -1px;
+}
+
+.hidden {
+    display: none;
+}
+
+.ellipsis {
+    flex-shrink: 0; 
+    width: 175px;
+    white-space: nowrap;         
+    overflow: hidden;           
+    text-overflow: ellipsis;   
+}
+>>>>>>> ChiTrong
