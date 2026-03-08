@@ -1,6 +1,6 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-fliterItem[1].classList.add('seleted-filter-box')
-const filterName = ['bouquet', 'flower', 'decorations']
+fliterItem[1].classList.add("seleted-filter-box");
+const filterName = ["bouquet", "flower", "decorations"];
 
 let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
@@ -20,22 +20,22 @@ let itemSelected = filterName[1];
 const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        fliterItem.forEach(it => it.classList.remove('seleted-filter-box'));
-        filterItemSignELe.forEach(it => it.classList.add('hidden'));
-        item.classList.add('seleted-filter-box');
-        filterItemSignELe[index].classList.remove('hidden');
-        renderListItem(filterName[index]);
-        itemSelected = filterName[index];
-    })
-})
+  item.addEventListener("click", () => {
+    fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
+    filterItemSignELe.forEach((it) => it.classList.add("hidden"));
+    item.classList.add("seleted-filter-box");
+    filterItemSignELe[index].classList.remove("hidden");
+    renderListItem(filterName[index]);
+    itemSelected = filterName[index];
+  });
+});
 
 //get date
 const getDataFlower = async () => {
-    const data = await fetch('flower.json');
-    const main = await data.json();
-    return main
-}
+  const data = await fetch("flower.json");
+  const main = await data.json();
+  return main;
+};
 
 //
 const ListItem = document.querySelector(".list-selection");
@@ -83,10 +83,11 @@ const itemFlower = (data, amount) => {
 };
 
 const renderBouquet = (data) => {
-    let html = "";
-    if (data) {
-        html = data.map((item) => {
-            return `
+  let html = "";
+  if (data) {
+    html = data
+      .map((item) => {
+        return `
                 <div class="itemFlower">
                     <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
@@ -111,16 +112,18 @@ const renderBouquet = (data) => {
 };
 
 const deleteBouquet = () => {
-    const BouquetWSEle = document.querySelector(".bouquet-render")
-    BouquetWSEle.style.backgroundImage = `url('')`;
+  const BouquetWSEle = document.querySelector(".bouquet-render");
+  BouquetWSEle.style.backgroundImage = `url('')`;
 
-    const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-        return value.item.type != "bouquet";
-    }))
-    SelectedFlowerList = temp;
+  const temp = Object.fromEntries(
+    Object.entries(SelectedFlowerList).filter(([key, value]) => {
+      return value.item.type != "bouquet";
+    }),
+  );
+  SelectedFlowerList = temp;
 
-    priceContainerEle.innerHTML = renderPriceContainer();
-}
+  priceContainerEle.innerHTML = renderPriceContainer();
+};
 
 //--------------
 const amountFlo = [];
@@ -137,136 +140,10 @@ const renderListItem = async (selected) => {
     const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
     const ListAmountArr = Array.from(ListAmount);
 
-        if (amountFlo.length < ListAmount.length) {
-            ListAmount.forEach(() => {
-                amountFlo.push(0);
-            })
-        }
-
-        console.log(amountFlo)
-
-        handleIncrease = (id) => {
-            amountFlo[id]++;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            console.log(SelectedFlowerList)
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
-        }
-
-        handleDescrease = (id) => {
-            if (amountFlo[id] > 0)
-                amountFlo[id]--;
-            else return;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            if (amountFlo[id] == 0) {
-                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                    return value.amountItem != 0;
-                }))
-                SelectedFlowerList = temp;
-            }
-            console.log(SelectedFlowerList)
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
-        }
-
-        handleDeleteAll = (id) => {
-            if (amountFlo[id] === 0) return;
-            amountFlo[id] = 0;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                return value.amountItem != 0;
-            }))
-            SelectedFlowerList = temp;
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-            const newarr = DataStructure["flower"].filter((item) => {
-                return item.name != currentData[id].name;
-            })
-            DataStructure["flower"] = newarr;
-            WorkSpaceEle.innerHTML = renderNode();
-        }
-        //-----------
-
-        // selected BOUQUET
-    } else if (selected === 'bouquet') {
-        ListItem.innerHTML = renderBouquet(data.bouquet);
-
-        handleBoquetWorkSpace(data.bouquet);
-
-        // decorations
-    } else if (selected === 'decorations') {
-        ListItem.innerHTML = itemFlower(data.decorations, amountDeco);
-        //--------
-        const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
-        const ListAmountArr = Array.from(ListAmount);
-
-        if (amountDeco.length < ListAmount.length) {
-            ListAmount.forEach(() => {
-                amountDeco.push(0);
-            })
-        }
-
-        console.log(amountDeco)
-
-        handleIncrease = (id) => {
-            amountDeco[id]++;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
-        }
-
-        handleDescrease = (id) => {
-            if (amountDeco[id] > 0)
-                amountDeco[id]--;
-            else return;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-            if (amountDeco[id] == 0) {
-                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                    return value.amountItem != 0;
-                }))
-                SelectedFlowerList = temp;
-            }
-            console.log(amountDeco)
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            deleteNode("decorations", DataStructure.decorations[id].name, data, ListAmountArr, amountDeco);
-        }
-
-        handleDeleteAll = (id) => {
-            if (amountDeco[id] === 0) return;
-            amountDeco[id] = 0;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                return value.amountItem != 0;
-            }))
-            SelectedFlowerList = temp;
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-            const newarr = DataStructure["decorations"].filter((item) => {
-                return item.name != data.decorations[id].name;
-            })
-            DataStructure["decorations"] = newarr;
-            WorkSpaceEle.innerHTML = renderNode();
-        }
-    } else {
-        ListItem.innerHTML = ""
+    if (amountFlo.length < ListAmount.length) {
+      ListAmount.forEach(() => {
+        amountFlo.push(0);
+      });
     }
 
     console.log(amountFlo);
@@ -300,13 +177,28 @@ const renderListItem = async (selected) => {
       console.log(SelectedFlowerList);
       priceContainerEle.innerHTML = renderPriceContainer();
 
-      deleteNode(
-        "flower",
-        currentData[id].name,
-        data,
-        ListAmountArr,
-        amountFlo,
+      deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
+    };
+
+    handleDeleteAll = (id) => {
+      if (amountFlo[id] === 0) return;
+      amountFlo[id] = 0;
+      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      setSelectedList(currentData[id], amountFlo[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
       );
+      SelectedFlowerList = temp;
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+      const newarr = DataStructure["flower"].filter((item) => {
+        return item.name != currentData[id].name;
+      });
+      DataStructure["flower"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
     };
     //-----------
 
@@ -339,13 +231,7 @@ const renderListItem = async (selected) => {
 
       priceContainerEle.innerHTML = renderPriceContainer();
 
-      appendNode(
-        "decorations",
-        data.decorations[id],
-        data,
-        ListAmountArr,
-        amountDeco,
-      );
+      appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
     };
 
     handleDescrease = (id) => {
@@ -373,13 +259,34 @@ const renderListItem = async (selected) => {
         amountDeco,
       );
     };
+
+    handleDeleteAll = (id) => {
+      if (amountDeco[id] === 0) return;
+      amountDeco[id] = 0;
+      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      setSelectedList(data.decorations[id], amountDeco[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
+      );
+      SelectedFlowerList = temp;
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+      const newarr = DataStructure["decorations"].filter((item) => {
+        return item.name != data.decorations[id].name;
+      });
+      DataStructure["decorations"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
+    };
   } else {
     ListItem.innerHTML = "";
   }
 };
 
 //init
-renderListItem(filterName[1])
+renderListItem(filterName[1]);
 
 // button flower
 
@@ -399,9 +306,12 @@ const renderPriceContainer = () => {
                 ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
                 <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
-            </li>`: ""}
-        `
-    }).join("");
+            </li>`
+                : ""
+            }
+        `;
+    })
+    .join("");
 
   const lengthList = Object.keys(SelectedFlowerList).length;
   const result_html = `
@@ -410,7 +320,7 @@ const renderPriceContainer = () => {
             ? `<div class="price-total-container">
             <span class="amount-item-seleted">
                 Selected
-                <p>${lengthList} ${lengthList === 1 ? 'item' : 'items'}</p>
+                <p>${lengthList} ${lengthList === 1 ? "item" : "items"}</p>
             </span>
             <span class="price-total-box">
                 <span class="price-total">${formatNumber(Total)}</span>
@@ -438,10 +348,10 @@ const BouquetWSEle = document.querySelector(".bouquet-render");
 const handleBoquetWorkSpace = (data) => {
   const BouquetItemEle = document.querySelectorAll(".bouquet-item");
 
-    data.forEach((item, index) => {
-        BouquetItemEle[index].addEventListener('click', () => {
-            BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
-            setSelectedList(item, 1);
+  data.forEach((item, index) => {
+    BouquetItemEle[index].addEventListener("click", () => {
+      BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
+      setSelectedList(item, 1);
 
       priceContainerEle.innerHTML = renderPriceContainer();
     });
@@ -450,8 +360,7 @@ const handleBoquetWorkSpace = (data) => {
 
 //Generate ID
 const generateId = (length = 8) => {
-  const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let id = "";
   for (let i = 0; i < length; i++) {
     id += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -483,21 +392,21 @@ const WorkSpaceEle = document.querySelector(".canva");
 let zindex = 0;
 
 const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
-    const id = generateId();
-    zindex++;
-    DataStructure[type].push({
-        id: id,
-        path: itemObj.texture,
-        name: itemObj.name,
-        state: {
-            pos: {
-                left: 10,
-                top: 10
-            },
-            rotation: 0,
-            zIndex: zindex
-        }
-    })
+  const id = generateId();
+  zindex++;
+  DataStructure[type].push({
+    id: id,
+    path: itemObj.texture,
+    name: itemObj.name,
+    state: {
+      pos: {
+        left: 10,
+        top: 10,
+      },
+      rotation: 0,
+      zIndex: zindex,
+    },
+  });
 
   WorkSpaceEle.innerHTML = renderNode();
 
@@ -536,8 +445,7 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
         DataStructure[type] = temp;
 
         SelectedFlowerList[name].amountItem = amountFlo[index];
-        if (itemSelected === "flower")
-          list[index].innerHTML = kvalue = amountFlo[index];
+        if (itemSelected === "flower") list[index].innerHTML = kvalue = amountFlo[index];
       } else {
         amountDeco[index]--;
         DataStructure[type] = temp;
@@ -623,142 +531,138 @@ const renderNode = () => {
 
 //render context menu
 const renderMenu = () => {
-    return `
+  return `
         <div id="sendbackward" class="menu-item">Send backward</div>
         <div id="sendforward" class="menu-item">Send forward</div>
         <div id="sendtoback" class="menu-item">Send to back</div>
         <div id="sendtofont" class="menu-item">Send to font</div>
-    `
-}
+    `;
+};
 
 const contextMenuEle = document.querySelector(".menu-context");
 
 const handleSend = (item, typeName) => {
-    const id = item.getAttribute("data");
-    const currentType = item.getAttribute("type");
+  const id = item.getAttribute("data");
+  const currentType = item.getAttribute("type");
 
+  let allElements = [];
+  let currentElement = null;
+  let currentZIndex = 0;
 
-    let allElements = [];
-    let currentElement = null;
-    let currentZIndex = 0;
-
-    Object.entries(DataStructure).forEach(([type, items]) => {
-        items.forEach((element) => {
-            allElements.push({
-                element: element,
-                type: type
-            });
-            if (element.id === id) {
-                currentElement = { element: element, type: type };
-                currentZIndex = element.state.zIndex;
-            }
-        });
-    });
-
-    if (!currentElement) {
-        contextMenuEle.innerHTML = "";
-        return;
-    }
-
-    // sort m
-    allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
-
-    let targetElement = null;
-
-    if (typeName === "forward") {
-        // finding nearest smaller zindex
-        for (let item of allElements) {
-            if (item.element.state.zIndex > currentZIndex) {
-                targetElement = item;
-                break;
-            }
-        }
-    } else if (typeName === "backward") {
-        // finding nearest bigger zindex
-        for (let i = allElements.length - 1; i >= 0; i--) {
-            if (allElements[i].element.state.zIndex < currentZIndex) {
-                targetElement = allElements[i];
-                break;
-            }
-        }
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+        currentZIndex = element.state.zIndex;
       }
+    });
+  });
 
-      DataStructure[type][i].state.zIndex = newIndex;
-      DataStructure[type][index].state.zIndex = oldIndex;
+  if (!currentElement) {
+    contextMenuEle.innerHTML = "";
+    return;
+  }
 
-      break;
+  // sort m
+  allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
+
+  let targetElement = null;
+
+  if (typeName === "forward") {
+    // finding nearest smaller zindex
+    for (let item of allElements) {
+      if (item.element.state.zIndex > currentZIndex) {
+        targetElement = item;
+        break;
+      }
+    }
+  } else if (typeName === "backward") {
+    // finding nearest bigger zindex
+    for (let i = allElements.length - 1; i >= 0; i--) {
+      if (allElements[i].element.state.zIndex < currentZIndex) {
+        targetElement = allElements[i];
+        break;
+      }
     }
   }
 
-    if (targetElement) {
+  if (targetElement) {
+    let temp = currentElement.element.state.zIndex;
+    currentElement.element.state.zIndex = targetElement.element.state.zIndex;
+    targetElement.element.state.zIndex = temp;
 
-        let temp = currentElement.element.state.zIndex;
-        currentElement.element.state.zIndex = targetElement.element.state.zIndex;
-        targetElement.element.state.zIndex = temp;
-
-
-        WorkSpaceEle.innerHTML = renderNode();
-        let NodeList = WorkSpaceEle.querySelectorAll(".node");
-        SetEvent(currentType, NodeList, {}, [], []);
-    }
-
-    contextMenuEle.innerHTML = "";
-}
-
-const handleSendUPD = (item, typeName) => {
-    const id = item.getAttribute("data");
-    const currentType = item.getAttribute("type");
-
-    //init
-    let allElements = [];
-    let currentElement = null;
-    let maxZIndex = 0;
-    let minZIndex = Infinity;
-
-    Object.entries(DataStructure).forEach(([type, items]) => {
-        items.forEach((element) => {
-            allElements.push({
-                element: element,
-                type: type
-            });
-            if (element.id === id) {
-                currentElement = { element: element, type: type };
-            }
-            maxZIndex = Math.max(maxZIndex, element.state.zIndex);
-            minZIndex = Math.min(minZIndex, element.state.zIndex);
-        });
-    });
-
-    if (!currentElement) {
-        contextMenuEle.innerHTML = "";
-        return;
-    }
-
-    if (typeName === "back") {
-        // push it in the back
-        allElements.forEach(item => {
-            if (item.element.id !== currentElement.element.id && item.element.state.zIndex < currentElement.element.state.zIndex) {
-                item.element.state.zIndex++;
-            }
-        });
-        currentElement.element.state.zIndex = minZIndex - 1;
-    } else if (typeName === "font") {
-        // push it to the top
-        allElements.forEach(item => {
-            if (item.element.id !== currentElement.element.id && item.element.state.zIndex > currentElement.element.state.zIndex) {
-                item.element.state.zIndex--;
-            }
-        });
-        currentElement.element.state.zIndex = maxZIndex + 1;
-    }
-
-    // Rerender canvas
     WorkSpaceEle.innerHTML = renderNode();
     let NodeList = WorkSpaceEle.querySelectorAll(".node");
     SetEvent(currentType, NodeList, {}, [], []);
+  }
 
+  contextMenuEle.innerHTML = "";
+};
+
+const handleSendUPD = (item, typeName) => {
+  const id = item.getAttribute("data");
+  const currentType = item.getAttribute("type");
+
+  //init
+  let allElements = [];
+  let currentElement = null;
+  let maxZIndex = 0;
+  let minZIndex = Infinity;
+
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+      }
+      maxZIndex = Math.max(maxZIndex, element.state.zIndex);
+      minZIndex = Math.min(minZIndex, element.state.zIndex);
+    });
+  });
+
+  if (!currentElement) {
     contextMenuEle.innerHTML = "";
-}
+    return;
+  }
+
+  if (typeName === "back") {
+    // push it in the back
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex < currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex++;
+      }
+    });
+    currentElement.element.state.zIndex = minZIndex - 1;
+  } else if (typeName === "font") {
+    // push it to the top
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex > currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex--;
+      }
+    });
+    currentElement.element.state.zIndex = maxZIndex + 1;
+  }
+
+  // Rerender canvas
+  WorkSpaceEle.innerHTML = renderNode();
+  let NodeList = WorkSpaceEle.querySelectorAll(".node");
+  SetEvent(currentType, NodeList, {}, [], []);
+
+  contextMenuEle.innerHTML = "";
+};
 
 WorkSpaceEle.addEventListener("mousedown", () => {
   contextMenuEle.innerHTML = "";
@@ -778,20 +682,17 @@ const HandMenuContext = (itemHtml) => {
     contextMenuEle.style.top = top + "px";
     contextMenuEle.innerHTML = renderMenu();
 
-    const flip = contextMenuEle.querySelector("#flip");
-    const sendback = contextMenuEle.querySelector("#sendback");
+    const sendbackward = contextMenuEle.querySelector("#sendbackward");
+    const sendforward = contextMenuEle.querySelector("#sendforward");
+    const sendtoback = contextMenuEle.querySelector("#sendtoback");
+    const sendtofont = contextMenuEle.querySelector("#sendtofont");
 
-        const sendbackward = contextMenuEle.querySelector("#sendbackward");
-        const sendforward = contextMenuEle.querySelector("#sendforward");
-        const sendtoback = contextMenuEle.querySelector("#sendtoback");
-        const sendtofont = contextMenuEle.querySelector("#sendtofont");
-
-        sendbackward.addEventListener('click', () => handleSend(itemHtml, "backward"));
-        sendforward.addEventListener('click', () => handleSend(itemHtml, "forward"));
-        sendtoback.addEventListener('click', () => handleSendUPD(itemHtml, "back"));
-        sendtofont.addEventListener('click', () => handleSendUPD(itemHtml, "font"));
-    })
-}
+    sendbackward.addEventListener("click", () => handleSend(itemHtml, "backward"));
+    sendforward.addEventListener("click", () => handleSend(itemHtml, "forward"));
+    sendtoback.addEventListener("click", () => handleSendUPD(itemHtml, "back"));
+    sendtofont.addEventListener("click", () => handleSendUPD(itemHtml, "font"));
+  });
+};
 //------------------
 
 let isDragging = false;
@@ -890,17 +791,21 @@ ResetButtonEle.addEventListener("click", () => {
 
   priceContainerEle.innerHTML = "";
 
-    WorkSpaceEle.innerHTML = "";
-    BouquetWSEle.style.backgroundImage = `url('')`
-    console.log("maihfewugwueygeyug")
+  WorkSpaceEle.innerHTML = "";
+  BouquetWSEle.style.backgroundImage = `url('')`;
+  console.log("maihfewugwueygeyug");
 
-    const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
-    if (ListAmount.length > 0) {
-        ListAmount.forEach((item, index) => {
-            if (item.textContent !== "0") {
-                item.innerHTML = 0;
-            }
-        })
+  const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
+  if (ListAmount.length > 0) {
+    ListAmount.forEach((item, index) => {
+      if (item.textContent !== "0") {
+        item.innerHTML = 0;
+      }
+    });
+  }
+  for (let i = 0; i < amountFlo.length; i++) {
+    if (amountFlo[i] !== 0) {
+      amountFlo[i] = 0;
     }
   }
 
@@ -911,71 +816,59 @@ ResetButtonEle.addEventListener("click", () => {
   }
 });
 
-const HandleSendDataLocal = () => {
+const HandleSendDataLocal = async () => {
   let total = 0;
-  const outputList = Object.entries(SelectedFlowerList).map(([key, value]) => {
-    total += value.item.price;
-    return {
-      name: value.item.name,
-      price: value.item.price,
-      amount: value.amountItem,
-    };
+  Object.entries(SelectedFlowerList).forEach(([key, value]) => {
+    total += value.item.price * value.amountItem;
   });
 
-  const output = {
-    total,
-    item: outputList,
-  };
+  const Localdata = localStorage.getItem("shoppingCart");
+  let data = JSON.parse(Localdata) || [];
 
-
-const HandleSendDataLocal = async () => {
-    let total = 0;
-    Object.entries(SelectedFlowerList).forEach(([key, value]) => {
-        total += value.item.price * value.amountItem;
+  await domtoimage
+    .toJpeg(document.getElementById("capture"), { quality: 0.5 })
+    .then(function (dataUrl) {
+      // Tạo thẻ img và gán ảnh vừa chụp
+      data = [
+        ...data,
+        {
+          id: 3, // Lưu ý: Nếu muốn có nhiều hoa tự thiết kế thì bạn nên dùng generateId() thay vì id: 3 cố định nhé
+          name: "Your design",
+          price: total,
+          image: dataUrl,
+          quantity: 1,
+          checked: false,
+        },
+      ];
+      console.log("Đã chụp và nén ảnh thành công!");
     })
+    .catch(function (error) {
+      console.error("Lỗi khi chụp ảnh:", error);
+    });
 
-    const Localdata = localStorage.getItem('shoppingCart');
-    let data = JSON.parse(Localdata) || [];
-
-    await domtoimage.toPng(document.getElementById('capture'))
-        .then(function (dataUrl) {
-            // Tạo thẻ img và gán ảnh vừa chụp
-            data = [
-                ...data,
-                {
-                    "id": 3,
-                    "name": "Your design",
-                    "price": total,
-                    "image": dataUrl,
-                    "quantity": 1,
-                    "checked": false
-                }
-            ]
-            console.log(dataUrl)
-        })
-        .catch(function (error) {
-            console.error('Lỗi khi chụp ảnh:', error);
-        });
-
-    localStorage.setItem('shoppingCart', JSON.stringify(data));
-}
+  try {
+    localStorage.setItem("shoppingCart", JSON.stringify(data));
+    window.location.href = "cart.html";
+  } catch (e) {
+    console.error("Lỗi khi lưu vào LocalStorage (có thể do ảnh vẫn quá lớn):", e);
+    alert("Thiết kế của bạn quá phức tạp, không đủ bộ nhớ để lưu vào giỏ hàng!");
+  }
+  window.location.href = "cart.html";
+};
 
 const formatNumber = (num) => {
-    let [integerPart, decimalPart] = num.toString().split('.');
-    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
-}
+  let [integerPart, decimalPart] = num.toString().split(".");
+  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
+};
 
 const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
 
-
-priceAppearanceBtnEle.addEventListener('click', (item) => {
-    if (priceContainerEle.classList.contains('hidden')) {
-        priceContainerEle.classList.remove('hidden');
-    } else priceContainerEle.classList.add('hidden')
-})
+priceAppearanceBtnEle.addEventListener("click", (item) => {
+  if (priceContainerEle.classList.contains("hidden")) {
+    priceContainerEle.classList.remove("hidden");
+  } else priceContainerEle.classList.add("hidden");
+});
 
 const page = document.querySelector(".arraging");
-window.addEventListener('resize', () => {
-    
-});
+window.addEventListener("resize", () => {});
