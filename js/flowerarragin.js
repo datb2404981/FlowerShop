@@ -1,11 +1,6 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-<<<<<<< HEAD
-fliterItem[0].classList.add("seleted-filter-box");
-const filterName = ["bouquet", "flower", "decorations"];
-=======
 fliterItem[1].classList.add('seleted-filter-box')
 const filterName = ['bouquet', 'flower', 'decorations']
->>>>>>> ChiTrong
 
 let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
@@ -25,23 +20,6 @@ let itemSelected = filterName[1];
 const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
-<<<<<<< HEAD
-  item.addEventListener("click", () => {
-    fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
-    item.classList.add("seleted-filter-box");
-    renderListItem(filterName[index]);
-    itemSelected = filterName[index];
-  });
-});
-
-//get date
-const getDataFlower = async () => {
-  const data = await fetch("flower.json");
-  const main = await data.json();
-  console.log(main);
-  return main;
-};
-=======
     item.addEventListener('click', () => {
         fliterItem.forEach(it => it.classList.remove('seleted-filter-box'));
         filterItemSignELe.forEach(it => it.classList.add('hidden'));
@@ -58,7 +36,6 @@ const getDataFlower = async () => {
     const main = await data.json();
     return main
 }
->>>>>>> ChiTrong
 
 //
 const ListItem = document.querySelector(".list-selection");
@@ -106,22 +83,12 @@ const itemFlower = (data, amount) => {
 };
 
 const renderBouquet = (data) => {
-<<<<<<< HEAD
-  let html = "";
-  if (data) {
-    html = data
-      .map((item) => {
-        return `
-                <div class="itemFlower bouquet-item">
-                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
-=======
     let html = "";
     if (data) {
         html = data.map((item) => {
             return `
                 <div class="itemFlower">
                     <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
->>>>>>> ChiTrong
                     <div class="content-flower-item">
                         <span class="content-flower-name">${item.name}</span>
                         <span class="content-flower-price">
@@ -170,12 +137,6 @@ const renderListItem = async (selected) => {
     const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
     const ListAmountArr = Array.from(ListAmount);
 
-<<<<<<< HEAD
-    if (amountFlo.length < ListAmount.length) {
-      ListAmount.forEach(() => {
-        amountFlo.push(0);
-      });
-=======
         if (amountFlo.length < ListAmount.length) {
             ListAmount.forEach(() => {
                 amountFlo.push(0);
@@ -306,7 +267,6 @@ const renderListItem = async (selected) => {
         }
     } else {
         ListItem.innerHTML = ""
->>>>>>> ChiTrong
     }
 
     console.log(amountFlo);
@@ -419,11 +379,7 @@ const renderListItem = async (selected) => {
 };
 
 //init
-<<<<<<< HEAD
-renderListItem(filterName[0]);
-=======
 renderListItem(filterName[1])
->>>>>>> ChiTrong
 
 // button flower
 
@@ -442,20 +398,10 @@ const renderPriceContainer = () => {
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
-<<<<<<< HEAD
-                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${value.item.price}</span>
-            </li>`
-                : ""
-            }
-        `;
-    })
-    .join("");
-=======
                 <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
             </li>`: ""}
         `
     }).join("");
->>>>>>> ChiTrong
 
   const lengthList = Object.keys(SelectedFlowerList).length;
   const result_html = `
@@ -492,17 +438,10 @@ const BouquetWSEle = document.querySelector(".bouquet-render");
 const handleBoquetWorkSpace = (data) => {
   const BouquetItemEle = document.querySelectorAll(".bouquet-item");
 
-<<<<<<< HEAD
-  data.forEach((item, index) => {
-    BouquetItemEle[index].addEventListener("click", () => {
-      BouquetWSEle.style.backgroundImage = `url('${item.path}')`;
-      setSelectedList(item, 1);
-=======
     data.forEach((item, index) => {
         BouquetItemEle[index].addEventListener('click', () => {
             BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
             setSelectedList(item, 1);
->>>>>>> ChiTrong
 
       priceContainerEle.innerHTML = renderPriceContainer();
     });
@@ -544,23 +483,6 @@ const WorkSpaceEle = document.querySelector(".canva");
 let zindex = 0;
 
 const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
-<<<<<<< HEAD
-  const id = generateId();
-  zindex++;
-  DataStructure[type].push({
-    id: id,
-    path: itemObj.path,
-    name: itemObj.name,
-    state: {
-      pos: {
-        left: 10,
-        top: 10,
-      },
-      rotation: 0,
-      zIndex: zindex,
-    },
-  });
-=======
     const id = generateId();
     zindex++;
     DataStructure[type].push({
@@ -576,7 +498,6 @@ const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
             zIndex: zindex
         }
     })
->>>>>>> ChiTrong
 
   WorkSpaceEle.innerHTML = renderNode();
 
@@ -702,13 +623,6 @@ const renderNode = () => {
 
 //render context menu
 const renderMenu = () => {
-<<<<<<< HEAD
-  return `
-        <div id="flip" class="menu-item">flip</div>
-        <div id="sendback" class="menu-item">Send to back</div>
-    `;
-};
-=======
     return `
         <div id="sendbackward" class="menu-item">Send backward</div>
         <div id="sendforward" class="menu-item">Send forward</div>
@@ -716,34 +630,9 @@ const renderMenu = () => {
         <div id="sendtofont" class="menu-item">Send to font</div>
     `
 }
->>>>>>> ChiTrong
 
 const contextMenuEle = document.querySelector(".menu-context");
 
-<<<<<<< HEAD
-const handleFip = (item) => {
-  item.style.transform = "scaleX(-1)";
-  contextMenuEle.innerHTML = "";
-};
-
-const handleSendBack = (item) => {
-  const id = item.getAttribute("data");
-  const type = item.getAttribute("type");
-  const nodelist = WorkSpaceEle.querySelectorAll(".node");
-
-  let index = 0;
-  let newIndex = 0;
-  let oldIndex = 0;
-  for (let i = 0; i < DataStructure[type].length; i++) {
-    if (DataStructure[type][i].id === id) {
-      oldIndex = parseInt(window.getComputedStyle(item).zIndex);
-
-      for (let k = 0; k < DataStructure[type].length; k++) {
-        if (DataStructure[type][k].state.zIndex === oldIndex - 1) {
-          newIndex = parseInt(window.getComputedStyle(nodelist[k]).zIndex);
-          index = k;
-          break;
-=======
 const handleSend = (item, typeName) => {
     const id = item.getAttribute("data");
     const currentType = item.getAttribute("type");
@@ -791,7 +680,6 @@ const handleSend = (item, typeName) => {
                 targetElement = allElements[i];
                 break;
             }
->>>>>>> ChiTrong
         }
       }
 
@@ -802,13 +690,6 @@ const handleSend = (item, typeName) => {
     }
   }
 
-<<<<<<< HEAD
-  nodelist[index].style.zIndex = oldIndex;
-
-  item.style.zIndex = newIndex;
-  contextMenuEle.innerHTML = "";
-};
-=======
     if (targetElement) {
 
         let temp = currentElement.element.state.zIndex;
@@ -878,7 +759,6 @@ const handleSendUPD = (item, typeName) => {
 
     contextMenuEle.innerHTML = "";
 }
->>>>>>> ChiTrong
 
 WorkSpaceEle.addEventListener("mousedown", () => {
   contextMenuEle.innerHTML = "";
@@ -901,12 +781,6 @@ const HandMenuContext = (itemHtml) => {
     const flip = contextMenuEle.querySelector("#flip");
     const sendback = contextMenuEle.querySelector("#sendback");
 
-<<<<<<< HEAD
-    flip.addEventListener("click", () => handleFip(itemHtml));
-    sendback.addEventListener("click", () => handleSendBack(itemHtml));
-  });
-};
-=======
         const sendbackward = contextMenuEle.querySelector("#sendbackward");
         const sendforward = contextMenuEle.querySelector("#sendforward");
         const sendtoback = contextMenuEle.querySelector("#sendtoback");
@@ -918,7 +792,6 @@ const HandMenuContext = (itemHtml) => {
         sendtofont.addEventListener('click', () => handleSendUPD(itemHtml, "font"));
     })
 }
->>>>>>> ChiTrong
 //------------------
 
 let isDragging = false;
@@ -1017,22 +890,6 @@ ResetButtonEle.addEventListener("click", () => {
 
   priceContainerEle.innerHTML = "";
 
-<<<<<<< HEAD
-  WorkSpaceEle.innerHTML = "";
-
-  const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
-  if (ListAmount.length > 0) {
-    ListAmount.forEach((item, index) => {
-      if (item.textContent !== "0") {
-        item.innerHTML = 0;
-        console.log("hello");
-      }
-    });
-  }
-  for (let i = 0; i < amountFlo.length; i++) {
-    if (amountFlo[i] !== 0) {
-      amountFlo[i] = 0;
-=======
     WorkSpaceEle.innerHTML = "";
     BouquetWSEle.style.backgroundImage = `url('')`
     console.log("maihfewugwueygeyug")
@@ -1044,7 +901,6 @@ ResetButtonEle.addEventListener("click", () => {
                 item.innerHTML = 0;
             }
         })
->>>>>>> ChiTrong
     }
   }
 
@@ -1071,10 +927,6 @@ const HandleSendDataLocal = () => {
     item: outputList,
   };
 
-<<<<<<< HEAD
-  localStorage.setItem("pay_list", JSON.stringify(output));
-};
-=======
 
 const HandleSendDataLocal = async () => {
     let total = 0;
@@ -1127,4 +979,3 @@ const page = document.querySelector(".arraging");
 window.addEventListener('resize', () => {
     
 });
->>>>>>> ChiTrong
