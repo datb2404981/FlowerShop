@@ -1,18 +1,18 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-fliterItem[1].classList.add('seleted-filter-box')
-const filterName = ['bouquet', 'flower', 'decorations']
+fliterItem[1].classList.add("seleted-filter-box");
+const filterName = ["bouquet", "flower", "decorations"];
 
-let SelectedFlowerList = {}
+let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
-    const main = {
-        ...SelectedFlowerList,
-        [item.name]: {
-            item,
-            amountItem
-        }
-    }
-    SelectedFlowerList = main
-}
+  const main = {
+    ...SelectedFlowerList,
+    [item.name]: {
+      item,
+      amountItem,
+    },
+  };
+  SelectedFlowerList = main;
+};
 
 //filter selected
 let itemSelected = filterName[1];
@@ -20,35 +20,36 @@ let itemSelected = filterName[1];
 const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
-    item.addEventListener('click', () => {
-        fliterItem.forEach(it => it.classList.remove('seleted-filter-box'));
-        filterItemSignELe.forEach(it => it.classList.add('hidden'));
-        item.classList.add('seleted-filter-box');
-        filterItemSignELe[index].classList.remove('hidden');
-        renderListItem(filterName[index]);
-        itemSelected = filterName[index];
-    })
-})
+  item.addEventListener("click", () => {
+    fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
+    filterItemSignELe.forEach((it) => it.classList.add("hidden"));
+    item.classList.add("seleted-filter-box");
+    filterItemSignELe[index].classList.remove("hidden");
+    renderListItem(filterName[index]);
+    itemSelected = filterName[index];
+  });
+});
 
 //get date
 const getDataFlower = async () => {
-    const data = await fetch('flower.json');
-    const main = await data.json();
-    return main
-}
+  const data = await fetch("flower.json");
+  const main = await data.json();
+  return main;
+};
 
 //
-const ListItem = document.querySelector('.list-selection');
+const ListItem = document.querySelector(".list-selection");
 let handleIncrease;
 let handleDescrease;
 let handleDeleteAll;
 let currentData = [];
 
 const itemFlower = (data, amount) => {
-    let html = ''
-    if (data) {
-        html = data.map((item, index) => {
-            return `
+  let html = "";
+  if (data) {
+    html = data
+      .map((item, index) => {
+        return `
                 <div class="itemFlower">
                     <div class="item-flower-img" style="background-image: url('${item.path}');" onclick="handleIncrease(${index})"></div>
                     <div class="content-flower-item">
@@ -74,17 +75,19 @@ const itemFlower = (data, amount) => {
                         </div>
                     </div>
                 </div>
-            `
-        }).join("");
-    }
-    return html
-}
+            `;
+      })
+      .join("");
+  }
+  return html;
+};
 
 const renderBouquet = (data) => {
-    let html = "";
-    if (data) {
-        html = data.map((item) => {
-            return `
+  let html = "";
+  if (data) {
+    html = data
+      .map((item) => {
+        return `
                 <div class="itemFlower">
                     <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
@@ -101,201 +104,223 @@ const renderBouquet = (data) => {
                         </div>
                     </div>
                 </div>
-            `
-        }).join("");
-    }
-    return html;
-}
+            `;
+      })
+      .join("");
+  }
+  return html;
+};
 
 const deleteBouquet = () => {
-    const BouquetWSEle = document.querySelector(".bouquet-render")
-    BouquetWSEle.style.backgroundImage = `url('')`;
+  const BouquetWSEle = document.querySelector(".bouquet-render");
+  BouquetWSEle.style.backgroundImage = `url('')`;
 
-    const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-        return value.item.type != "bouquet";
-    }))
-    SelectedFlowerList = temp;
+  const temp = Object.fromEntries(
+    Object.entries(SelectedFlowerList).filter(([key, value]) => {
+      return value.item.type != "bouquet";
+    }),
+  );
+  SelectedFlowerList = temp;
 
-    priceContainerEle.innerHTML = renderPriceContainer();
-}
+  priceContainerEle.innerHTML = renderPriceContainer();
+};
 
 //--------------
 const amountFlo = [];
 const amountDeco = [];
 
 const renderListItem = async (selected) => {
-    const data = await getDataFlower();
+  const data = await getDataFlower();
 
-    //flowers
-    if (selected === 'flower') {
-        currentData = data.flower;
-        ListItem.innerHTML = itemFlower(currentData, amountFlo);
-        //--------
-        const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
-        const ListAmountArr = Array.from(ListAmount);
+  //flowers
+  if (selected === "flower") {
+    currentData = data.flower;
+    ListItem.innerHTML = itemFlower(currentData, amountFlo);
+    //--------
+    const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
+    const ListAmountArr = Array.from(ListAmount);
 
-        if (amountFlo.length < ListAmount.length) {
-            ListAmount.forEach(() => {
-                amountFlo.push(0);
-            })
-        }
-
-        console.log(amountFlo)
-
-        handleIncrease = (id) => {
-            amountFlo[id]++;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            console.log(SelectedFlowerList)
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
-        }
-
-        handleDescrease = (id) => {
-            if (amountFlo[id] > 0)
-                amountFlo[id]--;
-            else return;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            if (amountFlo[id] == 0) {
-                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                    return value.amountItem != 0;
-                }))
-                SelectedFlowerList = temp;
-            }
-            console.log(SelectedFlowerList)
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
-        }
-
-        handleDeleteAll = (id) => {
-            if (amountFlo[id] === 0) return;
-            amountFlo[id] = 0;
-            ListAmountArr[id].innerHTML = amountFlo[id];
-
-            setSelectedList(currentData[id], amountFlo[id])
-            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                return value.amountItem != 0;
-            }))
-            SelectedFlowerList = temp;
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-            const newarr = DataStructure["flower"].filter((item) => {
-                return item.name != currentData[id].name;
-            })
-            DataStructure["flower"] = newarr;
-            WorkSpaceEle.innerHTML = renderNode();
-        }
-        //-----------
-
-        // selected BOUQUET
-    } else if (selected === 'bouquet') {
-        ListItem.innerHTML = renderBouquet(data.bouquet);
-
-        handleBoquetWorkSpace(data.bouquet);
-
-        // decorations
-    } else if (selected === 'decorations') {
-        ListItem.innerHTML = itemFlower(data.decorations, amountDeco);
-        //--------
-        const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
-        const ListAmountArr = Array.from(ListAmount);
-
-        if (amountDeco.length < ListAmount.length) {
-            ListAmount.forEach(() => {
-                amountDeco.push(0);
-            })
-        }
-
-        console.log(amountDeco)
-
-        handleIncrease = (id) => {
-            amountDeco[id]++;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
-        }
-
-        handleDescrease = (id) => {
-            if (amountDeco[id] > 0)
-                amountDeco[id]--;
-            else return;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-            if (amountDeco[id] == 0) {
-                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                    return value.amountItem != 0;
-                }))
-                SelectedFlowerList = temp;
-            }
-            console.log(amountDeco)
-            priceContainerEle.innerHTML = renderPriceContainer()
-
-            deleteNode("decorations", DataStructure.decorations[id].name, data, ListAmountArr, amountDeco);
-        }
-
-        handleDeleteAll = (id) => {
-            if (amountDeco[id] === 0) return;
-            amountDeco[id] = 0;
-            ListAmountArr[id].innerHTML = amountDeco[id];
-
-            setSelectedList(data.decorations[id], amountDeco[id])
-            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                return value.amountItem != 0;
-            }))
-            SelectedFlowerList = temp;
-
-            priceContainerEle.innerHTML = renderPriceContainer()
-            const newarr = DataStructure["decorations"].filter((item) => {
-                return item.name != data.decorations[id].name;
-            })
-            DataStructure["decorations"] = newarr;
-            WorkSpaceEle.innerHTML = renderNode();
-        }
-    } else {
-        ListItem.innerHTML = ""
+    if (amountFlo.length < ListAmount.length) {
+      ListAmount.forEach(() => {
+        amountFlo.push(0);
+      });
     }
-}
+
+    console.log(amountFlo);
+
+    handleIncrease = (id) => {
+      amountFlo[id]++;
+      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      setSelectedList(currentData[id], amountFlo[id]);
+      console.log(SelectedFlowerList);
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+
+      appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
+    };
+
+    handleDescrease = (id) => {
+      if (amountFlo[id] > 0) amountFlo[id]--;
+      else return;
+      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      setSelectedList(currentData[id], amountFlo[id]);
+      if (amountFlo[id] == 0) {
+        const temp = Object.fromEntries(
+          Object.entries(SelectedFlowerList).filter(([key, value]) => {
+            return value.amountItem != 0;
+          }),
+        );
+        SelectedFlowerList = temp;
+      }
+      console.log(SelectedFlowerList);
+      priceContainerEle.innerHTML = renderPriceContainer();
+
+      deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
+    };
+
+    handleDeleteAll = (id) => {
+      if (amountFlo[id] === 0) return;
+      amountFlo[id] = 0;
+      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      setSelectedList(currentData[id], amountFlo[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
+      );
+      SelectedFlowerList = temp;
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+      const newarr = DataStructure["flower"].filter((item) => {
+        return item.name != currentData[id].name;
+      });
+      DataStructure["flower"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
+    };
+    //-----------
+
+    // selected BOUQUET
+  } else if (selected === "bouquet") {
+    ListItem.innerHTML = renderBouquet(data.bouquet);
+
+    handleBoquetWorkSpace(data.bouquet);
+
+    // decorations
+  } else if (selected === "decorations") {
+    ListItem.innerHTML = itemFlower(data.decorations, amountDeco);
+    //--------
+    const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
+    const ListAmountArr = Array.from(ListAmount);
+
+    if (amountDeco.length < ListAmount.length) {
+      ListAmount.forEach(() => {
+        amountDeco.push(0);
+      });
+    }
+
+    console.log(amountDeco);
+
+    handleIncrease = (id) => {
+      amountDeco[id]++;
+      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      setSelectedList(data.decorations[id], amountDeco[id]);
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+
+      appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
+    };
+
+    handleDescrease = (id) => {
+      if (amountDeco[id] > 0) amountDeco[id]--;
+      else return;
+      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      setSelectedList(data.decorations[id], amountDeco[id]);
+      if (amountDeco[id] == 0) {
+        const temp = Object.fromEntries(
+          Object.entries(SelectedFlowerList).filter(([key, value]) => {
+            return value.amountItem != 0;
+          }),
+        );
+        SelectedFlowerList = temp;
+      }
+      console.log(amountDeco);
+      priceContainerEle.innerHTML = renderPriceContainer();
+
+      deleteNode(
+        "decorations",
+        DataStructure.decorations[id].name,
+        data,
+        ListAmountArr,
+        amountDeco,
+      );
+    };
+
+    handleDeleteAll = (id) => {
+      if (amountDeco[id] === 0) return;
+      amountDeco[id] = 0;
+      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      setSelectedList(data.decorations[id], amountDeco[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
+      );
+      SelectedFlowerList = temp;
+
+      priceContainerEle.innerHTML = renderPriceContainer();
+      const newarr = DataStructure["decorations"].filter((item) => {
+        return item.name != data.decorations[id].name;
+      });
+      DataStructure["decorations"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
+    };
+  } else {
+    ListItem.innerHTML = "";
+  }
+};
 
 //init
-renderListItem(filterName[1])
+renderListItem(filterName[1]);
 
 // button flower
 
-const priceContainerEle = document.querySelector(".price-container")
+const priceContainerEle = document.querySelector(".price-container");
 
 const renderPriceContainer = () => {
-    if (!priceContainerEle) return;
+  if (!priceContainerEle) return;
 
-    let Total = 0;
+  let Total = 0;
 
-
-    const html = Object.entries(SelectedFlowerList).map(([key, value]) => {
-        Total += value.item.price * value.amountItem;
-        return `
-            ${value.amountItem !== 0 ? `<li class="item-price-selected">
+  const html = Object.entries(SelectedFlowerList)
+    .map(([key, value]) => {
+      Total += value.item.price * value.amountItem;
+      return `
+            ${
+              value.amountItem !== 0
+                ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
                 <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
-            </li>`: ""}
-        `
-    }).join("");
+            </li>`
+                : ""
+            }
+        `;
+    })
+    .join("");
 
-    const lengthList = Object.keys(SelectedFlowerList).length;
-    const result_html = `
-        ${lengthList !== 0 ? `<div class="price-total-container">
+  const lengthList = Object.keys(SelectedFlowerList).length;
+  const result_html = `
+        ${
+          lengthList !== 0
+            ? `<div class="price-total-container">
             <span class="amount-item-seleted">
                 Selected
-                <p>${lengthList} ${lengthList === 1 ? 'item' : 'items'}</p>
+                <p>${lengthList} ${lengthList === 1 ? "item" : "items"}</p>
             </span>
             <span class="price-total-box">
                 <span class="price-total">${formatNumber(Total)}</span>
@@ -309,184 +334,184 @@ const renderPriceContainer = () => {
 
         <button onclick="HandleSendDataLocal()" class="button-add-cart">
             Add to cart
-        </button> ` : ""}
-    `
+        </button> `
+            : ""
+        }
+    `;
 
-    return result_html;
-}
+  return result_html;
+};
 
 //handle Bouquet
-const BouquetWSEle = document.querySelector(".bouquet-render")
+const BouquetWSEle = document.querySelector(".bouquet-render");
 
 const handleBoquetWorkSpace = (data) => {
-    const BouquetItemEle = document.querySelectorAll(".bouquet-item")
+  const BouquetItemEle = document.querySelectorAll(".bouquet-item");
 
-    data.forEach((item, index) => {
-        BouquetItemEle[index].addEventListener('click', () => {
-            BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
-            setSelectedList(item, 1);
+  data.forEach((item, index) => {
+    BouquetItemEle[index].addEventListener("click", () => {
+      BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
+      setSelectedList(item, 1);
 
-            priceContainerEle.innerHTML = renderPriceContainer();
-        })
-    })
-
-}
+      priceContainerEle.innerHTML = renderPriceContainer();
+    });
+  });
+};
 
 //Generate ID
 const generateId = (length = 8) => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let id = '';
-    for (let i = 0; i < length; i++) {
-        id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-}
-
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let id = "";
+  for (let i = 0; i < length; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
+};
 
 const DataStructure = {
-    flower: [
-        // {
-        //     id: "",
-        //     path: "",
-        //     name: "",
-        //     state: {
-        //         pos: {
-        //             left: 0,
-        //             top: 0
-        //         },
-        //         rotation: 0,
-        //         zIndex: 0
-        //     }
-        // }
-    ],
-    decorations: []
-}
+  flower: [
+    // {
+    //     id: "",
+    //     path: "",
+    //     name: "",
+    //     state: {
+    //         pos: {
+    //             left: 0,
+    //             top: 0
+    //         },
+    //         rotation: 0,
+    //         zIndex: 0
+    //     }
+    // }
+  ],
+  decorations: [],
+};
 
 const WorkSpaceEle = document.querySelector(".canva");
 
 let zindex = 0;
 
 const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
-    const id = generateId();
-    zindex++;
-    DataStructure[type].push({
-        id: id,
-        path: itemObj.texture,
-        name: itemObj.name,
-        state: {
-            pos: {
-                left: 10,
-                top: 10
-            },
-            rotation: 0,
-            zIndex: zindex
-        }
-    })
+  const id = generateId();
+  zindex++;
+  DataStructure[type].push({
+    id: id,
+    path: itemObj.texture,
+    name: itemObj.name,
+    state: {
+      pos: {
+        left: 10,
+        top: 10,
+      },
+      rotation: 0,
+      zIndex: zindex,
+    },
+  });
 
+  WorkSpaceEle.innerHTML = renderNode();
 
-    WorkSpaceEle.innerHTML = renderNode();
+  let NodeList = WorkSpaceEle.querySelectorAll(".node");
 
-    let NodeList = WorkSpaceEle.querySelectorAll(".node");
-
-    //event
-    SetEvent(type, NodeList, data, ListAmountArr, amount);
-}
+  //event
+  SetEvent(type, NodeList, data, ListAmountArr, amount);
+};
 
 const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
+  Array.from(NodeList).forEach((item) => {
+    //double click to delete
+    item.addEventListener("dblclick", (event) => {
+      const id = event.target.getAttribute("data");
+      const type = event.target.getAttribute("type");
+      const name = event.target.getAttribute("name");
+      // console.log("hihi", SelectedFlowerList)
 
-    Array.from(NodeList).forEach((item) => {
+      const temp = DataStructure[type].filter((item) => {
+        return item.id !== id;
+      });
+      let index = 0;
+      for (let i = 0; i < data[type].length; i++) {
+        if (name === data[type][i].name) {
+          index = i;
+          break;
+        }
+      }
 
-        //double click to delete
-        item.addEventListener('dblclick', (event) => {
-            const id = event.target.getAttribute("data");
-            const type = event.target.getAttribute("type");
-            const name = event.target.getAttribute("name");
-            // console.log("hihi", SelectedFlowerList)
+      const list = ListItem.querySelectorAll(".amount-flower-item");
 
-            const temp = DataStructure[type].filter((item) => {
-                return item.id !== id;
-            })
-            let index = 0;
-            for (let i = 0; i < data[type].length; i++) {
-                if (name === data[type][i].name) {
-                    index = i;
-                    break;
-                }
-            }
+      let kvalue = 0;
+      if (type === "flower") {
+        amountFlo[index]--;
 
-            const list = ListItem.querySelectorAll(".amount-flower-item");
+        DataStructure[type] = temp;
 
-            let kvalue = 0;
-            if (type === "flower") {
-                amountFlo[index]--;
+        SelectedFlowerList[name].amountItem = amountFlo[index];
+        if (itemSelected === "flower") list[index].innerHTML = kvalue = amountFlo[index];
+      } else {
+        amountDeco[index]--;
+        DataStructure[type] = temp;
 
-                DataStructure[type] = temp;
+        SelectedFlowerList[name].amountItem = amountDeco[index];
+        if (itemSelected === "decorations") {
+          list[index].innerHTML = kvalue = amountDeco[index];
+          console.log(ListAmountArr[index]);
+        }
+      }
 
-                SelectedFlowerList[name].amountItem = amountFlo[index];
-                if (itemSelected === "flower") list[index].innerHTML = kvalue = amountFlo[index]
-            } else {
-                amountDeco[index]--;
-                DataStructure[type] = temp;
+      if (SelectedFlowerList[name].amountItem === 0) {
+        const temp = Object.fromEntries(
+          Object.entries(SelectedFlowerList).filter(([key, value]) => {
+            return value.amountItem !== 0;
+          }),
+        );
+        SelectedFlowerList = temp;
+      }
 
-                SelectedFlowerList[name].amountItem = amountDeco[index];
-                if (itemSelected === "decorations") { list[index].innerHTML = kvalue = amountDeco[index]; console.log(ListAmountArr[index]); }
-            }
+      priceContainerEle.innerHTML = renderPriceContainer();
 
+      event.target.remove();
+    });
 
+    const id = item.getAttribute("data");
+    const type = item.getAttribute("type");
 
-            if (SelectedFlowerList[name].amountItem === 0) {
-                const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
-                    return value.amountItem !== 0;
-                }))
-                SelectedFlowerList = temp;
-            }
+    //draggable
+    DraggableHanlde(item, id, type);
 
-            priceContainerEle.innerHTML = renderPriceContainer();
+    //rotating
+    const RotationArea = item.querySelector(".rotate-area");
+    RotationNodeHandle(RotationArea, item, id, type);
 
-            event.target.remove();
-        })
-
-        const id = item.getAttribute("data");
-        const type = item.getAttribute("type");
-
-        //draggable
-        DraggableHanlde(item, id, type);
-
-        //rotating
-        const RotationArea = item.querySelector(".rotate-area");
-        RotationNodeHandle(RotationArea, item, id, type);
-
-        //menu
-        HandMenuContext(item);
-    })
-}
+    //menu
+    HandMenuContext(item);
+  });
+};
 
 //delete node-- press the descrease button
 const deleteNode = (type, ItemName, data, ListAmountArr, amount) => {
-    let index = 0;
-    for (let i = DataStructure[type].length - 1; i >= 0; i--) {
-        if (DataStructure[type][i].name === ItemName) {
-            index = i;
-            break;
-        }
+  let index = 0;
+  for (let i = DataStructure[type].length - 1; i >= 0; i--) {
+    if (DataStructure[type][i].name === ItemName) {
+      index = i;
+      break;
     }
-    DataStructure[type].splice(index, 1);
+  }
+  DataStructure[type].splice(index, 1);
 
-    WorkSpaceEle.innerHTML = renderNode();
+  WorkSpaceEle.innerHTML = renderNode();
 
-    let NodeList = WorkSpaceEle.querySelectorAll(".node");
-    //event
-    SetEvent(type, NodeList, data, ListAmountArr, amount);
+  let NodeList = WorkSpaceEle.querySelectorAll(".node");
+  //event
+  SetEvent(type, NodeList, data, ListAmountArr, amount);
 
-    console.log("hahaha", SelectedFlowerList)
-
-
-}
+  console.log("hahaha", SelectedFlowerList);
+};
 
 const renderNode = () => {
-    const html = Object.entries(DataStructure).map(([key, value]) => {
-        const html_child = value.map((item) => {
-            return `
+  const html = Object.entries(DataStructure)
+    .map(([key, value]) => {
+      const html_child = value
+        .map((item) => {
+          return `
                 <div class="node" data="${item.id}" type="${key}" name="${item.name}"
                     style="background-image: url(${item.path}); left: ${item.state.pos.left}px; top: ${item.state.pos.top}px; transform: rotate(${item.state.rotation}deg); z-index:${item.state.zIndex};" 
                 >
@@ -494,352 +519,356 @@ const renderNode = () => {
                         <i class="rotate-icon bi bi-arrow-clockwise"></i>
                     </div>
                 </div>
-            `
-        }).join("");
-        return html_child
-    }).join("");
+            `;
+        })
+        .join("");
+      return html_child;
+    })
+    .join("");
 
-    return html;
-}
+  return html;
+};
 
 //render context menu
 const renderMenu = () => {
-    return `
+  return `
         <div id="sendbackward" class="menu-item">Send backward</div>
         <div id="sendforward" class="menu-item">Send forward</div>
         <div id="sendtoback" class="menu-item">Send to back</div>
         <div id="sendtofont" class="menu-item">Send to font</div>
-    `
-}
+    `;
+};
 
-const contextMenuEle = document.querySelector(".menu-context")
+const contextMenuEle = document.querySelector(".menu-context");
 
 const handleSend = (item, typeName) => {
-    const id = item.getAttribute("data");
-    const currentType = item.getAttribute("type");
+  const id = item.getAttribute("data");
+  const currentType = item.getAttribute("type");
 
+  let allElements = [];
+  let currentElement = null;
+  let currentZIndex = 0;
 
-    let allElements = [];
-    let currentElement = null;
-    let currentZIndex = 0;
-
-    Object.entries(DataStructure).forEach(([type, items]) => {
-        items.forEach((element) => {
-            allElements.push({
-                element: element,
-                type: type
-            });
-            if (element.id === id) {
-                currentElement = { element: element, type: type };
-                currentZIndex = element.state.zIndex;
-            }
-        });
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+        currentZIndex = element.state.zIndex;
+      }
     });
+  });
 
-    if (!currentElement) {
-        contextMenuEle.innerHTML = "";
-        return;
-    }
-
-    // sort m
-    allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
-
-    let targetElement = null;
-
-    if (typeName === "forward") {
-        // finding nearest smaller zindex
-        for (let item of allElements) {
-            if (item.element.state.zIndex > currentZIndex) {
-                targetElement = item;
-                break;
-            }
-        }
-    } else if (typeName === "backward") {
-        // finding nearest bigger zindex
-        for (let i = allElements.length - 1; i >= 0; i--) {
-            if (allElements[i].element.state.zIndex < currentZIndex) {
-                targetElement = allElements[i];
-                break;
-            }
-        }
-    }
-
-    if (targetElement) {
-
-        let temp = currentElement.element.state.zIndex;
-        currentElement.element.state.zIndex = targetElement.element.state.zIndex;
-        targetElement.element.state.zIndex = temp;
-
-
-        WorkSpaceEle.innerHTML = renderNode();
-        let NodeList = WorkSpaceEle.querySelectorAll(".node");
-        SetEvent(currentType, NodeList, {}, [], []);
-    }
-
+  if (!currentElement) {
     contextMenuEle.innerHTML = "";
-}
+    return;
+  }
 
-const handleSendUPD = (item, typeName) => {
-    const id = item.getAttribute("data");
-    const currentType = item.getAttribute("type");
+  // sort m
+  allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
 
-    //init
-    let allElements = [];
-    let currentElement = null;
-    let maxZIndex = 0;
-    let minZIndex = Infinity;
+  let targetElement = null;
 
-    Object.entries(DataStructure).forEach(([type, items]) => {
-        items.forEach((element) => {
-            allElements.push({
-                element: element,
-                type: type
-            });
-            if (element.id === id) {
-                currentElement = { element: element, type: type };
-            }
-            maxZIndex = Math.max(maxZIndex, element.state.zIndex);
-            minZIndex = Math.min(minZIndex, element.state.zIndex);
-        });
-    });
-
-    if (!currentElement) {
-        contextMenuEle.innerHTML = "";
-        return;
+  if (typeName === "forward") {
+    // finding nearest smaller zindex
+    for (let item of allElements) {
+      if (item.element.state.zIndex > currentZIndex) {
+        targetElement = item;
+        break;
+      }
     }
-
-    if (typeName === "back") {
-        // push it in the back
-        allElements.forEach(item => {
-            if (item.element.id !== currentElement.element.id && item.element.state.zIndex < currentElement.element.state.zIndex) {
-                item.element.state.zIndex++;
-            }
-        });
-        currentElement.element.state.zIndex = minZIndex - 1;
-    } else if (typeName === "font") {
-        // push it to the top
-        allElements.forEach(item => {
-            if (item.element.id !== currentElement.element.id && item.element.state.zIndex > currentElement.element.state.zIndex) {
-                item.element.state.zIndex--;
-            }
-        });
-        currentElement.element.state.zIndex = maxZIndex + 1;
+  } else if (typeName === "backward") {
+    // finding nearest bigger zindex
+    for (let i = allElements.length - 1; i >= 0; i--) {
+      if (allElements[i].element.state.zIndex < currentZIndex) {
+        targetElement = allElements[i];
+        break;
+      }
     }
+  }
 
-    // Rerender canvas
+  if (targetElement) {
+    let temp = currentElement.element.state.zIndex;
+    currentElement.element.state.zIndex = targetElement.element.state.zIndex;
+    targetElement.element.state.zIndex = temp;
+
     WorkSpaceEle.innerHTML = renderNode();
     let NodeList = WorkSpaceEle.querySelectorAll(".node");
     SetEvent(currentType, NodeList, {}, [], []);
+  }
 
+  contextMenuEle.innerHTML = "";
+};
+
+const handleSendUPD = (item, typeName) => {
+  const id = item.getAttribute("data");
+  const currentType = item.getAttribute("type");
+
+  //init
+  let allElements = [];
+  let currentElement = null;
+  let maxZIndex = 0;
+  let minZIndex = Infinity;
+
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+      }
+      maxZIndex = Math.max(maxZIndex, element.state.zIndex);
+      minZIndex = Math.min(minZIndex, element.state.zIndex);
+    });
+  });
+
+  if (!currentElement) {
     contextMenuEle.innerHTML = "";
-}
+    return;
+  }
+
+  if (typeName === "back") {
+    // push it in the back
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex < currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex++;
+      }
+    });
+    currentElement.element.state.zIndex = minZIndex - 1;
+  } else if (typeName === "font") {
+    // push it to the top
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex > currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex--;
+      }
+    });
+    currentElement.element.state.zIndex = maxZIndex + 1;
+  }
+
+  // Rerender canvas
+  WorkSpaceEle.innerHTML = renderNode();
+  let NodeList = WorkSpaceEle.querySelectorAll(".node");
+  SetEvent(currentType, NodeList, {}, [], []);
+
+  contextMenuEle.innerHTML = "";
+};
 
 WorkSpaceEle.addEventListener("mousedown", () => {
-    contextMenuEle.innerHTML = "";
-})
+  contextMenuEle.innerHTML = "";
+});
 //menu context
 const HandMenuContext = (itemHtml) => {
+  itemHtml.addEventListener("contextmenu", (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    const rect = WorkSpaceEle.getBoundingClientRect();
 
-    itemHtml.addEventListener('contextmenu', (event) => {
-        event.stopPropagation();
-        event.preventDefault();
-        const rect = WorkSpaceEle.getBoundingClientRect()
+    const left = event.clientX - rect.x;
+    const top = event.clientY - rect.y;
+    console.log(event.offsetX);
 
-        const left = event.clientX - rect.x
-        const top = event.clientY - rect.y
-        console.log(event.offsetX)
+    contextMenuEle.style.left = left + "px";
+    contextMenuEle.style.top = top + "px";
+    contextMenuEle.innerHTML = renderMenu();
 
-        contextMenuEle.style.left = left + 'px';
-        contextMenuEle.style.top = top + 'px';
-        contextMenuEle.innerHTML = renderMenu();
+    const sendbackward = contextMenuEle.querySelector("#sendbackward");
+    const sendforward = contextMenuEle.querySelector("#sendforward");
+    const sendtoback = contextMenuEle.querySelector("#sendtoback");
+    const sendtofont = contextMenuEle.querySelector("#sendtofont");
 
-        const sendbackward = contextMenuEle.querySelector("#sendbackward");
-        const sendforward = contextMenuEle.querySelector("#sendforward");
-        const sendtoback = contextMenuEle.querySelector("#sendtoback");
-        const sendtofont = contextMenuEle.querySelector("#sendtofont");
-
-        sendbackward.addEventListener('click', () => handleSend(itemHtml, "backward"));
-        sendforward.addEventListener('click', () => handleSend(itemHtml, "forward"));
-        sendtoback.addEventListener('click', () => handleSendUPD(itemHtml, "back"));
-        sendtofont.addEventListener('click', () => handleSendUPD(itemHtml, "font"));
-    })
-}
+    sendbackward.addEventListener("click", () => handleSend(itemHtml, "backward"));
+    sendforward.addEventListener("click", () => handleSend(itemHtml, "forward"));
+    sendtoback.addEventListener("click", () => handleSendUPD(itemHtml, "back"));
+    sendtofont.addEventListener("click", () => handleSendUPD(itemHtml, "font"));
+  });
+};
 //------------------
-
 
 let isDragging = false;
 let isRotating = false;
 const DraggableHanlde = (itemHtml, id, type) => {
+  itemHtml.addEventListener("mousedown", (e) => {
+    if (!isRotating) {
+      isDragging = true;
+      offsetX = e.clientX - itemHtml.offsetLeft;
+      offsetY = e.clientY - itemHtml.offsetTop;
 
-    itemHtml.addEventListener('mousedown', (e) => {
-        if (!isRotating) {
-            isDragging = true;
-            offsetX = e.clientX - itemHtml.offsetLeft;
-            offsetY = e.clientY - itemHtml.offsetTop;
+      const handleSetPOs = (event) => {
+        itemHtml.style.left = event.clientX - offsetX + "px";
+        itemHtml.style.top = event.clientY - offsetY + "px";
+      };
 
-            const handleSetPOs = (event) => {
-                itemHtml.style.left = event.clientX - offsetX + 'px';
-                itemHtml.style.top = event.clientY - offsetY + 'px';
-            }
-
-            const handleMouseUp = () => {
-
-                for (let i = 0; i < DataStructure[type].length; i++) {
-                    if (DataStructure[type][i].id === id) {
-                        DataStructure[type][i].state.pos = { left: itemHtml.offsetLeft, top: itemHtml.offsetTop }
-                    }
-                }
-
-                isDragging = false;
-                document.removeEventListener('mousemove', handleSetPOs);
-                document.removeEventListener('mouseup', handleMouseUp);
-            }
-
-            document.addEventListener("mousemove", handleSetPOs);
-            document.addEventListener('mouseup', handleMouseUp);
+      const handleMouseUp = () => {
+        for (let i = 0; i < DataStructure[type].length; i++) {
+          if (DataStructure[type][i].id === id) {
+            DataStructure[type][i].state.pos = {
+              left: itemHtml.offsetLeft,
+              top: itemHtml.offsetTop,
+            };
+          }
         }
-        e.preventDefault();
-    });
-}
 
+        isDragging = false;
+        document.removeEventListener("mousemove", handleSetPOs);
+        document.removeEventListener("mouseup", handleMouseUp);
+      };
+
+      document.addEventListener("mousemove", handleSetPOs);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
+    e.preventDefault();
+  });
+};
 
 const getAngle = (event, item) => {
+  const rect = item.getBoundingClientRect();
 
-    const rect = item.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
 
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
+  const dx = event.clientX - centerX;
+  const dy = event.clientY - centerY;
 
-    const dx = event.clientX - centerX;
-    const dy = event.clientY - centerY;
-
-    return Math.atan2(dy, dx) * (180 / Math.PI);
-
-}
+  return Math.atan2(dy, dx) * (180 / Math.PI);
+};
 
 const RotationNodeHandle = (rotateArea, item, id, type) => {
-    let initialAngle = 0;
-    let currentAngle = 0;
+  let initialAngle = 0;
+  let currentAngle = 0;
 
-    rotateArea.addEventListener('mousedown', (e) => {
-        isRotating = true;
+  rotateArea.addEventListener("mousedown", (e) => {
+    isRotating = true;
 
-        initialAngle = getAngle(e, item);
+    initialAngle = getAngle(e, item);
 
-        const handleSetRotate = (event) => {
-            const angle = getAngle(event, item);
+    const handleSetRotate = (event) => {
+      const angle = getAngle(event, item);
 
-            currentAngle = angle - initialAngle;
-            item.style.transform = `rotate(${currentAngle}deg)`;
+      currentAngle = angle - initialAngle;
+      item.style.transform = `rotate(${currentAngle}deg)`;
+    };
+
+    const handleMouseUp = () => {
+      isRotating = false;
+
+      for (let i = 0; i < DataStructure[type].length; i++) {
+        if (DataStructure[type][i].id === id) {
+          DataStructure[type][i].state.rotation = currentAngle;
         }
+      }
 
-        const handleMouseUp = () => {
-            isRotating = false;
+      console.log(DataStructure);
 
-            for (let i = 0; i < DataStructure[type].length; i++) {
-                if (DataStructure[type][i].id === id) {
-                    DataStructure[type][i].state.rotation = currentAngle;
-                }
-            }
+      document.removeEventListener("mousemove", handleSetRotate);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
 
-            console.log(DataStructure);
+    document.addEventListener("mousemove", handleSetRotate);
+    document.addEventListener("mouseup", handleMouseUp);
 
-            document.removeEventListener('mousemove', handleSetRotate);
-            document.removeEventListener('mouseup', handleMouseUp);
-        }
-
-        document.addEventListener('mousemove', handleSetRotate);
-        document.addEventListener('mouseup', handleMouseUp);
-
-        e.preventDefault();
-    });
-}
+    e.preventDefault();
+  });
+};
 
 //handle reset- clear node
 const ResetButtonEle = document.querySelector(".reset-button");
 
-ResetButtonEle.addEventListener('click', () => {
-    DataStructure.flower = [];
-    DataStructure.decorations = [];
-    SelectedFlowerList = {};
+ResetButtonEle.addEventListener("click", () => {
+  DataStructure.flower = [];
+  DataStructure.decorations = [];
+  SelectedFlowerList = {};
 
-    priceContainerEle.innerHTML = "";
+  priceContainerEle.innerHTML = "";
 
-    WorkSpaceEle.innerHTML = "";
-    BouquetWSEle.style.backgroundImage = `url('')`
-    console.log("maihfewugwueygeyug")
+  WorkSpaceEle.innerHTML = "";
+  BouquetWSEle.style.backgroundImage = `url('')`;
+  console.log("maihfewugwueygeyug");
 
-    const ListAmount = ListItem.querySelectorAll('.amount-flower-item');
-    if (ListAmount.length > 0) {
-        ListAmount.forEach((item, index) => {
-            if (item.textContent !== "0") {
-                item.innerHTML = 0;
-            }
-        })
+  const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
+  if (ListAmount.length > 0) {
+    ListAmount.forEach((item, index) => {
+      if (item.textContent !== "0") {
+        item.innerHTML = 0;
+      }
+    });
+  }
+  for (let i = 0; i < amountFlo.length; i++) {
+    if (amountFlo[i] !== 0) {
+      amountFlo[i] = 0;
     }
-    for (let i = 0; i < amountFlo.length; i++) {
-        if (amountFlo[i] !== 0) {
-            amountFlo[i] = 0;
-        }
+  }
+
+  for (let i = 0; i < amountDeco.length; i++) {
+    if (amountDeco[i] !== 0) {
+      amountDeco[i] = 0;
     }
-
-    for (let i = 0; i < amountDeco.length; i++) {
-        if (amountDeco[i] !== 0) {
-            amountDeco[i] = 0;
-        }
-    }
-
-})
-
+  }
+});
 
 const HandleSendDataLocal = async () => {
-    let total = 0;
-    Object.entries(SelectedFlowerList).forEach(([key, value]) => {
-        total += value.item.price * value.amountItem;
+  let total = 0;
+  Object.entries(SelectedFlowerList).forEach(([key, value]) => {
+    total += value.item.price * value.amountItem;
+  });
+
+  const Localdata = localStorage.getItem("shoppingCart");
+  let data = JSON.parse(Localdata) || [];
+
+  await domtoimage
+    .toJpeg(document.getElementById("capture"), { quality: 0.5 })
+    .then(function (dataUrl) {
+      // Tạo thẻ img và gán ảnh vừa chụp
+      data = [
+        ...data,
+        {
+          id: 3, // Lưu ý: Nếu muốn có nhiều hoa tự thiết kế thì bạn nên dùng generateId() thay vì id: 3 cố định nhé
+          name: "Your design",
+          price: total,
+          image: dataUrl,
+          quantity: 1,
+          checked: false,
+        },
+      ];
+      console.log("Đã chụp và nén ảnh thành công!");
     })
+    .catch(function (error) {
+      console.error("Lỗi khi chụp ảnh:", error);
+    });
 
-    const Localdata = localStorage.getItem('shoppingCart');
-    let data = JSON.parse(Localdata) || [];
-
-    await domtoimage.toPng(document.getElementById('capture'))
-        .then(function (dataUrl) {
-            // Tạo thẻ img và gán ảnh vừa chụp
-            data = [
-                ...data,
-                {
-                    "id": 3,
-                    "name": "Your design",
-                    "price": total,
-                    "image": dataUrl,
-                    "quantity": 1,
-                    "checked": false
-                }
-            ]
-            console.log(dataUrl)
-        })
-        .catch(function (error) {
-            console.error('Lỗi khi chụp ảnh:', error);
-        });
-
-    localStorage.setItem('shoppingCart', JSON.stringify(data));
-}
+  try {
+    localStorage.setItem("shoppingCart", JSON.stringify(data));
+    window.location.href = "cart.html";
+  } catch (e) {
+    console.error("Lỗi khi lưu vào LocalStorage (có thể do ảnh vẫn quá lớn):", e);
+    alert("Thiết kế của bạn quá phức tạp, không đủ bộ nhớ để lưu vào giỏ hàng!");
+  }
+  window.location.href = "cart.html";
+};
 
 const formatNumber = (num) => {
-    let [integerPart, decimalPart] = num.toString().split('.');
-    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
-}
+  let [integerPart, decimalPart] = num.toString().split(".");
+  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
+};
 
 const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
 
-
-priceAppearanceBtnEle.addEventListener('click', (item) => {
-    if (priceContainerEle.classList.contains('hidden')) {
-        priceContainerEle.classList.remove('hidden');
-    } else priceContainerEle.classList.add('hidden')
-})
+priceAppearanceBtnEle.addEventListener("click", (item) => {
+  if (priceContainerEle.classList.contains("hidden")) {
+    priceContainerEle.classList.remove("hidden");
+  } else priceContainerEle.classList.add("hidden");
+});
 
 const page = document.querySelector(".arraging");
-window.addEventListener('resize', () => {
-    
-});
+window.addEventListener("resize", () => {});
