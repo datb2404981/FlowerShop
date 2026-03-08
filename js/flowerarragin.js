@@ -1,5 +1,5 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-fliterItem[0].classList.add('seleted-filter-box')
+fliterItem[1].classList.add('seleted-filter-box')
 const filterName = ['bouquet', 'flower', 'decorations']
 
 let SelectedFlowerList = {}
@@ -15,12 +15,16 @@ const setSelectedList = (item, amountItem) => {
 }
 
 //filter selected
-let itemSelected = filterName[0];
+let itemSelected = filterName[1];
+
+const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
     item.addEventListener('click', () => {
         fliterItem.forEach(it => it.classList.remove('seleted-filter-box'));
+        filterItemSignELe.forEach(it => it.classList.add('hidden'));
         item.classList.add('seleted-filter-box');
+        filterItemSignELe[index].classList.remove('hidden');
         renderListItem(filterName[index]);
         itemSelected = filterName[index];
     })
@@ -30,7 +34,6 @@ fliterItem.forEach((item, index) => {
 const getDataFlower = async () => {
     const data = await fetch('flower.json');
     const main = await data.json();
-    console.log(main)
     return main
 }
 
@@ -38,6 +41,7 @@ const getDataFlower = async () => {
 const ListItem = document.querySelector('.list-selection');
 let handleIncrease;
 let handleDescrease;
+let handleDeleteAll;
 let currentData = [];
 
 const itemFlower = (data, amount) => {
@@ -46,20 +50,26 @@ const itemFlower = (data, amount) => {
         html = data.map((item, index) => {
             return `
                 <div class="itemFlower">
-                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
+                    <div class="item-flower-img" style="background-image: url('${item.path}');" onclick="handleIncrease(${index})"></div>
                     <div class="content-flower-item">
-                        <span class="content-flower-name">${item.name}</span>
+                        <span class="content-flower-name ellipsis">${item.name}</span>
                         <span class="content-flower-price">
                             <span>Price: </span>
-                            ${item.price} VND
+                            ${formatNumber(item.price)} 
+                            <span class="cast">vnđ</span>
                         </span>
-                        <div class="button-flower-container">
-                            <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn">
-                                -
-                            </button>
-                            <span class="amount-flower-item">${amount[index] || 0}</span>
-                            <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
-                                +
+                        <div class="button-container">
+                            <div class="button-flower-container">
+                                <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn button-flower-reverse">
+                                    -
+                                </button>
+                                <span class="amount-flower-item">${amount[index] || 0}</span>
+                                <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
+                                    +
+                                </button>
+                            </div>
+                            <button onclick="handleDeleteAll(${index})" class="button-flower-item delete-btn">
+                                <i class="bi bi-trash3"></i>
                             </button>
                         </div>
                     </div>
@@ -75,17 +85,38 @@ const renderBouquet = (data) => {
     if (data) {
         html = data.map((item) => {
             return `
-                <div class="itemFlower bouquet-item">
-                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
+                <div class="itemFlower">
+                    <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
-                        <span>${item.name}</span>
-                        <span>${item.price}</span>
+                        <span class="content-flower-name">${item.name}</span>
+                        <span class="content-flower-price">
+                            <span>Price: </span>
+                            ${formatNumber(item.price)} 
+                            <span class="cast">vnđ</span>
+                        </span>
+                        <div class="button-container">
+                            <button onclick="deleteBouquet()" class="button-flower-item delete-btn">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `
         }).join("");
     }
     return html;
+}
+
+const deleteBouquet = () => {
+    const BouquetWSEle = document.querySelector(".bouquet-render")
+    BouquetWSEle.style.backgroundImage = `url('')`;
+
+    const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+        return value.item.type != "bouquet";
+    }))
+    SelectedFlowerList = temp;
+
+    priceContainerEle.innerHTML = renderPriceContainer();
 }
 
 //--------------
@@ -141,6 +172,25 @@ const renderListItem = async (selected) => {
 
             deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
         }
+
+        handleDeleteAll = (id) => {
+            if (amountFlo[id] === 0) return;
+            amountFlo[id] = 0;
+            ListAmountArr[id].innerHTML = amountFlo[id];
+
+            setSelectedList(currentData[id], amountFlo[id])
+            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                return value.amountItem != 0;
+            }))
+            SelectedFlowerList = temp;
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+            const newarr = DataStructure["flower"].filter((item) => {
+                return item.name != currentData[id].name;
+            })
+            DataStructure["flower"] = newarr;
+            WorkSpaceEle.innerHTML = renderNode();
+        }
         //-----------
 
         // selected BOUQUET
@@ -193,13 +243,32 @@ const renderListItem = async (selected) => {
 
             deleteNode("decorations", DataStructure.decorations[id].name, data, ListAmountArr, amountDeco);
         }
+
+        handleDeleteAll = (id) => {
+            if (amountDeco[id] === 0) return;
+            amountDeco[id] = 0;
+            ListAmountArr[id].innerHTML = amountDeco[id];
+
+            setSelectedList(data.decorations[id], amountDeco[id])
+            const temp = Object.fromEntries(Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                return value.amountItem != 0;
+            }))
+            SelectedFlowerList = temp;
+
+            priceContainerEle.innerHTML = renderPriceContainer()
+            const newarr = DataStructure["decorations"].filter((item) => {
+                return item.name != data.decorations[id].name;
+            })
+            DataStructure["decorations"] = newarr;
+            WorkSpaceEle.innerHTML = renderNode();
+        }
     } else {
         ListItem.innerHTML = ""
     }
 }
 
 //init
-renderListItem(filterName[0])
+renderListItem(filterName[1])
 
 // button flower
 
@@ -216,7 +285,7 @@ const renderPriceContainer = () => {
         return `
             ${value.amountItem !== 0 ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
-                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${value.item.price}</span>
+                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
             </li>`: ""}
         `
     }).join("");
@@ -225,11 +294,12 @@ const renderPriceContainer = () => {
     const result_html = `
         ${lengthList !== 0 ? `<div class="price-total-container">
             <span class="amount-item-seleted">
-                seleted item
-                <p>${lengthList} items</p>
+                Selected
+                <p>${lengthList} ${lengthList === 1 ? 'item' : 'items'}</p>
             </span>
             <span class="price-total-box">
-                <span class="price-total">${Total} VND</span>
+                <span class="price-total">${formatNumber(Total)}</span>
+                <span class="total-cast">vnđ</span>
             </span>
         </div>
         
@@ -301,7 +371,7 @@ const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
     zindex++;
     DataStructure[type].push({
         id: id,
-        path: itemObj.path,
+        path: itemObj.texture,
         name: itemObj.name,
         state: {
             pos: {
@@ -420,7 +490,9 @@ const renderNode = () => {
                 <div class="node" data="${item.id}" type="${key}" name="${item.name}"
                     style="background-image: url(${item.path}); left: ${item.state.pos.left}px; top: ${item.state.pos.top}px; transform: rotate(${item.state.rotation}deg); z-index:${item.state.zIndex};" 
                 >
-                    <div class="rotate-area"></div>
+                    <div class="rotate-area">
+                        <i class="rotate-icon bi bi-arrow-clockwise"></i>
+                    </div>
                 </div>
             `
         }).join("");
@@ -433,7 +505,6 @@ const renderNode = () => {
 //render context menu
 const renderMenu = () => {
     return `
-        <div id="flip" class="menu-item">flip</div>
         <div id="sendbackward" class="menu-item">Send backward</div>
         <div id="sendforward" class="menu-item">Send forward</div>
         <div id="sendtoback" class="menu-item">Send to back</div>
@@ -442,11 +513,6 @@ const renderMenu = () => {
 }
 
 const contextMenuEle = document.querySelector(".menu-context")
-
-const handleFip = (item) => {
-    item.style.transform = "scaleX(-1)";
-    contextMenuEle.innerHTML = ""
-}
 
 const handleSend = (item, typeName) => {
     const id = item.getAttribute("data");
@@ -587,13 +653,11 @@ const HandMenuContext = (itemHtml) => {
         contextMenuEle.style.top = top + 'px';
         contextMenuEle.innerHTML = renderMenu();
 
-        const flip = contextMenuEle.querySelector("#flip");
         const sendbackward = contextMenuEle.querySelector("#sendbackward");
         const sendforward = contextMenuEle.querySelector("#sendforward");
         const sendtoback = contextMenuEle.querySelector("#sendtoback");
         const sendtofont = contextMenuEle.querySelector("#sendtofont");
 
-        flip.addEventListener('click', () => handleFip(itemHtml));
         sendbackward.addEventListener('click', () => handleSend(itemHtml, "backward"));
         sendforward.addEventListener('click', () => handleSend(itemHtml, "forward"));
         sendtoback.addEventListener('click', () => handleSendUPD(itemHtml, "back"));
@@ -728,15 +792,10 @@ ResetButtonEle.addEventListener('click', () => {
 })
 
 
-const HandleSendDataLocal = async() => {
+const HandleSendDataLocal = async () => {
     let total = 0;
-    const outputList = Object.entries(SelectedFlowerList).map(([key, value]) => {
-        total += value.item.price;
-        return {
-            name: value.item.name,
-            price: value.item.price,
-            amount: value.amountItem
-        }
+    Object.entries(SelectedFlowerList).forEach(([key, value]) => {
+        total += value.item.price * value.amountItem;
     })
 
     const Localdata = localStorage.getItem('shoppingCart');
@@ -765,3 +824,22 @@ const HandleSendDataLocal = async() => {
     localStorage.setItem('shoppingCart', JSON.stringify(data));
 }
 
+const formatNumber = (num) => {
+    let [integerPart, decimalPart] = num.toString().split('.');
+    integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
+}
+
+const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
+
+
+priceAppearanceBtnEle.addEventListener('click', (item) => {
+    if (priceContainerEle.classList.contains('hidden')) {
+        priceContainerEle.classList.remove('hidden');
+    } else priceContainerEle.classList.add('hidden')
+})
+
+const page = document.querySelector(".arraging");
+window.addEventListener('resize', () => {
+    
+});

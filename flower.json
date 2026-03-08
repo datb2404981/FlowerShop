@@ -3,81 +3,113 @@
         {
             "id": 0,
             "name": "Rose",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Rose.png"
+            "type": "fower",
+            "price": 1500000,
+            "path": "assets/images/flowerImages/Rose_thumbnail.webp",
+            "texture": "assets/images/flowerImages/Rose_texture.png"
         },
         {
             "id": 1,
-            "name": "Blossom Purple Tulip",
+            "name": "Blossom Tulip",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/blossom_purple_tuplip.jpg"
+            "path": "assets/images/flowerImages/blossom_purple_tuplip.jpg",
+            "texture": "assets/images/flowerImages/blossom_purple_tuplip_texture.png"
         },
         {
             "id": 2,
             "name": "Camellia",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Camellia_thumnail.jpg"
+            "path": "assets/images/flowerImages/Camellia_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Camellia_texture.png"
         },
         {
             "id": 3,
             "name": "Blue Cornflower",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/cornflower_blue_thumnail.webp"
+            "path": "assets/images/flowerImages/cornflower_blue_thumnail.webp",
+            "texture": "assets/images/flowerImages/cornflower_blue_texture.png"
         },
         {
             "id": 4,
             "name": "Daisy",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Daisy_thumnail.jpg"
+            "path": "assets/images/flowerImages/Daisy_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Daisy_texture.png"
         },
         {
             "id": 5,
             "name": "Forget me not",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Forget_me_not_thumnail.jpg"
+            "path": "assets/images/flowerImages/Forget_me_not_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Forget_me_not_texture.png"
         },
         {
             "id": 6,
             "name": "Hydrangea",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Hydrangea_thumnail.jpg"
+            "path": "assets/images/flowerImages/Hydrangea_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Hydrangea_texture.png"
         },
         {
             "id": 7,
             "name": "Lavender",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Lavender_thumnail.webp"
+            "path": "assets/images/flowerImages/Lavender_thumnail.webp",
+            "texture": "assets/images/flowerImages/Lavender_texture.png"
         },
         {
             "id": 8,
             "name": "Lisianthus",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Lisianthus_thumnail.jpg"
+            "path": "assets/images/flowerImages/Lisianthus_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Lisianthus_texture.png"
         },
         {
             "id": 9,
             "name": "Pink Magnolia",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp"
+            "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp",
+            "texture": "assets/images/flowerImages/Rose.png"
         },
         {
             "id": 10,
             "name": "Pink Peony",
+            "type": "fower",
             "price": 15000,
-            "path": "assets/images/flowerImages/Pink_peony_thumnail.jpg"
+            "path": "assets/images/flowerImages/Pink_peony_thumnail.jpg",
+            "texture": "assets/images/flowerImages/Pink_peony_texture.png"
         }
     ],
     "bouquet": [
         {
             "id": 0,
             "name": "Normal",
+            "type": "bouquet",
             "price": 15000,
-            "path": "assets/images/bouquets/bouquet01_texture.png",
+            "path": "assets/images/bouquets/Bouquet01_thumbnail.png",
             "texture": "assets/images/bouquets/bouquet01_texture.png"
+        },
+        {
+            "id": 5,
+            "name": "Normal",
+            "type": "bouquet",
+            "price": 15000,
+            "path": "assets/images/bouquets/Bouquet05_thumbnail.png",
+            "texture": "assets/images/bouquets/Bouquet05_texture.png"
         },
         {
             "id": 1,
             "name": "Normal",
+            "type": "bouquet",
             "price": 15000,
             "path": "assets/images/bouquets/Bouquet02_texture.png",
             "texture": "assets/images/bouquets/Bouquet02_texture.png"
@@ -85,24 +117,36 @@
         {
             "id": 2,
             "name": "Normal",
+            "type": "bouquet",
             "price": 15000,
-            "path": "assets/images/bouquets/bouquet03_thumbnail.jpg",
+            "path": "assets/images/bouquets/bouquet03_thumbnail.png",
             "texture": "assets/images/bouquets/bouquet03_texture.png"
         },
         {
             "id": 3,
             "name": "Normal",
+            "type": "bouquet",
             "price": 15000,
-            "path": "assets/images/bouquets/bouquet04_thumbnail.jpg",
+            "path": "assets/images/bouquets/bouquet04_thumbnail.png",
             "texture": "assets/images/bouquets/bouquet04_texture.png"
         }
     ],
     "decorations": [
-         {
+        {
             "id": 0,
             "name": "Duong Xi",
+            "type": "decorations",
             "price": 15000,
-            "path": "assets/images/decorations/DuongXi_texture.png"
+            "path": "assets/images/decorations/DuongXi_texture.png",
+            "texture": "assets/images/decorations/DuongXi_texture.png"
+        },
+         {
+            "id": 1,
+            "name": "topper happy birthday",
+            "type": "decorations",
+            "price": 15000,
+            "path": "assets/images/decorations/happybirthday_texture.png",
+            "texture": "assets/images/decorations/happybirthday_texture.png"
         }
     ]
 }
