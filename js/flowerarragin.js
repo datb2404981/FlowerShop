@@ -49,29 +49,37 @@ const itemFlower = (data, amount) => {
   if (data) {
     html = data
       .map((item, index) => {
+        const isSelected = amount[index] > 0;
         return `
-                <div class="itemFlower">
-                    <div class="item-flower-img" style="background-image: url('${item.path}');" onclick="handleIncrease(${index})"></div>
+                <div class="itemFlower ${isSelected ? "is-checked" : ""}" onclick="handleIncrease(${index})">
+                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
                         <span class="content-flower-name ellipsis">${item.name}</span>
                         <span class="content-flower-price">
-                            <span>Price: </span>
+                            <span>Giá: </span>
                             ${formatNumber(item.price)} 
                             <span class="cast">vnđ</span>
                         </span>
-                        <div class="button-container">
-                            <div class="button-flower-container">
-                                <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn button-flower-reverse">
-                                    -
+                        <div class="action-button w-100" onclick="event.stopPropagation()">
+                            <div class="quantity-control fancy-qty d-flex align-items-center">
+                                <button onclick="handleDescrease(${index})" class="qty-btn btn-minus" type="button">
+                                    <i class="bi bi-dash"></i>
                                 </button>
-                                <span class="amount-flower-item">${amount[index] || 0}</span>
-                                <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
-                                    +
+                                <input
+                                    type="text"
+                                    class="form-control text-center quantity-input amount-flower-item"
+                                    value="${amount[index] || 0}"
+                                    readonly
+                                />
+                                <button onclick="handleIncrease(${index})" class="qty-btn btn-plus" type="button">
+                                    <i class="bi bi-plus"></i>
                                 </button>
                             </div>
-                            <button onclick="handleDeleteAll(${index})" class="button-flower-item delete-btn">
-                                <i class="bi bi-trash3"></i>
-                            </button>
+                            <div class="remove-btn">
+                                <button onclick="handleDeleteAll(${index})" class="btn-remove">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -88,19 +96,22 @@ const renderBouquet = (data) => {
     html = data
       .map((item) => {
         return `
-                <div class="itemFlower">
-                    <div class="item-flower-img bouquet-item" style="background-image: url('${item.path}');"></div>
+                <div class="itemFlower bouquet-item">
+                    <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
                         <span class="content-flower-name">${item.name}</span>
                         <span class="content-flower-price">
-                            <span>Price: </span>
+                            <span>Giá: </span>
                             ${formatNumber(item.price)} 
                             <span class="cast">vnđ</span>
                         </span>
-                        <div class="button-container">
-                            <button onclick="deleteBouquet()" class="button-flower-item delete-btn">
-                                <i class="bi bi-trash3"></i>
-                            </button>
+                        <div class="action-button w-100" onclick="event.stopPropagation()">
+                            <div></div> <!-- Spacer -->
+                            <div class="remove-btn">
+                                <button onclick="deleteBouquet()" class="btn-remove">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -122,7 +133,7 @@ const deleteBouquet = () => {
   );
   SelectedFlowerList = temp;
 
-  priceContainerEle.innerHTML = renderPriceContainer();
+  renderPriceContainer();
 };
 
 //--------------
@@ -150,12 +161,19 @@ const renderListItem = async (selected) => {
 
     handleIncrease = (id) => {
       amountFlo[id]++;
-      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      // Update amount
+      ListAmountArr[id].value = amountFlo[id];
+      // Update checked style
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountFlo[id] > 0) {
+        flowerItem.classList.add("is-checked");
+      }
 
       setSelectedList(currentData[id], amountFlo[id]);
       console.log(SelectedFlowerList);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
     };
@@ -163,7 +181,12 @@ const renderListItem = async (selected) => {
     handleDescrease = (id) => {
       if (amountFlo[id] > 0) amountFlo[id]--;
       else return;
-      ListAmountArr[id].innerHTML = amountFlo[id];
+      ListAmountArr[id].value = amountFlo[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountFlo[id] === 0) {
+        flowerItem.classList.remove("is-checked");
+      }
 
       setSelectedList(currentData[id], amountFlo[id]);
       if (amountFlo[id] == 0) {
@@ -175,7 +198,7 @@ const renderListItem = async (selected) => {
         SelectedFlowerList = temp;
       }
       console.log(SelectedFlowerList);
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
     };
@@ -183,7 +206,10 @@ const renderListItem = async (selected) => {
     handleDeleteAll = (id) => {
       if (amountFlo[id] === 0) return;
       amountFlo[id] = 0;
-      ListAmountArr[id].innerHTML = amountFlo[id];
+      ListAmountArr[id].value = amountFlo[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      flowerItem.classList.remove("is-checked");
 
       setSelectedList(currentData[id], amountFlo[id]);
       const temp = Object.fromEntries(
@@ -193,7 +219,7 @@ const renderListItem = async (selected) => {
       );
       SelectedFlowerList = temp;
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
       const newarr = DataStructure["flower"].filter((item) => {
         return item.name != currentData[id].name;
       });
@@ -225,11 +251,18 @@ const renderListItem = async (selected) => {
 
     handleIncrease = (id) => {
       amountDeco[id]++;
-      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      // Update amount
+      ListAmountArr[id].value = amountDeco[id];
+      // Update checked style
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountDeco[id] > 0) {
+        flowerItem.classList.add("is-checked");
+      }
 
       setSelectedList(data.decorations[id], amountDeco[id]);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
     };
@@ -237,7 +270,12 @@ const renderListItem = async (selected) => {
     handleDescrease = (id) => {
       if (amountDeco[id] > 0) amountDeco[id]--;
       else return;
-      ListAmountArr[id].innerHTML = amountDeco[id];
+      ListAmountArr[id].value = amountDeco[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountDeco[id] === 0) {
+        flowerItem.classList.remove("is-checked");
+      }
 
       setSelectedList(data.decorations[id], amountDeco[id]);
       if (amountDeco[id] == 0) {
@@ -249,7 +287,7 @@ const renderListItem = async (selected) => {
         SelectedFlowerList = temp;
       }
       console.log(amountDeco);
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       deleteNode(
         "decorations",
@@ -263,7 +301,10 @@ const renderListItem = async (selected) => {
     handleDeleteAll = (id) => {
       if (amountDeco[id] === 0) return;
       amountDeco[id] = 0;
-      ListAmountArr[id].innerHTML = amountDeco[id];
+      ListAmountArr[id].value = amountDeco[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      flowerItem.classList.remove("is-checked");
 
       setSelectedList(data.decorations[id], amountDeco[id]);
       const temp = Object.fromEntries(
@@ -273,7 +314,7 @@ const renderListItem = async (selected) => {
       );
       SelectedFlowerList = temp;
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
       const newarr = DataStructure["decorations"].filter((item) => {
         return item.name != data.decorations[id].name;
       });
@@ -290,10 +331,10 @@ renderListItem(filterName[1]);
 
 // button flower
 
-const priceContainerEle = document.querySelector(".price-container");
+const priceContainerEles = document.querySelectorAll(".price-container");
 
 const renderPriceContainer = () => {
-  if (!priceContainerEle) return;
+  if (priceContainerEles.length === 0) return "";
 
   let Total = 0;
 
@@ -305,7 +346,7 @@ const renderPriceContainer = () => {
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
                 <span class="name-item">${key}</span>
-                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
+                <span class="price-item">${formatNumber(value.item.price * value.amountItem)}</span>
             </li>`
                 : ""
             }
@@ -317,27 +358,35 @@ const renderPriceContainer = () => {
   const result_html = `
         ${
           lengthList !== 0
-            ? `<div class="price-total-container">
-            <span class="amount-item-seleted">
-                Selected
-                <p>${lengthList} ${lengthList === 1 ? "item" : "items"}</p>
-            </span>
-            <span class="price-total-box">
-                <span class="price-total">${formatNumber(Total)}</span>
-                <span class="total-cast">vnđ</span>
-            </span>
-        </div>
-        
-        <ul class="list-price">
-            ${html}
-        </ul>
+            ? `<div class="summary-card">
+            <div class="summary-header-box d-flex justify-content-between align-items-center">
+                <div class="summary-title-col">
+                    <h4>Tổng tiền: </h4>
+                </div>
+                <div class="summary-price-col">
+                    <span class="summary-total-price">${formatNumber(Total)}</span>
+                    <span class="summary-total-unit">vnđ</span>
+                </div>
+            </div>
+            
+            <hr class="summary-divider"/>
+            
+            <ul class="list-price">
+                ${html}
+            </ul>
 
-        <button onclick="HandleSendDataLocal()" class="button-add-cart">
-            Add to cart
-        </button> `
+            <button onclick="HandleSendDataLocal()" class="btn-checkout w-100 mt-3">
+                Thêm vào giỏ hàng
+            </button>
+        </div>`
             : ""
         }
     `;
+
+  // Update All Price Containers (Desktop & Mobile)
+  priceContainerEles.forEach((ele) => {
+    ele.innerHTML = result_html;
+  });
 
   return result_html;
 };
@@ -353,7 +402,7 @@ const handleBoquetWorkSpace = (data) => {
       BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
       setSelectedList(item, 1);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
     });
   });
 };
@@ -445,14 +494,14 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
         DataStructure[type] = temp;
 
         SelectedFlowerList[name].amountItem = amountFlo[index];
-        if (itemSelected === "flower") list[index].innerHTML = kvalue = amountFlo[index];
+        if (itemSelected === "flower") list[index].value = kvalue = amountFlo[index];
       } else {
         amountDeco[index]--;
         DataStructure[type] = temp;
 
         SelectedFlowerList[name].amountItem = amountDeco[index];
         if (itemSelected === "decorations") {
-          list[index].innerHTML = kvalue = amountDeco[index];
+          list[index].value = kvalue = amountDeco[index];
           console.log(ListAmountArr[index]);
         }
       }
@@ -466,7 +515,7 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
         SelectedFlowerList = temp;
       }
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       event.target.remove();
     });
@@ -532,10 +581,10 @@ const renderNode = () => {
 //render context menu
 const renderMenu = () => {
   return `
-        <div id="sendbackward" class="menu-item">Send backward</div>
-        <div id="sendforward" class="menu-item">Send forward</div>
-        <div id="sendtoback" class="menu-item">Send to back</div>
-        <div id="sendtofont" class="menu-item">Send to font</div>
+        <div id="sendbackward" class="menu-item">Đưa ra sau 1 lớp</div>
+        <div id="sendforward" class="menu-item">Đưa lên trước 1 lớp</div>
+        <div id="sendtoback" class="menu-item">Đưa ra sau cùng</div>
+        <div id="sendtofont" class="menu-item">Đưa lên trên cùng</div>
     `;
 };
 
