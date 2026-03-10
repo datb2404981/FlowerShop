@@ -1,13 +1,12 @@
 let currentImageIndex = 0;
 
 // =========================== GALLERY & LIGHTBOX ===========================
-function initGallery() {
+function initGallery(){
   const mainImages = document.querySelectorAll(".default .main-img img");
   const thumbnails = document.querySelectorAll(".default .thumb-list div");
   const lightboxMainImages = document.querySelectorAll(".lightbox .main-img img");
   const lightboxThumbnails = document.querySelectorAll(".lightbox .thumb-list div");
   const lightbox = document.querySelector(".lightbox");
-  // const iconClose = document.querySelector(".icon-close");
   const iconPrev = document.querySelector(".icon-prev");
   const iconNext = document.querySelector(".icon-next");
 
@@ -16,8 +15,10 @@ function initGallery() {
   const changeImage = (index, listMainImages, listThumbnails) => {
     listMainImages.forEach((img) => img.classList.remove("active"));
     listThumbnails.forEach((thumb) => thumb.classList.remove("active"));
-    if (listMainImages[index]) listMainImages[index].classList.add("active");
-    if (listThumbnails[index]) listThumbnails[index].classList.add("active");
+    if (listMainImages[index]) 
+      listMainImages[index].classList.add("active");
+    if (listThumbnails[index]) 
+      listThumbnails[index].classList.add("active");
     currentImageIndex = index;
   };
 
@@ -40,7 +41,7 @@ function initGallery() {
     });
   });
 
-  if (iconPrev) {
+  if (iconPrev){
     iconPrev.onclick = () => {
       if (currentImageIndex <= 0)
         changeImage(mainImages.length - 1, lightboxMainImages, lightboxThumbnails);
@@ -48,16 +49,13 @@ function initGallery() {
     };
   }
 
-  if (iconNext) {
+  if (iconNext){
     iconNext.onclick = () => {
       if (currentImageIndex >= mainImages.length - 1)
         changeImage(0, lightboxMainImages, lightboxThumbnails);
       else changeImage(currentImageIndex + 1, lightboxMainImages, lightboxThumbnails);
     };
   }
-
-  // if (iconClose)
-  //     iconClose.onclick = () => lightbox.classList.remove("active");
 
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) lightbox.classList.remove("active");
@@ -66,82 +64,108 @@ function initGallery() {
 
 // =========================== CART ===========================
 // handle incr & decr in purchase quantities and save products to LocalStorage.
-function initCartLogic(productInfo) {
+function initCartLogic(productInfo){
   const countEl = document.getElementById("numberDisplay");
   const minus = document.querySelector(".counter button:first-child");
   const plus = document.querySelector(".counter button:last-child");
   const addToCartBtn = document.querySelector(".add-to-cart");
+  const errorMsg = document.getElementById("name-error");
 
   let count = 1;
 
   const updateCount = (newCount) => {
     count = newCount;
     countEl.value = count;
+    errorMsg.style.display = "none";
   };
 
-  //increase
+  //decrease
   minus.addEventListener("click", () => {
     if (count > 1) updateCount(count - 1);
   });
 
-  //decrease
+  //increase
   plus.addEventListener("click", () => {
     updateCount(count + 1);
   });
 
+  //validate the input: only allow numbers, no negative, no empty
+  countEl.addEventListener("input", (e) => {
+    let val = e.target.value;
+
+    if(/[^0-9]/.test(val)) {
+      e.target.value = val.replace(/[^0-9]/g, '');
+      errorMsg.innerText = "Vui lòng chỉ nhập số!";
+      errorMsg.style.display = "block";
+    }
+
+    else
+      errorMsg.style.display = "none";
+  });
+
+  //validate the input when user finish typing and move out of the input field
   countEl.addEventListener("change", (e) => {
     let val = parseInt(e.target.value);
-    if (isNaN(val) || val < 1) val = 1;
 
-    updateCount(val);
+    if(isNaN(val) || val < 1){
+      errorMsg.innerText = "Số lượng phải lớn hơn 0!";
+      errorMsg.style.display = "block";
+    }
+
+    else{
+      errorMsg.style.display = "none";
+      updateCount(val);
+    }
   });
 
   //add to cart
   addToCartBtn.addEventListener("click", () => {
+    let currentVal = parseInt(countEl.value);
+    if (isNaN(currentVal) || currentVal < 1) {
+      errorMsg.innerText = "Số lượng phải lớn hơn 0!";
+      errorMsg.style.display = "block";
+      return;
+    }
+
     //get info from the interface
     const productName = document.querySelector(".product-name").innerText;
-    const priceText = document.querySelector(".price h1")
-      ? document.querySelector(".price h1").innerText
-      : document.querySelector(".price").innerText;
+    const priceText = document.querySelector(".price h1") ? document.querySelector(".price h1").innerText : document.querySelector(".price").innerText;
     const productPrice = parseInt(priceText.replace(/\D/g, ""));
-    const productImg = document.querySelector(
-      ".default.gallery .main-img img.active",
-    ).src;
+    const productImg = document.querySelector(".default.gallery .main-img img.active").src;
 
     const newItem = {
       id: productInfo.id,
       name: productName,
       price: productPrice,
       image: productImg,
-      quantity: count,
+      quantity: currentVal,
     };
 
     //get the old shopping cart from LocalStorage. if !exist => create an empty array
     let cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
     const existingItemIndex = cart.findIndex((item) => item.id === newItem.id);
 
-    if (existingItemIndex > -1) {
+    if (existingItemIndex > -1) 
       cart[existingItemIndex].quantity += newItem.quantity;
-    } else {
+    else 
       cart.push(newItem);
-    }
+    
 
     //save back to browser
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
     updateHeaderBadge();
 
-    // alert(`Đã thêm ${count} sản phẩm vào giỏ!`);
-
-    showToast(`Đã thêm ${count} sản phẩm vào giỏ!`);
+    showToast(`Đã thêm ${currentVal} sản phẩm vào giỏ!`);
   });
 }
+
 //upd the quantity of items on the shopping cart icon
-function updateHeaderBadge() {
+function updateHeaderBadge(){
   const cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
   let totalQty = 0;
   cart.forEach((item) => (totalQty += item.quantity));
   const badge = document.querySelector("my-header .badge");
-  if (badge) {
+  if (badge){
     badge.innerText = totalQty > 99 ? "99+" : totalQty;
     badge.style.display = totalQty > 0 ? "inline-block" : "none";
   }
@@ -149,7 +173,7 @@ function updateHeaderBadge() {
 
 // ================== RELATED PRODUCTS ==================
 //find & display the 4 most relevant products based on category & color
-function renderRelatedProducts(currentProduct, allProducts) {
+function renderRelatedProducts(currentProduct, allProducts){
   const container = document.querySelector(".related-products-list");
   if (!container) return;
 
@@ -159,17 +183,11 @@ function renderRelatedProducts(currentProduct, allProducts) {
     .map((p) => {
       let score = 0;
 
-      if (p.category.some((cat) => currentProduct.category.includes(cat))) {
+      if(p.category.some((cat) => currentProduct.category.includes(cat)))
         score += 2;
-      }
 
-      if (
-        p.color &&
-        currentProduct.color &&
-        p.color.some((c) => currentProduct.color.includes(c))
-      ) {
+      if(p.color && currentProduct.color && p.color.some((c) => currentProduct.color.includes(c)))
         score += 1;
-      }
 
       return { ...p, score };
     })
@@ -179,7 +197,7 @@ function renderRelatedProducts(currentProduct, allProducts) {
   //select the 4 highestscoring products
   const displayList = related.slice(0, 4);
 
-  if (displayList.length === 0) {
+  if (displayList.length === 0){
     document.querySelector(".related-products").style.display = "none";
     return;
   }
@@ -237,27 +255,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //fill in the info in the html
-function renderProductDetails(product, reviewCount) {
+function renderProductDetails(product, reviewCount){
   document.querySelector(".product-name").innerText = product.name;
   document.querySelector(".product-desc").innerText = product.description;
 
   //VND
   const formattedPrice = product.price.toLocaleString("vi-VN") + " VNĐ";
   const priceContainer = document.querySelector(".price");
-  if (priceContainer.querySelector("p")) {
+  if (priceContainer.querySelector("p")) 
     priceContainer.querySelector("p").innerText = formattedPrice;
-  } else {
+  else 
     priceContainer.innerHTML = `<p>${formattedPrice}</p>`;
-  }
-
-  //upd breadcrumb
-  const breadName = document.getElementById("bread-name");
-  const breadCategory = document.getElementById("bread-category");
-
-  if (breadName) breadName.innerText = product.name;
-  if (breadCategory && product.category && product.category.length > 0) {
-    breadCategory.innerText = product.category[0];
-  }
+  
   const smallStars = document.getElementById("small-stars");
   const smallCount = document.getElementById("small-count");
 
@@ -275,30 +284,30 @@ function renderProductDetails(product, reviewCount) {
 
   //assign html to the DOM
   const defaultGallery = document.querySelector(".default.gallery");
-  if (defaultGallery) {
+  if (defaultGallery){
     defaultGallery.querySelector(".main-img").innerHTML = mainHtml;
     defaultGallery.querySelector(".thumb-list").innerHTML = thumbHtml;
   }
 
   //upd lightbox
   const lightboxMainImg = document.querySelector(".lightbox .main-img");
-  if (lightboxMainImg) {
+  if (lightboxMainImg){
     const iconsHtml = `
             <span class="icon-prev"><i class="bi bi-chevron-compact-left"></i></span>
             <span class="icon-next"><i class="bi bi-chevron-compact-right"></i></span>
-            // <span class="icon-close"><i class="bi bi-x-circle-fill"></i></span>
         `;
     lightboxMainImg.innerHTML = iconsHtml + mainHtml;
     document.querySelector(".lightbox .thumb-list").innerHTML = thumbHtml;
   }
+
   initGallery();
 }
 
 // =========================== EVALUATION CHART ===========================
-function renderReviews(avgRating, totalCount) {
+function renderReviews(avgRating, totalCount){
   let dist = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
 
-  switch (true) {
+  switch (true){
     case avgRating === 5.0:
       dist = { 5: 100, 4: 0, 3: 0, 2: 0, 1: 0 };
       break;
@@ -340,9 +349,9 @@ function renderReviews(avgRating, totalCount) {
 
   if (starsEl) starsEl.innerHTML = generateStars(avgRating);
 
-  if (barsEl) {
+  if (barsEl){
     barsEl.innerHTML = "";
-    for (let i = 5; i >= 1; i--) {
+    for (let i = 5; i >= 1; i--){
       const percent = dist[i];
       const html = `
                 <div class="rating-progress-value">
@@ -358,7 +367,7 @@ function renderReviews(avgRating, totalCount) {
   }
 }
 // =========================== STAR ICON ===========================
-function generateStars(rating) {
+function generateStars(rating){
   let starsHtml = "";
 
   // Thuộc tính tạo viền: -webkit-text-stroke: 1px var(--text-accent);
@@ -368,6 +377,7 @@ function generateStars(rating) {
     if (i <= Math.floor(rating))
       //full
       starsHtml += `<i class="bi bi-star-fill" style="color: var(--text-accent); ${strokeStyle}"></i>`;
+
     else if (i === Math.ceil(rating)) {
       //not full
       let percent = (rating - Math.floor(rating)) * 100;
@@ -380,10 +390,12 @@ function generateStars(rating) {
                     ${strokeStyle}
                 "></i>`;
     } //empty
+
     else
       // color: transparent / white kết hợp với text-stroke sẽ tạo hiệu ứng chỉ có viền
       starsHtml += `<i class="bi bi-star-fill" style="color: white; ${strokeStyle}"></i>`;
   }
+
   return starsHtml;
 }
 
