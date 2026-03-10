@@ -4,9 +4,10 @@ const filterName = ['bouquet', 'flower', 'decorations']
 
 let SelectedFlowerList = {}
 const setSelectedList = (item, amountItem) => {
+    const name = item.type == 'bouquet' ? item.type : item.name;  
     const main = {
         ...SelectedFlowerList,
-        [item.name]: {
+        [name]: {
             item,
             amountItem
         }
@@ -284,7 +285,7 @@ const renderPriceContainer = () => {
         Total += value.item.price * value.amountItem;
         return `
             ${value.amountItem !== 0 ? `<li class="item-price-selected">
-                <span class="name-item">${key}</span>
+                <span class="name-item">${value.item.name}</span>
                 <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
             </li>`: ""}
         `
