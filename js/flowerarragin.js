@@ -4,9 +4,10 @@ const filterName = ["bouquet", "flower", "decorations"];
 
 let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
+  const name = item.type == "bouquet" ? item.type : item.name;
   const main = {
     ...SelectedFlowerList,
-    [item.name]: {
+    [name]: {
       item,
       amountItem,
     },
@@ -58,7 +59,6 @@ const itemFlower = (data, amount) => {
                         <span class="content-flower-price">
                             <span>Giá: </span>
                             ${formatNumber(item.price)} 
-                            <span class="cast">vnđ</span>
                         </span>
                         <div class="action-button w-100" onclick="event.stopPropagation()">
                             <div class="quantity-control fancy-qty d-flex align-items-center">
@@ -103,7 +103,6 @@ const renderBouquet = (data) => {
                         <span class="content-flower-price">
                             <span>Giá: </span>
                             ${formatNumber(item.price)} 
-                            <span class="cast">vnđ</span>
                         </span>
                         <div class="action-button w-100" onclick="event.stopPropagation()">
                             <div></div> <!-- Spacer -->
@@ -345,7 +344,7 @@ const renderPriceContainer = () => {
             ${
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
-                <span class="name-item">${key}</span>
+                <span class="name-item">${value.item.name}</span>
                 <span class="price-item">${formatNumber(value.item.price * value.amountItem)}</span>
             </li>`
                 : ""
@@ -365,7 +364,6 @@ const renderPriceContainer = () => {
                 </div>
                 <div class="summary-price-col">
                     <span class="summary-total-price">${formatNumber(Total)}</span>
-                    <span class="summary-total-unit">vnđ</span>
                 </div>
             </div>
             
@@ -919,9 +917,7 @@ const HandleSendDataLocal = async () => {
 };
 
 const formatNumber = (num) => {
-  let [integerPart, decimalPart] = num.toString().split(".");
-  integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  return decimalPart ? `${integerPart}.${decimalPart}` : integerPart;
+  return num.toLocaleString("en-US") + '<sup class="price-currency">vnđ</sup>';
 };
 
 const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
