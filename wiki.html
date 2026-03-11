@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Hoa</title>
     <link href="css/wiki.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="framework/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="framework/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/assets/images/Log.png" type="image/png" />
 </head>
@@ -27,7 +26,9 @@
                     Một bó hoa đẹp dành tặng cho những tâm hồn đẹp
                 </p>
                 <form>
-                <input type="number" id="hoacuathang" placeholder="Hãy nhập tháng sinh của bạn sẽ có điều bất ngờ xảy ra (1-12)" min= 1 max= 12
+                    <label for="hoacuathang" class="input-label">Tháng sinh của bạn là?</label><br>
+                    <input type="number" id="hoacuathang"
+                        placeholder="Hãy nhập tháng sinh của bạn sẽ có điều bất ngờ xảy ra (1-12)" min=1 max=12
                         onkeypress="if(event.key === 'Enter'){ event.preventDefault(); timHoaTheoThang(); }">
                 </form>
             </div>
@@ -44,34 +45,34 @@
             </h1>
             <div class="group">
                 <div class="object" onclick="loadFlowerData('Hoa Cát Tường')">
-                        <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-cat-tuong/cattuong1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa Cát Tường</h2>
-                            <p>Cát Tường - cái tên tựa như một lời chúc bình an, mang trong mình những cánh hoa mỏng
-                                manh
-                                như lụa nhưng chứa đựng một sức sống vô cùng bền bỉ.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-cat-tuong/cattuong1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa Cát Tường</h2>
+                        <p>Cát Tường - cái tên tựa như một lời chúc bình an, mang trong mình những cánh hoa mỏng
+                            manh
+                            như lụa nhưng chứa đựng một sức sống vô cùng bền bỉ.
+                            Xem thêm</p>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Linh Lan')">
-                        <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-linh-lan/linhlan1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa Linh Lan</h2>
-                            <p>Mỏng manh như lụa, trắng trong như sương, nhưng lại mang một bí mật đầy quyền năng trong
-                                hương thơm của mình. Khám phá ngay loài hoa 'hoàng gia' này.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-linh-lan/linhlan1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa Linh Lan</h2>
+                        <p>Mỏng manh như lụa, trắng trong như sương, nhưng lại mang một bí mật đầy quyền năng trong
+                            hương thơm của mình. Khám phá ngay loài hoa 'hoàng gia' này.
+                            Xem thêm</p>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Tulip')">
-                        <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-tulip/tulip1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa tulip</h2>
-                            <p>Mỗi màu sắc của Tulip là một mật mã riêng biệt. Đỏ là lời tự tình, vàng là tia nắng hy
-                                vọng,
-                                còn tím... là cả một vương triều kiêu hãnh.
+                    <img src="assets/images/img/anh-hoa-mua-xuan/anh-hoa-tulip/tulip1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa tulip</h2>
+                        <p>Mỗi màu sắc của Tulip là một mật mã riêng biệt. Đỏ là lời tự tình, vàng là tia nắng hy
+                            vọng,
+                            còn tím... là cả một vương triều kiêu hãnh.
                             Xem thêm</p>
-                             
-                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -82,35 +83,35 @@
             </h1>
             <div class="group">
                 <div class="object" onclick="loadFlowerData('Hoa Hướng Dương')">
-                        <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-huong-duong/huongduong1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa hướng dương</h2>
-                            <p>Bạn có bao giờ tự hỏi tại sao một đóa hoa lại luôn kiêu hãnh hướng về phía mặt trời? Hãy
-                                khám
-                                phá bí mật về lòng trung thành và nguồn năng lượng bất diệt của Hướng Dương.
+                    <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-huong-duong/huongduong1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa hướng dương</h2>
+                        <p>Bạn có bao giờ tự hỏi tại sao một đóa hoa lại luôn kiêu hãnh hướng về phía mặt trời? Hãy
+                            khám
+                            phá bí mật về lòng trung thành và nguồn năng lượng bất diệt của Hướng Dương.
                             Xem thêm</p>
-                        </div>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Lily')">
-                        <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-lily/lily1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa Lily</h2>
-                            <p>Thanh lịch, quyền quý và đầy kiêu hãnh – Hoa Lily không chỉ là một loài hoa, đó là một
-                                phong
-                                cách sống tinh tế vượt thời gian.
-                                Xem thêm</p>
-                            
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-lily/lily1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa Lily</h2>
+                        <p>Thanh lịch, quyền quý và đầy kiêu hãnh – Hoa Lily không chỉ là một loài hoa, đó là một
+                            phong
+                            cách sống tinh tế vượt thời gian.
+                            Xem thêm</p>
+
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Sen')">
-                        <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-sen/hoasen1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa sen</h2>
-                            <p>Trỗi dậy từ bùn lầy để tỏa hương thanh khiết, hoa Sen là minh chứng hùng hồn nhất cho
-                                việc
-                                tâm hồn ta có thể rạng rỡ giữa những nghịch cảnh.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-ha/anh-hoa-sen/hoasen1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa sen</h2>
+                        <p>Trỗi dậy từ bùn lầy để tỏa hương thanh khiết, hoa Sen là minh chứng hùng hồn nhất cho
+                            việc
+                            tâm hồn ta có thể rạng rỡ giữa những nghịch cảnh.
+                            Xem thêm</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -121,33 +122,33 @@
             </h1>
             <div class="group">
                 <div class="object" onclick="loadFlowerData('Hoa Cẩm Chướng')">
-                        <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-cam-chuong/camchuong1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa cẩm chướng</h2>
-                            <p>Mỏng manh nhưng bền bỉ lạ kỳ, Cẩm Chướng ẩn chứa sức mạnh của sự gắn kết và những lời tri
-                                ân
-                                chân thành nhất từ trái tim.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-cam-chuong/camchuong1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa cẩm chướng</h2>
+                        <p>Mỏng manh nhưng bền bỉ lạ kỳ, Cẩm Chướng ẩn chứa sức mạnh của sự gắn kết và những lời tri
+                            ân
+                            chân thành nhất từ trái tim.
+                            Xem thêm</p>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Cúc Họa Mi')">
-                        <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-cuc-hoa-mi/hoami1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa cúc họa mi</h2>
-                            <p>Vẻ đẹp của sự chân phương và tình yêu thầm lặng – Cúc Họa Mi chỉ nở rộ trong khoảnh khắc
-                                ngắn
-                                ngủi để ta thêm nâng niu những điều bình dị.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-cuc-hoa-mi/hoami1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa cúc họa mi</h2>
+                        <p>Vẻ đẹp của sự chân phương và tình yêu thầm lặng – Cúc Họa Mi chỉ nở rộ trong khoảnh khắc
+                            ngắn
+                            ngủi để ta thêm nâng niu những điều bình dị.
+                            Xem thêm</p>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Thạch Thảo')">
-                        <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-thach-thao/thachthao1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa thạch thảo</h2>
-                            <p>Mang sắc tím mộng mơ và chút buồn man mác của những ngày cuối thu, Thạch Thảo là loài hoa
-                                dành cho những tâm hồn yêu sự hoài niệm và tĩnh lặng. 
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-thu/anh-hoa-thach-thao/thachthao1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa thạch thảo</h2>
+                        <p>Mang sắc tím mộng mơ và chút buồn man mác của những ngày cuối thu, Thạch Thảo là loài hoa
+                            dành cho những tâm hồn yêu sự hoài niệm và tĩnh lặng.
+                            Xem thêm</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -157,67 +158,69 @@
                 Hoa Của Mùa Đông
             </h1>
             <div class="group">
-                <div class="object" onclick="loadFlowerData('Hoa Hồng Trắng')" >
-                        <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-hong-trang/hongtrang1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa hồng trắng</h2>
-                            <p>Sắc trắng tinh khôi không tì vết, Hồng Trắng là ngôn ngữ của ánh sáng và sự khởi đầu mới
-                                đầy
-                                hy vọng. Bạn đã sẵn sàng để lắng nghe lời tự tình từ tuyết trắng?
-                                Xem thêm</p>
-                       
-                        </div>
+                <div class="object" onclick="loadFlowerData('Hoa Hồng Trắng')">
+                    <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-hong-trang/hongtrang1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa hồng trắng</h2>
+                        <p>Sắc trắng tinh khôi không tì vết, Hồng Trắng là ngôn ngữ của ánh sáng và sự khởi đầu mới
+                            đầy
+                            hy vọng. Bạn đã sẵn sàng để lắng nghe lời tự tình từ tuyết trắng?
+                            Xem thêm</p>
+
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Mẫu Đơn')">
-                        <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-mau-don/maudon1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa mẫu đơn</h2>
-                            <p>Từng lớp cánh dày bồng bềnh như lụa là lời khẳng định về sự viên mãn và thịnh vượng. Hãy
-                                để
-                                Mẫu Đơn kể cho bạn nghe về giấc mơ quyền quý.
-                                Xem thêm</p>
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-mau-don/maudon1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa mẫu đơn</h2>
+                        <p>Từng lớp cánh dày bồng bềnh như lụa là lời khẳng định về sự viên mãn và thịnh vượng. Hãy
+                            để
+                            Mẫu Đơn kể cho bạn nghe về giấc mơ quyền quý.
+                            Xem thêm</p>
+                    </div>
                 </div>
                 <div class="object" onclick="loadFlowerData('Hoa Đinh Hương')">
-                        <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-dinh-huong/dinhhuong1.jpg">
-                        <div class="gthoa">
-                            <h2>Hoa đinh hương</h2>
-                            <p>Bạn có biết, có một loài hoa phải đi qua những ngày đông buốt giá nhất mới có thể tích tụ
-                                đủ
-                                hương thơm nồng nàn cho mùa xuân? Hãy khám phá bí mật về sự kiên cường của Đinh Hương.
-                                Xem thêm</p>
-                           
-                        </div>
+                    <img src="assets/images/img/anh-hoa-mua-dong/anh-hoa-dinh-huong/dinhhuong1.jpg">
+                    <div class="gthoa">
+                        <h2>Hoa đinh hương</h2>
+                        <p>Bạn có biết, có một loài hoa phải đi qua những ngày đông buốt giá nhất mới có thể tích tụ
+                            đủ
+                            hương thơm nồng nàn cho mùa xuân? Hãy khám phá bí mật về sự kiên cường của Đinh Hương.
+                            Xem thêm</p>
+
+                    </div>
                 </div>
             </div>
         </section>
     </main>
     <div id="flowerModal" class="modal-overlay" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-body">
-            <h2 id="ten-hoa" class="text-center mb-4"></h2>
-            <article id="mo-ta1" class="mb-3"></article>
-            <img id="img1" src="" class="img-fluid mb-3" style="width:100%;border-radius:10px;">
-            
-            <article id="mo-ta2" class="mb-3"></article>
-            <img id="img2" src="" class="img-fluid mb-3" style="width:100%;border-radius:10px;">
-            
-            <article id="mo-ta3" class="mb-3"></article>
-            <img id="img3" src="" class="img-fluid" style="width:100%;border-radius:10px;">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div id="loading-spinner" style="display: none; text-align: center; padding: 50px;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p>Đang tìm những đóa hoa xinh đẹp cho bạn...</p>
+                </div>
+                <h2 id="ten-hoa" class="text-center mb-4"></h2>
+                <article id="mo-ta1" class="mb-3"></article>
+                <img id="img1" src="" class="img-fluid mb-3" style="width:100%;border-radius:10px;">
+
+                <article id="mo-ta2" class="mb-3"></article>
+                <img id="img2" src="" class="img-fluid mb-3" style="width:100%;border-radius:10px;">
+
+                <article id="mo-ta3" class="mb-3"></article>
+                <img id="img3" src="" class="img-fluid" style="width:100%;border-radius:10px;">
+            </div>
         </div>
     </div>
-</div>
     <my-footer>
 
     </my-footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+<script src="framework/popper.min.js"></script>
+<script src="framework/bootstrap.min.js"></script>
 <script src="js/components.js"></script>
 <script src="js/wiki.js"></script>
 <script src="thuvien/hieuunghoabay.js"></script>

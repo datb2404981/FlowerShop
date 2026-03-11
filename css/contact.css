@@ -153,7 +153,7 @@ select {
   }
 }
 #thongbaottlh {
-  display: none;
+  display: none; 
   color: #2ecc71;
   margin-top: 10px;
 }
@@ -173,4 +173,7 @@ select {
 .toast-icon {
   color: #28a745;
   font-size: 22px;
+}
+.lienhe:hover{
+  scale: 1.0025;
 }

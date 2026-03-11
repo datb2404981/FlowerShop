@@ -1,24 +1,25 @@
 @import url("../thuvien/fontchu.css");
-
+/*bố cục cho container */
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;/*xếp theo chiều dọc*/
   align-items: center;
   text-align: center;
   padding: 20px;
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước chiều rộng của container */
 }
-
+/*bố cục lưới cho hoa của từng mùa*/
 .group {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;     /* chia làm 3 cột mỗi cột bằng nhau 1fr*/
   grid-template-areas: "hoa1 hoa2 hoa3";
   gap: 100px;
   justify-items: center;
   width: 100%;
   max-width: 1200px;
 }
+
 .object {
   display: flex;
   flex-direction: column;
@@ -30,7 +31,7 @@
 .object img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover; /*giữ đúng tỉ lệ khi thu phóng*/
   border-radius: 5px;
   max-width: 300px;
 }
@@ -39,16 +40,12 @@
   width: fit-content;
   border-radius: 4px;
   color: #333;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
 }
 
 .object:hover {
   background: rgba(170, 9, 9, 0.06);
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
-  animation: pulseSelect 0.25s ease;
   padding: 15px;
 }
 
@@ -259,7 +256,7 @@ article{
   padding: 20px 20px;
 }
 .modal-body img{
-  height: 800px;
+  max-height: 170vh;
   object-fit: cover;
 }
 #hoacuathang{
@@ -277,4 +274,64 @@ article{
 }
 #hoacuathang::-webkit-outer-spin-button,#hoacuathang::-webkit-inner-spin-button{
   -webkit-appearance: none;
+}
+.input-label{
+  padding-top: 20px;
+}
+.input-label {
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.6s ease forwards; /*hiệu ứng trượt lên cho label và ô input*/
+}
+
+#hoacuathang {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.7s ease forwards;
+}
+
+/* Keyframes cho Label */
+@keyframes fadeInUp {
+    to { opacity: 0.8; transform: translateY(0); }
+}
+
+.input-label { opacity: 0; transition: 0.5s; }
+
+
+/* Định nghĩa hiệu ứng mờ dần và trượt nhẹ lên cho phần modal */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Áp dụng hiệu ứng cho các phần tử trong Modal */
+.modal-body article, 
+.modal-body img {
+  animation: fadeInContent 0.8s ease-out forwards;
+}
+.modal-body article:nth-child(2) { animation-delay: 0.2s; }
+.modal-body img:nth-child(3) { animation-delay: 0.4s; }
+.modal-body article:nth-child(4) { animation-delay: 0.6s; }
+.modal-body img:nth-child(5) { animation-delay: 0.8s; }
+
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border: 0.25em solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: spinner-border .75s linear infinite;
+}
+
+@keyframes spinner-border {
+    to { transform: rotate(360deg); }
 }

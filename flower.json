@@ -1,98 +1,152 @@
 {
-    "flower": [
-        {
-            "id": 0,
-            "name": "Rose",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Rose.png"
-        },
-        {
-            "id": 1,
-            "name": "Blossom Purple Tulip",
-            "price": 15000,
-            "path": "assets/images/flowerImages/blossom_purple_tuplip.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Camellia",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Camellia_thumnail.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Blue Cornflower",
-            "price": 15000,
-            "path": "assets/images/flowerImages/cornflower_blue_thumnail.webp"
-        },
-        {
-            "id": 4,
-            "name": "Daisy",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Daisy_thumnail.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Forget me not",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Forget_me_not_thumnail.jpg"
-        },
-        {
-            "id": 6,
-            "name": "Hydrangea",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Hydrangea_thumnail.jpg"
-        },
-        {
-            "id": 7,
-            "name": "Lavender",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Lavender_thumnail.webp"
-        },
-        {
-            "id": 8,
-            "name": "Lisianthus",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Lisianthus_thumnail.jpg"
-        },
-        {
-            "id": 9,
-            "name": "Pink Magnolia",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp"
-        },
-        {
-            "id": 10,
-            "name": "Pink Peony",
-            "price": 15000,
-            "path": "assets/images/flowerImages/Pink_peony_thumnail.jpg"
-        }
-    ],
-    "bouquet": [
-        {
-            "id": 0,
-            "name": "Normal",
-            "price": 15000,
-            "path": "assets/images/bouquets/bouquet01_texture.png"
-        },
-        {
-            "id": 1,
-            "name": "Normal",
-            "price": 15000,
-            "path": "assets/images/bouquets/Bouquet02_texture.png"
-        },
-        {
-            "id": 2,
-            "name": "Normal",
-            "price": 15000,
-            "path": "assets/images/bouquets/bouquet01.png"
-        }
-    ],
-    "decorations": [
-         {
-            "id": 0,
-            "name": "Duong Xi",
-            "price": 15000,
-            "path": "assets/images/decorations/DuongXi_texture.png"
-        }
-    ]
+  "flower": [
+    {
+      "id": 0,
+      "name": "Hoa Hồng",
+      "type": "flower",
+      "price": 25000,
+      "path": "assets/images/flowerImages/Rose_thumbnail.webp",
+      "texture": "assets/images/flowerImages/Rose_texture.png"
+    },
+    {
+      "id": 1,
+      "name": "Tulip Tím",
+      "type": "flower",
+      "price": 35000,
+      "path": "assets/images/flowerImages/blossom_purple_tuplip.jpg",
+      "texture": "assets/images/flowerImages/blossom_purple_tuplip_texture.png"
+    },
+    {
+      "id": 2,
+      "name": "Hoa Trà",
+      "type": "flower",
+      "price": 30000,
+      "path": "assets/images/flowerImages/Camellia_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Camellia_texture.png"
+    },
+    {
+      "id": 3,
+      "name": "Cúc Thanh Anh Xanh",
+      "type": "flower",
+      "price": 18000,
+      "path": "assets/images/flowerImages/cornflower_blue_thumnail.webp",
+      "texture": "assets/images/flowerImages/cornflower_blue_texture.png"
+    },
+    {
+      "id": 4,
+      "name": "Cúc Họa Mi",
+      "type": "flower",
+      "price": 15000,
+      "path": "assets/images/flowerImages/Daisy_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Daisy_texture.png"
+    },
+    {
+      "id": 5,
+      "name": "Hoa Lưu Ly",
+      "type": "flower",
+      "price": 12000,
+      "path": "assets/images/flowerImages/Forget_me_not_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Forget_me_not_texture.png"
+    },
+    {
+      "id": 6,
+      "name": "Cẩm Tú Cầu",
+      "type": "flower",
+      "price": 45000,
+      "path": "assets/images/flowerImages/Hydrangea_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Hydrangea_texture.png"
+    },
+    {
+      "id": 7,
+      "name": "Oải Hương",
+      "type": "flower",
+      "price": 20000,
+      "path": "assets/images/flowerImages/Lavender_thumnail.webp",
+      "texture": "assets/images/flowerImages/Lavender_texture.png"
+    },
+    {
+      "id": 8,
+      "name": "Cát Tường",
+      "type": "flower",
+      "price": 28000,
+      "path": "assets/images/flowerImages/Lisianthus_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Lisianthus_texture.png"
+    },
+    {
+      "id": 9,
+      "name": "Mộc Lan Hồng",
+      "type": "flower",
+      "price": 35000,
+      "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp",
+      "texture": "assets/images/flowerImages/Rose.png"
+    },
+    {
+      "id": 10,
+      "name": "Mẫu Đơn Hồng",
+      "type": "flower",
+      "price": 50000,
+      "path": "assets/images/flowerImages/Pink_peony_thumnail.jpg",
+      "texture": "assets/images/flowerImages/Pink_peony_texture.png"
+    }
+  ],
+  "bouquet": [
+    {
+      "id": 0,
+      "name": "Bó Nâu Lụa",
+      "type": "bouquet",
+      "price": 150000,
+      "path": "assets/images/bouquets/Bouquet01_thumbnail.png",
+      "texture": "assets/images/bouquets/bouquet01_texture.png"
+    },
+    {
+      "id": 5,
+      "name": "Bó Đêm Bạc",
+      "type": "bouquet",
+      "price": 300000,
+      "path": "assets/images/bouquets/Bouquet05_thumbnail.png",
+      "texture": "assets/images/bouquets/Bouquet05_texture.png"
+    },
+    {
+      "id": 1,
+      "name": "Bó Băng Khói",
+      "type": "bouquet",
+      "price": 200000,
+      "path": "assets/images/bouquets/Bouquet02_texture.png",
+      "texture": "assets/images/bouquets/Bouquet02_texture.png"
+    },
+    {
+      "id": 2,
+      "name": "Bó Hồng Sương",
+      "type": "bouquet",
+      "price": 150000,
+      "path": "assets/images/bouquets/bouquet03_thumbnail.png",
+      "texture": "assets/images/bouquets/bouquet03_texture.png"
+    },
+    {
+      "id": 3,
+      "name": "Bó Rực Rở",
+      "type": "bouquet",
+      "price": 400000,
+      "path": "assets/images/bouquets/bouquet04_thumbnail.png",
+      "texture": "assets/images/bouquets/bouquet04_texture.png"
+    }
+  ],
+  "decorations": [
+    {
+      "id": 0,
+      "name": "Lá dương xỉ",
+      "type": "decorations",
+      "price": 2000,
+      "path": "assets/images/decorations/DuongXi_texture.png",
+      "texture": "assets/images/decorations/DuongXi_texture.png"
+    },
+    {
+      "id": 1,
+      "name": "Topper Sinh Nhật",
+      "type": "decorations",
+      "price": 10000,
+      "path": "assets/images/decorations/happybirthday_texture.png",
+      "texture": "assets/images/decorations/happybirthday_texture.png"
+    }
+  ]
 }

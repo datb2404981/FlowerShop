@@ -17,8 +17,17 @@ function loadFlowerData(name) {
 }
 
 function displayFlower(name) {
+    const modal = document.getElementById("flowerModal");
+    const spinner = document.getElementById("loading-spinner");
+    const bodyContent = document.querySelector(".modal-content");
+
+    modal.style.display = "flex";
+    spinner.style.display = "block";
+
     const flowerData = flowerCache.find(item => item.name.toLowerCase() === name.toLowerCase().trim());
     if (flowerData) {
+        setTimeout(() => {
+            spinner.style.display = "none";
         document.getElementById("ten-hoa").textContent = flowerData.name;
         document.getElementById("mo-ta1").textContent = flowerData.description[0];
         document.getElementById("mo-ta2").textContent = flowerData.description[1];
@@ -28,6 +37,13 @@ function displayFlower(name) {
         document.getElementById("img3").src = flowerData.img[2];
         console.log(flowerData);
         document.getElementById("flowerModal").style.display = "flex";
+
+        const modalBody = document.querySelector(".modal-body");
+        modalBody.style.animation = 'none';
+        modalBody.offsetHeight; // Lệnh này giúp trình duyệt "refresh" lại animation
+        modalBody.style.animation = null;
+        document.getElementById("ten-hoa").textContent = flowerData.name;
+        }, 500);
     }
 }
 
@@ -81,6 +97,7 @@ function chayHieuUngHoa() {
 }
 
 function timHoaTheoThang() {
+    const inputField = document.getElementById("hoacuathang");
     const input = document.getElementById("hoacuathang").value.trim();
     const tenHoa = thangToHoa[input]; // Lấy tên hoa từ object thangToHoa
 
@@ -92,10 +109,14 @@ function timHoaTheoThang() {
                 .then(res => res.json())
                 .then(data => {
                     flowerCache = data;
-                    setTimeout(() => displayFlower(tenHoa), 3000);
+                    setTimeout(() => {
+                        displayFlower(tenHoa);
+                        inputField.value="";
+                        inputField.blur();
+                    }, 2000);
                 });
         } else {
-            setTimeout(() => displayFlower(tenHoa), 3000);
+            setTimeout(() => displayFlower(tenHoa), 2000);
         }
     } else {
         alert("Vui lòng nhập một tháng hợp lệ (từ 1 đến 12)!");

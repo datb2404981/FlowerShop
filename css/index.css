@@ -142,6 +142,8 @@
   }
 }
 
+
+
 /* --- PHẦN TIÊU ĐỀ CÁC KHU VỰC (SECTION HEADER) --- */
 .section-header {
   display: flex;
@@ -314,6 +316,32 @@
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(170, 9, 9, 0.12); /* slight subtle shadow */
   animation: pulseSelect 0.25s ease;
+}
+
+.filter-reset {
+  font-size: 1.45rem;
+  /* Kích thước icon đẹp */
+  color: #8f1e4f;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.filter-reset:hover {
+  color: #640d33;
+}
+
+.filter-reset i {
+  transition: transform 0.5s ease;
+}
+
+.filter-reset:hover i {
+  transform: rotate(360deg);
+  /* Hiệu ứng quay 1 vòng đẹp như Chrome */
 }
 
 /* Custom Checkbox Appearance */

@@ -1,12 +1,13 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-fliterItem[0].classList.add("seleted-filter-box");
+fliterItem[1].classList.add("seleted-filter-box");
 const filterName = ["bouquet", "flower", "decorations"];
 
 let SelectedFlowerList = {};
 const setSelectedList = (item, amountItem) => {
+  const name = item.type == "bouquet" ? item.type : item.name;
   const main = {
     ...SelectedFlowerList,
-    [item.name]: {
+    [name]: {
       item,
       amountItem,
     },
@@ -15,12 +16,16 @@ const setSelectedList = (item, amountItem) => {
 };
 
 //filter selected
-let itemSelected = filterName[0];
+let itemSelected = filterName[1];
+
+const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
   item.addEventListener("click", () => {
     fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
+    filterItemSignELe.forEach((it) => it.classList.add("hidden"));
     item.classList.add("seleted-filter-box");
+    filterItemSignELe[index].classList.remove("hidden");
     renderListItem(filterName[index]);
     itemSelected = filterName[index];
   });
@@ -30,7 +35,6 @@ fliterItem.forEach((item, index) => {
 const getDataFlower = async () => {
   const data = await fetch("flower.json");
   const main = await data.json();
-  console.log(main);
   return main;
 };
 
@@ -38,6 +42,7 @@ const getDataFlower = async () => {
 const ListItem = document.querySelector(".list-selection");
 let handleIncrease;
 let handleDescrease;
+let handleDeleteAll;
 let currentData = [];
 
 const itemFlower = (data, amount) => {
@@ -45,20 +50,36 @@ const itemFlower = (data, amount) => {
   if (data) {
     html = data
       .map((item, index) => {
+        const isSelected = amount[index] > 0;
         return `
-                <div class="itemFlower">
+                <div class="itemFlower ${isSelected ? "is-checked" : ""}" onclick="handleIncrease(${index})">
                     <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
-                        <span class="content-flower-name">${item.name}</span>
-                        <span class="content-flower-price">${item.price} VND</span>
-                        <div class="button-flower-container">
-                            <button onclick="handleDescrease(${index})" class="button-flower-item increase-btn">
-                                -
-                            </button>
-                            <span class="amount-flower-item">${amount[index] || 0}</span>
-                            <button onclick="handleIncrease(${index})" class="button-flower-item descrease-btn">
-                                +
-                            </button>
+                        <span class="content-flower-name ellipsis">${item.name}</span>
+                        <span class="content-flower-price">
+                            <span>Giá: </span>
+                            ${formatNumber(item.price)} 
+                        </span>
+                        <div class="action-button w-100" onclick="event.stopPropagation()">
+                            <div class="quantity-control fancy-qty d-flex align-items-center">
+                                <button onclick="handleDescrease(${index})" class="qty-btn btn-minus" type="button">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                                <input
+                                    type="text"
+                                    class="form-control text-center quantity-input amount-flower-item"
+                                    value="${amount[index] || 0}"
+                                    readonly
+                                />
+                                <button onclick="handleIncrease(${index})" class="qty-btn btn-plus" type="button">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+                            <div class="remove-btn">
+                                <button onclick="handleDeleteAll(${index})" class="btn-remove">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -78,8 +99,19 @@ const renderBouquet = (data) => {
                 <div class="itemFlower bouquet-item">
                     <div class="item-flower-img" style="background-image: url('${item.path}');"></div>
                     <div class="content-flower-item">
-                        <span>${item.name}</span>
-                        <span>${item.price}</span>
+                        <span class="content-flower-name">${item.name}</span>
+                        <span class="content-flower-price">
+                            <span>Giá: </span>
+                            ${formatNumber(item.price)} 
+                        </span>
+                        <div class="action-button w-100" onclick="event.stopPropagation()">
+                            <div></div> <!-- Spacer -->
+                            <div class="remove-btn">
+                                <button onclick="deleteBouquet()" class="btn-remove">
+                                    <i class="bi bi-trash3"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -87,6 +119,20 @@ const renderBouquet = (data) => {
       .join("");
   }
   return html;
+};
+
+const deleteBouquet = () => {
+  const BouquetWSEle = document.querySelector(".bouquet-render");
+  BouquetWSEle.style.backgroundImage = `url('')`;
+
+  const temp = Object.fromEntries(
+    Object.entries(SelectedFlowerList).filter(([key, value]) => {
+      return value.item.type != "bouquet";
+    }),
+  );
+  SelectedFlowerList = temp;
+
+  renderPriceContainer();
 };
 
 //--------------
@@ -114,12 +160,19 @@ const renderListItem = async (selected) => {
 
     handleIncrease = (id) => {
       amountFlo[id]++;
-      ListAmountArr[id].innerHTML = amountFlo[id];
+
+      // Update amount
+      ListAmountArr[id].value = amountFlo[id];
+      // Update checked style
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountFlo[id] > 0) {
+        flowerItem.classList.add("is-checked");
+      }
 
       setSelectedList(currentData[id], amountFlo[id]);
       console.log(SelectedFlowerList);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       appendNode("flower", currentData[id], data, ListAmountArr, amountFlo);
     };
@@ -127,7 +180,12 @@ const renderListItem = async (selected) => {
     handleDescrease = (id) => {
       if (amountFlo[id] > 0) amountFlo[id]--;
       else return;
-      ListAmountArr[id].innerHTML = amountFlo[id];
+      ListAmountArr[id].value = amountFlo[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountFlo[id] === 0) {
+        flowerItem.classList.remove("is-checked");
+      }
 
       setSelectedList(currentData[id], amountFlo[id]);
       if (amountFlo[id] == 0) {
@@ -139,15 +197,33 @@ const renderListItem = async (selected) => {
         SelectedFlowerList = temp;
       }
       console.log(SelectedFlowerList);
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
-      deleteNode(
-        "flower",
-        currentData[id].name,
-        data,
-        ListAmountArr,
-        amountFlo,
+      deleteNode("flower", currentData[id].name, data, ListAmountArr, amountFlo);
+    };
+
+    handleDeleteAll = (id) => {
+      if (amountFlo[id] === 0) return;
+      amountFlo[id] = 0;
+      ListAmountArr[id].value = amountFlo[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      flowerItem.classList.remove("is-checked");
+
+      setSelectedList(currentData[id], amountFlo[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
       );
+      SelectedFlowerList = temp;
+
+      renderPriceContainer();
+      const newarr = DataStructure["flower"].filter((item) => {
+        return item.name != currentData[id].name;
+      });
+      DataStructure["flower"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
     };
     //-----------
 
@@ -174,25 +250,31 @@ const renderListItem = async (selected) => {
 
     handleIncrease = (id) => {
       amountDeco[id]++;
-      ListAmountArr[id].innerHTML = amountDeco[id];
+
+      // Update amount
+      ListAmountArr[id].value = amountDeco[id];
+      // Update checked style
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountDeco[id] > 0) {
+        flowerItem.classList.add("is-checked");
+      }
 
       setSelectedList(data.decorations[id], amountDeco[id]);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
-      appendNode(
-        "decorations",
-        data.decorations[id],
-        data,
-        ListAmountArr,
-        amountDeco,
-      );
+      appendNode("decorations", data.decorations[id], data, ListAmountArr, amountDeco);
     };
 
     handleDescrease = (id) => {
       if (amountDeco[id] > 0) amountDeco[id]--;
       else return;
-      ListAmountArr[id].innerHTML = amountDeco[id];
+      ListAmountArr[id].value = amountDeco[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      if (amountDeco[id] === 0) {
+        flowerItem.classList.remove("is-checked");
+      }
 
       setSelectedList(data.decorations[id], amountDeco[id]);
       if (amountDeco[id] == 0) {
@@ -204,7 +286,7 @@ const renderListItem = async (selected) => {
         SelectedFlowerList = temp;
       }
       console.log(amountDeco);
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       deleteNode(
         "decorations",
@@ -214,20 +296,44 @@ const renderListItem = async (selected) => {
         amountDeco,
       );
     };
+
+    handleDeleteAll = (id) => {
+      if (amountDeco[id] === 0) return;
+      amountDeco[id] = 0;
+      ListAmountArr[id].value = amountDeco[id];
+
+      const flowerItem = ListAmountArr[id].closest(".itemFlower");
+      flowerItem.classList.remove("is-checked");
+
+      setSelectedList(data.decorations[id], amountDeco[id]);
+      const temp = Object.fromEntries(
+        Object.entries(SelectedFlowerList).filter(([key, value]) => {
+          return value.amountItem != 0;
+        }),
+      );
+      SelectedFlowerList = temp;
+
+      renderPriceContainer();
+      const newarr = DataStructure["decorations"].filter((item) => {
+        return item.name != data.decorations[id].name;
+      });
+      DataStructure["decorations"] = newarr;
+      WorkSpaceEle.innerHTML = renderNode();
+    };
   } else {
     ListItem.innerHTML = "";
   }
 };
 
 //init
-renderListItem(filterName[0]);
+renderListItem(filterName[1]);
 
 // button flower
 
-const priceContainerEle = document.querySelector(".price-container");
+const priceContainerEles = document.querySelectorAll(".price-container");
 
 const renderPriceContainer = () => {
-  if (!priceContainerEle) return;
+  if (priceContainerEles.length === 0) return "";
 
   let Total = 0;
 
@@ -238,8 +344,8 @@ const renderPriceContainer = () => {
             ${
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
-                <span class="name-item">${key}</span>
-                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${value.item.price}</span>
+                <span class="name-item">${value.item.name}</span>
+                <span class="price-item">${formatNumber(value.item.price * value.amountItem)}</span>
             </li>`
                 : ""
             }
@@ -251,26 +357,34 @@ const renderPriceContainer = () => {
   const result_html = `
         ${
           lengthList !== 0
-            ? `<div class="price-total-container">
-            <span class="amount-item-seleted">
-                seleted item
-                <p>${lengthList} items</p>
-            </span>
-            <span class="price-total-box">
-                <span class="price-total">${Total}</span>
-            </span>
-        </div>
-        
-        <ul class="list-price">
-            ${html}
-        </ul>
+            ? `<div class="summary-card">
+            <div class="summary-header-box d-flex justify-content-between align-items-center">
+                <div class="summary-title-col">
+                    <h4>Tổng tiền: </h4>
+                </div>
+                <div class="summary-price-col">
+                    <span class="summary-total-price">${formatNumber(Total)}</span>
+                </div>
+            </div>
+            
+            <hr class="summary-divider"/>
+            
+            <ul class="list-price">
+                ${html}
+            </ul>
 
-        <button onclick="HandleSendDataLocal()" class="button-add-cart">
-            Add to cart
-        </button> `
+            <button onclick="HandleSendDataLocal()" class="btn-checkout w-100 mt-3">
+                Thêm vào giỏ hàng
+            </button>
+        </div>`
             : ""
         }
     `;
+
+  // Update All Price Containers (Desktop & Mobile)
+  priceContainerEles.forEach((ele) => {
+    ele.innerHTML = result_html;
+  });
 
   return result_html;
 };
@@ -283,18 +397,17 @@ const handleBoquetWorkSpace = (data) => {
 
   data.forEach((item, index) => {
     BouquetItemEle[index].addEventListener("click", () => {
-      BouquetWSEle.style.backgroundImage = `url('${item.path}')`;
+      BouquetWSEle.style.backgroundImage = `url('${item.texture}')`;
       setSelectedList(item, 1);
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
     });
   });
 };
 
 //Generate ID
 const generateId = (length = 8) => {
-  const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   let id = "";
   for (let i = 0; i < length; i++) {
     id += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -330,7 +443,7 @@ const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
   zindex++;
   DataStructure[type].push({
     id: id,
-    path: itemObj.path,
+    path: itemObj.texture,
     name: itemObj.name,
     state: {
       pos: {
@@ -379,15 +492,14 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
         DataStructure[type] = temp;
 
         SelectedFlowerList[name].amountItem = amountFlo[index];
-        if (itemSelected === "flower")
-          list[index].innerHTML = kvalue = amountFlo[index];
+        if (itemSelected === "flower") list[index].value = kvalue = amountFlo[index];
       } else {
         amountDeco[index]--;
         DataStructure[type] = temp;
 
         SelectedFlowerList[name].amountItem = amountDeco[index];
         if (itemSelected === "decorations") {
-          list[index].innerHTML = kvalue = amountDeco[index];
+          list[index].value = kvalue = amountDeco[index];
           console.log(ListAmountArr[index]);
         }
       }
@@ -401,7 +513,7 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
         SelectedFlowerList = temp;
       }
 
-      priceContainerEle.innerHTML = renderPriceContainer();
+      renderPriceContainer();
 
       event.target.remove();
     });
@@ -450,7 +562,9 @@ const renderNode = () => {
                 <div class="node" data="${item.id}" type="${key}" name="${item.name}"
                     style="background-image: url(${item.path}); left: ${item.state.pos.left}px; top: ${item.state.pos.top}px; transform: rotate(${item.state.rotation}deg); z-index:${item.state.zIndex};" 
                 >
-                    <div class="rotate-area"></div>
+                    <div class="rotate-area">
+                        <i class="rotate-icon bi bi-arrow-clockwise"></i>
+                    </div>
                 </div>
             `;
         })
@@ -465,48 +579,135 @@ const renderNode = () => {
 //render context menu
 const renderMenu = () => {
   return `
-        <div id="flip" class="menu-item">flip</div>
-        <div id="sendback" class="menu-item">Send to back</div>
+        <div id="sendbackward" class="menu-item">Đưa ra sau 1 lớp</div>
+        <div id="sendforward" class="menu-item">Đưa lên trước 1 lớp</div>
+        <div id="sendtoback" class="menu-item">Đưa ra sau cùng</div>
+        <div id="sendtofont" class="menu-item">Đưa lên trên cùng</div>
     `;
 };
 
 const contextMenuEle = document.querySelector(".menu-context");
 
-const handleFip = (item) => {
-  item.style.transform = "scaleX(-1)";
-  contextMenuEle.innerHTML = "";
-};
-
-const handleSendBack = (item) => {
+const handleSend = (item, typeName) => {
   const id = item.getAttribute("data");
-  const type = item.getAttribute("type");
-  const nodelist = WorkSpaceEle.querySelectorAll(".node");
+  const currentType = item.getAttribute("type");
 
-  let index = 0;
-  let newIndex = 0;
-  let oldIndex = 0;
-  for (let i = 0; i < DataStructure[type].length; i++) {
-    if (DataStructure[type][i].id === id) {
-      oldIndex = parseInt(window.getComputedStyle(item).zIndex);
+  let allElements = [];
+  let currentElement = null;
+  let currentZIndex = 0;
 
-      for (let k = 0; k < DataStructure[type].length; k++) {
-        if (DataStructure[type][k].state.zIndex === oldIndex - 1) {
-          newIndex = parseInt(window.getComputedStyle(nodelist[k]).zIndex);
-          index = k;
-          break;
-        }
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+        currentZIndex = element.state.zIndex;
       }
+    });
+  });
 
-      DataStructure[type][i].state.zIndex = newIndex;
-      DataStructure[type][index].state.zIndex = oldIndex;
+  if (!currentElement) {
+    contextMenuEle.innerHTML = "";
+    return;
+  }
 
-      break;
+  // sort m
+  allElements.sort((a, b) => a.element.state.zIndex - b.element.state.zIndex);
+
+  let targetElement = null;
+
+  if (typeName === "forward") {
+    // finding nearest smaller zindex
+    for (let item of allElements) {
+      if (item.element.state.zIndex > currentZIndex) {
+        targetElement = item;
+        break;
+      }
+    }
+  } else if (typeName === "backward") {
+    // finding nearest bigger zindex
+    for (let i = allElements.length - 1; i >= 0; i--) {
+      if (allElements[i].element.state.zIndex < currentZIndex) {
+        targetElement = allElements[i];
+        break;
+      }
     }
   }
 
-  nodelist[index].style.zIndex = oldIndex;
+  if (targetElement) {
+    let temp = currentElement.element.state.zIndex;
+    currentElement.element.state.zIndex = targetElement.element.state.zIndex;
+    targetElement.element.state.zIndex = temp;
 
-  item.style.zIndex = newIndex;
+    WorkSpaceEle.innerHTML = renderNode();
+    let NodeList = WorkSpaceEle.querySelectorAll(".node");
+    SetEvent(currentType, NodeList, {}, [], []);
+  }
+
+  contextMenuEle.innerHTML = "";
+};
+
+const handleSendUPD = (item, typeName) => {
+  const id = item.getAttribute("data");
+  const currentType = item.getAttribute("type");
+
+  //init
+  let allElements = [];
+  let currentElement = null;
+  let maxZIndex = 0;
+  let minZIndex = Infinity;
+
+  Object.entries(DataStructure).forEach(([type, items]) => {
+    items.forEach((element) => {
+      allElements.push({
+        element: element,
+        type: type,
+      });
+      if (element.id === id) {
+        currentElement = { element: element, type: type };
+      }
+      maxZIndex = Math.max(maxZIndex, element.state.zIndex);
+      minZIndex = Math.min(minZIndex, element.state.zIndex);
+    });
+  });
+
+  if (!currentElement) {
+    contextMenuEle.innerHTML = "";
+    return;
+  }
+
+  if (typeName === "back") {
+    // push it in the back
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex < currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex++;
+      }
+    });
+    currentElement.element.state.zIndex = minZIndex - 1;
+  } else if (typeName === "font") {
+    // push it to the top
+    allElements.forEach((item) => {
+      if (
+        item.element.id !== currentElement.element.id &&
+        item.element.state.zIndex > currentElement.element.state.zIndex
+      ) {
+        item.element.state.zIndex--;
+      }
+    });
+    currentElement.element.state.zIndex = maxZIndex + 1;
+  }
+
+  // Rerender canvas
+  WorkSpaceEle.innerHTML = renderNode();
+  let NodeList = WorkSpaceEle.querySelectorAll(".node");
+  SetEvent(currentType, NodeList, {}, [], []);
+
   contextMenuEle.innerHTML = "";
 };
 
@@ -528,11 +729,15 @@ const HandMenuContext = (itemHtml) => {
     contextMenuEle.style.top = top + "px";
     contextMenuEle.innerHTML = renderMenu();
 
-    const flip = contextMenuEle.querySelector("#flip");
-    const sendback = contextMenuEle.querySelector("#sendback");
+    const sendbackward = contextMenuEle.querySelector("#sendbackward");
+    const sendforward = contextMenuEle.querySelector("#sendforward");
+    const sendtoback = contextMenuEle.querySelector("#sendtoback");
+    const sendtofont = contextMenuEle.querySelector("#sendtofont");
 
-    flip.addEventListener("click", () => handleFip(itemHtml));
-    sendback.addEventListener("click", () => handleSendBack(itemHtml));
+    sendbackward.addEventListener("click", () => handleSend(itemHtml, "backward"));
+    sendforward.addEventListener("click", () => handleSend(itemHtml, "forward"));
+    sendtoback.addEventListener("click", () => handleSendUPD(itemHtml, "back"));
+    sendtofont.addEventListener("click", () => handleSendUPD(itemHtml, "font"));
   });
 };
 //------------------
@@ -634,13 +839,14 @@ ResetButtonEle.addEventListener("click", () => {
   priceContainerEle.innerHTML = "";
 
   WorkSpaceEle.innerHTML = "";
+  BouquetWSEle.style.backgroundImage = `url('')`;
+  console.log("maihfewugwueygeyug");
 
   const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
   if (ListAmount.length > 0) {
     ListAmount.forEach((item, index) => {
       if (item.textContent !== "0") {
         item.innerHTML = 0;
-        console.log("hello");
       }
     });
   }
@@ -657,21 +863,70 @@ ResetButtonEle.addEventListener("click", () => {
   }
 });
 
-const HandleSendDataLocal = () => {
+const HandleSendDataLocal = async () => {
   let total = 0;
-  const outputList = Object.entries(SelectedFlowerList).map(([key, value]) => {
-    total += value.item.price;
-    return {
-      name: value.item.name,
-      price: value.item.price,
-      amount: value.amountItem,
-    };
+  Object.entries(SelectedFlowerList).forEach(([key, value]) => {
+    total += value.item.price * value.amountItem;
   });
 
-  const output = {
-    total,
-    item: outputList,
-  };
+  const Localdata = localStorage.getItem("shoppingCart");
+  let data = JSON.parse(Localdata) || [];
 
-  localStorage.setItem("pay_list", JSON.stringify(output));
+  const captureNode = document.getElementById("capture");
+  const scale = 0.3; // Thu nhỏ đi 3 lần để nhẹ bộ nhớ
+
+  await domtoimage
+    .toJpeg(captureNode, {
+      quality: 0.5,
+      width: captureNode.offsetWidth * scale,
+      height: captureNode.offsetHeight * scale,
+      style: {
+        transform: `scale(${scale})`,
+        transformOrigin: "top left",
+        width: `${captureNode.offsetWidth}px`,
+        height: `${captureNode.offsetHeight}px`,
+      },
+    })
+    .then(function (dataUrl) {
+      // Tạo thẻ img và gán ảnh vừa chụp
+      data = [
+        ...data,
+        {
+          id: 3, // Lưu ý: Nếu muốn có nhiều hoa tự thiết kế thì bạn nên dùng generateId() thay vì id: 3 cố định nhé
+          name: "Your design",
+          price: total,
+          image: dataUrl,
+          quantity: 1,
+          checked: false,
+        },
+      ];
+      console.log("Đã chụp và nén ảnh thành công!");
+    })
+    .catch(function (error) {
+      console.error("Lỗi khi chụp ảnh:", error);
+    });
+
+  try {
+    localStorage.setItem("shoppingCart", JSON.stringify(data));
+    window.location.href = "cart.html";
+  } catch (e) {
+    console.error("Lỗi khi lưu vào LocalStorage (có thể do ảnh vẫn quá lớn):", e);
+    alert("Thiết kế của bạn quá phức tạp, không đủ bộ nhớ để lưu vào giỏ hàng!");
+  }
+  window.location.href = "cart.html";
 };
+
+const formatNumber = (num) => {
+  return num.toLocaleString("en-US") + '<sup class="price-currency">vnđ</sup>';
+};
+
+const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
+
+priceAppearanceBtnEle.addEventListener("click", (item) => {
+  if (priceContainerEle.classList.contains("hidden")) {
+    priceContainerEle.classList.remove("hidden");
+  } else priceContainerEle.classList.add("hidden");
+});
+
+const page = document.querySelector(".arraging");
+window.addEventListener("resize", () => {});
