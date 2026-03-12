@@ -33,7 +33,7 @@ fliterItem.forEach((item, index) => {
 
 //get date
 const getDataFlower = async () => {
-  const data = await fetch("flower.json");
+  const data = await fetch("data/flower.json");
   const main = await data.json();
   return main;
 };

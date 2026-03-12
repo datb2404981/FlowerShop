@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Load JSON và khởi tạo
-  fetch("../products.json")
+  fetch("../data/products.json")
     .then((response) => response.json())
     .then((products) => {
       // Chỉ lấy sản phẩm thuộc "Hoa Tình Yêu" (Valentine)
