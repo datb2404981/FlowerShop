@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+
+    <link
+      href="framework/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="framework/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+    <link rel="icon" href="/assets/images/Log.png" type="image/png" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <my-header> </my-header>
+    <!-- end HEADER -->
+
+    <!-- Main -->
+    <main class="cart-page">
+      <h1>Giỏ hàng của bạn</h1>
+      <p class="description">
+        Mỗi bó hoa là một câu chuyện, đang chờ được bạn trao đi...
+      </p>
+
+      <div class="container">
+        <div class="row bigItem">
+          <!-- Danh sách giỏ hàng (trái) -->
+          <section class="items-list col-lg-8">
+            <!-- CHỖ BƠM CODE CHO CÁC ITEM TỪ LOCAL STORAGE-->
+          </section>
+
+          <!-- Bảng tổng tiền (phải) -->
+          <aside class="summary col-lg-4">
+            <div class="summary-card">
+              <h3>Tóm tắt đơn hàng</h3>
+              <div class="summary-subtotal row">
+                <div class="summary-header col-7">
+                  <p>Tạm tính:</p>
+                  <p>Phí vận chuyển:</p>
+                  <p>Giảm giá:</p>
+                </div>
+                <div class="summary-money col-5">
+                  <p>-</p>
+                  <p>-</p>
+                </div>
+              </div>
+              <hr />
+              <div class="summary-total row">
+                <div class="summary-header col-7">
+                  <p id="tongCongText">Tổng cộng:</p>
+                </div>
+                <div class="summary-money col-5">
+                  <p id="tongCong"></p>
+                </div>
+              </div>
+              <button
+                class="btn btn-checkout d-flex align-items-center justify-content-center gap-2"
+              >
+                <h2>Đặt hàng</h2>
+              </button>
+
+              <!-- Nút xóa tất cả sản phẩm -->
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <!-- end Main -->
+
+    <!-- FOOTER -->
+    <my-footer></my-footer>
+    <!-- end FOOTER -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="confirmClearCartModal"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+          <div class="modal-body">
+            <p>
+              Bạn có chắc muốn <strong>xóa toàn bộ</strong> giỏ hàng?<br />
+              <span style="font-size: 0.9rem; color: #999"
+                >Hành động này không thể khôi phục.</span
+              >
+            </p>
+          </div>
+          <div
+            class="modal-footer border-0 d-flex justify-content-center gap-3"
+          >
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">
+              Để tôi xem lại
+            </button>
+            <button
+              type="button"
+              id="btn-confirm-clear-action"
+              class="btn btn-danger"
+            >
+              Đồng ý, xóa hết
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CDN js Bootstrap -->
+    <script src="framework/popper.min.js"></script>
+    <script src="framework/bootstrap.min.js"></script>
+    <!-- end CDN js Bootstrap -->
+
+    <!-- js components -->
+    <script src="js/components.js"></script>
+    <script src="js/cart.js"></script>
+    <!-- end js components -->
+  </body>
+</html>

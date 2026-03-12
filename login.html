@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập | The Floral Gallery</title>
+    
+    <link href="framework/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="framework/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    
+    <link rel="icon" href="/assets/images/Log.png" type="image/png" />
+</head>
+<body>
+    <main class="container-fluid p-0">
+        <div class="row g-0 login-wrapper">
+            
+            <!-- Bọc class d-md-flex giúp hiển thị căn các nội dung bên trong như caption -->
+            <div class="col-md-6 d-none d-md-flex flex-column justify-content-end banner-wrapper" id="img-login-container">
+                <img src="assets/images/imgLogin/login.jpg" alt="Flower Login" class="login-bg-img">
+                <div class="banner-overlay"></div>
+                <!-- Nội dung chữ đẩy xuống cuối kèm padding -->
+                <div class="img-caption p-5 w-100">
+                    <span class="badge bg-white text-dark mb-3 px-3 py-2 rounded-pill shadow-sm" style="font-size: 0.75rem; font-weight: 600; letter-spacing: 1.5px;">BỘ SƯU TẬP THỰC VẬT SỐ 4</span>
+                    <h2 class="display-3 fw-bold text-white title-shadow font-heading">"Vẻ Đẹp<br>Mong Manh"</h2>
+                    <p class="text-white mt-3 mb-2" style="font-size: 1.15rem; font-weight: 300; opacity: 0.9; max-width: 420px; line-height: 1.6;">
+                        Khám phá vẻ đẹp thuần khiết của tự nhiên. Đăng nhập để truy cập những thiết kế hoa độc quyền.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 d-flex flex-column" id="login-section">
+                
+                <div class="p-4 text-end">
+                    <a href="index.html" class="back-link-icon">
+                        <i class="bi bi-arrow-left"></i>
+                    </a>
+                </div>
+
+                <div class="login-form-container my-auto mx-auto w-100" style="max-width: 400px;">
+                    <div class="welcome-text mb-5 text-start">
+                        <h1 class="fw-bold display-4" style="color: #4b0d1d;">Welcome<br>Back</h1>
+                        <p class="text-muted mt-3">Vui lòng nhập thông tin để truy cập bộ sưu tập thành viên.</p>
+                    </div>
+
+                    <form>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold text-uppercase text-secondary">Email Address</label>
+                            <input type="email" class="form-control custom-input" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label small fw-bold text-uppercase text-secondary">Password</label>
+                                <a href="#" class="text-muted small text-decoration-none">Forgot Password?</a>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control custom-input" placeholder="••••••••" required>
+                                <span class="input-group-text border-0 border-bottom bg-transparent rounded-0">
+                                    <i class="bi bi-eye-slash text-muted"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <a href="index.html" class="btn btn-dark w-100 btn-signin py-3 mt-3 d-flex justify-content-center align-items-center text-decoration-none">
+                            SIGN IN &nbsp; &rarr;
+                        </a>
+
+                        <div class="text-center mt-4">
+                            <span class="small text-muted">Not a member? 
+                                <a href="#" class="text-dark fw-bold text-decoration-none border-bottom border-dark">Create an Account</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="framework/popper.min.js"></script>
+    <script src="framework/bootstrap.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/wiki.js"></script>
+</body>
+</html>

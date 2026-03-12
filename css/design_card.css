@@ -1,0 +1,876 @@
+/* CÂN CHỈNH KHUNG CHO CÁC PHẦN TỬ */
+.design-page {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+body {
+  padding-top: 76.313px;
+}
+.page-container {
+  min-height: calc(100vh - 76.313px);
+  background-color: #fbf0f6;
+}
+/* DESIGN TOOL */
+.design-tool-panel {
+  height: calc(100vh - 76.313px);
+  overflow-y: auto;
+  background-color: white;
+  box-shadow:
+    10px 0 30px rgba(0, 0, 0, 0.05),
+    5px 0 15px rgba(0, 0, 0, 0.03);
+  z-index: 10;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+#page-heading {
+  padding: 20px 20px 0px;
+  margin: 0px;
+}
+#heading-desc {
+  padding: 0px 20px 0px;
+  margin: 0px;
+  font-style: italic;
+  font-family: var(--font-header);
+  color: var(--text-light);
+}
+
+/* PREVIEW PANEL */
+.preview-panel {
+  position: sticky;
+  top: 76.313px;
+  height: calc(100vh - 76.313px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbf0f6;
+}
+
+/* KHUNG TẤM THIỆP - CARD */
+.card-canvas {
+  height: 80%;
+  aspect-ratio: 4/3;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+
+.card-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PHẦN TOOLS */
+/* PHẦN CHỌN TỈ LỆ BAN ĐẦU TRƯỚC KHI THIẾT KẾ */
+.ratio-selector {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  z-index: 20;
+  max-width: 550px;
+  width: 90%;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  animation: cardAppear 0.6s ease-out;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.ratio-selector h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #333;
+  padding-bottom: 15px;
+  margin-bottom: 35px;
+  letter-spacing: -0.5px;
+}
+
+.ratio-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  padding: 0;
+}
+
+.ratio-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.ratio-preview {
+  width: 60px;
+  background-color: #f8f9fa;
+  border: 2px solid #edeff2;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a0aec0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+.ratio-3-4 {
+  aspect-ratio: 3 / 4;
+}
+.ratio-4-3 {
+  aspect-ratio: 4 / 3;
+  width: 70px;
+}
+
+.ratio-custom {
+  aspect-ratio: 1 / 1;
+  border-style: dashed;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+.ratio-btn:hover {
+  transform: translateY(-8px);
+}
+
+.ratio-btn:hover .ratio-preview {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(170, 9, 9, 0.1);
+}
+
+.ratio-btn.active .ratio-preview {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.ratio-btn::after {
+  content: attr(data-ratio);
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+.ratio-btn[data-ratio="custom"]::after {
+  content: "Khác";
+}
+/* Style cho cụm nhập tỉ lệ */
+.custom-input-group {
+  animation: fadeIn 0.3s ease;
+}
+
+.custom-field {
+  width: 60px;
+  height: 40px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+  font-weight: bold;
+}
+
+.custom-field:focus {
+  border-color: var(--primary-color);
+}
+
+.btn-go {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.btn-go:hover {
+  transform: scale(1.1);
+}
+
+/* ==== CÁC TOOL SECTION ==== */
+.tool-section {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+  margin-left: 15px;
+}
+
+/* ==== CÁC LỰA CHỌN BACGROUND ==== */
+.bg-type-btn {
+  border-radius: 20px;
+  padding: 6px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.bg-type-btn.active {
+  background-color: #212529;
+  color: white;
+}
+
+.color-palette {
+  padding: 10px 0;
+}
+
+.color-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #dee2e6; /* Viền nhẹ để thấy các màu trắng/sáng */
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-circle:hover {
+  transform: scale(1.1);
+}
+
+.color-circle.active {
+  border: 2px solid var(--primary-hover) !important;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ô chọn màu tùy chỉnh (+) */
+.custom-color-circle {
+  background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  font-size: 20px;
+  position: relative;
+  border: none;
+}
+
+.plus-icon {
+  pointer-events: none;
+}
+
+/* TỔNG THỂ CỤM CHỌN LOẠI BG */
+.bg-type-selector {
+  background: #f8f9fa;
+  padding: 5px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.bg-type-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6c757d;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-type-btn.active {
+  background-color: white;
+  color: var(--primary-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bg-type-btn:hover:not(.active) {
+  background-color: rgba(0, 0, 0, 0.02);
+  color: #333;
+}
+
+/* ICON TRONG NÚT */
+.bg-type-btn i {
+  font-size: 1.1rem;
+}
+
+/* 1. KHUNG NHẬP URL */
+.bg-image-panel .form-control {
+  border-radius: 10px;
+  border: 1.5px solid #eee;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.bg-image-panel .form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(170, 9, 9, 0.05);
+  outline: none;
+}
+
+#btn-apply-bg-image {
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 600;
+  background-color: #c5c2c2;
+  border: none;
+  transition: 0.3s;
+}
+
+#btn-apply-bg-image:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* LƯỚI ẢNH KHI CHỌN BACKGROUND IMAGE*/
+.image-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.bg-sample-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bg-sample-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bg-sample-img.active {
+  border-color: var(--primary-color);
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
+
+.background-section {
+  margin-top: 20px;
+}
+
+/* STYLE LẠI CÁI THANH CUỘN */
+.design-tool-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.design-tool-panel::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.design-tool-panel::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* STYLE LẠI CÁI CHỖ INPUT MÀU */
+.custom-color-circle {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#custom-color-input {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.plus-icon {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ==== CỤM THÊM TEXT VÀ CHỈNH SỬA TEXT ==== */
+/* Nút Thêm văn bản chính */
+#btn-add-text {
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(170, 9, 9, 0.15);
+}
+
+#btn-add-text:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(170, 9, 9, 0.25);
+  filter: brightness(1.1);
+}
+
+/* Panel điều chỉnh Text khi đã chọn */
+.text-control-panel {
+  padding-top: 10px;
+  border-top: 1px dashed #eee;
+  margin-top: 15px;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Style cho các nhãn và input nội dung */
+.text-section .form-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.text-section .form-control,
+.text-section .form-select {
+  border-radius: 10px;
+  border: 1.5px solid #eee;
+  padding: 10px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.text-section .form-control:focus,
+.text-section .form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(170, 9, 9, 0.05);
+  outline: none;
+}
+
+/* Tinh chỉnh thanh trượt kích thước (Range Slider) */
+.form-range::-webkit-slider-runnable-track {
+  background: #eee;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--primary-color);
+  margin-top: -5px; /* Căn giữa track */
+}
+
+#font-size-label {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* Style cho Input màu chữ */
+.form-control-color {
+  width: 100% !important;
+  height: 40px !important;
+  cursor: pointer;
+  padding: 4px !important;
+}
+
+/* Group nút căn chỉnh (Align) */
+.text-align-btn {
+  border: 1.5px solid #eee;
+  color: #666;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.text-align-btn:hover {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+  border-color: #eee;
+}
+
+.text-align-btn.active {
+  background-color: var(--primary-hover) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* Animation đơn giản cho panel */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.card-text {
+  cursor: move;
+  user-select: none;
+  padding: 4px 8px;
+  min-width: 30px;
+  min-height: 20px;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.card-text.active {
+  outline: 2px dashed var(--primary-hover);
+}
+
+.card-canvas {
+  position: relative;
+  overflow: hidden;
+}
+
+/* CỤM CHỈNH KIỂU VĂN BẢN */
+.text-style-btn {
+  border: 1.5px solid #eee;
+  color: #666;
+  background: white;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  padding: 8px 0;
+}
+
+.text-style-btn:hover {
+  background-color: #f8f9fa;
+  color: var(--primary-color);
+  border-color: #eee;
+}
+
+.text-style-btn.active {
+  background-color: var(--primary-hover) !important;
+  color: white !important;
+  border-color: var(--primary-color) !important;
+}
+
+.text-section .form-label {
+  margin-top: 10px;
+}
+
+/* CỤM CHỌN FONT */
+/* CUSTOM DROPDOWN STYLE */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-selected {
+  background: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 10px;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown:hover .dropdown-selected {
+  border-color: var(--primary-color);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Hiển thị danh sách khi active */
+.custom-dropdown.active .dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-list li {
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-list li:hover {
+  background-color: rgba(170, 9, 9, 0.05); /* Hồng nhẹ */
+  color: var(--primary-color);
+  padding-left: 20px; /* Hiệu ứng trượt nhẹ khi hover */
+}
+
+/* Tùy chỉnh thanh cuộn cho list */
+.dropdown-list::-webkit-scrollbar {
+  width: 5px;
+}
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: #eee;
+  border-radius: 10px;
+}
+
+/* CSS CHO PHẦN CUỘN TỚI PANEL TEXT */
+.design-tool-panel {
+  height: 90vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 20px;
+  padding-right: 10px;
+}
+
+/* Làm đẹp thanh cuộn (tùy chọn) */
+.design-tool-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.design-tool-panel::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.text-section {
+  scroll-margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+}
+
+#font-size-slider {
+  cursor: pointer;
+  accent-color: #0d6efd;
+}
+
+/* NÚT THANH TOÁN */
+.vnd-unit {
+  font-size: 0.65em;
+  vertical-align: super;
+  margin-left: 2px;
+  font-family: var(--font-body);
+  font-weight: normal;
+}
+
+/* Tinh chỉnh nút Đính kèm để khớp với style web bạn */
+#btn-add-to-cart {
+  background-color: var(--primary-color) !important;
+  border: none;
+  border-radius: 15px; /* Bo góc 15px cho giống .customer-inf */
+  transition: all 0.3s ease;
+}
+
+#btn-add-to-cart:hover {
+  background-color: var(--primary-hover) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(170, 9, 9, 0.2);
+}
+
+#btn-add-to-cart i {
+  font-size: 1.5rem;
+}
+/* Container quản lý thiệp */
+.card-management-section {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  /* Sử dụng hiệu ứng đổ bóng giống .customer-inf bạn đã có */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card-management-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(170, 9, 9, 0.08);
+}
+
+#btn-add-to-cart {
+  background-color: var(--primary-color) !important;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+#btn-add-to-cart:hover {
+  background-color: var(--primary-hover) !important;
+  box-shadow: 0 5px 15px rgba(170, 9, 9, 0.2);
+}
+
+#btn-add-to-cart .fw-bold {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+}
+
+#btn-add-to-cart small {
+  font-family: var(--font-body);
+  display: block;
+  margin-top: 2px;
+}
+
+#btn-delete-card {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  opacity: 0.8;
+}
+
+#btn-delete-card:hover {
+  opacity: 1;
+  transform: scale(1.02);
+  color: #dc3545 !important;
+}
+
+#btn-add-to-cart i {
+  transition: transform 0.3s ease;
+}
+
+#btn-add-to-cart:hover i {
+  transform: scale(1.5);
+}
+
+/* RESPONSIVE ĐIỆN THOẠI */
+@media (max-width: 991.98px) {
+  .page-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .preview-panel {
+    position: relative;
+    top: 0;
+    height: 50vh;
+    width: 100%;
+    padding: 20px;
+    order: 1;
+  }
+
+  .card-canvas {
+    height: 90%;
+    max-width: 100%;
+  }
+
+  .design-tool-panel {
+    order: 2;
+    height: auto;
+    overflow-y: visible;
+    padding-bottom: 50px;
+    border-right: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .color-palette {
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px !important;
+  }
+
+  .color-circle {
+    flex-shrink: 0;
+  }
+
+  .ratio-selector {
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  .ratio-list {
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    justify-content: flex-start;
+  }
+
+  .ratio-btn {
+    flex-shrink: 0;
+  }
+
+  .image-sample-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bg-sample-img {
+    width: 100px;
+    flex-shrink: 0;
+  }
+  .color-palette::-webkit-scrollbar,
+  .ratio-list::-webkit-scrollbar,
+  .image-sample-grid::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .color-palette::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+  }
+
+  .card-management-section {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    background: white;
+    padding: 15px;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  }
+}
