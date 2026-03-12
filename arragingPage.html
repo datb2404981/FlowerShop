@@ -79,7 +79,7 @@
                 <div class="canva"></div>
             </div>
             
-            <!-- 
+            <!--
                 This is NOT a separate region, but the price-container that lives
                 inside the workspace on desktop, and gets revealed by an offcanvas on mobile.
             -->
@@ -88,24 +88,6 @@
             </div>
         </div>
     </div>
-
-    <!-- 
-      KHU VỰC 4 (MOBILE): KHAY HÓA ĐƠN TRƯỢT
-      This is a Bootstrap Offcanvas component, shown only on mobile.
-      It's triggered by the Sticky Bottom Bar.
-    -->
-    <div class="offcanvas offcanvas-bottom custom-offcanvas h-auto d-lg-none" tabindex="-1" id="offcanvasBill" aria-labelledby="offcanvasBillLabel">
-        <div class="offcanvas-header border-bottom pb-2">
-            <h5 class="offcanvas-title fw-bold" id="offcanvasBillLabel" style="color: var(--primary-color);">Chi tiết tác phẩm</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body p-0">
-            <!-- The same price container from desktop will be rendered here by JS -->
-            <div class="price-container"></div>
-        </div>
-    </div>
-
-
     <!-- 
       KHU VỰC 3 (MOBILE): THANH HÀNH ĐỘNG BÁM ĐÁY
       This is a mobile-only bar, fixed to the bottom of the viewport.
@@ -122,6 +104,5 @@
     <script src="framework/bootstrap.min.js"></script>
     <script src="js/components.js"></script>
     <script src="js/flowerarragin.js"></script>
-
 </body>
 </html>

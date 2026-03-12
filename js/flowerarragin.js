@@ -290,7 +290,7 @@ const renderListItem = async (selected) => {
 
       deleteNode(
         "decorations",
-        DataStructure.decorations[id].name,
+        data.decorations[id].name,
         data,
         ListAmountArr,
         amountDeco,
@@ -345,7 +345,7 @@ const renderPriceContainer = () => {
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
                 <span class="name-item">${value.item.name}</span>
-                <span class="price-item">${formatNumber(value.item.price * value.amountItem)}</span>
+                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
             </li>`
                 : ""
             }
@@ -385,6 +385,12 @@ const renderPriceContainer = () => {
   priceContainerEles.forEach((ele) => {
     ele.innerHTML = result_html;
   });
+
+  // Update Mobile Sticky Bar Total
+  const mobileTotalEle = document.getElementById("mobile-total-amount");
+  if (mobileTotalEle) {
+    mobileTotalEle.textContent = Total.toLocaleString("en-US");
+  }
 
   return result_html;
 };
@@ -465,8 +471,8 @@ const appendNode = (type, itemObj, data, ListAmountArr, amount) => {
 
 const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
   Array.from(NodeList).forEach((item) => {
-    //double click to delete
-    item.addEventListener("dblclick", (event) => {
+
+    const deletenode = (event) => {
       const id = event.target.getAttribute("data");
       const type = event.target.getAttribute("type");
       const name = event.target.getAttribute("name");
@@ -516,8 +522,77 @@ const SetEvent = (typeCurrent, NodeList, data, ListAmountArr, amount) => {
       renderPriceContainer();
 
       event.target.remove();
+    };
+
+    //double click to delete
+    item.addEventListener("dblclick", deletenode)
+    item.addEventListener('click', () => {
+      item.classList.add("selected-node");
     });
 
+    item.addEventListener("mouseout", () => {
+      item.classList.remove("selected-node");
+    });
+    
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Delete' || event.key === 'Backspace') {
+        const selectedNodes = document.querySelector('.selected-node');
+        if (selectedNodes) {
+          console.log(selectedNodes)
+            const id = selectedNodes.getAttribute("data");
+            const type = selectedNodes.getAttribute("type");
+            const name = selectedNodes.getAttribute("name");
+            // console.log("hihi", SelectedFlowerList)
+
+            const temp = DataStructure[type].filter((item) => {
+              return item.id !== id;
+            });
+            let index = 0;
+            for (let i = 0; i < data[type].length; i++) {
+              if (name === data[type][i].name) {
+                index = i;
+                break;
+              }
+            }
+
+            const list = ListItem.querySelectorAll(".amount-flower-item");
+
+            let kvalue = 0;
+            if (type === "flower") {
+              amountFlo[index]--;
+
+              DataStructure[type] = temp;
+
+              SelectedFlowerList[name].amountItem = amountFlo[index];
+              if (itemSelected === "flower")
+                list[index].value = kvalue = amountFlo[index];
+            } else {
+              amountDeco[index]--;
+              DataStructure[type] = temp;
+
+              SelectedFlowerList[name].amountItem = amountDeco[index];
+              if (itemSelected === "decorations") {
+                list[index].value = kvalue = amountDeco[index];
+                console.log(ListAmountArr[index]);
+              }
+            }
+
+            if (SelectedFlowerList[name].amountItem === 0) {
+              const temp = Object.fromEntries(
+                Object.entries(SelectedFlowerList).filter(([key, value]) => {
+                  return value.amountItem !== 0;
+                }),
+              );
+              SelectedFlowerList = temp;
+            }
+
+            renderPriceContainer();
+
+            selectedNodes.remove();
+        }
+      }
+    });
+    
     const id = item.getAttribute("data");
     const type = item.getAttribute("type");
 
@@ -831,37 +906,38 @@ const RotationNodeHandle = (rotateArea, item, id, type) => {
 //handle reset- clear node
 const ResetButtonEle = document.querySelector(".reset-button");
 
-ResetButtonEle.addEventListener("click", () => {
-  DataStructure.flower = [];
-  DataStructure.decorations = [];
-  SelectedFlowerList = {};
+if (ResetButtonEle) {
+  ResetButtonEle.addEventListener("click", () => {
+    DataStructure.flower = [];
+    DataStructure.decorations = [];
+    SelectedFlowerList = {};
 
-  priceContainerEle.innerHTML = "";
+    // Clear Price UI
+    renderPriceContainer();
 
-  WorkSpaceEle.innerHTML = "";
-  BouquetWSEle.style.backgroundImage = `url('')`;
-  console.log("maihfewugwueygeyug");
+    // Reset Sidebar Amounts and Styles
+    const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
+    if (ListAmount.length > 0) {
+      ListAmount.forEach((item) => {
+        item.value = 0; // It's an input field
+      });
+    }
 
-  const ListAmount = ListItem.querySelectorAll(".amount-flower-item");
-  if (ListAmount.length > 0) {
-    ListAmount.forEach((item, index) => {
-      if (item.textContent !== "0") {
-        item.innerHTML = 0;
-      }
+    const FlowerItems = ListItem.querySelectorAll(".itemFlower");
+    FlowerItems.forEach((item) => {
+      item.classList.remove("is-checked");
     });
-  }
-  for (let i = 0; i < amountFlo.length; i++) {
-    if (amountFlo[i] !== 0) {
-      amountFlo[i] = 0;
-    }
-  }
 
-  for (let i = 0; i < amountDeco.length; i++) {
-    if (amountDeco[i] !== 0) {
-      amountDeco[i] = 0;
-    }
-  }
-});
+    amountFlo.fill(0);
+    amountDeco.fill(0);
+
+    // Clear Workspace
+    WorkSpaceEle.innerHTML = "";
+    BouquetWSEle.style.backgroundImage = `url('')`;
+
+    console.log("Canvas has been reset");
+  });
+}
 
 const HandleSendDataLocal = async () => {
   let total = 0;
@@ -892,7 +968,7 @@ const HandleSendDataLocal = async () => {
       data = [
         ...data,
         {
-          id: 3, // Lưu ý: Nếu muốn có nhiều hoa tự thiết kế thì bạn nên dùng generateId() thay vì id: 3 cố định nhé
+          id: generateId(5), // Lưu ý: Nếu muốn có nhiều hoa tự thiết kế thì bạn nên dùng generateId() thay vì id: 3 cố định nhé
           name: "Your design",
           price: total,
           image: dataUrl,
@@ -920,13 +996,9 @@ const formatNumber = (num) => {
   return num.toLocaleString("en-US") + '<sup class="price-currency">vnđ</sup>';
 };
 
-const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
-
-priceAppearanceBtnEle.addEventListener("click", (item) => {
-  if (priceContainerEle.classList.contains("hidden")) {
-    priceContainerEle.classList.remove("hidden");
-  } else priceContainerEle.classList.add("hidden");
-});
+// Remove or fix broken price-app-btn logic if not needed
+// const priceAppearanceBtnEle = document.querySelector(".price-app-btn");
+// if(priceAppearanceBtnEle) { ... }
 
 const page = document.querySelector(".arraging");
 window.addEventListener("resize", () => {});
