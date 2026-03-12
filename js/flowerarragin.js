@@ -33,15 +33,9 @@ fliterItem.forEach((item, index) => {
 
 //get date
 const getDataFlower = async () => {
-<<<<<<< HEAD
-    const data = await fetch("flower.json");
-    const main = await data.json();
-    return main;
-=======
   const data = await fetch("data/flower.json");
   const main = await data.json();
   return main;
->>>>>>> VanDat
 };
 
 //
