@@ -290,7 +290,7 @@ const renderListItem = async (selected) => {
 
       deleteNode(
         "decorations",
-        DataStructure.decorations[id].name,
+        data.decorations[id].name,
         data,
         ListAmountArr,
         amountDeco,
@@ -345,7 +345,11 @@ const renderPriceContainer = () => {
               value.amountItem !== 0
                 ? `<li class="item-price-selected">
                 <span class="name-item">${value.item.name}</span>
+<<<<<<< HEAD
                 <span class="price-item">${formatNumber(value.item.price * value.amountItem)}</span>
+=======
+                <span class="price-item">${value.amountItem !== 1 ? value.amountItem + " x" : ""} ${formatNumber(value.item.price)}</span>
+>>>>>>> ChiTrong
             </li>`
                 : ""
             }
