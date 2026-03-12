@@ -70,7 +70,27 @@
     width: 300px !important;
     min-width: 300px !important;
     max-width: 300px !important;
-    font-size: 8pt !important;
+    font-size: 7.25pt !important;
+  }
+  .small-content{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .small-content article{
+    font-size: 14pt;
+    padding: 20px 20px;
+  }
+  .small-content img{
+    height: 300px !important;
+  }
+  .modal-body{
+    padding: 20px 20px;
+  }
+  .modal-content{
+    margin: 20px 20px !important;
+    padding: 20px 20px !important;
+    display: flex;
+    flex-direction: column;/*đổi thành cột*/
   }
 }
 
@@ -228,12 +248,19 @@
     z-index: 10000; 
 }
 .modal-content {
-  background: white; padding: 0px; border-radius: 20px;
+  background: white; border-radius: 20px;
   width: 90%; position: relative;
   max-width: 1200px;
   height: 100%;
   overflow-y: auto;
-  margin: 20px 20px;
+  margin: 40px 40px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3) ;
+  display: flex;
+  flex-direction: column;
+}
+.modal-content::-webkit-scrollbar{
+  display: none;
 }
 .close-btn { 
     position: absolute; top: 15px; right: 25px; 
@@ -241,42 +268,53 @@
 }
 .modal-body{
   background-color: #fdeee6;
+  background-image:linear-gradient(rgba(255,255,255,0.5)), url(..//assets/images/img/anh_modal.png);
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Khoảng cách giữa các ảnh và đoạn văn */
-
+  gap: 15px; /* Khoảng cách giữa các ảnh và đoạn văn */
 }
 #ten-hoa{
-  font-size: 3rem;
-  margin-top: 30px;
+  font-size: 3.5rem;
+  margin-top: 50px;
+ padding-bottom: 40px;
 }
 article{
   font-size: 1.2rem;
-  padding: 20px 20px;
+  padding: 0 40px;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.small-content{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  width: 100%;
+}
+.trai,.phai{
+  flex: 1 ;
 }
 .modal-body img{
-  max-height: 170vh;
+  width: 100%;
+  height: 80vh;
   object-fit: cover;
-}
-#hoacuathang{
-  padding-top: 20px;
-  border: none;
-  border-bottom: 1px solid white;
-  background-color: transparent;
-  color: #fff;
-  outline: none;
-  width: 600px;
-  min-width: 600px;
-  max-width: 600px;
-  text-align: center;
-  font-size: 13pt;
-}
+  border-radius: 20px;
+  padding: 10px 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0,0.3);
+  }
+
 #hoacuathang::-webkit-outer-spin-button,#hoacuathang::-webkit-inner-spin-button{
   -webkit-appearance: none;
 }
 .input-label{
   padding-top: 20px;
+  padding-bottom: 10px;
 }
 .input-label {
     color: #fff;
@@ -334,4 +372,49 @@ article{
 
 @keyframes spinner-border {
     to { transform: rotate(360deg); }
+}
+
+/*hoa rơi trong input*/
+#hoacuathang {
+    /* Các thuộc tính định dạng */
+    padding-top: 20px;
+    outline: none;
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    text-align: center;
+    font-size: 13pt;
+    color: #fff;
+    position: relative;
+    z-index: 999;
+
+    /* Hiệu ứng kính mờ (Glassmorphism) */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    /* Hiệu ứng hoa rơi */
+    background-image: url('../assets/images/img/anh_modal.png');
+    background-size: 90px 90px;
+    background-repeat: repeat;
+    animation: fadeInUp 0.7s ease forwards,falling-petals 10s linear infinite;
+    transition: all 0.4s ease; 
+}
+
+@keyframes falling-petals {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 50px 500px; /* Hoa trượt từ trái sang phải và từ trên xuống dưới */
+    }
+}
+
+#hoacuathang:focus {
+    animation: fadeInUp 0.7s ease forwards,falling-petals 10s linear infinite;
+    background-color: rgba(100, 13, 51, 0.4);
+    box-shadow: 0 0 10px rgba(248, 205, 218, 0.5);
+    background-image: none;
 }

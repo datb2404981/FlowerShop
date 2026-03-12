@@ -103,7 +103,10 @@ function timHoaTheoThang() {
 
     if (tenHoa) {
         chayHieuUngHoa(); // Chạy hiệu ứng
-        
+        const resetInput = () => {
+            inputField.value = ""; 
+            inputField.blur();
+        };
         if (!flowerCache) {
             fetch("wiki.json")
                 .then(res => res.json())
@@ -111,12 +114,14 @@ function timHoaTheoThang() {
                     flowerCache = data;
                     setTimeout(() => {
                         displayFlower(tenHoa);
-                        inputField.value="";
-                        inputField.blur();
+                        resetInput();
                     }, 2000);
                 });
         } else {
-            setTimeout(() => displayFlower(tenHoa), 2000);
+            setTimeout(() =>{
+                 displayFlower(tenHoa);
+                 resetInput();
+            }, 2000);
         }
     } else {
         alert("Vui lòng nhập một tháng hợp lệ (từ 1 đến 12)!");
