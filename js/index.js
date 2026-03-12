@@ -346,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Load JSON và khởi tạo
-  const jsonPath = isSubFolder ? "../products.json" : "products.json";
+  const jsonPath = isSubFolder ? "../data/products.json" : "data/products.json";
 
   fetch(jsonPath)
     .then((response) => response.json())

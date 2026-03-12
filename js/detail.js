@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!productId) return;
 
-  fetch("products.json")
+  fetch("data/products.json")
     .then((response) => response.json())
     .then((products) => {
       const product = products.find((p) => p.id === productId);

@@ -18,6 +18,7 @@
     
     <!-- Custom Admin CSS -->
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="icon" href="/assets/images/Log.png" type="image/png" />
 </head>
 
 <body>
@@ -27,34 +28,30 @@
     <div class="dashboard-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-logo">
-                <img src="assets/images/Log.png" alt="Logo" width="40" height="40" style="background: white; border-radius: 50%; padding: 2px;">
-                <h4>Flower Shop Admin</h4>
-            </div>
+            <a href="index.html" style="text-decoration: none; color: white;">
+                <div class="sidebar-logo">
+                    <img src="assets/images/Log.png" alt="Logo" width="40" height="40" style="background: white; border-radius: 50%; padding: 2px;">
+                    <h4>Flower Shop Admin</h4>
+                </div>
+            </a>
 
             <ul class="sidebar-menu">
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="#" class="menu-link" id="menuOverview">
                         <i class="bi bi-speedometer2"></i>
                         <span>Tổng quan</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link active">
+                    <a href="#" class="menu-link active" id="menuProducts">
                         <i class="bi bi-box-seam"></i>
                         <span>Quản lý Sản phẩm</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" class="menu-link">
+                    <a href="#" class="menu-link" id="menuOrders">
                         <i class="bi bi-cart3"></i>
                         <span>Đơn hàng</span>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link">
-                        <i class="bi bi-gear"></i>
-                        <span>Cài đặt</span>
                     </a>
                 </li>
             </ul>
@@ -72,39 +69,120 @@
 
             <div class="page-header">
                 <div class="page-title">
-                    <h2>Danh sách Sản phẩm</h2>
-                    <p class="text-muted mt-1">Quản lý các sản phẩm hoa trong hệ thống</p>
+                    <h2 id="mainTitle">Tổng quan Dashboard</h2>
+                    <p class="text-muted mt-1" id="mainSubtitle">Chào mừng bạn trở lại, đây là thống kê của tháng này</p>
                 </div>
-                <div class="header-actions">
+                <div class="header-actions" id="headerActions">
                     <div class="search-box">
                         <i class="bi bi-search"></i>
-                        <input type="text" id="searchInput" placeholder="Tìm sản phẩm...">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm...">
                     </div>
-                    <button class="btn-add-product" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                    <select class="form-select filter-select" id="categoryFilter" style="width: auto; border-radius: 10px;">
+                        <option value="all">Tất cả danh mục</option>
+                        <option value="Hoa Sinh Nhật">Hoa Sinh Nhật</option>
+                        <option value="Hoa Tình Yêu">Hoa Tình Yêu</option>
+                        <option value="Hoa Khai Trương">Hoa Khai Trương</option>
+                        <option value="Hoa Chia Buồn">Hoa Chia Buồn</option>
+                        <option value="Hoa Tốt Nghiệp">Hoa Tốt Nghiệp</option>
+                    </select>
+                    <button class="btn-add-product" id="btnAddMain" data-bs-toggle="modal" data-bs-target="#addProductModal">
                         <i class="bi bi-plus-lg"></i>
                         <span>Thêm sản phẩm</span>
                     </button>
                 </div>
             </div>
 
+            <!-- Overview Section (Dashboard Cards) -->
+            <div id="overviewSection">
+                <div class="row g-4 mb-4">
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-soft-primary">
+                                <i class="bi bi-cart-check text-primary"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="statTotalOrders">0</h3>
+                                <p>Đơn hàng tháng này</p>
+                            </div>
+                            <div class="stat-trend text-success">
+                                <i class="bi bi-arrow-up"></i> 12%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-soft-success">
+                                <i class="bi bi-box-arrow-in-down text-success"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="statImported">0</h3>
+                                <p>Hoa đã nhập</p>
+                            </div>
+                            <div class="stat-trend text-success">
+                                <i class="bi bi-arrow-up"></i> 5%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-soft-danger">
+                                <i class="bi bi-bag-check text-danger"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3 id="statSold">0</h3>
+                                <p>Hoa đã bán ra</p>
+                            </div>
+                            <div class="stat-trend text-primary">
+                                <i class="bi bi-dash"></i> 0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simple Chart Placeholder -->
+                <div class="table-card">
+                    <h5 class="fw-bold mb-4">Biểu đồ doanh thu (Giả lập)</h5>
+                    <div style="height: 300px; display: flex; align-items: flex-end; gap: 20px; padding-bottom: 20px;">
+                        <div class="chart-bar" style="height: 40%;" title="Tháng 1"></div>
+                        <div class="chart-bar" style="height: 60%;" title="Tháng 2"></div>
+                        <div class="chart-bar" style="height: 85%;" title="Tháng 3"></div>
+                        <div class="chart-bar active" style="height: 70%;" title="Tháng 4"></div>
+                        <div class="chart-bar" style="height: 50%;" title="Tháng 5"></div>
+                    </div>
+                    <div class="d-flex justify-content-between text-muted small px-2">
+                        <span>Tháng 1</span>
+                        <span>Tháng 2</span>
+                        <span>Tháng 3</span>
+                        <span>Tháng 4 (Hiện tại)</span>
+                        <span>Tháng 5</span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Table Section -->
-            <div class="table-card">
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered" id="productTable">
-                        <thead>
-                            <tr>
-                                <th width="80">ID</th>
-                                <th width="100">Hình ảnh</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Giá bán</th>
-                                <th>Danh mục</th>
-                                <th width="120">Hành động</th>
-                            </tr>
-                        </thead>
-                        <tbody id="productTableBody">
-                            <!-- Data will be injected here using JavaScript -->
-                        </tbody>
-                    </table>
+            <div id="tableSection" class="d-none">
+                <div class="table-card">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered" id="mainTable">
+                            <thead id="mainTableHead">
+                                <!-- Header will be dynamic -->
+                            </thead>
+                            <tbody id="mainTableBody">
+                                <!-- Data will be injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                <!-- Pagination Section -->
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <div class="text-muted" id="paginationInfo">
+                        Đang hiển thị 0/0 sản phẩm
+                    </div>
+                    <nav aria-label="Product Table Pagination">
+                        <ul class="pagination mb-0" id="pagination">
+                            <!-- Pagination buttons will be injected here -->
+                        </ul>
+                    </nav>
                 </div>
                 
                 <!-- Skeleton Loading / Empty State placeholder -->
@@ -118,30 +196,41 @@
         </main>
     </div>
 
-    <!-- Modal: Thêm Sản Phẩm -->
+    <!-- Modal: Thêm/Sửa Sản Phẩm -->
     <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProductModalLabel">Thêm sản phẩm mới</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title fw-bold" id="addProductModalLabel">Thêm sản phẩm mới</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body p-4">
                     <form id="addProductForm">
+                        <input type="hidden" id="productIdHidden">
                         <div class="mb-3">
-                            <label for="productName" class="form-label">Tên hoa</label>
+                            <label for="productName" class="form-label fw-600">Tên hoa</label>
                             <input type="text" class="form-control" id="productName" placeholder="Nhập tên hoa..." required>
                         </div>
-                        <div class="mb-3">
-                            <label for="productPrice" class="form-label">Giá tiền (VNĐ)</label>
-                            <input type="number" class="form-control" id="productPrice" placeholder="Ví dụ: 500000" required>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="productPrice" class="form-label fw-600">Giá tiền (VNĐ)</label>
+                                <input type="number" class="form-control" id="productPrice" placeholder="500000" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productStock" class="form-label fw-600">Số lượng tồn</label>
+                                <input type="number" class="form-control" id="productStock" placeholder="50" required>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="productImage" class="form-label">Link ảnh (URL)</label>
-                            <input type="text" class="form-control" id="productImage" placeholder="Ví dụ: assets/images/..." required>
+                            <label for="productImage" class="form-label fw-600">Link ảnh (URL)</label>
+                            <input type="text" class="form-control" id="productImage" placeholder="assets/images/imgProduct/..." required>
+                            <div id="imagePreviewArea" class="mt-2 text-center d-none">
+                                <p class="small text-muted mb-1">Xem trước:</p>
+                                <img src="" id="imgPreview" class="rounded shadow-sm" style="max-height: 120px; border: 1px solid #ddd;">
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="productCategory" class="form-label">Danh mục</label>
+                            <label for="productCategory" class="form-label fw-600">Danh mục</label>
                             <select class="form-select" id="productCategory" required>
                                 <option value="" selected disabled>Chọn danh mục</option>
                                 <option value="Hoa Sinh Nhật">Hoa Sinh Nhật</option>
@@ -151,11 +240,63 @@
                                 <option value="Hoa Tốt Nghiệp">Hoa Tốt Nghiệp</option>
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label for="productDesc" class="form-label fw-600">Mô tả ngắn</label>
+                            <textarea class="form-control" id="productDesc" rows="3" placeholder="Nhập mô tả sản phẩm..."></textarea>
+                        </div>
                         <div class="d-grid mt-4">
-                            <button type="submit" class="btn btn-add-product justify-content-center">Lưu sản phẩm</button>
+                            <button type="submit" class="btn btn-primary py-2 fw-bold" style="background: var(--primary-color); border: none;">Xác nhận Lưu</button>
                         </div>
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Xem Chi Tiết Đơn Hàng -->
+    <div class="modal fade" id="orderDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title fw-bold">Chi tiết đơn hàng</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" id="orderDetailContent">
+                    <!-- Nội dung đơn hàng sẽ được render ở đây -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Xác nhận xóa -->
+    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-body p-4 text-center">
+                    <i class="bi bi-exclamation-circle text-danger fs-1"></i>
+                    <h5 class="fw-bold mt-3">Xác nhận xóa?</h5>
+                    <p class="text-muted small">Hành động này không thể hoàn tác.</p>
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="button" class="btn btn-light grow" data-bs-dismiss="modal">Hủy</button>
+                        <button type="button" class="btn btn-danger grow" id="btnConfirmDelete">Xóa ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+        <div id="adminToast" class="toast align-items-center text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i id="toastIcon" class="bi me-2"></i>
+                    <span id="toastMessage">Thông báo</span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
         </div>
     </div>
