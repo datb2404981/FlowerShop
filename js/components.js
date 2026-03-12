@@ -184,8 +184,8 @@ class MyHeader extends HTMLElement {
         searchInput.style.padding = "5px 35px 5px 15px";
         searchInput.style.opacity = "1";
         if (searchIcon) {
-            searchIcon.classList.remove("bi-search");
-            searchIcon.classList.add("bi-x-lg");
+          searchIcon.classList.remove("bi-search");
+          searchIcon.classList.add("bi-x-lg");
         }
       }
 
@@ -195,21 +195,24 @@ class MyHeader extends HTMLElement {
           searchInput.style.padding = "5px 35px 5px 15px";
           searchInput.style.opacity = "1";
           if (searchIcon) {
-              searchIcon.classList.remove("bi-search");
-              searchIcon.classList.add("bi-x-lg");
+            searchIcon.classList.remove("bi-search");
+            searchIcon.classList.add("bi-x-lg");
           }
           searchInput.focus();
           searchOpen = true;
         } else {
-          if (searchInput.value.trim() !== "" && urlSearch !== searchInput.value.trim()) {
+          if (
+            searchInput.value.trim() !== "" &&
+            urlSearch !== searchInput.value.trim()
+          ) {
             searchForm.submit();
           } else {
             searchInput.style.width = "0px";
             searchInput.style.padding = "0px";
             searchInput.style.opacity = "0";
             if (searchIcon) {
-                searchIcon.classList.remove("bi-x-lg");
-                searchIcon.classList.add("bi-search");
+              searchIcon.classList.remove("bi-x-lg");
+              searchIcon.classList.add("bi-search");
             }
             if (!urlSearch) searchInput.value = "";
             searchOpen = false;
