@@ -1,5 +1,5 @@
 const fliterItem = document.querySelectorAll(".filter-box-item");
-fliterItem[1].classList.add("seleted-filter-box");
+fliterItem[1].classList.add("selected-filter-box");
 const filterName = ["bouquet", "flower", "decorations"];
 
 let SelectedFlowerList = {};
@@ -22,9 +22,9 @@ const filterItemSignELe = document.querySelectorAll(".filter-item-sign");
 
 fliterItem.forEach((item, index) => {
     item.addEventListener("click", () => {
-        fliterItem.forEach((it) => it.classList.remove("seleted-filter-box"));
+        fliterItem.forEach((it) => it.classList.remove("selected-filter-box"));
         filterItemSignELe.forEach((it) => it.classList.add("hidden"));
-        item.classList.add("seleted-filter-box");
+        item.classList.add("selected-filter-box");
         filterItemSignELe[index].classList.remove("hidden");
         renderListItem(filterName[index]);
         itemSelected = filterName[index];
@@ -58,7 +58,7 @@ const itemFlower = (data, amount) => {
                         <span class="content-flower-name ellipsis">${item.name}</span>
                         <span class="content-flower-price">
                             <span>Giá: </span>
-                            ${formatNumber(item.price)} 
+                            <span>${formatNumber(item.price)}</span>
                         </span>
                         <div class="action-button w-100" onclick="event.stopPropagation()">
                             <div class="quantity-control fancy-qty d-flex align-items-center">
@@ -102,7 +102,7 @@ const renderBouquet = (data) => {
                         <span class="content-flower-name">${item.name}</span>
                         <span class="content-flower-price">
                             <span>Giá: </span>
-                            ${formatNumber(item.price)} 
+                            <span>${formatNumber(item.price)}</span>
                         </span>
                         <div class="action-button w-100" onclick="event.stopPropagation()">
                             <div></div> <!-- Spacer -->
@@ -919,10 +919,10 @@ const RotationNodeHandle = (rotateArea, item, id, type) => {
 };
 
 //handle reset- clear node
-const ResetButtonEle = document.querySelector(".reset-button");
+const ResetButtonEles = document.querySelectorAll(".reset-button");
 
-if (ResetButtonEle) {
-    ResetButtonEle.addEventListener("click", () => {
+ResetButtonEles.forEach(btn => {
+    btn.addEventListener("click", () => {
         DataStructure.flower = [];
         DataStructure.decorations = [];
         SelectedFlowerList = {};
@@ -952,7 +952,7 @@ if (ResetButtonEle) {
 
         console.log("Canvas has been reset");
     });
-}
+});
 
 const HandleSendDataLocal = async () => {
     let total = 0;

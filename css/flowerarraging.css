@@ -111,44 +111,79 @@ body {
   border-bottom: 1px solid #f2f2f2;
 }
 
+/* Professional Solid Category Tabs */
+.filter-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* No transparency */
+    border: 1px solid #eee;
+    padding: 2px;
+    border-radius: 12px;
+    height: 48px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
 .filter-box-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    width: 60px;
+    width: 54px;
     height: 100%;
-    color: #aaa;
+    color: #888;
     background-color: transparent;
     transition: all 0.3s ease;
     cursor: pointer;
-    border-bottom: 2px solid transparent;
-}
-
-.filter-item-sign {
-    display: none;
+    border-radius: 10px;
 }
 
 .flower-icon {
-  width: 28px;
-  height: 28px;
+    width: 32px;
+    height: 32px;
 }
 
 .filter-icon {
-  width: 24px;
-  height: 24px;
+    width: 28px;
+    height: 28px;
 }
 
 .filter-box-item:hover {
     color: var(--primary-color) !important;
+    background-color: #fcfcfc;
 }
 
-.seleted-filter-box {
+.selected-filter-box {
     color: var(--primary-color) !important;
-    background-color: transparent !important;
-    border-bottom: 2px solid var(--primary-color);
-    border-radius: 0;
-    box-shadow: none;
+    background-color: #fffafb !important;
+    border: 1px solid rgba(100, 13, 51, 0.1);
+    box-shadow: inset 0 0 5px rgba(100, 13, 51, 0.05);
+}
+
+.filter-reset-desktop {
+    width: 45px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.filter-reset-desktop i {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.filter-reset-desktop:hover {
+    color: var(--primary-color);
+}
+
+.filter-reset-desktop:hover i {
+    transform: rotate(-180deg);
+}
+
+.filter-item-sign {
+    display: none;
 }
 
 /* item list */
@@ -164,62 +199,54 @@ body {
 }
 
 .itemFlower {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
     width: 100%;
-    padding: 16px 8px;
+    padding: 16px 12px;
     background-color: #ffffff;
-    border-radius: 0;
+    border-radius: 12px;
     color: var(--text-main);
-    box-shadow: none;
-    border: none;
+    border: 1px solid transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    user-select: none;
+    position: relative;
+    cursor: pointer;
     border-bottom: 1px solid #f2f2f2;
-    transition: all 0.3s ease;
-  user-select: none;
-  position: relative;
-}
-
-.itemFlower:active {
-  transform: scale(0.98);
-}
-
-.itemFlower.is-checked {
-  background: rgba(170, 9, 9, 0.04);
-  border-radius: 12px;
-  animation: pulseSelect 0.25s ease;
 }
 
 @keyframes pulseSelect {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
 }
 
-.itemFlower:hover {
-  background: rgba(170, 9, 9, 0.04);
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
-  border-bottom-color: transparent;
-  cursor: pointer;
+.itemFlower:hover, .itemFlower.is-checked {
+    background: rgba(170, 9, 9, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+.itemFlower.is-checked {
+    animation: pulseSelect 0.25s ease;
 }
 
 .item-flower-img {
     width: 80px;
     height: 80px;
     flex-shrink: 0;
-    border-radius: 8px;
+    border-radius: 10px;
     object-fit: cover;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: none;
-    border: 1px solid #f2f2f2;
-    transition: all 0.3s ease;
+    border: 1px solid #f8f8f8;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.item-flower-img:hover {
-    opacity: 0.9;
+.itemFlower:hover .item-flower-img {
+    transform: scale(1.05);
 }
 
 .content-flower-item {
@@ -238,11 +265,24 @@ body {
 }
 
 .content-flower-price {
-    font-size: 0.95rem;
-    color: var(--text-light); /* Changed to darker/neutral color */
-    font-weight: 600;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
     position: relative;
+    margin-top: 4px;
     margin-bottom: 8px;
+}
+
+.content-flower-price span:last-child {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.content-flower-price sup {
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-left: 1px;
 }
 
 .cast {
@@ -477,25 +517,64 @@ body {
   background-repeat: no-repeat;
 }
 
-.canva-title {
+.watermark-container {
     position: absolute;
-    font-family: var(--font-heading);
-    font-size: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    pointer-events: none;
+    user-select: none;
+}
 
+.canva-title {
+    font-family: var(--font-heading);
+    font-size: 90px; /* Increased for Desktop presence */
     white-space: nowrap;
-    top: 10px;
-    color: var(--primary-hyper-visual);
-    z-index: -2;
+    color: var(--primary-color);
+    opacity: 0.08; /* Low opacity watermark */
+    margin-bottom: 5px;
 }
 
 .canva-subtitle {
-    margin-top: -30px;
-    font-size: 20px;
-    color: var(--primary-hyper-visual);
+    margin-top: -10px;
+    font-size: 18px; /* Balanced with 90px title */
+    color: var(--primary-color);
+    opacity: 0.08;
+    text-transform: uppercase;
+    letter-spacing: 6px; /* Elegant spacing */
+}
 
-    text-align: center;
-    word-spacing: 10px;
-    letter-spacing: 10px;
+/* Nút Reset Canvas mới */
+.reset-canvas-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 8px 15px;
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 50;
+}
+
+.reset-canvas-btn:hover {
+    color: #333;
+    border-color: #bbb;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.reset-canvas-btn i {
+    font-size: 1rem;
 }
 
 .delete-note {
@@ -732,102 +811,166 @@ body {
     body, html {
         overflow: hidden !important;
         height: 100vh;
+        position: fixed;
+        width: 100%;
     }
 
-    .arraging.wrapper {
-        min-height: 100vh;
-        height: 100vh;
-        overflow: hidden;
+    .arraging {
+        height: calc(100vh - 55px);
+        margin-top: 55px !important;
+        flex-direction: column;
     }
 
     /* 1. Khu Vực Khung Canvas (Nửa trên 60vh) */
     .workspace {
-        position: fixed;
-        top: 70px; /* Cách thanh Header (có thể chỉnh lại số liệu cho vừa khít với thanh Header) */
+        position: absolute;
+        top: 0; 
         left: 0;
         width: 100%;
-        height: 60vh;
+        height: 55vh; /* Giảm tỷ lệ canvas để chừa chỗ cho menu */
         z-index: 10;
         padding: 0;
+        background-color: var(--bg-cream);
+        border-bottom: 1px solid #eee;
     }
 
     #capture {
         height: 100% !important;
     }
 
-    .canva-title {
-        font-size: 50px;
-        top: 20px;
-    }
-
-    /* Nới dòng chú thích ra mép giữa màn hình vì không lo đụng Bảng tính tiền nữa */
     .delete-note {
-        bottom: 10px;
-        right: auto;
+        bottom: 5px;
         left: 50%;
         transform: translateX(-50%);
-        width: 100%;
+        width: 90%;
+        font-size: 11px;
     }
 
-    /* 2. Khay Menu Hoa (Bottom Sheet - Nửa dưới 40vh) */
+    /* 2. Khay Menu Hoa (Bottom Sheet - Nửa dưới) */
     .sidebar {
         position: fixed;
-        bottom: 60px; /* Chừa 60px dưới cùng cho Thanh Hành Động Đáy */
+        bottom: 60px; 
         left: 0;
         width: 100%;
-        height: calc(40vh - 60px);
+        height: calc(45vh - 60px);
         background: #ffffff;
         z-index: 100;
-        overflow-y: auto;
-        border-radius: 20px 20px 0 0;
-        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
-        padding-top: 15px; 
+        overflow-y: hidden; /* Header fixed, body scrolls */
+        border-radius: 24px 24px 0 0;
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
         border: none;
     }
 
-    .filter-box {
-        margin-bottom: 10px;
+    .title-container {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        border-bottom: 1px solid #f0f0f0;
+        flex-shrink: 0;
     }
 
-    /* 3. Thanh Hành Động Bám Đáy (Sticky Bottom Bar) */
+    .sidebar-titlebox {
+        margin: 0;
+    }
+
+    .title-sidebar {
+        font-size: 1.1rem;
+        text-align: left;
+        font-weight: 700;
+    }
+
+    .filter-box {
+        width: auto;
+        border: none;
+        height: 40px;
+        margin: 0;
+    }
+
+    .filter-box-item {
+        width: 45px;
+    }
+
+    .canva-title {
+        font-size: 26px; /* Elegant and less crowded */
+    }
+
+    .canva-subtitle {
+        margin-top: 0; /* Reset margin for mobile */
+        font-size: 9px;
+        letter-spacing: 3px;
+        white-space: nowrap;
+    }
+
+    .list-selection {
+        padding: 10px 15px;
+        overflow-y: auto;
+        flex: 1;
+    }
+
+    .itemFlower {
+        padding: 12px 5px;
+    }
+
+    .item-flower-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .content-flower-name {
+        font-size: 0.95rem;
+    }
+
+    .content-flower-price {
+        font-size: 0.85rem;
+    }
+
+    .ellipsis {
+        width: 140px;
+    }
+
+    /* 3. Thanh Hành ĐỘng Bám Đáy (Sticky Bottom Bar) */
     .mobile-bottom-bar {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 60px;
-        background: #faf7f5; /* Mã màu kem cho đẹp mắt */
+        background: #ffffff;
         border-top: 1px solid #eee;
-        z-index: 1050; /* Đè lên vạn vật */
+        z-index: 1050;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 15px;
-        cursor: pointer;
+        padding: 0 20px;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.05);
     }
 
     .mobile-total-price {
         font-family: var(--font-header);
         color: var(--primary-color);
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         display: flex;
         align-items: center;
+        gap: 5px;
     }
 
     .mobile-btn-cart {
         background: var(--primary-color);
         color: #fff;
         border: none;
-        border-radius: 20px;
-        padding: 8px 18px;
-        font-size: 1rem;
+        border-radius: 30px;
+        padding: 10px 22px;
+        font-size: 0.95rem;
         font-family: var(--font-heading);
-        font-weight: 500;
-        box-shadow: 0 4px 10px rgba(100, 13, 51, 0.25);
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(100, 13, 51, 0.2);
     }
     
     /* 4. Khay Hóa Đơn Trượt Offcanvas Bill */
-    /* Phá Position Absolute của price-container thả trôi tự do trong Offcanvas */
     .custom-offcanvas .price-container {
         position: relative;
         bottom: auto;
@@ -839,29 +982,48 @@ body {
 
     .custom-offcanvas .summary-card {
         box-shadow: none;
-        padding: 5px 15px;
+        padding: 0;
     }
 
-    /* Tàng hình nút Checkout trong Khay hóa đơn vì ta đã có MÀU ĐỎ thêm giỏ ở dưới Bottom Bar rồi */
     .custom-offcanvas .btn-checkout {
         display: none !important;
     }
+
+    .summary-total-price {
+        font-size: 1.8rem;
+    }
+
+    .item-price-selected {
+        padding: 8px 0;
+        border-bottom: 1px solid #f9f9f9;
+    }
 }
 
-/* =========================================
-   GIỮ NGUYÊN BỐ CỤC ON DESKTOP MƯỢT MÀ
-========================================= */
+/* Fix bouquet image size on mobile */
+@media (max-width: 768px) {
+    .bouquet-render {
+        width: 220px;
+        height: 300px;
+    }
+    
+    .node {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Fix offcanvas duplicate on desktop */
 @media (min-width: 992px) {
-    /* Disable tính năng "ẩn" của Bootstrap Offcanvas để nó nổi lềnh phềnh thành thẻ giá trị Absolute bình thường */
     .custom-offcanvas {
-        position: static !important;
-        transform: none !important;
-        visibility: visible !important;
-        background: transparent !important;
-        border: none !important;
-        display: block !important;
+        display: none !important;
     }
     .custom-offcanvas-backdrop {
         display: none !important;
     }
+}
+
+.price-currency {
+    font-size: 0.8em;
+    font-weight: 400;
+    margin-left: 2px;
 }

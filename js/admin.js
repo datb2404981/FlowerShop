@@ -449,6 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
             [menuProducts, menuOrders].forEach(m => m.classList.remove('active'));
             menuOverview.classList.add('active');
             fetchData('overview');
+            // Close sidebar on mobile
+            if (window.innerWidth < 992) toggleSidebar();
         });
     }
 
@@ -458,6 +460,8 @@ document.addEventListener('DOMContentLoaded', () => {
             [menuOverview, menuOrders].forEach(m => m.classList.remove('active'));
             menuProducts.classList.add('active');
             fetchData('products');
+            // Close sidebar on mobile
+            if (window.innerWidth < 992) toggleSidebar();
         });
     }
 
@@ -467,6 +471,8 @@ document.addEventListener('DOMContentLoaded', () => {
             [menuOverview, menuProducts].forEach(m => m.classList.remove('active'));
             menuOrders.classList.add('active');
             fetchData('orders');
+            // Close sidebar on mobile
+            if (window.innerWidth < 992) toggleSidebar();
         });
     }
 
