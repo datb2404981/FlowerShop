@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lato:wght@300;400;700&family=Prata&family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@300;400;500;600;700&family=Prata&family=Yeseva+One&display=swap");
 
 .container {
   display: flex;
@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "hoa1 hoa2 hoa3";
-  gap: 100px;
+  gap: 30px; /* Reduced from 100px for better layout density */
   justify-items: center;
   width: 100%;
   max-width: 1200px;
@@ -25,14 +25,20 @@
   align-items: center;
   width: 100%;
   max-width: 300px;
+  padding: 15px; /* Keep padding constant to avoid jumping */
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
 }
 
 .object img {
   height: 200px;
   width: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 12px;
   max-width: 300px;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .object p {
   margin-top: 10px;
@@ -48,11 +54,30 @@
   width: 100%;
 }
 .object:hover {
-  background: rgba(170, 9, 9, 0.06);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(170, 9, 9, 0.12);
-  animation: pulseSelect 0.25s ease;
-  padding: 15px;
+  background: rgba(100, 13, 51, 0.04); /* Updated to match plum/berry primary-color */
+  box-shadow: 0 15px 35px rgba(100, 13, 51, 0.1);
+  transform: translateY(-10px);
+}
+
+.object:hover img {
+  transform: scale(1.08); /* Subtle zoom on hover */
+}
+
+/* Style for 'Xem thêm' to look smoother */
+.xem-them {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.object:hover .xem-them {
+  border-bottom-color: var(--primary-color);
+  padding-left: 5px;
 }
 
 .gthoa {
@@ -61,9 +86,33 @@
 .gthoa h2 {
   margin-top: 20px;
 }
-.container h1 {
-  margin-top: 20px;
-  margin-bottom: 25px;
+.container h1.hoacuacacmua {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  transition: all 0.4s ease;
+}
+
+.container h1.hoacuacacmua::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+
+.container h1.hoacuacacmua:hover {
+  letter-spacing: 2px;
+}
+
+.container h1.hoacuacacmua:hover::after {
+  width: 100px;
 }
 
 @media screen and (max-width: 480px) {
@@ -100,13 +149,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* Gradient kết hợp màu mận chín (primary-color) ở đáy và mờ dần lên trên */
   background: linear-gradient(
-    to top,
-    rgba(100, 13, 51, 0.9) 0%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  backdrop-filter: blur(3px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
+    to bottom,
+    rgba(100, 13, 51, 0.4) 0%,
+    rgba(100, 13, 51, 0.85) 100%
+  ); /* More balanced gradient for readable text */
+  backdrop-filter: blur(5px); /* Increased blur for more wow factor */
   pointer-events: none;
 }
 
