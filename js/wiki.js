@@ -43,7 +43,13 @@ function displayFlower(name) {
         modalBody.offsetHeight; // Lệnh này giúp trình duyệt "refresh" lại animation
         modalBody.style.animation = null;
         document.getElementById("ten-hoa").textContent = flowerData.name;
+        /* reset thang */
+        const selectElement = document.getElementById("hoacuathang");
+            if (selectElement) {
+                selectElement.value = "0"; 
+            }
         }, 500);
+
     }
 }
 
@@ -96,17 +102,12 @@ function chayHieuUngHoa() {
     }());
 }
 
-function timHoaTheoThang() {
-    const inputField = document.getElementById("hoacuathang");
-    const input = document.getElementById("hoacuathang").value.trim();
-    const tenHoa = thangToHoa[input]; // Lấy tên hoa từ object thangToHoa
+function timHoaTheoThang(value) {
+    const tenHoa = thangToHoa[value]; // Lấy tên hoa từ object thangToHoa
 
     if (tenHoa) {
         chayHieuUngHoa(); // Chạy hiệu ứng
-        const resetInput = () => {
-            inputField.value = ""; 
-            inputField.blur();
-        };
+    
         if (!flowerCache) {
             fetch("wiki.json")
                 .then(res => res.json())
@@ -114,13 +115,11 @@ function timHoaTheoThang() {
                     flowerCache = data;
                     setTimeout(() => {
                         displayFlower(tenHoa);
-                        resetInput();
                     }, 2000);
                 });
         } else {
             setTimeout(() =>{
                  displayFlower(tenHoa);
-                 resetInput();
             }, 2000);
         }
     } else {

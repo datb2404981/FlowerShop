@@ -26,10 +26,22 @@
                     Một bó hoa đẹp dành tặng cho những tâm hồn đẹp
                 </p>
                 <form>
-                    <label for="hoacuathang" class="input-label">Tháng sinh của bạn là?</label><br>
-                    <input type="number" id="hoacuathang"
-                        placeholder="Hãy nhập tháng sinh của bạn sẽ có điều bất ngờ xảy ra (1-12)" min=1 max=12
-                        onkeypress="if(event.key === 'Enter'){ event.preventDefault(); timHoaTheoThang(); }">
+                    <label for="hoacuathang" class="input-label">Khám phá loài hoa đại diện cho tâm hồn bạn.</label><br>
+                   <select id="hoacuathang"  onchange="timHoaTheoThang(this.value)">
+                    <option value="0" disabled selected>Chọn tháng sinh của bạn</option>
+                        <option value="1"> Tháng 1</option>
+                        <option value="2"> Tháng 2</option>
+                        <option value="3" > Tháng 3</option>
+                        <option value="4"> Tháng 4</option>
+                        <option value="5">Tháng 5</option>
+                        <option value="6">Tháng 6</option>
+                        <option value="7">Tháng 7</option>
+                        <option value="8">Tháng 8</option>
+                        <option value="9">Tháng 9</option>
+                        <option value="10">Tháng 10</option>
+                        <option value="11">Tháng 11</option>
+                        <option value="12">Tháng 12</option>
+                   </select>
                 </form>
             </div>
         </div>
