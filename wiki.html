@@ -25,10 +25,34 @@
             Những thiết kế hoa tinh tế gói trọn cảm xúc yêu thương.<br />
             Khám phá ngôn ngữ của các loài hoa qua bộ sưu tập độc quyền.
           </p>
+
+          <!-- Birthday Search Feature from Merge -->
+          <form class="mt-4">
+            <label for="hoacuathang" class="input-label"
+              >Khám phá loài hoa đại diện cho tâm hồn bạn.</label
+            ><br />
+            <select id="hoacuathang">
+              <option value="0" disabled selected>
+                Chọn tháng sinh của bạn
+              </option>
+              <option value="1">Tháng 1</option>
+              <option value="2">Tháng 2</option>
+              <option value="3">Tháng 3</option>
+              <option value="4">Tháng 4</option>
+              <option value="5">Tháng 5</option>
+              <option value="6">Tháng 6</option>
+              <option value="7">Tháng 7</option>
+              <option value="8">Tháng 8</option>
+              <option value="9">Tháng 9</option>
+              <option value="10">Tháng 10</option>
+              <option value="11">Tháng 11</option>
+              <option value="12">Tháng 12</option>
+            </select>
+          </form>
+
           <button
             onclick="location.href = '#Xuan'"
             class="btn btn-buy mt-3 px-4 py-2"
-            style="background-color: var(--primary-color); color: white"
           >
             Khám phá ngay
           </button>
@@ -253,12 +277,64 @@
           </div>
         </div>
       </section>
-      <script></script>
     </main>
+
+    <!-- Modal for Birthday Search Result (from Merge) -->
+    <div id="flowerModal" class="modal-overlay" onclick="closeModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-body">
+          <div
+            id="loading-spinner"
+            style="display: none; text-align: center; padding: 50px"
+          >
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Đang tìm những đóa hoa xinh đẹp cho bạn...</p>
+          </div>
+          <h2 id="ten-hoa" class="text-center mb-4"></h2>
+          <div class="content">
+            <div class="small-content">
+              <div class="trai">
+                <article id="mo-ta1"></article>
+              </div>
+              <div class="phai">
+                <img id="img1" src="" />
+              </div>
+            </div>
+
+            <div class="small-content">
+              <div class="trai">
+                <img id="img2" src="" />
+              </div>
+              <div class="phai">
+                <article id="mo-ta2"></article>
+              </div>
+            </div>
+
+            <div class="small-content">
+              <div class="trai">
+                <article id="mo-ta3"></article>
+              </div>
+              <div class="phai">
+                <img id="img3" src="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <my-footer> </my-footer>
+
+    <script src="framework/popper.min.js"></script>
+    <script src="framework/bootstrap.min.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/wiki.js"></script>
+    <script src="js/updateCartIcon.js"></script>
+    <script src="thuvien/hieuunghoabay.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   </body>
-  <script src="framework/popper.min.js"></script>
-  <script src="framework/bootstrap.min.js"></script>
-  <script src="js/components.js"></script>
-  <script src="js/updateCartIcon.js"></script>
 </html>
+
