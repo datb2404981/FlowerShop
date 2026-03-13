@@ -77,9 +77,11 @@ function chayHieuUngHoa() {
     const animationEnd = Date.now() + duration;
 
     (function frame() {
+        const isMobile = window.innerWidth < 768;
+        const particleCount = isMobile ? 3 : 5;
       //bắn bên trái
         confetti({
-            particleCount: 5,
+            particleCount: particleCount,
             angle: 60,            // Góc bắn 60 độ
             spread: 55,           // Độ lan tỏa
             origin: { x: 0, y: 0.6 },
@@ -88,7 +90,7 @@ function chayHieuUngHoa() {
         });
         //bắn bên phải
         confetti({
-            particleCount: 5,
+            particleCount: particleCount,
             angle: 120,           // Góc bắn 120 độ
             spread: 55,
             origin: { x: 1, y: 0.6 },
@@ -126,3 +128,6 @@ function timHoaTheoThang(value) {
         alert("Vui lòng nhập một tháng hợp lệ (từ 1 đến 12)!");
     }
 }
+document.getElementById("hoacuathang").addEventListener("change", function(e) {
+            timHoaTheoThang(e.target.value);
+        });

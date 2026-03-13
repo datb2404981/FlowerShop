@@ -70,21 +70,27 @@
     width: 300px !important;
     min-width: 300px !important;
     max-width: 300px !important;
-    font-size: 7.25pt !important;
+    font-size: 10.25pt !important;
+  }
+  .input-label{
+    font-size: 14pt !important;
   }
   .small-content{
     display: flex;
     flex-direction: column !important;
+    gap: 2px !important;
+    
   }
   .small-content article{
     font-size: 14pt;
-    padding: 20px 20px;
+    padding: 15px 20px;
   }
   .small-content img{
     height: 300px !important;
   }
   .modal-body{
     padding: 20px 20px;
+    align-items: center;
   }
   .modal-content{
     margin: 20px 20px !important;
@@ -93,11 +99,18 @@
     flex-direction: column;/*đổi thành cột*/
   }
   .trai{
-    margin-left: 10px !important;
+    margin: 10px 10px !important;
+    align-items: center;
   }
   .phai{
-    margin-right: 10px !important;
+    margin: 10px 10px !important;
   }
+  .content{
+    display:flex;
+    flex-direction: column;
+    gap: 15px !important;;
+  }
+  
 }
 
 /* Bọc quanh ảnh để chứa lớp overlay đổ gradient */
@@ -133,7 +146,7 @@
     rgba(100, 13, 51, 0.9) 0%,
     rgba(0, 0, 0, 0.3) 100%
   );
-  backdrop-filter: blur(2px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
+  backdrop-filter: blur(3px); /* Hiệu ứng kính mờ (Glassmorphism) cực Wow */
   pointer-events: none;
 }
 
@@ -440,7 +453,6 @@ article{
     transition: all 0.4s ease; 
 }
 
-/**/
 #hoacuathang{
   appearance: none;
 }
