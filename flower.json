@@ -78,7 +78,7 @@
       "type": "flower",
       "price": 35000,
       "path": "assets/images/flowerImages/Pink_magnolia_thumnail.webp",
-      "texture": "assets/images/flowerImages/Rose.png"
+      "texture": "assets/images/flowerImages/Pink_magnolia_texture.png"
     },
     {
       "id": 10,
