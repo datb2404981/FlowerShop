@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const flower = urlParams.get("name");
-fetch("wiki.json")
+fetch("data/wiki.json")
   .then((response) => response.json())
   .then((data) => {
     const flowerData = data.find(
