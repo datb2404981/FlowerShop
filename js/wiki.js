@@ -58,41 +58,35 @@ function loadFlowerData(name) {
 
 function displayFlower(name) {
     const modal = document.getElementById("flowerModal");
-    const spinner = document.getElementById("loading-spinner");
 
     if (!modal) return;
 
     modal.style.display = "flex";
-    if (spinner) spinner.style.display = "block";
 
     const flowerData = flowerCache.find(item => item.name.toLowerCase() === name.toLowerCase().trim());
     if (flowerData) {
-        setTimeout(() => {
-            if (spinner) spinner.style.display = "none";
-            
-            document.getElementById("ten-hoa").textContent = flowerData.name;
-            document.getElementById("mo-ta1").textContent = flowerData.description[0];
-            document.getElementById("mo-ta2").textContent = flowerData.description[1];
-            document.getElementById("mo-ta3").textContent = flowerData.description[2];
-            document.getElementById("img1").src = flowerData.img[0];
-            document.getElementById("img2").src = flowerData.img[1];
-            document.getElementById("img3").src = flowerData.img[2];
-            
-            console.log("Displayed in modal:", flowerData.name);
+        document.getElementById("ten-hoa").textContent = flowerData.name;
+        document.getElementById("mo-ta1").textContent = flowerData.description[0];
+        document.getElementById("mo-ta2").textContent = flowerData.description[1];
+        document.getElementById("mo-ta3").textContent = flowerData.description[2];
+        document.getElementById("img1").src = flowerData.img[0];
+        document.getElementById("img2").src = flowerData.img[1];
+        document.getElementById("img3").src = flowerData.img[2];
+        
+        console.log("Displayed in modal:", flowerData.name);
 
-            const modalBody = document.querySelector(".modal-body");
-            if (modalBody) {
-                modalBody.style.animation = 'none';
-                modalBody.offsetHeight; // Force reflow
-                modalBody.style.animation = null;
-            }
+        const modalBody = document.querySelector(".modal-body");
+        if (modalBody) {
+            modalBody.style.animation = 'none';
+            modalBody.offsetHeight; // Force reflow
+            modalBody.style.animation = null;
+        }
 
-            /* reset thang */
-            const selectElement = document.getElementById("hoacuathang");
-            if (selectElement) {
-                selectElement.value = "0"; 
-            }
-        }, 500);
+        /* reset thang */
+        const selectElement = document.getElementById("hoacuathang");
+        if (selectElement) {
+            selectElement.value = "0"; 
+        }
     }
 }
 
@@ -163,12 +157,12 @@ function timHoaTheoThang(value) {
                     flowerCache = data;
                     setTimeout(() => {
                         displayFlower(tenHoa);
-                    }, 2000);
+                    }, 500);
                 });
         } else {
-            setTimeout(() =>{
-                 displayFlower(tenHoa);
-            }, 2000);
+            setTimeout(() => {
+                displayFlower(tenHoa);
+            }, 500);
         }
     } else {
         alert("Vui lòng chọn một tháng hợp lệ!");

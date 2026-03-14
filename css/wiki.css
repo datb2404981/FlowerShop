@@ -392,7 +392,7 @@ article{
   padding-bottom: 10px;
 }
 .input-label {
-    font-family: Dancing Script;
+    font-family: var(--font-heading), serif;
     color: #fff;
     font-size: 1.5rem;
     opacity: 0;
@@ -400,13 +400,7 @@ article{
     animation: fadeInUp 0.6s ease forwards; /*hiệu ứng trượt lên cho label và ô input*/
 }
 
-#hoacuathang {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 0.7s ease forwards;
-}
-
-/* Keyframes cho Label */
+/* Keyframes cho Label và Dropdown */
 @keyframes fadeInUp {
     to { opacity: 0.8; transform: translateY(0); }
 }
@@ -428,58 +422,47 @@ article{
   animation: fadeInContent 0.8s ease-out forwards;
 }
 
-.spinner-border {
-    width: 3rem;
-    height: 3rem;
-    border: 0.25em solid currentColor;
-    border-right-color: transparent;
-    border-radius: 50%;
-    animation: spinner-border .75s linear infinite;
+@keyframes falling-petals {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 50px 500px;
+    }
 }
 
-@keyframes spinner-border {
-    to { transform: rotate(360deg); }
-}
-
-/*hoa rơi trong input*/
+/* Dropdown chọn tháng sinh */
 #hoacuathang {
     padding-top: 20px;
     outline: none;
     width: 70%;
     text-align: center;
     font-size: 13pt;
-    color:rgba(100, 13, 51, 0.9);
+    color: rgba(100, 13, 51, 0.9);
     position: relative;
     z-index: 999;
+    opacity: 0;
+    transform: translateY(10px);
 
-    /* Hiệu ứng kính mờ (Glassmorphism) */
+    /* Glassmorphism */
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     border-radius: 30px;
     padding: 15px 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: #f8cdda;
-  /* Hiệu ứng hoa rơi */
+
+    /* Background image for petals */
     background-image: url('../assets/images/img/anh_modal.png');
     background-size: 90px 90px;
     background-repeat: repeat;
-    transition: all 0.4s ease; 
+    
+    /* Animations: entry + continuous petals */
+    animation: fadeInUp 0.7s ease forwards, falling-petals 10s linear infinite;
+    transition: box-shadow 0.4s ease;
     appearance: none;
 }
 
-@keyframes falling-petals {
-    0% {
-        background-position: 0px 0px;
-    }
-    100% {
-        background-position: 50px 500px; /* Hoa trượt từ trái sang phải và từ trên xuống dưới */
-    }
-}
-
 #hoacuathang:focus {
-    box-shadow: 0 0 10px rgba(248, 205, 218, 0.5);
-    background-image: url('../assets/images/img/anh_modal.png');
-    background-size: 90px 90px;
-    background-repeat: repeat;
-    animation: fadeInUp 0.7s ease forwards, falling-petals 10s linear infinite;
+    box-shadow: 0 0 15px rgba(248, 205, 218, 0.6);
 }
