@@ -270,9 +270,11 @@ function renderProductDetails(product, reviewCount){
   const smallStars = document.getElementById("small-stars");
   const smallCount = document.getElementById("small-count");
 
-  if (smallStars) smallStars.innerHTML = generateStars(product.rating);
+  if (smallStars) 
+      smallStars.innerHTML = generateStars(product.rating);
 
-  if (smallCount) smallCount.innerText = reviewCount;
+  if (smallCount) 
+      smallCount.innerText = reviewCount;
 
   let mainHtml = "";
   let thumbHtml = "";
